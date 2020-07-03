@@ -1,0 +1,33 @@
+// ----- Fonts
+
+// http://gregory-broyer.vpnuser.lan/
+
+// ----- colors theme  https://colorhunt.co/palette/196224
+
+$firstColor: #EEEEEE;
+$secondColor: #393e46;
+$thirdColor: #76ead7;
+$fourthColor: #cff395;
+
+// ----- color & size FRIDGE 
+
+
+$c-dark: #8ce400; //#C62828; // bordure frigo
+$fridge-color: hsl(83, 77%, 66%); //#EF5350; // porte
+$width: 200px;
+$height: 400px;
+
+$fridge-stroke: rgb(142, 200, 247); // bordure interieur
+$fridge-stroke-width: 9px;
+$fridge-bgc: #E3F2FD; // background
+$fridge-section-margin: 9px;
+
+$freezer-height: 130px;
+
+$fridge-shelf-height: 4px;
+$fridge-thickness: 50px;
+
+$out-border-radius: 20px;
+$in-border-radius: 20px;
+
+// ----- @mixin
