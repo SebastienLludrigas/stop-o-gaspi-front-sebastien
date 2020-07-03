@@ -1,16 +1,21 @@
 // == Import npm
 import React from 'react';
 
-import Fridge from './Fridge';
-import LogoGaspi from './Logo';
+
+
 // == Import
+import Header from 'src/components/Header';
+import Main from 'src/components/Main';
+import Footer from 'src/components/Footer';
+
 import './styles.scss';
 
 // == Composant
 const App = () => (
   <div className="app">
-    <LogoGaspi />
-    <Fridge />
+  <Header />
+  <Main />
+  <Footer />
   </div>
 );
 

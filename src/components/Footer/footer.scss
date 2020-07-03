@@ -1,0 +1,41 @@
+@import 'src/styles/vars.scss';
+
+footer{
+  height: 20vh;
+  background-color: $firstColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2vmin 4vmin;
+  font-size: 2vmin;
+  .footerTitle{
+    font-size: 3vmin;
+    font-weight: bold;
+  }
+  & ul{
+    margin: 1vmin 0;
+    & li{
+      margin: 3vmin 0;
+    }
+  }
+  .contact{
+    text-align: center;
+      .lienContact{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      & li{
+        padding: 0px 10px;
+        line-height: 1.1rem;
+      }
+    }
+  }
+  .footerHoover{
+    :hover{
+      color: $thirdColor;
+    }
+  }
+  .blogCommunauty{
+        
+  }
+}
