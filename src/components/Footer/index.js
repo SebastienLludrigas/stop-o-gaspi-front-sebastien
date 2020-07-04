@@ -33,23 +33,23 @@ const Footer = () => (
         <Link to="/advice-sheet/about" className="footerHoover">
           <li> <Mail size="15" /> </li>
         </Link>
-        <Link to="/advice-sheet/about" className="footerHoover">
+        <Link to="/advice-sheet/faq" className="footerHoover">
           <li>FAQ</li>
         </Link>
       </ul>
 
       <p>2020 @copyright Stop O'Gaspi | 
-        <Link to="/advice-sheet/about" className="footerHoover">
+        <Link to="/advice-sheet/legal-mentions" className="footerHoover">
           <a>Mentions Légales</a>
         </Link>
       </p>
 
     </div>
     <div className="blogCommunauty">
-      <Link to="/advice-sheet/about" className="footerHoover">
+      <Link to="/blog" className="footerHoover">
         <li className="footerHoover footerTitle"><a>Blog</a></li>
       </Link>
-      <Link to="/advice-sheet/about" className="footerHoover">
+      <Link to="/communauty" className="footerHoover">
         <li className="footerHoover"><a className="footerTitle">Communauté</a></li>
       </Link>
     </div>
