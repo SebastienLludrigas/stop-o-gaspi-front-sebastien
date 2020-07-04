@@ -38,24 +38,22 @@ const Footer = () => (
         </Link>
       </ul>
 
-      <p>2020 @copyright Stop O'Gaspi | 
+      <p><span>2020 @copyright Stop O'Gaspi |</span>
         <Link to="/advice-sheet/legal-mentions" className="footerHoover">
-          <a>Mentions Légales</a>
+          <li> Mentions Légales</li>
         </Link>
       </p>
-
     </div>
     <div className="blogCommunauty">
       <Link to="/blog" className="footerHoover">
-        <li className="footerHoover footerTitle"><a>Blog</a></li>
+        <li className="footerHoover footerTitle">Blog</li>
       </Link>
       <Link to="/communauty" className="footerHoover">
-        <li className="footerHoover"><a className="footerTitle">Communauté</a></li>
+        <li className="footerHoover footerTitle">Communauté</li>
       </Link>
     </div>
   </footer>
 );
-
 
 // == Export
 export default Footer;

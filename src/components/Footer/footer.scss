@@ -1,6 +1,7 @@
 @import 'src/styles/vars.scss';
 
 footer{
+
   height: 20vh;
   background-color: $firstColor;
   display: flex;
@@ -27,8 +28,9 @@ footer{
       & li{
         padding: 0px 10px;
         line-height: 1.1rem;
-      }
+      }    
     }
+    & p{ display: flex;}
   }
   .footerHoover{
     :hover{
