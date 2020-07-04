@@ -36,6 +36,43 @@ footer{
     }
   }
   .blogCommunauty{
-        
+    & li{
+      margin-bottom: 3vmin;
+    }        
+  }
+}
+@media screen and (max-width: 600px) {
+  footer {
+    row-gap: 2em;
+    font-size:3vmin;
+    height: max-content;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    grid-template-areas: 
+    "blogCommunauty"
+    "aboutUs "
+    "contact";
+    .aboutUs{
+      grid-area: aboutUs;
+      margin-bottom: 2vmin;
+      align-items: center;
+      & ul{
+        align-items: center;
+      }
+    }
+    .footerHoover{
+      text-decoration: underline;
+      font-style: italic;
+      
+    }
+    .contact{
+      grid-area: contact;
+    }
+    .blogCommunauty{
+      grid-area: blogCommunauty;
+      
+    }
+    .footerTitle{font-size: 20px;}
   }
 }
