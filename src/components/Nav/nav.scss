@@ -1,0 +1,25 @@
+@import 'src/styles/vars.scss';
+
+#row-menu {
+  display: none;
+}
+
+.principal-nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.principal-nav-container {
+  margin-top: -15px;
+  list-style-type: none;
+  display: flex;
+}
+
+#row-menu li {
+    margin-right: 2vw;
+}
+
+#row-menu a:hover {
+    text-shadow: 0.5px 0.5px 0.5px $thirdColor;
+    // color: $thirdColor;
+}

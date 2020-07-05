@@ -2,8 +2,7 @@
 import React from 'react';
 import logo from 'src/assets/image/logoStopOGaspi.PNG';
 
-import './logo.scss';
-
+import './logogaspi.scss';
 
 const LogoGaspi = () => (
   <div className="sloganLogo">

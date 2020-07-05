@@ -1,0 +1,17 @@
+@import 'src/styles/vars.scss';
+
+.sloganLogo{
+  text-align: center;
+}
+
+.logo{
+  max-width: 200px;  
+}
+.slogan{
+  text-shadow: 0 1px 0 rgb(143, 143, 255);
+  position: relative;
+  transform: translateY(-35px);
+  color:$thirdColor;
+  font-size: 1em;
+
+}
