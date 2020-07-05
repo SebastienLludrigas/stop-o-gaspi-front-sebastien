@@ -5,10 +5,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 // == Import
-import Twitter from '@bit/feathericons.react-feather.twitter';
-import Facebook from '@bit/feathericons.react-feather.facebook';
-import Instagram from '@bit/feathericons.react-feather.instagram';
-
 import Burger from './Burger';
 
 import './nav.scss';
@@ -20,22 +16,31 @@ const Nav = ({ handleBurger, cross }) => (
       <ul className="row-menu-content">
         <li><NavLink to="/" title="Accueil">Accueil</NavLink></li>
         <li><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
-        <li><NavLink to="/twitter" title="twitter"><Twitter /></NavLink></li>
-        <li><NavLink to="/facebook" title="facebook"><Facebook /></NavLink></li>
-        <li><NavLink to="/instagram" title="instagram"><Instagram /></NavLink></li>
+      </ul>
+      <ul className="row-social-media">
+        <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
+        <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
+        <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
+        <li><NavLink to="/instagram" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
       </ul>
     </nav>
 
     <nav id="column-menu">
       <ul className={classNames('column-menu-content', { active: cross })}>
-        <li><NavLink to="/" title="Accueil">Accueil</NavLink></li>
-        <li><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
-        <li><NavLink to="/twitter" title="twitter"><Twitter /></NavLink></li>
-        <li><NavLink to="/facebook" title="facebook"><Facebook /></NavLink></li>
-        <li><NavLink to="/instagram" title="instagram"><Instagram /></NavLink></li>
-        <li><NavLink to="/settings" title="instagram">Tableau de bord</NavLink></li>
-        <li><NavLink to="/pantry" title="instagram">Pantry</NavLink></li>
-        <li>Déconnexion</li>
+        <li className="nav"><NavLink to="/" title="Accueil">Accueil</NavLink></li>
+        <li className="nav"><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
+        <li className="nav"><NavLink to="/settings" title="instagram">Tableau de bord</NavLink></li>
+        <li className="nav"><NavLink to="/pantry" title="instagram">Pantry</NavLink></li>
+        <li className="nav">Déconnexion</li>
+        <div className="social-media">
+          <li><p>Réseaux sociaux</p></li>
+          <div className="social-media-container">
+            <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
+            <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
+            <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
+            <li><NavLink to="/instagram" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
+          </div>
+        </div>
       </ul>
     </nav>
     <Burger handleBurger={handleBurger} cross={cross} />

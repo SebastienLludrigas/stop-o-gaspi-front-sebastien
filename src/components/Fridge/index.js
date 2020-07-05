@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // == Import npm
 import React from 'react';
 
 import './fridge.scss';
 
-const fridge = () => (
+const Fridge = () => (
   <div className="frigo">
     <div className="fridge--container">
       <input id="freezer-toggle" type="checkbox" />
@@ -15,4 +16,4 @@ const fridge = () => (
 
 );
 
-export default fridge;
+export default Fridge;

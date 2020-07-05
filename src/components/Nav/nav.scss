@@ -16,7 +16,8 @@
 }
 
 #row-menu li {
-    margin-right: 2vw;
+    margin-right: 1.2em;
+    font-size: 1.2em;
 }
 
 #row-menu a:hover {
@@ -24,8 +25,18 @@
     // color: $thirdColor;
 }
 
+.row-social-media {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  & li {
+    margin-right: 1vw;
+  }
+}
+
 #column-menu {
-  display: block;
+  display: none;
 }
 
 .column-menu-content {
@@ -42,10 +53,25 @@
   overflow-x: hidden;
   transition: width 0.2s ease-in-out;
 
-  & li {
-    font-size: 2em;
-    margin: 0.3em;
+  & .nav {
+    font-size: 1.7em;
+    margin: 0.5em;
     cursor: pointer;
+  }
+
+  & .social-media {
+    margin-top: 6em;
+
+    & li {
+      font-size: 1.7em;
+      margin: 0.3em;
+    }
+
+    & .social-media-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 

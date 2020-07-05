@@ -1,11 +1,15 @@
 @import 'src/styles/vars.scss';
 
 .header {
+  height: 110px;
   background-color: $firstColor;
-  padding: 15px 25px 0px 25px;
+  padding: 20px 25px 0px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
 
   .right-container {
     display: flex;

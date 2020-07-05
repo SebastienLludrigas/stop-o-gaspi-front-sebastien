@@ -2,12 +2,14 @@
 import React from 'react';
 
 // == Import
+// import Fridge from 'src/components/Fridge';
+
 import './main.scss';
 
 // == Composant
 const Main = () => (
   <div className="main">
-    <h1>Main</h1>
+    {/* <Fridge /> */}
   </div>
 );
 

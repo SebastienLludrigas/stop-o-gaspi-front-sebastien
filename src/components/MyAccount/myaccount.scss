@@ -1,12 +1,44 @@
+@import 'src/styles/vars.scss';
+
 .my-account {
   margin-left: 20px;
   margin-top: -15px;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
   // display: none;
   
   & :nth-child(2){
     align-self: center;
+  }
+
+  .account-menu {
+    position: absolute;
+    top: 90px;
+    right: 10px;
+    border: 1px solid $secondColor;
+    border-radius: 3px;
+    padding: 1em 0.5em;
+    background-color: $firstColor;
+
+    & div {
+      width: 60px;
+      height: 1px;
+      background-color: $secondColor;
+      margin: 1em auto;
+    }
+
+    & .list-menu {
+      text-align: center;
+      
+      & li {
+        font-size: 0.9em;
+
+        &:not(:first-child) {
+          margin-top: 1em;
+        }
+      }
+    }
   }
 }
 
