@@ -2,9 +2,9 @@
 import React from 'react';
 
 // == Import
-import Nav from 'src/components/Nav';
+import Nav from 'src/containers/Nav';
 import LogoGaspi from 'src/components/LogoGaspi';
-import User from '@bit/feathericons.react-feather.user';
+import MyAccount from 'src/components/MyAccount';
 
 import './header.scss';
 
@@ -14,10 +14,7 @@ const Header = () => (
     <LogoGaspi className="logo-gaspi" />
     <div className="right-container">
       <Nav />
-      <div className="my-account">
-        <p>Mon compte</p>
-        <User />
-      </div>
+      <MyAccount />
     </div>
   </div>
 );

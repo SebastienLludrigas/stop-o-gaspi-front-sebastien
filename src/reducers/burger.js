@@ -11,6 +11,7 @@ const burger = (state = initialState, action = {}) => {
     case BURGER_TRANSFORM:
       return {
         ...state,
+        cross: !state.cross,
       };
     default: return state;
   }

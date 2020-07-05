@@ -1,0 +1,17 @@
+.my-account {
+  margin-left: 20px;
+  margin-top: -15px;
+  display: flex;
+  flex-direction: column;
+  // display: none;
+  
+  & :nth-child(2){
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .my-account {
+    display: none;
+  }
+}

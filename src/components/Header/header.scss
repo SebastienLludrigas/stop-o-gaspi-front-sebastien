@@ -11,27 +11,10 @@
     display: flex;
     align-items: center;
     height: 100px;
-
-    .my-account {
-      margin-left: 20px;
-      margin-top: -15px;
-      display: flex;
-      flex-direction: column;
-      display: none;
-      
-      & :nth-child(2){
-        align-self: center;
-      }
-    }
   }
 }
 
 @media all and (max-width: 600px) {
-  .my-account {
-    display: none;
-    color: blue;
-  }
-
   .header {
     background-color: $firstColor;
     padding: 15px 25px 0px 25px;
@@ -43,6 +26,10 @@
       align-self: center;
       width: 5px;
     }
+  }
+
+  .right-container {
+    display: none;
   }
 }
 
