@@ -1,0 +1,17 @@
+@import 'src/styles/vars.scss';
+
+.sloganLogo{
+text-align: center;
+}
+
+.logo{
+  max-width: 50vmin;
+  
+}
+.slogan{
+  position: relative;
+  transform: translateY(-6vmin);
+  color:$thirdColor;
+  font-size: 4vmin;
+
+}
