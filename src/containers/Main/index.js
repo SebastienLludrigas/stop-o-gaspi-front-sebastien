@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { handleDatas } from 'src/actions/datas';
 
 // === on importe le composant de présentation
 import Main from 'src/components/Main';
@@ -8,12 +9,16 @@ import Main from 'src/components/Main';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   cross: state.burger.cross,
+  datas: state.datas.dataContent,
 });
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher une action vers le store
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
+  handleDatas: () => {
+    dispatch(handleDatas());
+  },
 });
 
 // === création de l'assistant

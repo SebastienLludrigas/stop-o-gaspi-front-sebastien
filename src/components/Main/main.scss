@@ -5,7 +5,25 @@
   display: flex;
   justify-content: center;
 
-  & .refrigerateur {
-    opacity: 0;
-  }
+  // & .refrigerateur {
+  //   opacity: 0;
+  // }
+}
+
+.datas {
+  background-color: $firstColor;
+  color: $secondColor;
+}
+
+.buttonDatas{
+  position: absolute;
+  top: 200px;
+  left: 100px;
+  border-radius: 3px;
+  border: none;
+  background-color: $firstColor;
+  // width: 120px;
+  // height: 30px;
+  padding: 5px;
+  font-size: 1em;
 }

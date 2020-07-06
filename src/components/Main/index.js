@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 
 // == Import
@@ -8,11 +8,27 @@ import React from 'react';
 import './main.scss';
 
 // == Composant
-const Main = () => (
+const Main = ({ datas, handleDatas }) => (
   <div className="main">
-    <h1>Main</h1>
+    <button
+      className="buttonDatas"
+      type="button"
+      onClick={() => {
+        handleDatas();
+      }}
+    >
+      Afficher les données
+    </button>
+    <div className="datas">
+      {datas}
+    </div>
   </div>
 );
+
+Main.propTypes = {
+  datas: PropTypes.array.isRequired,
+  handleDatas: PropTypes.func.isRequired,
+};
 
 // == Export
 export default Main;
