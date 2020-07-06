@@ -13,10 +13,11 @@ const Fridge = () => (
       <input id="fridge-toggle" type="checkbox" />
       <label htmlFor="fridge-toggle" />
     </div>
+
 );
 
-Fridge.propTypes = {
+/* Fridge.propTypes = {
   cross: PropTypes.bool.isRequired,
-};
+}; */
 
 export default Fridge;
