@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-
+import { Switch, Route } from 'react-router-dom';
 // == Import
 import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
@@ -12,7 +12,9 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Main />
+    <Switch>
+      <Route exact path="" component={Main} />
+    </Switch>
     <Footer />
   </div>
 );
