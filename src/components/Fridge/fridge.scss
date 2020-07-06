@@ -1,8 +1,5 @@
 @import 'src/styles/vars.scss';
 
-
-
-
 .frigo {
   background-color: transparent;
   display: flex;
@@ -10,6 +7,12 @@
   justify-content: center;
   align-items: center;
   min-height: 70vh;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.frigo.active {
+  opacity: 0;
 }
 
 .fridge--container {
@@ -20,6 +23,7 @@
   border: $fridge-stroke-width solid $c-dark;
   box-shadow: 0px 0px 70px $fourthColor; //rgba(255, 255, 255, 1);
   position: relative;
+  top: 50px;
 
   input[type="checkbox"] {
     transform: translate(-10px, -11px);

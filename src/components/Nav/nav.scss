@@ -1,0 +1,91 @@
+@import 'src/styles/vars.scss';
+
+#row-menu {
+  // display: none;
+}
+
+.row-menu-content  {
+  display: flex;
+  align-items: center;
+}
+
+.row-menu-content {
+  margin-top: -15px;
+  list-style-type: none;
+  display: flex;
+}
+
+#row-menu li {
+    margin-right: 1.2em;
+    font-size: 1.2em;
+}
+
+#row-menu a:hover {
+    text-shadow: 0.5px 0.5px 0.5px $thirdColor;
+    // color: $thirdColor;
+}
+
+.row-social-media {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+
+  & li {
+    margin-right: 1vw;
+  }
+}
+
+#column-menu {
+  display: none;
+}
+
+.column-menu-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $firstColor;
+  overflow-x: hidden;
+  transition: width 0.2s ease-in-out;
+
+  & .nav {
+    font-size: 1.7em;
+    margin: 0.5em;
+    cursor: pointer;
+  }
+
+  & .social-media {
+    margin-top: 6em;
+
+    & li {
+      font-size: 1.7em;
+      margin: 0.3em;
+    }
+
+    & .social-media-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.column-menu-content.active {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  #row-menu {
+    display: none;
+  }
+
+  #column-menu {
+    display: block;
+  }
+  
+}

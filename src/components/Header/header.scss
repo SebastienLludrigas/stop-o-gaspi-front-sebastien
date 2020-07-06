@@ -1,0 +1,39 @@
+@import 'src/styles/vars.scss';
+
+.header {
+  height: 110px;
+  background-color: $firstColor;
+  padding: 20px 25px 0px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  .right-container {
+    display: flex;
+    align-items: center;
+    height: 100px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .header {
+    background-color: $firstColor;
+    padding: 15px 25px 0px 25px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+
+    .logo-gaspi {
+      align-self: center;
+      width: 5px;
+    }
+  }
+
+  .right-container {
+    display: none;
+  }
+}
+

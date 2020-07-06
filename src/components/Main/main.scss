@@ -1,0 +1,11 @@
+@import 'src/styles/vars.scss';
+
+.main {
+  height: 650px;
+  display: flex;
+  justify-content: center;
+
+  & .refrigerateur {
+    opacity: 0;
+  }
+}

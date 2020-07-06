@@ -1,7 +1,10 @@
 // == Import npm
 import React from 'react';
+// import PropTypes from 'prop-types';
+// import classNames from 'classnames';
 
 // == Import
+
 import './main.scss';
 
 // == Composant

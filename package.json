@@ -62,11 +62,15 @@
     "@bit/feathericons.react-feather.twitter": "^1.1.6",
     "@bit/feathericons.react-feather.user": "^1.1.6",
     "axios": "^0.19.2",
+    "classnames": "^2.2.6",
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
     "react-media": "^1.10.0",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
     "styled-components": "^5.1.1"
   }
 }
