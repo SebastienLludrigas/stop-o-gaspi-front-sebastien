@@ -21,7 +21,7 @@ const Nav = ({ handleBurger, cross }) => (
         <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
         <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
         <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
-        <li><NavLink to="/instagram" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
+        <li><NavLink to="/snapchat" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
       </ul>
     </nav>
 
@@ -39,7 +39,7 @@ const Nav = ({ handleBurger, cross }) => (
             <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
             <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
             <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
-            <li><NavLink to="/instagram" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
+            <li><NavLink to="/snapchat" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
           </div>
         </div>
       </ul>

@@ -1,23 +1,18 @@
 // == Import npm
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 
 // == Import
-import Fridge from 'src/components/Fridge';
 
 import './main.scss';
 
 // == Composant
-const Main = ({ cross }) => (
+const Main = () => (
   <div className="main">
-    <Fridge cross={cross} />
+    <h1>Main</h1>
   </div>
 );
-
-Main.propTypes = {
-  cross: PropTypes.bool.isRequired,
-};
 
 // == Export
 export default Main;

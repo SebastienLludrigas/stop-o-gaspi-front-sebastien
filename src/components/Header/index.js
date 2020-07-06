@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import Nav from 'src/containers/Nav';
 import LogoGaspi from 'src/components/LogoGaspi';
 import MyAccount from 'src/components/MyAccount';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import './header.scss';
 
