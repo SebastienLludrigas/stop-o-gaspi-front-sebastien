@@ -7,6 +7,12 @@
   justify-content: center;
   align-items: center;
   min-height: 70vh;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.frigo.active {
+  opacity: 0;
 }
 
 .fridge--container {

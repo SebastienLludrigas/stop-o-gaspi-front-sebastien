@@ -3,7 +3,7 @@ import React from 'react';
 
 // == Import
 import Header from 'src/containers/Header';
-import Main from 'src/components/Main';
+import Main from 'src/containers/Main';
 import Footer from 'src/components/Footer';
 
 import './styles.scss';

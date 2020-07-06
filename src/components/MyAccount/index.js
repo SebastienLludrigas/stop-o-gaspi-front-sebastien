@@ -26,7 +26,9 @@ const MyAccount = ({ toggle, toggleMenu }) => (
           <div />
           <li><Link to="/pantry" title="instagram">Pantry</Link></li>
           <div />
-          <li>Déconnexion</li>
+          <li>Connexion</li>
+          <div />
+          <li>Inscription</li>
         </ul>
       </div>
     )}

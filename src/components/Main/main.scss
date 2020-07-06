@@ -4,4 +4,8 @@
   height: 650px;
   display: flex;
   justify-content: center;
+
+  & .refrigerateur {
+    opacity: 0;
+  }
 }
