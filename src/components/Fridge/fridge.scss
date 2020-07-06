@@ -1,0 +1,159 @@
+@import 'src/styles/vars.scss';
+
+
+
+
+.frigo {
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.fridge--container {
+  width: 206px;
+  height: 404px;
+  background-color: $fridge-bgc;
+  border-radius: $out-border-radius;
+  border: $fridge-stroke-width solid $c-dark;
+  box-shadow: 0px 0px 70px $fourthColor; //rgba(255, 255, 255, 1);
+  position: relative;
+
+  input[type="checkbox"] {
+    transform: translate(-10px, -11px);
+
+    appearance: none;
+    display: block;
+    width: $width;
+    background-color: $fridge-bgc;
+    border: $fridge-stroke-width solid $fridge-stroke;
+    outline: 0;
+
+    &#freezer-toggle {
+      border-radius: $in-border-radius $in-border-radius 0px 0px;
+      height: $freezer-height;
+      margin-bottom: $fridge-section-margin;
+
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: $fridge-shelf-height;
+        box-shadow: 0px 30px 0px $fridge-stroke, 0px 80px 0px $fridge-stroke;
+      }
+
+      &+label {
+        top: -$fridge-stroke-width;
+        right: -$fridge-stroke-width;
+        height: $freezer-height;
+        border-radius: $out-border-radius $out-border-radius 0px 0px;
+        background-color: $fridge-color;
+
+        &:after {
+          content: "";
+          display: block;
+          height: 40px;
+          position: absolute;
+          left: 20px;
+          width: 0px;
+          border: 4px solid white;
+          border-radius: 10px;
+          bottom: 20px;
+        }
+      }
+
+      &:checked+label {
+        right: -$fridge-stroke-width - $fridge-thickness - $fridge-stroke-width;
+        width: $fridge-thickness;
+        border-radius: $in-border-radius $out-border-radius $out-border-radius $in-border-radius;
+
+        &:after {
+          border: $fridge-stroke-width solid white;
+          border-left: 0px;
+          width: 10px;
+          left: $fridge-thickness;
+          z-index: -1;
+        }
+      }
+    }
+
+    &#fridge-toggle {
+
+      border-radius: 0px 0px $in-border-radius $in-border-radius;
+      height: #{$height - $freezer-height - $fridge-section-margin};
+
+      &:after {
+        content: "";
+        height: $fridge-shelf-height;
+        display: block;
+        width: 100%;
+        box-shadow: 0px 40px 0px $fridge-stroke, 0px 100px 0px $fridge-stroke, 0px 160px 0px $fridge-stroke;
+      }
+
+      &+label {
+        border-radius: 0px 0px $out-border-radius $out-border-radius;
+        top: $freezer-height;
+        height: $height - $freezer-height - $fridge-stroke-width;
+        background-color: $fridge-color;
+        right: -$fridge-stroke-width;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 20px;
+          left: 20px;
+          border: 4px solid white;
+          height: 80px;
+          border-radius: 10px;
+        }
+      }
+
+      &:checked+label {
+        right: -$fridge-thickness - $fridge-stroke-width*2;
+        width: $fridge-thickness;
+        border-radius: 0px $out-border-radius $out-border-radius $in-border-radius;
+
+        &:after {
+          top: 20px;
+          left: $fridge-thickness;
+          width: 2px;
+          border: $fridge-stroke-width solid white;
+          border-left: 0;
+          padding-left: $fridge-stroke-width;
+          z-index: -1;
+        }
+      }
+    }
+
+    &+label {
+
+
+      position: absolute;
+      border: $fridge-stroke-width solid $c-dark;
+      border-radius: $out-border-radius;
+      width: 108%;
+
+      &:before {
+        content: "";
+        transform: translate(-9px, -8px);
+        display: none;
+        position: absolute;
+        left: -100px;
+        top: $fridge-stroke-width;
+        width: 60px;
+        height: 30px;
+        background-image: linear-gradient(0deg, transparent, yellow);
+        clip-path: polygon(25% 0, 75% 0, 100% 100%, 0% 100%);
+      }
+    }
+
+    &:checked+label {
+      &:before {
+        display: block;
+      }
+    }
+  }
+}

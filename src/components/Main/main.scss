@@ -1,0 +1,43 @@
+@import 'src/styles/vars.scss';
+
+.main{
+  height: max-content;
+  background-color: $firstColor;
+  overflow: hidden;
+  border-top: $secondColor 2px solid;
+  border-bottom: $secondColor 2px solid;
+  display: grid;
+  grid-template-areas: 
+  "title title"
+  "fridge text";
+  row-gap: 10vmin;
+  column-gap: 10vmin;
+  padding: 7vmin;
+
+  @media screen and (max-width: 600px) {
+    grid-template-areas:
+    "title"
+    "text"
+    "fridge";
+    
+  }
+  .titleMain{
+  grid-area: title;
+  text-align: center;
+  font-size: 5vmin;
+  @media screen and (max-width: 600px) {
+    font-size: 1.5em;  
+    }
+
+  }
+  .textMain{
+    grid-area: text;
+    text-align: center;
+    width: 40vw;
+    @media screen and (max-width: 600px) {
+      width: 100%;  
+      }
+  
+
+  }
+}
