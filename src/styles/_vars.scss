@@ -31,3 +31,17 @@ $out-border-radius: 20px;
 $in-border-radius: 20px;
 
 // ----- @mixin
+// Button
+@mixin btn-style($colorText, $ColorBackground) {
+  border: none;
+  color: $colorText;
+  background-color: $ColorBackground;
+  border-radius: 10px;
+  border: 2px solid $colorText;
+  padding: 5px;
+  box-shadow: $ColorBackground 1px 1px 2px;
+  &:hover{
+    box-shadow: $ColorBackground 1px 1px 20px;
+    transform: scale(1.1);
+  }
+}
