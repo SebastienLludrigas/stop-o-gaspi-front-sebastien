@@ -7,9 +7,9 @@ const datasMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_DATAS:
       // faire une requête vers l'API
-      axios.get('http://localhost:3001/recipes')
+      axios.get('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
           // on veut enregistrer les recettes dans le state => c'est le travail
           // du reducer => on dispatch une action qui sera traitée par un reducer
           store.dispatch(saveDatas(response.data));

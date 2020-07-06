@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import './main.scss';
 
 // == Composant
-const Main = ({ datas, handleDatas }) => (
+const Main = ({ handleDatas }) => (
   <div className="main">
     <button
       className="buttonDatas"
@@ -19,14 +19,10 @@ const Main = ({ datas, handleDatas }) => (
     >
       Afficher les données
     </button>
-    <div className="datas">
-      {datas}
-    </div>
   </div>
 );
 
 Main.propTypes = {
-  datas: PropTypes.array.isRequired,
   handleDatas: PropTypes.func.isRequired,
 };
 

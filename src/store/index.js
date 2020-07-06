@@ -17,7 +17,7 @@ const store = createStore(
   // reducer
   reducer,
   // enhancer
-  enhancers(),
+  enhancers,
 );
 
 export default store;
