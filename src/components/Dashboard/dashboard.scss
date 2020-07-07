@@ -2,15 +2,22 @@
 
 .dashboard_page{
   padding-top: 120px;
+  height: 100vh ;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   .dashboard_left{
+    padding: 5vmin;
     width: 50vw;
   }
   .dashboard_right{
     width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
 
     & .alert_dashboard{
       display: flex;
@@ -24,6 +31,7 @@
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
         &:hover{
           cursor: pointer;
@@ -35,6 +43,7 @@
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
 
         &:hover{
@@ -48,6 +57,7 @@
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
         &:hover{
           cursor: pointer;
@@ -55,6 +65,29 @@
         }
         
 
+      }
+    }
+    & .remove_account{
+      border-top: 1px solid $secondColor;
+      text-align: center;
+      align-content: center;
+      margin: 5vmin;
+      padding: 5vmin;
+      .btn_remove_account{
+        
+        background-color: #79d70f;
+        color: $firstColor;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid $fourthColor;
+        border-radius: 10px;
+        width: fit-content;
+        margin: 5vmin 0;
+        &:hover{
+          cursor: pointer;
+          border: 2px solid $secondColor;
+        }
+        
       }
     }
   }
