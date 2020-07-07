@@ -1,0 +1,68 @@
+@import 'src/styles/vars.scss';
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  
+}
+.card-container {
+  perspective: 500px;
+  &:hover .card{
+    transform: rotateY( 180deg );
+}
+}
+
+
+.cardRotate{
+backface-visibility: hidden;
+}
+
+
+.card{
+  background-color: $firstColor;
+  border: solid 2px $secondColor;
+  border-radius: 15px;
+  width: 200px;
+  height: 200px;
+  padding: 2vmin;
+  margin: 2vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 12px;
+  cursor: pointer;
+  will-change: transform, opacity;
+  transition: 0.7s;
+  transform-style: preserve-3d;
+
+  & .productTitle{
+    text-align: center;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding-bottom: 4px;
+    border-bottom:1px $secondColor solid  ;
+    margin-bottom: 4px;
+  }
+  & .dlc{
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  & img{
+    width: 150px;
+  }
+  @media screen and (max-width: 600px) {
+
+  }
+ 
+}
+/*.back{
+  transform: rotateY( 180deg);
+}
+.front, .back{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+}*/

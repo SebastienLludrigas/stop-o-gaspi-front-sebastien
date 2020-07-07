@@ -1,13 +1,26 @@
 // == Import npm
 import React from 'react';
 
+import Card from './Card';
 // == Import
 import './cards.scss';
 
 // == Composant
 const Cards = () => (
   <div className="cards">
-    <h1>Cards</h1>
+
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+    <Card />
   </div>
 );
 
