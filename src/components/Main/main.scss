@@ -1,6 +1,7 @@
 @import 'src/styles/vars.scss';
 
 .main{
+  
   height: max-content;
   background-color: $firstColor;
   overflow: hidden;
@@ -12,7 +13,7 @@
   "fridge text";
   row-gap: 10vmin;
   column-gap: 10vmin;
-  padding: 7vmin;
+  padding: 115px 7vmin 7vmin;
 
   @media screen and (max-width: 600px) {
     grid-template-areas:

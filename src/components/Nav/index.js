@@ -31,8 +31,8 @@ const Nav = ({ handleBurger, cross }) => (
         <li className="nav"><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
         <li className="nav"><NavLink to="/settings" title="instagram">Tableau de bord</NavLink></li>
         <li className="nav"><NavLink to="/pantry" title="instagram">Pantry</NavLink></li>
-        <li className="nav">Connexion</li>
-        <li className="nav">Inscription</li>
+        <li className="nav"><NavLink to="/connexion" title="Connexion">Connexion</NavLink></li>
+        <li className="nav"><NavLink to="/inscription" title="inscription">Inscription</NavLink></li>
         <div className="social-media">
           <li><p>Réseaux sociaux</p></li>
           <div className="social-media-container">
