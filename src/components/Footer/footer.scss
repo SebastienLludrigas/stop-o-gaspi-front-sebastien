@@ -1,8 +1,10 @@
 @import 'src/styles/vars.scss';
 
 footer{
-
+  position: absolute;
+  bottom: -20vh;
   height: 20vh;
+  width: 100vw;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;

@@ -29,8 +29,8 @@ const Nav = ({ handleBurger, cross }) => (
       <ul className={classNames('column-menu-content', { active: cross })}>
         <li className="nav"><NavLink to="/" title="Accueil">Accueil</NavLink></li>
         <li className="nav"><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
-        <li className="nav"><NavLink to="/settings" title="instagram">Tableau de bord</NavLink></li>
-        <li className="nav"><NavLink to="/pantry" title="instagram">Pantry</NavLink></li>
+        <li className="nav"><NavLink to="/settings" title="DashBoard">Tableau de bord</NavLink></li>
+        <li className="nav"><NavLink to="/pantry" title="Garde Manger">Pantry</NavLink></li>
         <li className="nav"><NavLink to="/connexion" title="Connexion">Connexion</NavLink></li>
         <li className="nav"><NavLink to="/inscription" title="inscription">Inscription</NavLink></li>
         <div className="social-media">

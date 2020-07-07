@@ -6,6 +6,9 @@ import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/components/Pantry';
 import Footer from 'src/components/Footer';
+import Connexion from 'src/components/Registration/connexion';
+import Inscription from 'src/components/Registration';
+
 
 import './styles.scss';
 
@@ -16,6 +19,8 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/pantry" component={Pantry} />
+      <Route exact path="/connexion" component={Connexion} />
+      <Route exact path="/inscription" component={Inscription} />
 
     </Switch>
     <Footer />
