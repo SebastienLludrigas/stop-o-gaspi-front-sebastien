@@ -6,8 +6,13 @@ import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/components/Pantry';
 import Footer from 'src/components/Footer';
+import Connexion from 'src/components/Registration/Connexion';
+import Inscription from 'src/components/Registration';
+import Dashboard from 'src/components/Dashboard';
+import Product from 'src/components/Product';
 
 import './styles.scss';
+// import MyAccount from '../MyAccount';
 
 // == Composant
 const App = () => (
@@ -16,6 +21,10 @@ const App = () => (
     <Switch>
       <Route exact path="/" component={Main} />
       <Route exact path="/pantry" component={Pantry} />
+      <Route exact path="/connexion" component={Connexion} />
+      <Route exact path="/inscription" component={Inscription} />
+      <Route exact path="/product" component={Product} />
+      <Route exact path="/settings" component={Dashboard} />
 
     </Switch>
     <Footer />

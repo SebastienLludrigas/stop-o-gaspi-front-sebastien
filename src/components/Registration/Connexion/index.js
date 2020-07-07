@@ -1,25 +1,24 @@
 // == Import npm
 import React from 'react';
-import { useSpring, useChain, animated } from 'react-spring';
+// import { useSpring, useChain, animated } from 'react-spring';
 
 // == Import
-import Cards from '../Cards';
 
-import './registration.scss';
+import '../registration.scss';
 
 // == Composant
 const Connexion = () => (
-  <>
-    <div className="login-contain">
+  <div className="connexionPage">
+    <div className="login-contain ">
       <h2>Login</h2>
       <form>
         <div className="user-contain">
-            <input type="text" name="" required=""/>
-            <label>e-mail</label>
+          <input type="text" name="" required=""/>
+          <label>e-mail</label>
         </div>
         <div className="user-contain">
-            <input type="password" name="" required=""/>
-            <label>Password</label>
+          <input type="password" name="" required=""/>
+          <label>Password</label>
         </div>
         <button type="submit">
           <span />
@@ -27,10 +26,10 @@ const Connexion = () => (
           <span />
           <span />
           Submit
-          </button>
+        </button>
       </form>
     </div>
-  </>
+  </div>
 );
 
 // == Export

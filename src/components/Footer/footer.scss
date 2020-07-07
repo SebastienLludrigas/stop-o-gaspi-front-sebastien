@@ -1,14 +1,17 @@
 @import 'src/styles/vars.scss';
 
 footer{
-
+  position: relative;
+  bottom: 0;
   height: 20vh;
+  width: 100vw;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 2vmin 4vmin;
   font-size: 2vmin;
+  border-top: 2px $secondColor solid;
   .footerTitle{
     font-size: 3vmin;
     font-weight: bold;
@@ -45,19 +48,15 @@ footer{
 }
 @media screen and (max-width: 600px) {
   footer {
-    row-gap: 2em;
     font-size:3vmin;
     height: max-content;
-    display: grid;
+    display: flex;
     justify-content: center;
     text-align: center;
-    grid-template-areas: 
-    "blogCommunauty"
-    "aboutUs "
-    "contact";
+    flex-direction: column;
     .aboutUs{
       grid-area: aboutUs;
-      margin-bottom: 2vmin;
+      margin-bottom: 4vmin;
       align-items: center;
       & ul{
         align-items: center;
@@ -70,10 +69,14 @@ footer{
     }
     .contact{
       grid-area: contact;
+      height: max-content;
     }
     .blogCommunauty{
       grid-area: blogCommunauty;
-      
+      order:-1;
+            margin-bottom: 4vmin;
+
+
     }
     .footerTitle{font-size: 4vmin;}
   }

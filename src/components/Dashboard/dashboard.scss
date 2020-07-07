@@ -1,0 +1,61 @@
+@import 'src/styles/vars.scss';
+
+.dashboard_page{
+  padding-top: 120px;
+  background-color: $firstColor;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  .dashboard_left{
+    width: 50vw;
+  }
+  .dashboard_right{
+    width: 50vw;
+
+    & .alert_dashboard{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      font-size: 3vmin;
+      font-weight: bold;
+      & h2{padding: 10px;}
+      .alert_J{
+        background-color: #d32626;
+        color: $firstColor;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover{
+          cursor: pointer;
+          border: 2px solid $secondColor;
+        }
+      }
+      .alert_24{
+        background-color: #f5a31a;
+        color: $firstColor;
+        padding: 10px;
+        border-radius: 10px;
+
+
+        &:hover{
+          cursor: pointer;
+          border: 2px solid $secondColor;
+        }
+
+      }
+      .alert_48{
+        background-color: #79d70f;
+        color: $firstColor;
+        padding: 10px;
+        border-radius: 10px;
+
+        &:hover{
+          cursor: pointer;
+          border: 2px solid $secondColor;
+        }
+        
+
+      }
+    }
+  }
+}
