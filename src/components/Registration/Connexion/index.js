@@ -1,11 +1,10 @@
 // == Import npm
 import React from 'react';
-import { useSpring, useChain, animated } from 'react-spring';
+// import { useSpring, useChain, animated } from 'react-spring';
 
 // == Import
-import Cards from '../Cards';
 
-import './registration.scss';
+import '../registration.scss';
 
 // == Composant
 const Connexion = () => (

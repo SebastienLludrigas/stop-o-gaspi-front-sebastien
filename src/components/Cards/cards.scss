@@ -7,20 +7,9 @@
   justify-content: center;
   
 }
-.card-container {
-  perspective: 500px;
-  &:hover .card{
-    transform: rotateY( 180deg );
-}
-}
-
-
-.cardRotate{
-backface-visibility: hidden;
-}
-
 
 .card{
+  position: absolute;
   background-color: $firstColor;
   border: solid 2px $secondColor;
   border-radius: 15px;
@@ -33,9 +22,9 @@ backface-visibility: hidden;
   justify-content: space-evenly;
   font-size: 12px;
   cursor: pointer;
+  position: relative;
   will-change: transform, opacity;
-  transition: 0.7s;
-  transform-style: preserve-3d;
+  
 
   & .productTitle{
     text-align: center;
@@ -57,12 +46,9 @@ backface-visibility: hidden;
   }
  
 }
-/*.back{
-  transform: rotateY( 180deg);
-}
 .front, .back{
-  position: absolute;
-  top: 0;
-  bottom: 0;
+  display:none;
+ 
+}
 
-}*/
+
