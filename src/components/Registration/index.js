@@ -15,23 +15,23 @@ const Registration = () => (
       <h2>S'inscrire</h2>
       <form>
         <div className="user-contain">
-          <input type="text" name="" required=""/>
+          <input type="text" name="" required="" />
           <label>e-mail</label>
         </div>
         <div className="user-contain">
-          <input type="password" name="" required=""/>
+          <input type="password" name="" required="" />
           <label>Password</label>
         </div>
         <div className="user-contain">
-          <input type="password" name="" required=""/>
+          <input type="password" name="" required="" />
           <label> Verif Password</label>
         </div>
         <div className="user-contain">
-          <input type="password" name="" required=""/>
+          <input type="text" name="" required="" />
           <label>Pseudo</label>
         </div>
         <div className="user-contain">
-          <input type="password" name="" required=""/>
+          <input type="text" name="" required="" />
           <label>First Name</label>
         </div>
 

@@ -12,7 +12,7 @@ import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
 
 import './styles.scss';
-import MyAccount from '../MyAccount';
+// import MyAccount from '../MyAccount';
 
 // == Composant
 const App = () => (
