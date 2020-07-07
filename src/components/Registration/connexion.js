@@ -10,7 +10,7 @@ import './registration.scss';
 // == Composant
 const Connexion = () => (
   <div className="connexionPage">
-    <div className="login-contain">
+    <div className="login-contain ">
       <h2>Login</h2>
       <form>
         <div className="user-contain">

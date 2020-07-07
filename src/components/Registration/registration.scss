@@ -1,14 +1,29 @@
 @import 'src/styles/vars.scss';
 .connexionPage{
-  align-self: auto;
+position: relative;
   width: 100vw;
-  height: 60vh;
+  height: 100vh;
+  // background-color: $firstColor;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
+}
+.inscriptionPage {
+  position: relative;
+  width: 100vw;
+  height: 150vh;
+  //background-color: $firstColor;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
+  padding-top: 120px;
+  text-align: center;
+  & h1{
+    font-size: 6vmin;
+    font-weight: bold;
+  }
 }
 .login-contain {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 80vmin;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.8);
@@ -16,6 +31,19 @@
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
 }
+.contain-inscription{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 60vmin;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,.8);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
 
 .login-contain h2 {
   margin: 0 0 30px;
@@ -76,14 +104,11 @@
 }
 /*hover du button submit: fond + effet de lumiere + background à pesonnaliser*/
 .login-contain button:hover {
-  background: linear-gradient(125deg, #FDFF9C 0%, #0500FF 100%), linear-gradient(180deg, #D3D3D3 0%, #161616 100%), linear-gradient(310deg, #00F0FF 0%, #00F0FF 20%, #0017E3 calc(20% + 1px), #0017E3 40%, #000F8F calc(40% + 1px), #000F8F 70%, #00073F calc(70% + 1px), #00073F 100%), linear-gradient(285deg, #FFB6B9 0%, #FFB6B9 35%, #FAE3D9 calc(35% + 1px), #FAE3D9 45%, #BBDED6 calc(45% + 1px), #BBDED6 65%, #61C0BF calc(65% + 1px), #61C0BF 100%);
+  background-color: $secondColor;
   background-blend-mode: overlay, overlay, exclusion, normal;    border-radius: 5px;
   
-  box-shadow: 0 0 5px #1858e2,
-              0 0 25px #e4ba49,
-              0 0 50px #70e442,
-              0 0 100px rgb(209, 29, 29);
-  color: rgb(46, 20, 20);
+
+  color: $thirdColor;
   font-weight: bolder;
 }
 /*effet visuel autour de submit avec les balises Span*/
@@ -96,7 +121,7 @@
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgb(211, 29, 29));
+  background: linear-gradient(90deg, transparent,$thirdColor);
   animation: btn-top-mvt 1s linear infinite;
 }
 
@@ -114,7 +139,7 @@
   right: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(180deg, transparent, #e4ba49);
+  background: linear-gradient(180deg, transparent, $fourthColor);
   animation: btn-right-mvt 1s linear infinite;
   animation-delay: .25s
 }
@@ -133,7 +158,7 @@
   right: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(270deg, transparent, #70e442);
+  background: linear-gradient(270deg, transparent, $thirdColor);
   animation: btn-bottom-mvt 1s linear infinite;
   animation-delay: .5s
 }
@@ -152,7 +177,7 @@
   left: 0;
   width: 2px;
   height: 100%;
-  background: linear-gradient(360deg, transparent, #1858e2);
+  background: linear-gradient(360deg, transparent, $fourthColor);
   animation: btn-left-mvt 1s linear infinite;
   animation-delay: .75s
 }
@@ -164,4 +189,10 @@
 50%,100% {
   bottom: 100%;
 }
+}
+@media screen and (max-width: 600px) {
+  .inscriptionPage{
+    height: 100vh;
+  }
+
 }

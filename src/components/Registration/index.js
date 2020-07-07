@@ -9,9 +9,10 @@ import './registration.scss';
 
 // == Composant
 const Registration = () => (
-  <>
-    <div className="login-contain">
-      <h2>Register</h2>
+ 
+  <div className="inscriptionPage"> <h1>Bienvenue chez les gaspi Hunters</h1>
+    <div className="contain-inscription login-contain">
+      <h2>S'inscrire</h2>
       <form>
         <div className="user-contain">
           <input type="text" name="" required=""/>
@@ -43,7 +44,8 @@ const Registration = () => (
         </button>
       </form>
     </div>
-  </>
+  </div>
+
 );
 
 // == Export
