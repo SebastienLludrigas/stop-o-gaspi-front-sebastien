@@ -7,7 +7,7 @@ const datasMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case HANDLE_DATAS:
       // faire une requête vers l'API
-      axios.get('https://jsonplaceholder.typicode.com/users')
+      axios.get('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/products')
         .then((response) => {
           console.log(response.data);
           // on veut enregistrer les recettes dans le state => c'est le travail
