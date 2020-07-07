@@ -2,14 +2,42 @@
 
 .dashboard_page{
   padding-top: 120px;
-  height: 100vh ;
+  height: max-content ;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+ 
   .dashboard_left{
     padding: 5vmin;
     width: 50vw;
+    text-align: center;
+    & h2{
+      margin-top: 5vmin;
+      margin-bottom: 5vmin;
+    }
+    .user-contain input {
+      width: 100%;
+      padding: 3px 0;
+      font-size: 16px;
+      color: $secondColor;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid $secondColor;
+      outline: none;
+      background: transparent;
+      &::placeholder{
+        color: red;
+      }
+    }
+
+    
+    .user-contain input:focus {
+      top: -20px;
+      left: 0;
+      color: $secondColor;
+      font-size: 12px;
+    }
   }
   .dashboard_right{
     width: 50vw;
