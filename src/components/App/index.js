@@ -10,7 +10,7 @@ import Connexion from 'src/components/Registration/Connexion';
 import Inscription from 'src/components/Registration';
 import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
-import ScanProduct from 'src/components/ScanProduct';
+import ScanProduct from 'src/containers/ScanProduct';
 
 import './styles.scss';
 // import MyAccount from '../MyAccount';
