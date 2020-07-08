@@ -2,9 +2,103 @@
 
 .scanPage{
 
-  background-color: $firstColor;
+  background-image: url(../../assets/image/scanbackground.jpg);//url(/src/assets/image/scanbackground.jpg);
+  background-size: cover;
+  background-position-y: -100px;
   padding-top: 110px;
-  text-align: center;
-  min-height: 100vh
+  text-align: left;
+  min-height: 90vh;
+  @media screen and (max-width: 1162px) {
+    height: 80vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: bottom;
+  }
+  @media screen and (max-width: 600px) {
+    height: 80vh;
+    background-color:$firstColor;
+    background-image: none;
+  }
+  .right_scanPage{
+    margin-left: 7vmin;
+    padding: 3vmin 0;
+    width: 40vw;
+    height: max-content;
+    background: rgba(0,0,0,.1);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.1);
+    border-radius: 10px;
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+    }
+    .scanInput{
+      margin: 10vmin 5vmin;
+      text-align: center;
+      & h2{
+        font-weight: bold;
+        font-size: 3vmin;
+        margin-bottom: 3vmin;
+      }
+      & .btn_scan_direct{
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+        background-color: $fourthColor;
+        color: $secondColor;
+        font-weight: bold;
+        line-height: 40px;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        border: $secondColor 1px solid;
+
+        &:hover{
+          animation: pulse 1.5s infinite ease-in-out;
+        }
+        
+
+      }
+    }
+    .manualInput{
+      text-align: center;
+      
+      & :focus{
+        animation: pulse 1.5s infinite ease-in-out;
+      }
+      & h2{
+        font-weight: bold;
+        font-size: 3vmin;
+        margin-bottom: 3vmin;
+      }
+      & input{
+        margin-bottom: 3vmin;
+        background-color: $fourthColor;
+        color: $secondColor;
+        border: $secondColor 1px solid;
+        font-weight: bold;
+
+      }
+      & .btn_validate_barcode{
+
+      }
+    }
+  }
+  @keyframes pulse {
+    0%{
+      box-shadow: 0 0 20px rgb(104, 118, 133, 0.5) ;
+      border: 1px solid  rgb(104, 118, 133, 0.5);
+    }
+    50%{
+      box-shadow: 0 0 20px rgb(104, 118, 133, 1);
+      border: 1px solid  rgb(104, 118, 133, 1);
+
+    }
+    100%{
+      box-shadow: 0 0 20px rgb(104, 118, 133, 0.5);
+      border: 1px solid  rgb(104, 118, 133, 0.5);
+
+    }
+  }
+
   
 }
