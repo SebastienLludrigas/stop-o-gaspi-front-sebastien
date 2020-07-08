@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleDatas } from 'src/actions/datas';
+import { handleDatas, sendDatas} from 'src/actions/datas';
 
 // === on importe le composant de présentation
 import Main from 'src/components/Main';
@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   handleDatas: () => {
     dispatch(handleDatas());
+  },
+  sendDatas: () => {
+    dispatch(sendDatas());
   },
 });
 

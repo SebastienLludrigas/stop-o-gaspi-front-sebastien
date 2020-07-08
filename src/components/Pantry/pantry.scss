@@ -24,7 +24,8 @@ margin-bottom: 3vmin;
   @include btn-style($thirdColor, $secondColor)
 }
 .btn_scan{
-  @include btn-style($fourthColor, $secondColor)
+  @include btn-style($fourthColor, $secondColor);
+  cursor: pointer;
 }
 @media screen and (max-width: 450px) {
   .pantry_buttons{

@@ -8,7 +8,7 @@ import Fridge from 'src/components/Fridge';
 import './main.scss';
 
 // == Composant
-const Main = ({ handleDatas }) => (
+const Main = ({ handleDatas, sendDatas }) => (
   <div className="main">
     <h1 className="titleMain">Bienvenue à toi Gaspi Hunter.</h1>
 
@@ -33,12 +33,22 @@ const Main = ({ handleDatas }) => (
     >
       Afficher les données
     </button>
+    <button
+      className="buttonDatas2"
+      type="button"
+      onClick={() => {
+        sendDatas();
+      }}
+    >
+      Envoyer des données
+    </button>
 
   </div>
 );
 
 Main.propTypes = {
   handleDatas: PropTypes.func.isRequired,
+  sendDatas: PropTypes.func.isRequired,
 };
 
 // == Export
