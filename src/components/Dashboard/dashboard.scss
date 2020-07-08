@@ -7,11 +7,21 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
- 
+  font-size: 3vmin;
+  @media screen and (max-width: 770px) {
+    flex-direction: column;
+    text-align: center;
+    font-size: 4vmin;
+  }
   .dashboard_left{
     padding: 5vmin;
     width: 50vw;
     text-align: center;
+    @media screen and (max-width: 770px) {
+      width: 100vw;
+        }
+
+    
     & h2{
       margin-top: 5vmin;
       margin-bottom: 5vmin;
@@ -62,6 +72,12 @@
     align-content: center;
     justify-content: center;
     justify-items: center;
+    @media screen and (max-width: 770px) {
+      margin-top: 10vmin;
+      order:-1;
+      width: 100vw;
+        }
+      
 
     & .alert_dashboard{
       display: flex;
@@ -119,7 +135,6 @@
       margin: 5vmin;
       padding: 5vmin;
       .btn_remove_account{
-        
         background-color: #79d70f;
         color: $firstColor;
         font-weight: bold;

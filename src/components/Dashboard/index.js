@@ -36,7 +36,7 @@ const Dashboard = () => (
         <h2>ALERTE :</h2>
         <div className="alert_J">Jour J</div>
         <div className="alert_24">24h Avant</div>
-        <div className="alert_48">48h Avant></div>
+        <div className="alert_48">48h Avant</div>
       </div>
       <div className="remove_account">
         <h2>Je veux supprimer mon compte :</h2>
