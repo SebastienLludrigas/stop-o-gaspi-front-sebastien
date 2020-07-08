@@ -13,7 +13,7 @@ const Loader = () => (
         <i className="apple fas fa-apple-alt" />
         <i className="cheese fas fa-cheese" />
         <i className="meat fas fa-drumstick-bite" />
-        <i className="ic fas fa-ice-cream" />
+        <i className="fas fa-fish" />
         <i className="hand fas fa-hand-holding" />
       </div>
     </div>
