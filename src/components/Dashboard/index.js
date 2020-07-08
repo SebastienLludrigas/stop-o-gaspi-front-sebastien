@@ -3,7 +3,6 @@ import React from 'react';
 
 // == Import
 import './dashboard.scss';
-
 // == Composant
 const Dashboard = () => (
   <div className="dashboard_page">

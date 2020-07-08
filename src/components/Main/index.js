@@ -11,7 +11,6 @@ import './main.scss';
 const Main = ({ handleDatas, sendDatas }) => (
   <div className="main">
     <h1 className="titleMain">Bienvenue à toi Gaspi Hunter.</h1>
-
     <Fridge />
     <p className="textMain">
       Toi aussi tu te dis que gâcher c’est nul?

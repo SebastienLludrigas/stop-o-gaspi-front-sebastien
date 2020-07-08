@@ -11,6 +11,7 @@ import Inscription from 'src/components/Registration';
 import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
 import ScanProduct from 'src/components/ScanProduct';
+import Page404 from 'src/components/Page404';
 
 import './styles.scss';
 // import MyAccount from '../MyAccount';
@@ -27,6 +28,7 @@ const App = () => (
       <Route exact path="/product" component={Product} />
       <Route exact path="/settings" component={Dashboard} />
       <Route exact path="/scan-product" component={ScanProduct} />
+      <Route path="/" component={Page404} />
     </Switch>
     <Footer />
   </div>
