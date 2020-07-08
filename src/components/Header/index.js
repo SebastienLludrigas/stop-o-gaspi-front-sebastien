@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 // == Import
 import Nav from 'src/containers/Nav';
@@ -13,7 +14,9 @@ import './header.scss';
 // == Composant
 const Header = ({ toggle, toggleMenu }) => (
   <div className="header">
-    <LogoGaspi className="logo-gaspi" />
+    <Link exact to="/">
+      <LogoGaspi className="logo-gaspi" />
+    </Link>
     <div className="right-container">
       <Nav />
       <MyAccount
