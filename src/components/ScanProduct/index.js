@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 // == Import
 
@@ -19,15 +19,15 @@ const ScanProduct = () => {
 
           <div className="scanInput">
             <h2>je scanne mon code barre :</h2>
-            <div className="btn_scan_direct">+</div>
+            <div onClick="" className="btn_scan_direct"><span className="fas fa-barcode" /></div>
           </div>
 
           <div className="manualInput">
             <h2>je saisie mon code barre :</h2>
             <input type="text" name="" required="" />
-            <div className="btn_validate_barcode">Valider</div>
+            <div onClick="" className="btn_validate_barcode">Valider</div>
           </div>
-          
+
         </div>
       </animated.div>
 
