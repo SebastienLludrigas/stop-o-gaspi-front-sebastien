@@ -81,14 +81,14 @@
       & .btn_validate_barcode{
         height: 50px;
         width: 60px;
-        border-radius: 20px;
-        background-color: $fourthColor;
-        color: $secondColor;
-        font-weight: bold;
         line-height: 50px;
+        border-radius: 20px;
         font-size: 15px;
+        font-weight: bold;
         margin-left: auto;
         margin-right: auto;
+        background-color: $fourthColor;
+        color: $secondColor;
         border: $secondColor 1px solid;
 
         &:hover{
