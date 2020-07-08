@@ -8,27 +8,26 @@ import './dashboard.scss';
 const Dashboard = () => (
   <div className="dashboard_page">
     <div className="dashboard_left">
-      <h1>Mon tableau de bord</h1>
       <h2>Mettre à jour mes données personnelles :</h2>
       <div className="user-contain">
-        <input type="text" name="" required="" />
-        <label>e-mail</label>
+        <input type="text" name="" required="" placeholder="e-mail" />
+        
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" />
-        <label>Mot de Passe</label>
+        <input type="text" name="" required="" placeholder="Mot de Passe"/>
+
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" />
-        <label>Vérification du Mot de Passe</label>
+        <input type="text" name="" required=""  placeholder="Vérification du Mot de Passe"/>
+
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" />
-        <label>Pseudo</label>
+        <input type="text" name="" required=""  placeholder="Pseudo"/>
+
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" />
-        <label>Prénom</label>
+        <input type="text" name="" required=""  placeholder="Prénom"/>
+
       </div>
       <div className="btn_dashboard_validate">valider</div>
     </div>
@@ -37,7 +36,7 @@ const Dashboard = () => (
         <h2>ALERTE :</h2>
         <div className="alert_J">Jour J</div>
         <div className="alert_24">24h Avant</div>
-        <div className="alert_48">48h Avant></div>
+        <div className="alert_48">48h Avant</div>
       </div>
       <div className="remove_account">
         <h2>Je veux supprimer mon compte :</h2>

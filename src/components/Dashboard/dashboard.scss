@@ -2,15 +2,82 @@
 
 .dashboard_page{
   padding-top: 120px;
+  height: max-content ;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  font-size: 3vmin;
+  @media screen and (max-width: 770px) {
+    flex-direction: column;
+    text-align: center;
+    font-size: 4vmin;
+  }
   .dashboard_left{
+    padding: 5vmin;
     width: 50vw;
+    text-align: center;
+    @media screen and (max-width: 770px) {
+      width: 100vw;
+        }
+
+    
+    & h2{
+      margin-top: 5vmin;
+      margin-bottom: 5vmin;
+    }
+    .user-contain input {
+      width: 100%;
+      padding: 3px 0;
+      font-size: 16px;
+      color: $secondColor;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid $secondColor;
+      outline: none;
+      background: transparent;
+      &::placeholder{
+        color: red;
+      }
+    }
+
+    
+    .user-contain input:focus {
+      top: -20px;
+      left: 0;
+      color: $secondColor;
+      font-size: 12px;
+    }
+    .btn_dashboard_validate{
+      background-color: $thirdColor;
+      color: $secondColor;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 10px;
+      border: 2px solid red;
+      width: max-content;
+      align-self: center;
+
+      &:hover{
+        cursor: pointer;
+        border: 2px solid $secondColor;
+      }
+
+    }
   }
   .dashboard_right{
     width: 50vw;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    @media screen and (max-width: 770px) {
+      margin-top: 10vmin;
+      order:-1;
+      width: 100vw;
+        }
+      
 
     & .alert_dashboard{
       display: flex;
@@ -18,12 +85,14 @@
       justify-content: space-evenly;
       font-size: 3vmin;
       font-weight: bold;
+      margin-bottom: 5vmin;
       & h2{padding: 10px;}
       .alert_J{
         background-color: #d32626;
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
         &:hover{
           cursor: pointer;
@@ -35,6 +104,7 @@
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
 
         &:hover{
@@ -48,6 +118,7 @@
         color: $firstColor;
         padding: 10px;
         border-radius: 10px;
+        border: 2px solid $fourthColor;
 
         &:hover{
           cursor: pointer;
@@ -55,6 +126,28 @@
         }
         
 
+      }
+    }
+    & .remove_account{
+      // border-top: 1px solid $secondColor;
+      text-align: center;
+      align-content: center;
+      margin: 5vmin;
+      padding: 5vmin;
+      .btn_remove_account{
+        background-color: #79d70f;
+        color: $firstColor;
+        font-weight: bold;
+        padding: 10px;
+        border: 2px solid $fourthColor;
+        border-radius: 10px;
+        width: fit-content;
+        margin: 5vmin 0;
+        &:hover{
+          cursor: pointer;
+          border: 2px solid $secondColor;
+        }
+        
       }
     }
   }
