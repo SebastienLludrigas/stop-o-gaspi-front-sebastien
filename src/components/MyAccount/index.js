@@ -26,9 +26,9 @@ const MyAccount = ({ toggle, toggleMenu }) => (
           <div />
           <li><Link to="/pantry" title="instagram">Pantry</Link></li>
           <div />
-          <li>Connexion</li>
+          <li><Link to="/connexion" title="connexion">Connexion</Link></li>
           <div />
-          <li>Inscription</li>
+          <li><Link to="/inscription" title="inscription">Inscription</Link></li>
         </ul>
       </div>
     )}

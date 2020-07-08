@@ -11,10 +11,9 @@ const Dashboard = () => (
       <h2>Mettre à jour mes données personnelles :</h2>
       <div className="user-contain">
         <input type="text" name="" required="" placeholder="e-mail" />
-        
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Mot de Passe"/>
+        <input type="text" name="" required="" placeholder="Mot de Passe" />
 
       </div>
       <div className="user-contain">
@@ -27,7 +26,6 @@ const Dashboard = () => (
       </div>
       <div className="user-contain">
         <input type="text" name="" required=""  placeholder="Prénom"/>
-
       </div>
       <div className="btn_dashboard_validate">valider</div>
     </div>
@@ -45,7 +43,6 @@ const Dashboard = () => (
         </div>
       </div>
     </div>
-
   </div>
 );
 

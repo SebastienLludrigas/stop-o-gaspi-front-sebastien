@@ -12,6 +12,7 @@ import './nav.scss';
 // == Composant
 const Nav = ({ handleBurger, cross }) => (
   <div className="nav">
+
     <nav id="row-menu">
       <ul className="row-menu-content">
         <li><NavLink to="/" title="Accueil">Accueil</NavLink></li>
@@ -27,12 +28,73 @@ const Nav = ({ handleBurger, cross }) => (
 
     <nav id="column-menu">
       <ul className={classNames('column-menu-content', { active: cross })}>
-        <li className="nav"><NavLink to="/" title="Accueil">Accueil</NavLink></li>
-        <li className="nav"><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
-        <li className="nav"><NavLink to="/settings" title="DashBoard">Tableau de bord</NavLink></li>
-        <li className="nav"><NavLink to="/pantry" title="Garde Manger">Pantry</NavLink></li>
-        <li className="nav"><Link to="/connexion" title="Connexion">Connexion</Link></li>
-        <li className="nav"><Link to="/inscription" title="inscription">Inscription</Link></li>
+
+        <li className="nav">
+          <NavLink
+            to="/"
+            title="Accueil"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Accueil
+          </NavLink>
+        </li>
+
+        <li className="nav">
+          <NavLink
+            to="/advice-sheet/about"
+            title="Notre vision"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Notre vision
+          </NavLink>
+        </li>
+
+        <li className="nav">
+          <NavLink
+            to="/settings"
+            title="DashBoard"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Tableau de bord
+          </NavLink>
+        </li>
+
+        <li className="nav">
+          <NavLink
+            to="/pantry"
+            title="Garde Manger"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Pantry
+          </NavLink>
+        </li>
+
+        <li className="nav">
+          <Link
+            to="/connexion"
+            title="Connexion"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Connexion
+          </Link>
+        </li>
+
+        <li className="nav">
+          <Link
+            to="/inscription"
+            title="inscription"
+            onClick={() => {
+              handleBurger();
+            }}
+          >Inscription
+          </Link>
+        </li>
+
         <div className="social-media">
           <li><p>Réseaux sociaux</p></li>
           <div className="social-media-container">
