@@ -28,7 +28,7 @@
   font-size: 5vmin;
   @media screen and (max-width: 600px) {
     font-size: 1.5em;  
-    }
+  }
 
   }
   .textMain{
@@ -38,7 +38,21 @@
     @media screen and (max-width: 600px) {
       width: 100%;  
       }
-  
+    }
+}
 
-  }
+// .datas {
+//   background-color: $firstColor;
+//   color: $secondColor;
+// }
+
+.buttonDatas{
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  border-radius: 3px;
+  border: 1px solid $secondColor;
+  background-color: $firstColor;
+  padding: 5px;
+  font-size: 1em;
 }
