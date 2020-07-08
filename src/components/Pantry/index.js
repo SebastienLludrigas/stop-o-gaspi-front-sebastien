@@ -15,7 +15,7 @@ const Pantry = () => {
     <div className="pantry">
       <animated.div
         style={pantryText}
-        config={{ delay: 2000, duration: 2000}}
+        config={{ delay: 2000, duration: 2000 }}
       >
         <h1 className="pantryTitle">MON PANTRY</h1>
         <h2 className="label_pantry">Ajouter un nouveau produit</h2>
@@ -23,7 +23,9 @@ const Pantry = () => {
           <Link exact to="/product">
             <div className="btn_manual btn">Je saisie mon produit</div>
           </Link>
-          <div className="btn_scan btn">Je scanne mon produit</div>
+          <Link exact to="/scan-product">
+            <div className="btn_scan btn">Je scanne mon produit</div>
+          </Link>
         </div>
       </animated.div>
       <Cards />
