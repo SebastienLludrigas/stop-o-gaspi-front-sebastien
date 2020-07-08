@@ -10,7 +10,7 @@ import './pantry.scss';
 
 // == Composant
 const Pantry = () => {
-  const pantryText=useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
+  const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
       <animated.div
@@ -31,6 +31,6 @@ const Pantry = () => {
       <Cards />
     </div>
   );
-}
+};
 // == Export
 export default Pantry;
