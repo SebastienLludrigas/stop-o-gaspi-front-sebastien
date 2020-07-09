@@ -1,45 +1,40 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
-import { Modal } from 'react-bootstrap';
 import Scanner from './Scanner';
-import Result from './Result';
 import './scanProduct.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ScanProduct = ({
   scanCode,
   modal,
-  scanSuccess,
+  scanDatas,
   toggleModal,
-  handleInput,
   onDetected,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
 
   return (
     <>
-      <div>
+      {console.log(scanDatas)}
+      {console.log(scanCode)}
 
-        {scanSuccess ? (
-          <Result
-            key="scanResult"
-            scanCode={scanCode}
-            handleInput={handleInput}
-          />
-        ) : null}
-        {/* <input id="scanner_result" type="text" defaultValue={scanCode} />
-        {/* <input id="scanner_result" type="text" defaultValue={result} /> */}
-        {/* <input id="scanner_result" type="text" defaultValue={scanSuccess} /> */} */}
+      {/* <Modal show={modal} onHide={toggleModal}>
+        <Modal.Header closeButton="true" />
+        <Modal.Body>
+          <Scanner handleScan={onDetected} />
+        </Modal.Body>
+      </Modal> */}
 
-        <Modal show={modal} onHide={toggleModal}>
-          <Modal.Header closeButton="true" />
-          <Modal.Body>
-            <Scanner handleScan={onDetected} />
-          </Modal.Body>
-        </Modal>
-      </div>
+      {modal && (
+        <div className="modal">
+          <div className="modal-body">
+            <div className="modal-content">
+              <Scanner handleScan={onDetected} />
+            </div>
+          </div>
+        </div>
+      )}
+
       <div className="scanPage">
         <animated.div
           style={scanText}
@@ -68,11 +63,11 @@ const ScanProduct = ({
 
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
-  handleInput: PropTypes.func.isRequired,
+  // handleInput: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
   scanCode: PropTypes.string.isRequired,
   modal: PropTypes.bool.isRequired,
-  scanSuccess: PropTypes.bool.isRequired,
+  scanDatas: PropTypes.object.isRequired,
 };
 
 export default ScanProduct;

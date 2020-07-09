@@ -13,8 +13,3 @@ export const onDetected = (result) => ({
   type: ON_DETECTED,
   result,
 });
-
-export const handleInput = (value) => ({
-  type: HANDLE_INPUT,
-  value,
-});

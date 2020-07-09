@@ -33,7 +33,7 @@ class Scanner extends React.Component {
             top: '0%', // top offset
             right: '0%', // right offset
             left: '0%', // left offset
-            bottom: '0%' // bottom offset
+            bottom: '0%', // bottom offset
           },
         },
         frequency: 'full',
@@ -48,11 +48,11 @@ class Scanner extends React.Component {
             'ean_reader',
             'ean_8_reader',
             'code_128_reader',
-            // 'code_39_vin_reader'
-            // 'codabar_reader',
+            'code_39_vin_reader',
+            'codabar_reader',
             'upc_reader',
-            // 'upc_e_reader',
-            // 'i2of5_reader'
+            'upc_e_reader',
+            'i2of5_reader',
           ],
         },
         locate: true,
@@ -80,30 +80,6 @@ class Scanner extends React.Component {
 
     Quagga.stop();
     return handleScan(code);
-    // The code below does not execute fast enough before the next scan occurs
-    /*
-    if (!(Object.keys(code).length === 0) && code !== '') {
-      const errors = result.codeResult.decodedCodes
-        .filter(_ => _.error !== undefined)
-        .map(_ => _.error);
-      const median = this._getMedian(errors);
-      if (median < 0.08) {
-        // probably correct
-        Quagga.stop();
-        console.log(code);
-        console.log(median);
-        return this.props.handleScan(code);
-      } else {
-        // probably wrong
-        console.log(code);
-        console.log(median);
-      }
-    } else {
-      Quagga.stop();
-      console.log(code);
-      return this.props.handleScan(code);
-    }
-    */
   }
 
   onProcessed(result) {
@@ -122,7 +98,7 @@ class Scanner extends React.Component {
           .filter(function (box) {
             return box !== result.box;
           })
-          .forEach(function (box) {
+          .forEach((box) => {
             Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, {
               color: 'green',
               lineWidth: 2,

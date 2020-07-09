@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   scanCode: state.scanner.scanCode,
   modal: state.scanner.modal,
-  scanSuccess: state.scanner.scanSuccess,
+  scanDatas: state.scanner.scanDatas,
 });
 
 // === mapDispatchToProps
@@ -23,9 +23,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onDetected: (result) => {
     dispatch(onDetected(result));
-  },
-  handleInput: (value) => {
-    dispatch(handleInput(value));
   },
 });
 

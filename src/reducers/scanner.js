@@ -1,14 +1,13 @@
 import {
   TOGGLE_MODAL,
   ON_DETECTED,
-  HANDLE_INPUT,
 } from 'src/actions/scanner';
 
 const initialState = {
   // results: [],
   scanCode: '',
   modal: false,
-  scanSuccess: false,
+  scanDatas: {},
 };
 
 const scanner = (state = initialState, action = {}) => {
@@ -17,7 +16,6 @@ const scanner = (state = initialState, action = {}) => {
       return {
         ...state,
         modal: !state.modal,
-        scanSuccess: false,
       };
 
     case ON_DETECTED:
@@ -25,13 +23,7 @@ const scanner = (state = initialState, action = {}) => {
         ...state,
         modal: false,
         scanCode: action.result ? action.result.codeResult.code : '',
-        scanSuccess: action.result,
-      };
-
-    case HANDLE_INPUT:
-      return {
-        ...state,
-        scanCode: action.value,
+        scanDatas: action.result,
       };
     default: return state;
   }
