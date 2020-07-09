@@ -8,10 +8,11 @@
   max-width: 200px;  
 }
 .slogan{
-  text-shadow: 0 1px 0 rgb(143, 143, 255);
   position: relative;
   transform: translateY(-35px);
-  color:$thirdColor;
+  color: darken($thirdColor, 20%);
   font-size: 1em;
+  font-weight: bold;
+  text-shadow: $secondColor 1px 1px 1px ;
 
 }
