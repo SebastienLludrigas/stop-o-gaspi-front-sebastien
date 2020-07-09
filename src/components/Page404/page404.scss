@@ -4,7 +4,7 @@
   padding-top: 20px;
   background-color: transparent;
   color: $firstColor;
-
+  
 }
 
 @keyframes food-movement {100% {transform: translate(100vmin,-600px);} }
@@ -123,6 +123,7 @@ top: 95%;
     text-shadow: slategray 2px 2px;
     background-color: rgba(112, 128, 144, 0.4);
     border-radius: 15px;
+    padding: 5px;
    }
 }
 
