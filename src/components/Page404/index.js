@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // == Import
-import logo from 'src/assets/image/logoStopOGaspi.PNG';
+// import logo from 'src/assets/image/logoStopOGaspi.PNG';
 import tomate from 'src/assets/image/tomate.png';
 import banane from 'src/assets/image/banane.png';
 import coriandre from 'src/assets/image/coriandre.png';
@@ -29,7 +29,7 @@ const Page404 = () => (
       </div>
 
       <Link exact to="/">
-        <a className="btn-go-home">RETOUR ACCEUIL</a>
+        <div className="btn-go-home">RETOUR ACCEUIL</div>
       </Link>
     </div>
 

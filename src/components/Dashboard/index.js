@@ -16,18 +16,19 @@ const Dashboard = () => (
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required=""  placeholder="Vérification du Mot de Passe"/>
+        <input type="text" name="" required="" placeholder="Vérification du Mot de Passe"/>
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required=""  placeholder="Pseudo"/>
+        <input type="text" name="" required="" placeholder="Pseudo"/>
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required=""  placeholder="Prénom"/>
+        <input type="text" name="" required="" placeholder="Prénom"/>
       </div>
       <div className="btn_dashboard_validate">valider</div>
     </div>
+
     <div className="dashboard_right">
       <div className="alert_dashboard">
         <h2>ALERTE :</h2>
