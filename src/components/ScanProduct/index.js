@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
@@ -10,6 +11,8 @@ const ScanProduct = ({
   scanDatas,
   toggleModal,
   onDetected,
+  image_small_url,
+  status,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
 
@@ -18,20 +21,27 @@ const ScanProduct = ({
       {console.log(scanDatas)}
       {console.log(scanCode)}
 
-      {/* <Modal show={modal} onHide={toggleModal}>
-        <Modal.Header closeButton="true" />
-        <Modal.Body>
-          <Scanner handleScan={onDetected} />
-        </Modal.Body>
-      </Modal> */}
-
       {modal && (
         <div className="modal">
+          <i className="fas fa-times" onClick={toggleModal} />
           <div className="modal-body">
             <div className="modal-content">
               <Scanner handleScan={onDetected} />
             </div>
           </div>
+        </div>
+      )}
+
+      {status === 1 && (
+        <div className="test-datas">
+          <p>Félicitations ! Vous venez de scanner votre premier produit avec succès</p>
+          <img src={image_small_url} alt="" />
+        </div>
+      )}
+
+      {status === 0 && (
+        <div className="test-datas">
+          <p>Désolé, votre scan n'a pas fonctionné...</p>
         </div>
       )}
 
@@ -68,6 +78,8 @@ ScanProduct.propTypes = {
   scanCode: PropTypes.string.isRequired,
   modal: PropTypes.bool.isRequired,
   scanDatas: PropTypes.object.isRequired,
+  status: PropTypes.number.isRequired,
+  image_small_url: PropTypes.string.isRequired,
 };
 
 export default ScanProduct;

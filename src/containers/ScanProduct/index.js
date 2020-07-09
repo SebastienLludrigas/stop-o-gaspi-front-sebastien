@@ -12,6 +12,8 @@ const mapStateToProps = (state) => ({
   scanCode: state.scanner.scanCode,
   modal: state.scanner.modal,
   scanDatas: state.scanner.scanDatas,
+  status: state.scanner.status,
+  image_small_url: state.scanner.image_small_url,
 });
 
 // === mapDispatchToProps

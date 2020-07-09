@@ -1,7 +1,7 @@
 // === action types
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';
 export const ON_DETECTED = 'ON_DETECTED';
-export const HANDLE_INPUT = 'HANDLE_INPUT';
+export const FETCH_API_DATAS = 'FETCH_API_DATAS';
 // export const HANDLE_LOGOUT = 'HANDLE_LOGOUT';
 
 // === action creators
@@ -12,4 +12,8 @@ export const toggleModal = () => ({
 export const onDetected = (result) => ({
   type: ON_DETECTED,
   result,
+});
+
+export const fetchApiDatas = () => ({
+  type: FETCH_API_DATAS,
 });
