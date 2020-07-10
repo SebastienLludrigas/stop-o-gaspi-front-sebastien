@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { handleDatas, sendDatas} from 'src/actions/datas';
+import { handleDatas, sendDatas } from 'src/actions/datas';
 
 // === on importe le composant de présentation
 import Main from 'src/components/Main';

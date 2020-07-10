@@ -25,6 +25,18 @@ const Main = ({ handleDatas, sendDatas }) => (
         Heureusement tu viens de trouvé une solution à ce problème afin de dire STOP’O’GASPI.
       </p>
     </div>
+    <button
+      className="button-tests"
+      type="button"
+      onClick={sendDatas}
+    >Envoyer des données
+    </button>
+    <button
+      className="button-tests"
+      type="button"
+      onClick={handleDatas}
+    >Récupérer des données
+    </button>
   </div>
 );
 
