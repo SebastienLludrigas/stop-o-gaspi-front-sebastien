@@ -4,11 +4,11 @@
   padding-top: 20px;
   background-color: transparent;
   color: $firstColor;
-
+  
 }
 
-@keyframes food-movement {100% {transform: translate(1200px,-600px);} }
-@keyframes food-movement2 {100% {transform: translate(1800px,-700px);} }
+@keyframes food-movement {100% {transform: translate(100vmin,-600px);} }
+@keyframes food-movement2 {100% {transform: translate(100vmin,-700px);} }
 @keyframes spin-food{ 
   50% { transform:rotate(-160deg); transition: transform 10s; }
   100% { transform:rotate(-360deg); transition: transform 20s; } }
@@ -30,6 +30,7 @@
     font-weight: 400;
     display: block;
     color: white;
+    text-shadow: $secondColor 2px 1px;
     text-align: center;
     text-decoration: none;
     letter-spacing : 2px;
@@ -48,13 +49,13 @@
 
 
 .objects img{
-    z-index: 90;
+    z-index: 0;
     pointer-events: none;
     
 }
 
 @mixin object_food {
-    z-index: 95;
+    z-index: 0;
     position: absolute;
     transform: translateX(-50px);
     top: 75%;
@@ -99,10 +100,9 @@ top: 95%;
 }
 
 .object_fridge{
-    animation: rotate-fridge 20s infinite linear both alternate;
+    animation: rotate-fridge 10s infinite linear both alternate;
 }
 .box_fridge{
-    z-index: 90 !important;
     position: absolute;
     top: 60%;
     right: 20%;
@@ -117,12 +117,13 @@ top: 95%;
   display: flex;
   flex-direction: column;
   & h3{
-    z-index: 120;
+    z-index: 1;
     font-weight: bold;
     font-size: 10vmin;
     text-shadow: slategray 2px 2px;
     background-color: rgba(112, 128, 144, 0.4);
     border-radius: 15px;
+    padding: 5px;
    }
 }
 
@@ -131,7 +132,7 @@ top: 95%;
   flex-direction: row;
   justify-content: center;
     & h2{
-      z-index: 120;
+      z-index: 1;
       font-size: 30vmin;
      &:nth-child(1){color: $fourthColor}
      &:nth-child(3){color: $thirdColor}
@@ -141,7 +142,9 @@ top: 95%;
 
 
 @media only screen and (max-width: 600px){
-    
+    .page_404{
+      height: 100vh;
+    }
     .box_fridge{
         top: 70%;
     }

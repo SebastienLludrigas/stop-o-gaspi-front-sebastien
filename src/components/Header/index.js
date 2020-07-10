@@ -14,7 +14,7 @@ import './header.scss';
 // == Composant
 const Header = ({ toggle, toggleMenu }) => (
   <div className="header">
-    <Link exact to="/">
+    <Link to="/">
       <LogoGaspi className="logo-gaspi" />
     </Link>
     <div className="right-container">

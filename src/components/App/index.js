@@ -12,7 +12,7 @@ import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
 import ScanProduct from 'src/containers/ScanProduct';
 import Page404 from 'src/components/Page404';
-
+import About from 'src/components/About';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
 
@@ -28,6 +28,7 @@ const App = () => (
       <Route path="/product" component={Product} />
       <Route path="/settings" component={Dashboard} />
       <Route path="/scan-product" component={ScanProduct} />
+      <Route path="/advice-sheet/about" component={About} />
       <Route path="/" component={Page404} />
     </Switch>
     <Footer />

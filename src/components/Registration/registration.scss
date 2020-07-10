@@ -32,11 +32,12 @@ position: relative;
   border-radius: 10px;
 }
 .contain-inscription{
+  margin-top: 5vmin;
   position: relative;
   top: 50%;
   left: 50%;
   width: 60vmin;
-  padding: 40px;
+  padding: 20px;
   transform: translate(-50%, -50%);
   background: rgba(0,0,0,.8);
   box-sizing: border-box;
@@ -192,9 +193,10 @@ position: relative;
 }
 @media screen and (max-width: 600px) {
   .inscriptionPage{
-    height: 100vh;
+    height: 120vh;
+    width: 100vw;
   }
   .connexionPage{
-    height: 80vh;
+    height: 95vh;
   }
 }

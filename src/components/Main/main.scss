@@ -1,9 +1,12 @@
 @import 'src/styles/vars.scss';
-
+@font-face {
+  font-family: "bubble";
+  src: url("../../assets/fonts/Bubble.ttf");
+ } 
 .main{
-  
+  font-family: bubble ,Arial;
   height: max-content;
-  background-color: $firstColor;
+  background-image: repeating-linear-gradient(90deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
   overflow: hidden;
   border-top: $secondColor 2px solid;
   border-bottom: $secondColor 2px solid;
@@ -25,16 +28,18 @@
   .titleMain{
   grid-area: title;
   text-align: center;
-  font-size: 5vmin;
+  font-size: 9vmin;
   @media screen and (max-width: 600px) {
-    font-size: 1.5em;  
+    font-size:9vmin;  
   }
 
   }
   .textMain{
+    line-height: 5vmin;
     grid-area: text;
     text-align: center;
-    width: 40vw;
+    width: 50vw;
+    font-size: 4vmin;
     @media screen and (max-width: 600px) {
       width: 100%;  
       }
@@ -45,25 +50,3 @@
 //   background-color: $firstColor;
 //   color: $secondColor;
 // }
-
-.buttonDatas{
-  position: absolute;
-  top: 150px;
-  right: 100px;
-  border-radius: 3px;
-  border: 1px solid $secondColor;
-  background-color: $firstColor;
-  padding: 5px;
-  font-size: 1em;
-}
-
-.buttonDatas2{
-  position: absolute;
-  top: 250px;
-  right: 100px;
-  border-radius: 3px;
-  border: 1px solid $secondColor;
-  background-color: $firstColor;
-  padding: 5px;
-  font-size: 1em;
-}

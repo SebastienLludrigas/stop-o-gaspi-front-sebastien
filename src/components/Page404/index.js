@@ -28,7 +28,7 @@ const Page404 = () => (
         <h2>4</h2>
       </div>
 
-      <Link exact to="/">
+      <Link to="/">
         <div className="btn-go-home">RETOUR ACCEUIL</div>
       </Link>
     </div>

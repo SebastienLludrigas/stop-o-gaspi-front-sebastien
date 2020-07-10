@@ -1,0 +1,111 @@
+@import 'src/styles/vars.scss';
+@font-face {
+  font-family: "bubble";
+  src: url("../../assets/fonts/Bubble.ttf");
+ } 
+.about_page{
+  font-family: bubble ,Arial;
+  height: max-content;
+  background-image: repeating-linear-gradient(90deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
+  overflow: hidden;
+  display: grid;
+  grid-template-areas:
+  "about_title about_title about_title about_title about_title" 
+  "p_laurie p_sebastien p_aurelien p_greg p_alexis"
+  "a_laurie a_sebastien a_aurelien a_greg a_alexis"
+  "tous tous tous tous tous"
+  ;
+  row-gap: 1vmin;
+  column-gap: 5vmin;
+  padding: 115px 7vmin 7vmin;
+  height: 80vh;
+  width: 100vw;
+  @media screen and (max-width: 1000px) {
+  //grid-template-areas:
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    width: max-content;
+  }
+  @media screen and (max-width: 600px) {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    height: max-content;
+  }
+  .about_title{
+    grid-area: about_title;
+    font-size: 8vmin;
+    text-align: center;
+    @media screen and (max-width: 600px) {
+      font-size: 14vmin;
+     }
+  }
+  & img{
+    border: ridge 10px $fourthColor;
+    width: 150px;
+  }
+  .ul_about{
+    list-style: none;
+    text-align: center;
+    border: ridge 10px $fourthColor;
+    width: 150px;
+    background-color: #76ead771;
+
+
+    :nth-child(1){
+      font-size: 1.2em;
+      padding:0.2em 0;
+      background-color: $secondColor;
+      color: $firstColor;
+      letter-spacing: 2px;
+    }
+    :nth-child(2){
+      border-top: ridge 10px $fourthColor;
+      padding: 0.5vmin 0 1vmin;
+      font-size: 3vmin;
+
+    }
+    :nth-child(3){
+      font-size: 3vmin;
+      
+    }
+
+  }
+  .photo_laurie{
+    grid-area: p_laurie;
+  }
+  .about_laurie{
+    grid-area: a_laurie;
+  }
+  .photo_sebastien{
+    grid-area: p_sebastien;
+  }
+  .about_sebastien{
+    grid-area: a_sebastien;
+  }
+  .photo_aurelien{
+        grid-area: p_aurelien;
+  }
+  .about_aurelien{
+        grid-area: a_aurelien;
+  }
+  .photo_greg{
+        grid-area: p_greg;
+  }
+  .about_greg{
+        grid-area: a_greg
+  }
+  .photo_alexis{
+        grid-area: p_alexis;
+  }
+  .about_alexis{
+        grid-area: a_alexis;
+  }
+  .tous{
+    margin-top: 3vmin;
+    grid-area: tous;
+    font-size: 5vmin;
+    text-align: center;
+  }
+}
