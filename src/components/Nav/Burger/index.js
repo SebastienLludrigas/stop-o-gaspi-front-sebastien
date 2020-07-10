@@ -11,7 +11,6 @@ const Burger = ({ handleBurger, cross }) => (
   <div
     className={classNames('burger', { active: cross })}
     onClick={() => {
-      console.log(cross);
       handleBurger();
     }}
   >

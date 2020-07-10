@@ -3,6 +3,7 @@ import { combineReducers } from 'redux';
 import burgerReducer from 'src/reducers/burger';
 import myaccountReducer from 'src/reducers/myaccount';
 import datasReducer from 'src/reducers/datas';
+import scannerReducer from 'src/reducers/scanner';
 
 // séparer le state en plusieurs morceaux ("tiroirs") pour mieux s'y retrouver
 // createStore prend en argument un seul reducer, pour lui en fournir plusieurs
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   burger: burgerReducer,
   myaccount: myaccountReducer,
   datas: datasReducer,
+  scanner: scannerReducer,
 });
 
 // pour accéder au state défini dans le reducer 'recipesReducer', il faudra que

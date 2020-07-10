@@ -1,10 +1,76 @@
 @import 'src/styles/vars.scss';
 
+#interactive.viewport {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+#interactive.viewport > canvas,
+#interactive.viewport > video {
+  max-width: 100%;
+  // width: 100%;
+}
+canvas.drawing,
+canvas.drawingBuffer {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  border-radius: 5px;
+  top: 150px;
+  left: 50%;
+  right: 50%;
+  height: 300px;
+  width: 400px;
+  margin: 0 auto;
+  background-color: $thirdColor;
+  padding: 30px 20px 0 20px;
+}
+
+.fa-times {
+  margin-bottom: 25px;
+  margin-top: -15px;
+  float: right;
+  color: $secondColor;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.products-list {
+  position: fixed;
+  top: 150px;
+  left: 800px;
+  padding: 20px;
+  background-color: $firstColor;
+  color: $secondColor;
+  font-size: 1.5em;
+  border: 1px solid $secondColor;
+  border-radius: 3px;
+}
+
+.scanError {
+  position: fixed;
+  top: 150px;
+  left: 800px;
+  padding: 15px;
+  background-color: rgb(255, 194, 194);
+  color: rgb(173, 0, 0);
+  border: 1px solid rgb(173, 0, 0);
+  border-radius: 3px;
+}
+
 .scanPage{
 
-  background-image: url(../../assets/image/scanbackground.jpg);//url(/src/assets/image/scanbackground.jpg);
-  background-size: cover;
-  background-position-y: -100px;
+  // background-image: url(../../assets/image/scanbackground.jpg);//url(/src/assets/image/scanbackground.jpg);
+  // background-size: cover;
+  // background-position-y: -100px;
+  background-color: #fff;
   padding-top: 110px;
   text-align: left;
   min-height: 90vh;
@@ -34,6 +100,7 @@
     .scanInput{
       margin: 10vmin 5vmin;
       text-align: center;
+      cursor: pointer;
       & h2{
         font-weight: bold;
         font-size: 3vmin;
