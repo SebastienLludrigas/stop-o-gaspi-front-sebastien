@@ -40,31 +40,13 @@ const datasMiddleware = (store) => (next) => (action) => {
 
     case SEND_DATAS:
     // faire une requête vers l'API
-      axios.post('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/products', {
-        id: 1,
-        name: 'Moules Marinières',
-        expiration_date: [],
-        archived_date: [],
-        ingredients: 'Chocolat, Banane, Mayo, Sel, Poivre',
-        quantity: 18,
-        nutritional_composition: null,
-        favorite: true,
-        archived: true,
-        expirated: true,
-        created_at: [],
-        user: {
-          id: 17,
-          name: 'Julien',
-          city: 'Carre',
-          email: 'gvaillant@tele2.fr',
-          password: 'a\'`xbc',
-          pseudo: 'Dominique',
-          created_at: [],
-        },
-        brand: {
-          id: 14,
-          name: 'Fernandes',
-        },
+      axios.post('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/user/registrer', {
+        email: 'fabclock@gmail',
+        name: 'Fabio',
+        City: 'Paris',
+        password: 'à plumes et à bec',
+        verifPassword: 'animal à plumes et à bec',
+        pseudo: 'bigeon',
       })
         .then((response) => {
           console.log(response);

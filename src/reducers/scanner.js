@@ -9,8 +9,8 @@ const initialState = {
   scanCode: '',
   modal: false,
   scanDatas: {},
-  status: 3,
-  image_small_url: '',
+  datas: [],
+  status: 2,
 };
 
 const scanner = (state = initialState, action = {}) => {
@@ -32,8 +32,8 @@ const scanner = (state = initialState, action = {}) => {
     case SAVE_DATAS:
       return {
         ...state,
+        datas: action.datas,
         status: action.datas.status,
-        image_small_url: action.datas.product.image_small_url,
       };
     default: return state;
   }

@@ -11,7 +11,7 @@ const ScanProduct = ({
   scanDatas,
   toggleModal,
   onDetected,
-  image_small_url,
+  // datas,
   status,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
@@ -32,16 +32,23 @@ const ScanProduct = ({
         </div>
       )}
 
-      {status === 1 && (
-        <div className="test-datas">
-          <p>Félicitations ! Vous venez de scanner votre premier produit avec succès</p>
-          <img src={image_small_url} alt="" />
-        </div>
-      )}
+      {/* {console.log(datas.product)}
+      {console.log(datas)} */}
 
+      {/* {status === 1 && (
+        <ul className="products-list">
+          {datas.map((data) => (
+            <li key={data.product.product_name_fr}>
+              <p>{data.product.product_name_fr}</p>
+              <p>{data.product.quantity}</p>
+            </li>
+          ))}
+        </ul>
+      )} */}
       {status === 0 && (
-        <div className="test-datas">
-          <p>Désolé, votre scan n'a pas fonctionné...</p>
+        <div className="scanError">
+          <p>Désolé, votre scan n'a pas fonctionné.</p>
+          <p>Veuillez réessayer.</p>
         </div>
       )}
 
@@ -78,8 +85,17 @@ ScanProduct.propTypes = {
   scanCode: PropTypes.string.isRequired,
   modal: PropTypes.bool.isRequired,
   scanDatas: PropTypes.object.isRequired,
-  status: PropTypes.number.isRequired,
-  image_small_url: PropTypes.string.isRequired,
+  status: PropTypes.number,
+  // datas: PropTypes.arrayOf(
+  //   PropTypes.shape({
+  //     product: PropTypes.object.isRequired,
+  //   }),
+  // ),
+};
+
+ScanProduct.defaultProps = {
+  status: 2,
+  // datas: [],
 };
 
 export default ScanProduct;
