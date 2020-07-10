@@ -12,7 +12,7 @@ import alexis from 'src/assets/image/Dormeur.png';
 // == Composant
 const About = () => {
 
-  const effectAbout= useSpring({ marginTop: 0, from: { marginTop: 500 } });
+const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
 
   return (
     <div className="about_page">

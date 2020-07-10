@@ -1,9 +1,7 @@
 // == Import npm
 import React from 'react';
-import { useSpring, useChain, animated } from 'react-spring';
 
 // == Import
-import Cards from '../Cards';
 
 import './product.scss';
 
@@ -14,19 +12,19 @@ const Product = () => (
       <h2>Ajouter un produit dans mon garde manger.</h2>
       <form>
         <div className="user-contain">
-          <input type="text" name="" required=""/>
+          <input type="text" name="" required="" />
           <label>Nom du produit *</label>
         </div>
         <div className="user-contain">
-          <input type="date" name="" required=""/>
+          <input type="date" name="" required="" value="" />
           <label>Date de fabriction (si vous avez cuisiné vous même)</label>
         </div>
         <div className="user-contain">
-          <input type="date" name="" required=""/>
+          <input type="date" name="" required="" />
           <label>Date de péremption *</label>
         </div>
         <div className="user-contain">
-          <input type="number" name="" required=""/>
+          <input type="number" name="" required="" />
           <label>Quantité</label>
         </div>
         <button type="submit">

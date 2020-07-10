@@ -9,7 +9,6 @@ import './registration.scss';
 
 // == Composant
 const Registration = () => (
- 
   <div className="inscriptionPage"> <h1>Bienvenue chez les gaspi Hunters</h1>
     <div className="contain-inscription login-contain">
       <h2>S'inscrire</h2>
