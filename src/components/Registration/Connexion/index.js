@@ -9,11 +9,7 @@ import '../registration.scss';
 
 // == Composant
 const Connexion = ({
-  email,
-  password,
   onChange,
-  name,
-  changeField,
   handleLogin,
   handleLogout,
   isLogged,
@@ -24,7 +20,7 @@ const Connexion = ({
     handleLogin();
   };
   const handleChange = (evt) => {
-    onChange(evt.target.value, name);
+    onChange(evt.target.value, evt.target.name);
   };
 
   return (
@@ -52,20 +48,18 @@ const Connexion = ({
             <div className="user-contain">
               <input
                 type="text"
-                name={name}
+                name="email"
                 required="email"
-                onChange={changeField}
-                value={email}
+                onChange={handleChange}
               />
               <label>e-mail</label>
             </div>
             <div className="user-contain">
               <input
                 type="password"
-                name={name}
+                name="password"
                 required="Password"
-                onChange={changeField}
-                value={password}
+                onChange={handleChange}
               />
               <label>Password</label>
             </div>
@@ -85,11 +79,7 @@ const Connexion = ({
 };
 
 Connexion.propTypes = {
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
-  changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
