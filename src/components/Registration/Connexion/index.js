@@ -11,6 +11,8 @@ import '../registration.scss';
 const Connexion = ({
   email,
   password,
+  onChange,
+  name,
   changeField,
   handleLogin,
   handleLogout,
@@ -20,6 +22,9 @@ const Connexion = ({
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
     handleLogin();
+  };
+  const handleChange = (evt) => {
+    onChange(evt.target.value, name);
   };
 
   return (
@@ -47,7 +52,7 @@ const Connexion = ({
             <div className="user-contain">
               <input
                 type="text"
-                name="email"
+                name={name}
                 required="email"
                 onChange={changeField}
                 value={email}
@@ -57,7 +62,7 @@ const Connexion = ({
             <div className="user-contain">
               <input
                 type="password"
-                name="Password"
+                name={name}
                 required="Password"
                 onChange={changeField}
                 value={password}
@@ -82,6 +87,8 @@ const Connexion = ({
 Connexion.propTypes = {
   email: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
   changeField: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
   handleLogout: PropTypes.func.isRequired,

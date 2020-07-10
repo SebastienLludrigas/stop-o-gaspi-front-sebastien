@@ -7,7 +7,7 @@ import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/components/Pantry';
 import Footer from 'src/components/Footer';
-import Connexion from 'src/containers/LoginForm';
+import Connexion from 'src/containers/Connexion';
 import Inscription from 'src/components/Registration';
 import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
