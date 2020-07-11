@@ -26,6 +26,7 @@ const user = (state = initialState, action = {}) => {
         isLogged: action.isLogged,
         email: '',
         password: '',
+        loading: false,
       };
 
     default: return state;

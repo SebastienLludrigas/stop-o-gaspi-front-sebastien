@@ -17,7 +17,7 @@ const userMiddleware = (store) => (next) => (action) => {
         email,
         password,
       }, {
-        // withCredentials: true, // TODO ATTENTION
+        withCredentials: true, // TODO ATTENTION
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));

@@ -13,9 +13,15 @@ const Main = ({ handleDatas, sendDatas }) => (
     <h1 className="titleMain">Bienvenue à toi Gaspi Hunter.</h1>
     <div className="main_left"><Fridge /></div>
     <div className="main_right">
-      <p className="textMain">
-        Toi aussi tu te dis que gâcher c’est nul?
-        <br />
+      <div className="textMain">
+        <div id="container">
+        Toi aussi tu te dis que gâcher :
+          <div id="flip">
+            <div><div>c'est nul</div></div>
+            <div><div>c'est de l'argent perdu</div></div>
+            <div><div>j'en ai marre</div></div>
+          </div>
+        </div>
         <br />
         Tu te fais avoir à chaque fois que tu fais les courses,
         tu achètes plein de trucs que tu oublies de manger ?
@@ -23,7 +29,9 @@ const Main = ({ handleDatas, sendDatas }) => (
         Et bien nous aussi, c’est humain.
         <br /><br />
         Heureusement tu viens de trouvé une solution à ce problème afin de dire STOP’O’GASPI.
-      </p>
+ 
+
+      </div>
     </div>
   </div>
 );

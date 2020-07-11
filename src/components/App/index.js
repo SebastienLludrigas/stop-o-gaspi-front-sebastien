@@ -3,6 +3,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // == Import
+
 import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/components/Pantry';
@@ -16,7 +17,6 @@ import Page404 from 'src/components/Page404';
 import About from 'src/components/About';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
-
 // == Composant
 const App = () => (
   <div className="app">
@@ -33,9 +33,9 @@ const App = () => (
       <Route path="/" component={Page404} />
     </Switch>
     <Footer />
+
   </div>
 );
 
 // == Export
 export default App;
-
