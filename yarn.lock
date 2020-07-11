@@ -895,6 +895,21 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bit/feathericons.react-feather.mail@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.mail/-/feathericons.react-feather.mail-1.1.6.tgz#f6303b5dbd8c7ce668226e425eb1cb11766ce43c"
+  integrity sha1-9jA7Xb2MfOZoIm5CXrHLEXZs5Dw=
+
+"@bit/feathericons.react-feather.phone@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.phone/-/feathericons.react-feather.phone-1.1.6.tgz#1143dc96d6ea5adc6078fe2d17258daa465ef794"
+  integrity sha1-EUPcltbqWtxgeP4tFyWNqkZe95Q=
+
+"@bit/feathericons.react-feather.user@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.user/-/feathericons.react-feather.user-1.1.6.tgz#8090049a6bc4741b398b3db05d0bb6cda4790f33"
+  integrity sha1-gJAEmmvEdBs5iz2wXQu2zaR5DzM=
+
 "@bundle-stats/cli-utils@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@bundle-stats/cli-utils/-/cli-utils-2.2.0.tgz#c4003e495cb0d56cb009be775071da32350e5466"
