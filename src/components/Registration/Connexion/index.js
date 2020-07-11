@@ -44,7 +44,7 @@ const Connexion = ({
 
         <div className="login-contain ">
           <h2>Login</h2>
-          <form autoComplete="off" onSubmit={handleSubmitLoggin}>
+          <form onSubmit={handleSubmitLoggin}>
             <div className="user-contain">
               <input
                 type="text"
