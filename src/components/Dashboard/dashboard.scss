@@ -71,7 +71,7 @@
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
     @media screen and (max-width: 770px) {
       margin-top: 10vmin;
       order:-1;

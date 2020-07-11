@@ -6,7 +6,7 @@ const initialState = {
   // contenu de l'input pour le mot de passe
   password: '',
   // informations sur l'utilisateur
-  info: {},
+  info: {}, // TODO ADAPTER suivant BDD
   // indique si l'utilisateur est loggué
   isLogged: false,
 };

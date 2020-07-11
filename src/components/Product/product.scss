@@ -2,7 +2,7 @@
 .productPage {
   position: relative;
   width: 100vw;
-  height: 150vh;
+  height: 120vh;
   //background-color: $firstColor;
   background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
   padding-top: 120px;
@@ -42,6 +42,7 @@
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
+  font-size: 1.5em;
   text-align: center;
 }
 

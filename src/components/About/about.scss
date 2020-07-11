@@ -18,7 +18,7 @@
   row-gap: 1vmin;
   column-gap: 5vmin;
   padding: 115px 7vmin 7vmin;
-  height: 80vh;
+  height: max-content;
   width: 100vw;
   @media screen and (max-width: 1000px) {
   //grid-template-areas:
