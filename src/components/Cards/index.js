@@ -1,28 +1,26 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import Card from './Card';
 // == Import
+import Card from './Card';
 import './cards.scss';
 
 // == Composant
-const Cards = () => (
+const Cards = ({ datas }) => (
   <div className="cards">
-
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
-    <Card />
+    {datas.map((data) => (
+      <Card
+        key={data.code}
+        {...data.product}
+      />
+    ))}
   </div>
 );
+
+Cards.propTypes = {
+  datas: PropTypes.array.isRequired,
+};
 
 // == Export
 export default Cards;

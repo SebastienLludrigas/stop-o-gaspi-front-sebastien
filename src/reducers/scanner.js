@@ -2,7 +2,7 @@ import {
   TOGGLE_MODAL,
   ON_DETECTED,
 } from 'src/actions/scanner';
-import { SAVE_DATAS } from 'src/actions/datas';
+// import { SAVE_DATAS } from 'src/actions/datas';
 
 const initialState = {
   // results: [],
@@ -19,22 +19,28 @@ const scanner = (state = initialState, action = {}) => {
       return {
         ...state,
         modal: !state.modal,
+        status: 2,
       };
 
-    case ON_DETECTED:
+    case ON_DETECTED: {
+      if (action.result.codeResult.code.length === 13) {
+        return {
+          ...state,
+          modal: false,
+          scanCode: action.result ? action.result.codeResult.code : '',
+          scanDatas: action.result,
+          status: 1,
+        };
+      }
       return {
         ...state,
         modal: false,
         scanCode: action.result ? action.result.codeResult.code : '',
         scanDatas: action.result,
+        status: 0,
       };
+    }
 
-    case SAVE_DATAS:
-      return {
-        ...state,
-        datas: action.datas,
-        status: action.datas.status,
-      };
     default: return state;
   }
 };

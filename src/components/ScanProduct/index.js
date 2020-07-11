@@ -18,8 +18,8 @@ const ScanProduct = ({
 
   return (
     <>
-      {console.log(scanDatas)}
-      {console.log(scanCode)}
+      {/* {console.log(scanDatas)}
+      {console.log(scanCode)} */}
 
       {modal && (
         <div className="modal">
@@ -35,20 +35,18 @@ const ScanProduct = ({
       {/* {console.log(datas.product)}
       {console.log(datas)} */}
 
-      {/* {status === 1 && (
-        <ul className="products-list">
-          {datas.map((data) => (
-            <li key={data.product.product_name_fr}>
-              <p>{data.product.product_name_fr}</p>
-              <p>{data.product.quantity}</p>
-            </li>
-          ))}
-        </ul>
-      )} */}
       {status === 0 && (
         <div className="scanError">
           <p>Désolé, votre scan n'a pas fonctionné.</p>
           <p>Veuillez réessayer.</p>
+        </div>
+      )}
+
+      {status === 1 && (
+        <div className="scanSuccess">
+          <p>Félicitations ! Votre scan a fonctionné.</p>
+          <p>Retournez dans votre Pantry pour voir</p>
+          <p>votre nouveau produit</p>
         </div>
       )}
 

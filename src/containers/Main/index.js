@@ -9,7 +9,7 @@ import Main from 'src/components/Main';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   cross: state.burger.cross,
-  datas: state.datas.dataContent,
+  // datas: state.datas.dataContent,
 });
 
 // === mapDispatchToProps

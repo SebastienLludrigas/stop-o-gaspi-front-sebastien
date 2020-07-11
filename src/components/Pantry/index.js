@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSpring, useChain, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // == Import
 import Cards from '../Cards';
@@ -9,7 +10,7 @@ import Cards from '../Cards';
 import './pantry.scss';
 
 // == Composant
-const Pantry = () => {
+const Pantry = ({ datas }) => {
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
@@ -28,9 +29,14 @@ const Pantry = () => {
           </Link>
         </div>
       </animated.div>
-      <Cards />
+      <Cards datas={datas} />
     </div>
   );
 };
+
+Pantry.propTypes = {
+  datas: PropTypes.array.isRequired,
+};
+
 // == Export
 export default Pantry;

@@ -1,32 +1,32 @@
 import { connect } from 'react-redux';
 
-import { toggleModal, onDetected } from 'src/actions/scanner';
-
 // === on importe le composant de présentation
-import ScanProduct from 'src/components/ScanProduct';
+import Connexion from 'src/components/Registration/Connexion';
+
+import { updateUserField, logIn, logOut } from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
-  scanCode: state.scanner.scanCode,
-  modal: state.scanner.modal,
-  scanDatas: state.scanner.scanDatas,
-  status: state.scanner.status,
-  datas: state.scanner.datas,
+  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher une action vers le store
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-  toggleModal: () => {
-    dispatch(toggleModal());
+  onChange: (newValue, name) => {
+    console.log(`La valeur du champ ${name} est : ${newValue}`);
+    dispatch(updateUserField(newValue, name));
   },
-  onDetected: (result) => {
-    dispatch(onDetected(result));
+  handleLogin: () => {
+    dispatch(logIn());
+  },
+  handleLogout: () => {
+    dispatch(logOut());
   },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(ScanProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(Connexion);

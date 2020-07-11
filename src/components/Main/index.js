@@ -22,10 +22,10 @@ const Main = ({ handleDatas, sendDatas }) => (
         <br /><br />
         Et bien nous aussi, c’est humain.
         <br /><br />
-        Heureusement tu viens de trouvé une solution à ce problème afin de dire STOP’O’GASPI.
+        Heureusement tu viens de trouver une solution à ce problème afin de dire STOP’O’GASPI.
       </p>
     </div>
-    <button
+    {/* <button
       className="button-tests"
       type="button"
       onClick={sendDatas}
@@ -36,7 +36,7 @@ const Main = ({ handleDatas, sendDatas }) => (
       type="button"
       onClick={handleDatas}
     >Récupérer des données
-    </button>
+    </button> */}
   </div>
 );
 
