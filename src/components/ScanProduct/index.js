@@ -11,8 +11,9 @@ const ScanProduct = ({
   scanDatas,
   toggleModal,
   onDetected,
-  // datas,
   status,
+  toggleScanInfo,
+  productFound,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
 
@@ -35,18 +36,38 @@ const ScanProduct = ({
       {/* {console.log(datas.product)}
       {console.log(datas)} */}
 
-      {status === 0 && (
+      {(status === 0 && productFound) && (
         <div className="scanError">
-          <p>Désolé, votre scan n'a pas fonctionné.</p>
-          <p>Veuillez réessayer.</p>
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <div className="text">
+            <p>Désolé,<br />
+              votre scan n'a pas fonctionné...<br />
+              Veuillez réessayer.
+            </p>
+          </div>
         </div>
       )}
 
-      {status === 1 && (
+      {(status === 1 && productFound) && (
         <div className="scanSuccess">
-          <p>Félicitations ! Votre scan a fonctionné.</p>
-          <p>Retournez dans votre Pantry pour voir</p>
-          <p>votre nouveau produit</p>
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <p>Félicitations !<br />
+            Votre scan a fonctionné.<br />
+            Retournez dans votre Pantry pour voir<br />
+            votre nouveau produit
+          </p>
+        </div>
+      )}
+
+      {!productFound && (
+        <div className="productNotFound">
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <p>Votre produit n'a pas été trouvé<br />
+            dans notre base de données..<br />
+            Il est possible que vous n'ayez pas scanné<br />
+            un produit alimentaire.<br />
+            Veuillez réessayer avec un autre produit
+          </p>
         </div>
       )}
 
@@ -78,7 +99,8 @@ const ScanProduct = ({
 
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
-  // handleInput: PropTypes.func.isRequired,
+  productFound: PropTypes.bool.isRequired,
+  toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
   scanCode: PropTypes.string.isRequired,
   modal: PropTypes.bool.isRequired,

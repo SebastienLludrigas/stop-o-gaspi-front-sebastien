@@ -23,6 +23,8 @@ const Card = ({
     config: { mass: 5, tension: 500, friction: 80 },
   });
 
+  const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
+
   return (
     <div className="card-container" onClick={() => set((state) => !state)}>
       <anim.div className={flipped ? 'front' : 'card'} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
@@ -37,7 +39,7 @@ const Card = ({
       <anim.div className={flipped ? 'card' : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
         <img className="product-img" src={image_front_thumb_url} alt="visuel par default" />
         <p className="productTitle">{product_name_fr}</p>
-        <img className="nutri-img" src={nutriscore_grade} alt="visuel par default" />
+        <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />
       </anim.div>
     </div>
   );

@@ -10,7 +10,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       // Je récupère le code-barres qui est enregistré dans le state actuel
       const {
         scanCode,
-      } = store.getState().scanner;
+      } = store.getState().user;
 
       // Je récupère dans barCode le code-barres du produit qui vient d'être scanné via le payload
       // de l'action ON_DETECTED
@@ -28,6 +28,9 @@ const datasMiddleware = (store) => (next) => (action) => {
             console.log(response.data);
             // on veut enregistrer les recettes dans le state => c'est le travail
             // du reducer => on dispatch une action qui sera traitée par un reducer
+
+            const nutriscore = `https://static.openfoodfacts.org/images/misc/nutriscore-${response.data.product.nutriscore_grade}.svg`;
+
             store.dispatch(addProduct(response.data));
           })
           .catch((error) => {
