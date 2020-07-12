@@ -7,7 +7,7 @@ import laurie from 'src/assets/image/Blanche-neige.jpg';
 import sebastien from 'src/assets/image/Prof.png';
 import aurelien from 'src/assets/image/Timide.png';
 import alexis from 'src/assets/image/Dormeur.png';
-import greg from '../../assets/image/Grincheux.png';
+import greg from '/home/etudiant/Bureau/html/REACT/stop-o-gaspi-front/src/assets/image/Grincheux.png';
 
 // == Composant
 const About = () => {
