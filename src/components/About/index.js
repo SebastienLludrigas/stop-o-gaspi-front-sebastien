@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSpring, animated as a} from 'react-spring';
+import { useSpring, animated as a } from 'react-spring';
 
 // == Import
 import './about.scss';
 import laurie from 'src/assets/image/Blanche-neige.jpg';
 import sebastien from 'src/assets/image/Prof.png';
 import aurelien from 'src/assets/image/Timide.png';
-import greg from 'src/assets/image/Grincheux.png';
 import alexis from 'src/assets/image/Dormeur.png';
+import greg from '../../assets/image/Grincheux.png';
 
 // == Composant
 const About = () => {
@@ -19,7 +19,7 @@ const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
       <a.div
         className="about_title"
         style={effectAbout}
-        config={{ delay: 1, duration: 50000 }}
+        config={{ delay: 1, duration: 5000 }}
       >
         <h2>
           L'équipe de Stop O' Gaspi :
