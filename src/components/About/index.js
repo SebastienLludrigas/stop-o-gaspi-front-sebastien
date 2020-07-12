@@ -7,7 +7,7 @@ import laurie from 'src/assets/image/Blanche-neige.jpg';
 import sebastien from 'src/assets/image/Prof.png';
 import aurelien from 'src/assets/image/Timide.png';
 import alexis from 'src/assets/image/Dormeur.png';
-import greg from '/home/etudiant/Bureau/html/REACT/stop-o-gaspi-front/src/assets/image/Grincheux.png';
+import greg from 'src/assets/image/Grincheux.png';
 
 // == Composant
 const About = () => {
@@ -46,7 +46,7 @@ const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
         <li>Dev Back</li>
 
       </ul>
-      <img className="photo_greg" alt="" src={greg} />
+      <img className="photo_greg" alt="greg" src={greg} />
       <ul className="about_greg ul_about">
         <li>GREG</li>
         <li>Git Master</li>
