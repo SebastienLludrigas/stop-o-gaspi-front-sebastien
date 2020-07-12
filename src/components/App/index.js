@@ -1,12 +1,14 @@
+/* eslint-disable import/no-unresolved */
 // == Import npm
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // == Import
+
 import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/components/Pantry';
 import Footer from 'src/components/Footer';
-import Connexion from 'src/components/Registration/Connexion';
+import Connexion from 'src/containers/Connexion';
 import Inscription from 'src/components/Registration';
 import Dashboard from 'src/components/Dashboard';
 import Product from 'src/components/Product';
@@ -15,7 +17,6 @@ import Page404 from 'src/components/Page404';
 import About from 'src/components/About';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
-
 // == Composant
 const App = () => (
   <div className="app">
@@ -32,6 +33,7 @@ const App = () => (
       <Route path="/" component={Page404} />
     </Switch>
     <Footer />
+
   </div>
 );
 

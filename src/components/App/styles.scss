@@ -1,9 +1,9 @@
 @import 'src/styles/vars.scss';
 
 .app {
-  background-color: $secondColor;
+  background-color: $firstColor;
   color:$secondColor;
-  //height: 100vh;
+  height: 100vh;
   margin: 0;
   list-style: none;
 }
