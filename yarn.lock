@@ -895,16 +895,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@bit/feathericons.react-feather.facebook@^1.1.6":
-  version "1.1.6"
-  resolved "https://node.bit.dev/feathericons.react-feather.facebook/-/feathericons.react-feather.facebook-1.1.6.tgz#402caa3b683a5e12ab4e83795b57f45ed657a723"
-  integrity sha1-QCyqO2g6XhKrToN5W1f0XtZXpyM=
-
-"@bit/feathericons.react-feather.instagram@^1.1.6":
-  version "1.1.6"
-  resolved "https://node.bit.dev/feathericons.react-feather.instagram/-/feathericons.react-feather.instagram-1.1.6.tgz#b98217406907cc0ef4a62e6e8aface51bd270626"
-  integrity sha1-uYIXQGkHzA70pi5uivrOUb0nBiY=
-
 "@bit/feathericons.react-feather.mail@^1.1.6":
   version "1.1.6"
   resolved "https://node.bit.dev/feathericons.react-feather.mail/-/feathericons.react-feather.mail-1.1.6.tgz#f6303b5dbd8c7ce668226e425eb1cb11766ce43c"
@@ -914,11 +904,6 @@
   version "1.1.6"
   resolved "https://node.bit.dev/feathericons.react-feather.phone/-/feathericons.react-feather.phone-1.1.6.tgz#1143dc96d6ea5adc6078fe2d17258daa465ef794"
   integrity sha1-EUPcltbqWtxgeP4tFyWNqkZe95Q=
-
-"@bit/feathericons.react-feather.twitter@^1.1.6":
-  version "1.1.6"
-  resolved "https://node.bit.dev/feathericons.react-feather.twitter/-/feathericons.react-feather.twitter-1.1.6.tgz#72bc61c1b840f859d49d0df0aaa21285d95c8bdc"
-  integrity sha1-crxhwbhA+FnUnQ3wqqIShdlci9w=
 
 "@bit/feathericons.react-feather.user@^1.1.6":
   version "1.1.6"

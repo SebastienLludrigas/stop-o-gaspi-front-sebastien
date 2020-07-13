@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import { combineReducers } from 'redux';
 
 import burgerReducer from 'src/reducers/burger';

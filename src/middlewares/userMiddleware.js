@@ -5,7 +5,9 @@ import {
   LOG_OUT,
   CHECK_LOGGED,
   saveUser,
+
 } from '../actions/user';
+
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -13,14 +15,16 @@ const userMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().user;
 
       // withCredentials : autorisation d'accéder au cookie
-      axios.post('login', { // TODO
+
+      axios.post('http://54.196.61.131/api/v0/user/login', {
         email,
         password,
       }, {
-        withCredentials: true,
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
+          console.log(response);
         })
         .catch((error) => {
           console.warn(error);
@@ -31,9 +35,10 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case LOG_OUT:
-      axios.post('logout', { // TODO
+
+      axios.post('http://54.196.61.131/api/v0/user/logout', { // TODO
       }, {
-        withCredentials: true,
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
@@ -46,9 +51,10 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
 
     case CHECK_LOGGED:
-      axios.post('isLogged', { // TODO
+
+      axios.post('http://54.196.61.131/api/v0/user/isLogged', { // TODO
       }, {
-        withCredentials: true,
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));

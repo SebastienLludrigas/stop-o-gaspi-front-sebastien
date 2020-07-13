@@ -1,7 +1,9 @@
+
 import staticDatas from 'src/staticDatas';
 import { UPDATE_USER_FIELD, SAVE_USER } from '../actions/user';
 import { ADD_PRODUCT } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
+
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
@@ -9,6 +11,7 @@ const initialState = {
   // contenu de l'input pour le mot de passe
   password: '',
   // informations sur l'utilisateur
+
   info: {},
   // indique si l'utilisateur est loggué
   isLogged: false,
@@ -18,6 +21,7 @@ const initialState = {
   modal: false,
   scanCode: '',
   scanDatas: {},
+
 };
 
 const user = (state = initialState, action = {}) => {
@@ -84,6 +88,7 @@ const user = (state = initialState, action = {}) => {
         ...state,
         status: 2,
         productFound: true,
+
       };
 
     default: return state;

@@ -55,11 +55,8 @@
     "webpack-merge": "*"
   },
   "dependencies": {
-    "@bit/feathericons.react-feather.facebook": "^1.1.6",
-    "@bit/feathericons.react-feather.instagram": "^1.1.6",
     "@bit/feathericons.react-feather.mail": "^1.1.6",
     "@bit/feathericons.react-feather.phone": "^1.1.6",
-    "@bit/feathericons.react-feather.twitter": "^1.1.6",
     "@bit/feathericons.react-feather.user": "^1.1.6",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
