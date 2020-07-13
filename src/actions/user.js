@@ -1,5 +1,5 @@
 export const UPDATE_USER_FIELD = 'UPDATE_USER_FIELD';
-export const DLC_CHANGE = 'DLC_CHANGE';
+export const ON_CHANGE = 'ON_CHANGE';
 export const HANDLE_ADD_PRODUCT = 'HANDLE_ADD_PRODUCT';
 export const LOG_IN = 'LOG_IN';
 export const SAVE_USER = 'SAVE_USER';
@@ -12,9 +12,10 @@ export const updateUserField = (newValue, name) => ({
   name,
 });
 
-export const dlcChange = (newDlc) => ({
-  type: DLC_CHANGE,
-  newDlc,
+export const onChange = (newValue, name) => ({
+  type: ON_CHANGE,
+  newValue,
+  name,
 });
 
 export const handleAddProduct = () => ({

@@ -11,8 +11,8 @@ const Cards = ({ datas, dlc }) => (
   <div className="cards">
     {datas.map((data) => (
       <Card
-        key={data.code}
-        {...data.product}
+        key={data.barcode}
+        {...data}
         dlc={dlc}
       />
     ))}

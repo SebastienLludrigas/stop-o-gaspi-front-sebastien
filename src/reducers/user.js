@@ -2,7 +2,7 @@ import staticDatas from 'src/staticDatas';
 import {
   UPDATE_USER_FIELD,
   SAVE_USER,
-  DLC_CHANGE,
+  ON_CHANGE,
   HANDLE_ADD_PRODUCT,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
@@ -20,11 +20,12 @@ const initialState = {
   userProducts: staticDatas,
   currentProduct: {},
   productFound: true,
-  status: 2,
+  status: 1,
   modal: false,
   scanCode: '',
   scanDatas: {},
   dlc: '',
+  quantite: 1,
 };
 
 const user = (state = initialState, action = {}) => {
@@ -35,10 +36,10 @@ const user = (state = initialState, action = {}) => {
         [action.name]: action.newValue,
       };
 
-    case DLC_CHANGE:
+    case ON_CHANGE:
       return {
         ...state,
-        dlc: action.newDlc,
+        [action.name]: action.newValue,
       };
 
     case SAVE_USER:
@@ -88,7 +89,7 @@ const user = (state = initialState, action = {}) => {
     case HANDLE_ADD_PRODUCT:
       return {
         ...state,
-        // userProducts: [{state.dlc,...state.currentProduct}, ...state.staticDatas],
+        // userProducts: [, ...state.staticDatas],
         status: 2,
       };
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
-import DlcInput from 'src/components/DlcInput';
+import InfosProduct from 'src/components/InfosProduct';
 import Scanner from './Scanner';
 import './scanProduct.scss';
 
@@ -11,7 +11,7 @@ const ScanProduct = ({
   scanCode,
   modal,
   scanDatas,
-  dlcChange,
+  onChange,
   handleAddProduct,
   toggleModal,
   onDetected,
@@ -57,14 +57,14 @@ const ScanProduct = ({
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
             <p>Félicitations !<br />
-              Votre scan a fonctionné.<br />
-              Entrez maintenant la date limite de<br />
-              consommation puis validez pour enregistrer<br />
-              le produit dans votre Pantry
+              Le scan de votre produit : {}<br />
+              a fonctionné.<br />
+              Entrez maintenant la date limite de consommation<br />
+              ainsi que la quantité, puis validez pour enregistrer<br />
             </p>
           </div>
           <div className="input-dlc">
-            <DlcInput dlcChange={dlcChange} handleAddProduct={handleAddProduct} />
+            <InfosProduct onChange={onChange} handleAddProduct={handleAddProduct} />
           </div>
         </div>
       )}
@@ -109,7 +109,7 @@ const ScanProduct = ({
 
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
-  dlcChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   handleAddProduct: PropTypes.func.isRequired,
   productFound: PropTypes.bool.isRequired,
   toggleScanInfo: PropTypes.func.isRequired,
@@ -118,11 +118,6 @@ ScanProduct.propTypes = {
   modal: PropTypes.bool.isRequired,
   scanDatas: PropTypes.object.isRequired,
   status: PropTypes.number,
-  // datas: PropTypes.arrayOf(
-  //   PropTypes.shape({
-  //     product: PropTypes.object.isRequired,
-  //   }),
-  // ),
 };
 
 ScanProduct.defaultProps = {
