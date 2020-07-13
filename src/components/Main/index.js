@@ -33,7 +33,7 @@ const Main = ({ handleDatas, sendDatas }) => (
       </div>
 
 
-      </div>
+    </div>
 
 
     {/* <button
