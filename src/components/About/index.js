@@ -25,7 +25,7 @@ const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
           L'équipe de Stop O' Gaspi :
         </h2>
       </a.div>
-      <img className="photo_laurie" alt="" src={Laurie} />
+      <img className="photo_laurie" alt="" src={require('src/assets/image/Blanche-neige.jpg')} />
       <ul className="about_laurie ul_about">
         <li>LAURIE</li>
         <li>Product Owner</li>
