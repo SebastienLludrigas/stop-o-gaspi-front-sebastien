@@ -3,7 +3,7 @@ import { useSpring, animated as a } from 'react-spring';
 
 // == Import
 import './about.scss';
-import laurie from 'src/assets/image/Blanche-neige.jpg';
+import Laurie from 'src/assets/image/Blanche-neige.jpg';
 import sebastien from 'src/assets/image/Prof.png';
 import aurelien from 'src/assets/image/Timide.png';
 import alexis from 'src/assets/image/Dormeur.png';
@@ -25,7 +25,7 @@ const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
           L'équipe de Stop O' Gaspi :
         </h2>
       </a.div>
-      <img className="photo_laurie" alt="" src={laurie} />
+      <img className="photo_laurie" alt="" src={Laurie} />
       <ul className="about_laurie ul_about">
         <li>LAURIE</li>
         <li>Product Owner</li>

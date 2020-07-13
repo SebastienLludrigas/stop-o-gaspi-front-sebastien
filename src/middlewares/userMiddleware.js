@@ -17,7 +17,7 @@ const userMiddleware = (store) => (next) => (action) => {
         email,
         password,
       }, {
-        // withCredentials: true, 
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
@@ -32,7 +32,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case LOG_OUT:
-      axios.post('logout', { // TODO
+      axios.post('http://54.196.61.131/api/v0/user/logout', { // TODO
       }, {
         // withCredentials: true,
       })
@@ -47,9 +47,9 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
 
     case CHECK_LOGGED:
-      axios.post('isLogged', { // TODO
+      axios.post('http://54.196.61.131/api/v0/user/isLogged', { // TODO
       }, {
-       // withCredentials: true,
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
