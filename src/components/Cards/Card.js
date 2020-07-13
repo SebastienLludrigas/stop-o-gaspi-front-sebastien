@@ -15,6 +15,7 @@ const Card = ({
   nutriscore_grade,
   product_quantity,
   brands,
+  dlc,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -51,6 +52,7 @@ Card.propTypes = {
   product_quantity: PropTypes.any.isRequired,
   nutriscore_grade: PropTypes.string.isRequired,
   image_front_thumb_url: PropTypes.string.isRequired,
+  dlc: PropTypes.string.isRequired,
 };
 
 // == Export

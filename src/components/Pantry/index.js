@@ -10,7 +10,7 @@ import Cards from '../Cards';
 import './pantry.scss';
 
 // == Composant
-const Pantry = ({ datas }) => {
+const Pantry = ({ datas, dlc }) => {
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
@@ -29,13 +29,14 @@ const Pantry = ({ datas }) => {
           </Link>
         </div>
       </animated.div>
-      <Cards datas={datas} />
+      <Cards datas={datas} dlc={dlc} />
     </div>
   );
 };
 
 Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
+  dlc: PropTypes.string.isRequired,
 };
 
 // == Export

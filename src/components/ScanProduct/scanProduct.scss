@@ -65,7 +65,7 @@ canvas.drawingBuffer {
 .scanError {
   position: fixed;
   top: 150px;
-  left: 800px;
+  left: 60%;
   width: 280px;
   padding: 15px;
   background-color: rgb(255, 194, 194);
@@ -79,7 +79,7 @@ canvas.drawingBuffer {
 .productNotFound {
   position: fixed;
   top: 150px;
-  left: 800px;
+  left: 60%;
   width: 350px;
   padding: 15px;
   background-color: rgb(255, 194, 194);
@@ -91,9 +91,6 @@ canvas.drawingBuffer {
 }
 
 .scanSuccess {
-  position: fixed;
-  top: 150px;
-  left: 800px;
   padding: 15px;
   background-color: rgb(199, 255, 182);
   color: rgb(24, 102, 0);
@@ -101,6 +98,18 @@ canvas.drawingBuffer {
   border-radius: 3px;
   line-height: 1.3em;
   text-align: center;
+  margin-bottom: 15px;
+}
+
+.add-product {
+  position: fixed;
+  top: 150px;
+  left: 60%;
+
+  & .input-dlc {
+    width: 200px;
+    margin: 0 auto;
+  }
 }
 
 .scanPage{

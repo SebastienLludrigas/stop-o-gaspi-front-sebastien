@@ -7,12 +7,13 @@ import Card from './Card';
 import './cards.scss';
 
 // == Composant
-const Cards = ({ datas }) => (
+const Cards = ({ datas, dlc }) => (
   <div className="cards">
     {datas.map((data) => (
       <Card
         key={data.code}
         {...data.product}
+        dlc={dlc}
       />
     ))}
   </div>
@@ -20,6 +21,7 @@ const Cards = ({ datas }) => (
 
 Cards.propTypes = {
   datas: PropTypes.array.isRequired,
+  dlc: PropTypes.string.isRequired,
 };
 
 // == Export

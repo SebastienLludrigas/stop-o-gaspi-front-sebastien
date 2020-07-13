@@ -10,6 +10,7 @@ export default [
     },
     status: 1,
     code: 3273230050245,
+    dlc: '01/02/2021',
   },
   {
     status_verbose: 'product found',
@@ -22,6 +23,7 @@ export default [
     },
     status: 1,
     code: 3273220081068,
+    dlc: '01/01/2021',
   },
   {
     status_verbose: 'product found',
@@ -34,6 +36,7 @@ export default [
     },
     status: 1,
     code: 3560070475681,
+    dlc: '10/05/2021',
   },
   {
     status_verbose: 'product found',
@@ -46,6 +49,7 @@ export default [
     },
     status: 1,
     code: 3250391308415,
+    dlc: '01/09/2020',
   },
   {
     status_verbose: 'product found',
@@ -58,6 +62,7 @@ export default [
     },
     status: 1,
     code: 3257983940060,
+    dlc: '01/10/2020',
   },
   {
     status_verbose: 'product found',
@@ -70,6 +75,7 @@ export default [
     },
     status: 1,
     code: 4056489012832,
+    dlc: '01/08/2020',
   },
   {
     status_verbose: 'product found',
@@ -82,6 +88,7 @@ export default [
     },
     status: 1,
     code: 3230890843921,
+    dlc: '15/10/2020',
   },
   {
     status_verbose: 'product found',
@@ -94,6 +101,7 @@ export default [
     },
     status: 1,
     code: 3266980289768,
+    dlc: '01/01/2021',
   },
   {
     status_verbose: 'product found',
@@ -106,6 +114,7 @@ export default [
     },
     status: 1,
     code: 3302100012400,
+    dlc: '07/10/2020',
   },
   {
     status_verbose: 'product found',
@@ -118,6 +127,7 @@ export default [
     },
     status: 1,
     code: 3413900000310,
+    dlc: '01/12/2020',
   },
   {
     status_verbose: 'product found',
@@ -130,6 +140,7 @@ export default [
     },
     status: 1,
     code: 3155251205425,
+    dlc: '05/11/2020',
   },
   {
     status_verbose: 'product found',
@@ -142,5 +153,6 @@ export default [
     },
     status: 1,
     code: 3166353931402,
+    dlc: '12/01/2021',
   },
 ];

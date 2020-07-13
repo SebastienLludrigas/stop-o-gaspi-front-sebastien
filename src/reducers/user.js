@@ -1,6 +1,11 @@
 import staticDatas from 'src/staticDatas';
-import { UPDATE_USER_FIELD, SAVE_USER } from '../actions/user';
-import { ADD_PRODUCT } from '../actions/datas';
+import {
+  UPDATE_USER_FIELD,
+  SAVE_USER,
+  DLC_CHANGE,
+  HANDLE_ADD_PRODUCT,
+} from '../actions/user';
+import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
 
 const initialState = {
@@ -13,11 +18,13 @@ const initialState = {
   // indique si l'utilisateur est loggué
   isLogged: false,
   userProducts: staticDatas,
+  currentProduct: {},
   productFound: true,
   status: 2,
   modal: false,
   scanCode: '',
   scanDatas: {},
+  dlc: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -26,6 +33,12 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.newValue,
+      };
+
+    case DLC_CHANGE:
+      return {
+        ...state,
+        dlc: action.newDlc,
       };
 
     case SAVE_USER:
@@ -56,7 +69,7 @@ const user = (state = initialState, action = {}) => {
       };
     }
 
-    case ADD_PRODUCT: {
+    case PRODUCT_RECOVERY: {
       if (action.datas.status_verbose === 'product not found') {
         return {
           ...state,
@@ -66,11 +79,18 @@ const user = (state = initialState, action = {}) => {
       }
       return {
         ...state,
-        userProducts: [action.datas, ...state.userProducts],
+        currentProduct: action.datas,
         productFound: true,
         status: 1,
       };
     }
+
+    case HANDLE_ADD_PRODUCT:
+      return {
+        ...state,
+        userProducts: [{state.dlc,...state.currentProduct}, ...state.staticDatas],
+        status: 2,
+      };
 
     case TOGGLE_MODAL:
       return {

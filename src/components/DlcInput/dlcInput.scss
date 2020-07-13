@@ -1,0 +1,33 @@
+@import 'src/styles/vars.scss';
+
+.dlc-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 180px;
+  margin: 0 auto;
+  align-items: center;
+
+  & .dlc-input {
+    background-color: $firstColor;
+    border: 1px solid $secondColor;
+    padding: 5px;
+    color: $secondColor;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+
+  & .dlc-button {
+    background-color: $fourthColor;
+    border: 1px solid $secondColor;
+    color: $secondColor;
+    border-radius: 3px;
+    padding: 5px 10px;
+
+    &:hover {
+      background-color: $thirdColor;
+    }
+  }
+}
+
+

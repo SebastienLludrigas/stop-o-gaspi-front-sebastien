@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { HANDLE_DATAS, addProduct, SEND_DATAS } from 'src/actions/datas';
+import { HANDLE_DATAS, productRecovery, SEND_DATAS } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
 
 const datasMiddleware = (store) => (next) => (action) => {
@@ -28,10 +28,7 @@ const datasMiddleware = (store) => (next) => (action) => {
             console.log(response.data);
             // on veut enregistrer les recettes dans le state => c'est le travail
             // du reducer => on dispatch une action qui sera traitée par un reducer
-
-            const nutriscore = `https://static.openfoodfacts.org/images/misc/nutriscore-${response.data.product.nutriscore_grade}.svg`;
-
-            store.dispatch(addProduct(response.data));
+            store.dispatch(productRecovery(response.data));
           })
           .catch((error) => {
             console.warn(error);
