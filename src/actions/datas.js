@@ -8,10 +8,9 @@ export const handleDatas = () => ({
   type: HANDLE_DATAS,
 });
 
-export const addProduct = (datas, nutriscore) => ({
+export const addProduct = (datas) => ({
   type: ADD_PRODUCT,
   datas,
-  nutriscore,
 });
 
 export const sendDatas = () => ({

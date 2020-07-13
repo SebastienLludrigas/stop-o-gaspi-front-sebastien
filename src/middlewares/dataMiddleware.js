@@ -29,8 +29,6 @@ const datasMiddleware = (store) => (next) => (action) => {
             // on veut enregistrer les recettes dans le state => c'est le travail
             // du reducer => on dispatch une action qui sera traitée par un reducer
 
-            const nutriscore = `https://static.openfoodfacts.org/images/misc/nutriscore-${response.data.product.nutriscore_grade}.svg`;
-
             store.dispatch(addProduct(response.data));
           })
           .catch((error) => {
