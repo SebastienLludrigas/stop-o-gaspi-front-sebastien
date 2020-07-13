@@ -15,7 +15,7 @@ const initialState = {
   isLogged: false,
   userProducts: staticDatas,
   productFound: true,
-  status: 2,
+  status: 1,
   modal: false,
   scanCode: '',
   scanDatas: {},
