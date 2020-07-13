@@ -13,11 +13,11 @@ const userMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().user;
 
       // withCredentials : autorisation d'accéder au cookie
-      axios.post('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/user/login', {
+      axios.post('http://54.196.61.131/api/v0/user/login', {
         email,
         password,
       }, {
-        withCredentials: true, // TODO ATTENTION
+        // withCredentials: true, 
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
@@ -34,7 +34,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case LOG_OUT:
       axios.post('logout', { // TODO
       }, {
-        withCredentials: true,
+        // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
@@ -49,7 +49,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case CHECK_LOGGED:
       axios.post('isLogged', { // TODO
       }, {
-        withCredentials: true,
+       // withCredentials: true,
       })
         .then((response) => {
           store.dispatch(saveUser(response.data.info, response.data.logged));
