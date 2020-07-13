@@ -37,38 +37,47 @@ const ScanProduct = ({
         {console.log(datas)} */}
 
         {(status === 0 && productFound) && (
-          <div className="scanError">
-            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
-            <div className="text">
-              <p>Désolé,<br />
-                votre scan n'a pas fonctionné...<br />
-                Veuillez réessayer.
-              </p>
+          <>
+            <div className="scanError">
+              <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+              <div className="text">
+                <p>Désolé,<br />
+                  votre scan n'a pas fonctionné...<br />
+                  Veuillez réessayer.
+                </p>
+              </div>
             </div>
-          </div>
+            <div className="arrow-down-error" />
+          </>
         )}
 
         {(status === 1 && productFound) && (
-          <div className="scanSuccess">
-            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
-            <p>Félicitations !<br />
-              Votre scan a fonctionné.<br />
-              Retournez dans votre Pantry pour voir<br />
-              votre nouveau produit
-            </p>
-          </div>
+          <>
+            <div className="scanSuccess">
+              <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+              <p>Félicitations !<br />
+                Votre scan a fonctionné.<br />
+                Retournez dans votre Pantry pour voir<br />
+                votre nouveau produit
+              </p>
+            </div>
+            <div className="arrow-down-success" />
+          </>
         )}
 
         {!productFound && (
-          <div className="productNotFound">
-            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
-            <p>Votre produit n'a pas été trouvé<br />
-              dans notre base de données..<br />
-              Il est possible que vous n'ayez pas scanné<br />
-              un produit alimentaire.<br />
-              Veuillez réessayer avec un autre produit
-            </p>
-          </div>
+          <>
+            <div className="productNotFound">
+              <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+              <p>Votre produit n'a pas été trouvé<br />
+                dans notre base de données..<br />
+                Il est possible que vous n'ayez pas scanné<br />
+                un produit alimentaire.<br />
+                Veuillez réessayer avec un autre produit
+              </p>
+            </div>
+            <div className="arrow-down-notFound" />
+          </>
         )}
       </div>
 
