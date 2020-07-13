@@ -88,7 +88,7 @@ const user = (state = initialState, action = {}) => {
     case HANDLE_ADD_PRODUCT:
       return {
         ...state,
-        userProducts: [{state.dlc,...state.currentProduct}, ...state.staticDatas],
+        // userProducts: [{state.dlc,...state.currentProduct}, ...state.staticDatas],
         status: 2,
       };
 
