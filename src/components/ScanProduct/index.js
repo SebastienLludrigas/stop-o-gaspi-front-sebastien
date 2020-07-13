@@ -11,15 +11,16 @@ const ScanProduct = ({
   scanDatas,
   toggleModal,
   onDetected,
-  // datas,
   status,
+  toggleScanInfo,
+  productFound,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
 
   return (
     <>
-      {console.log(scanDatas)}
-      {console.log(scanCode)}
+      {/* {console.log(scanDatas)}
+      {console.log(scanCode)} */}
 
       {modal && (
         <div className="modal">
@@ -35,20 +36,38 @@ const ScanProduct = ({
       {/* {console.log(datas.product)}
       {console.log(datas)} */}
 
-      {/* {status === 1 && (
-        <ul className="products-list">
-          {datas.map((data) => (
-            <li key={data.product.product_name_fr}>
-              <p>{data.product.product_name_fr}</p>
-              <p>{data.product.quantity}</p>
-            </li>
-          ))}
-        </ul>
-      )} */}
-      {status === 0 && (
+      {(status === 0 && productFound) && (
         <div className="scanError">
-          <p>Désolé, votre scan n'a pas fonctionné.</p>
-          <p>Veuillez réessayer.</p>
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <div className="text">
+            <p>Désolé,<br />
+              votre scan n'a pas fonctionné...<br />
+              Veuillez réessayer.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {(status === 1 && productFound) && (
+        <div className="scanSuccess">
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <p>Félicitations !<br />
+            Votre scan a fonctionné.<br />
+            Retournez dans votre Pantry pour voir<br />
+            votre nouveau produit
+          </p>
+        </div>
+      )}
+
+      {!productFound && (
+        <div className="productNotFound">
+          <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+          <p>Votre produit n'a pas été trouvé<br />
+            dans notre base de données..<br />
+            Il est possible que vous n'ayez pas scanné<br />
+            un produit alimentaire.<br />
+            Veuillez réessayer avec un autre produit
+          </p>
         </div>
       )}
 
@@ -80,7 +99,8 @@ const ScanProduct = ({
 
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
-  // handleInput: PropTypes.func.isRequired,
+  productFound: PropTypes.bool.isRequired,
+  toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
   scanCode: PropTypes.string.isRequired,
   modal: PropTypes.bool.isRequired,

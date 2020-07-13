@@ -16,7 +16,7 @@ const Product = () => (
           <label>Nom du produit *</label>
         </div>
         <div className="user-contain">
-          <input type="date" name="" required="" value="" />
+          <input type="date" name="" required="" />
           <label>Date de fabriction (si vous avez cuisiné vous même)</label>
         </div>
         <div className="user-contain">

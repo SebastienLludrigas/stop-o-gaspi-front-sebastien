@@ -3,7 +3,6 @@ import { combineReducers } from 'redux';
 
 import burgerReducer from 'src/reducers/burger';
 import myaccountReducer from 'src/reducers/myaccount';
-import datasReducer from 'src/reducers/datas';
 import scannerReducer from 'src/reducers/scanner';
 import userReducer from 'src/reducers/user';
 
@@ -15,7 +14,6 @@ const rootReducer = combineReducers({
   // nom du tiroir : reducer qui gère cette partie du state
   burger: burgerReducer,
   myaccount: myaccountReducer,
-  datas: datasReducer,
   scanner: scannerReducer,
   user: userReducer,
 });

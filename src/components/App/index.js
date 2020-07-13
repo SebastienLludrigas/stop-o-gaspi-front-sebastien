@@ -6,7 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
-import Pantry from 'src/components/Pantry';
+import Pantry from 'src/containers/Pantry';
 import Footer from 'src/components/Footer';
 import Connexion from 'src/containers/Connexion';
 import Inscription from 'src/components/Registration';

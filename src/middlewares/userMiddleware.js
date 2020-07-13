@@ -5,7 +5,9 @@ import {
   LOG_OUT,
   CHECK_LOGGED,
   saveUser,
-} from '../actions/user'; // 'src/actions/user';
+
+} from '../actions/user';
+
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -13,6 +15,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const { email, password } = store.getState().user;
 
       // withCredentials : autorisation d'accéder au cookie
+
       axios.post('http://54.196.61.131/api/v0/user/login', {
         email,
         password,
@@ -32,6 +35,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case LOG_OUT:
+
       axios.post('http://54.196.61.131/api/v0/user/logout', { // TODO
       }, {
         // withCredentials: true,
@@ -47,6 +51,7 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
 
     case CHECK_LOGGED:
+
       axios.post('http://54.196.61.131/api/v0/user/isLogged', { // TODO
       }, {
         // withCredentials: true,

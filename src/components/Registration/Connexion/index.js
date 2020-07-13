@@ -19,14 +19,21 @@ const Connexion = ({
     evt.preventDefault();
     handleLogin();
   };
+
+
   const handleChange = (evt) => {
+    // console.log(evt.target.name);
+
+
     onChange(evt.target.value, evt.target.name);
   };
 
   return (
     <div className="connexionPage">
       <div className="login-form">
-        {isLogged && ( // TODO
+
+        {isLogged && (
+
         <div className="login-form-logged">
           <p className="login-form-message">
             {loggedMessage}
@@ -44,7 +51,9 @@ const Connexion = ({
 
         <div className="login-contain ">
           <h2>Login</h2>
-          <form onSubmit={handleSubmitLoggin}>
+
+          <form autoComplete="off" onSubmit={handleSubmitLoggin}>
+
             <div className="user-contain">
               <input
                 type="text"
@@ -56,10 +65,11 @@ const Connexion = ({
             </div>
             <div className="user-contain">
               <input
-                type="password"
-                name="password"
+                type="text"
+                name="Password"
                 required="Password"
                 onChange={handleChange}
+                // defaultValue="password"
               />
               <label>Password</label>
             </div>

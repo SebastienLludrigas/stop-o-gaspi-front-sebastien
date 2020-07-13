@@ -1,42 +1,17 @@
-import {
-  TOGGLE_MODAL,
-  ON_DETECTED,
-} from 'src/actions/scanner';
-import { SAVE_DATAS } from 'src/actions/datas';
+// import { ON_DETECTED } from 'src/actions/scanner';
 
-const initialState = {
-  // results: [],
-  scanCode: '',
-  modal: false,
-  scanDatas: {},
-  datas: [],
-  status: 2,
-};
+// const initialState = {
+//   // results: [],
+//   // scanCode: '',
+//   // scanDatas: {},
+//   // status: 2,
+// };
 
-const scanner = (state = initialState, action = {}) => {
-  switch (action.type) {
-    case TOGGLE_MODAL:
-      return {
-        ...state,
-        modal: !state.modal,
-      };
+// const scanner = (state = initialState, action = {}) => {
+//   switch (action.type) {
 
-    case ON_DETECTED:
-      return {
-        ...state,
-        modal: false,
-        scanCode: action.result ? action.result.codeResult.code : '',
-        scanDatas: action.result,
-      };
+//     default: return state;
+//   }
+// };
 
-    case SAVE_DATAS:
-      return {
-        ...state,
-        datas: action.datas,
-        status: action.datas.status,
-      };
-    default: return state;
-  }
-};
-
-export default scanner;
+// export default scanner;
