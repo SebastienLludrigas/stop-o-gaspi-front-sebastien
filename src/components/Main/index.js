@@ -30,14 +30,12 @@ const Main = ({ handleDatas, sendDatas }) => (
         <br /><br />
 
         Heureusement tu viens de trouver une solution à ce problème afin de dire STOP’O’GASPI.
-      </p>
+      </div>
 
-
- 
 
       </div>
 
-    </div>
+
     {/* <button
       className="button-tests"
       type="button"
