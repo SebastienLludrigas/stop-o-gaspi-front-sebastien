@@ -12,6 +12,8 @@ const ScanProduct = ({
   modal,
   scanDatas,
   onChange,
+  onChangeBarCode,
+  catchBarCode,
   handleAddProduct,
   toggleModal,
   onDetected,
@@ -20,6 +22,10 @@ const ScanProduct = ({
   productFound,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
+
+  const handleChange = (evt) => {
+    onChangeBarCode(evt.target.value);
+  };
 
   return (
     <>
@@ -95,8 +101,13 @@ const ScanProduct = ({
 
             <div className="manualInput">
               <h2>je saisie mon code barre :</h2>
-              <input type="text" name="" required="" />
-              <div className="btn_validate_barcode">Valider</div>
+              <input onChange={handleChange} type="text" /* name="" required="" */ />
+              <div
+                onClick={catchBarCode}
+                className="btn_validate_barcode"
+              >
+                Valider
+              </div>
             </div>
 
           </div>
@@ -110,6 +121,8 @@ const ScanProduct = ({
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
+  onChangeBarCode: PropTypes.func.isRequired,
+  catchBarCode: PropTypes.func.isRequired,
   handleAddProduct: PropTypes.func.isRequired,
   productFound: PropTypes.bool.isRequired,
   toggleScanInfo: PropTypes.func.isRequired,

@@ -204,6 +204,7 @@ canvas.drawingBuffer {
         background-color: $fourthColor;
         color: $secondColor;
         border: $secondColor 1px solid;
+        cursor: pointer;
 
         &:hover{
           animation: pulse 1.5s infinite ease-in-out;

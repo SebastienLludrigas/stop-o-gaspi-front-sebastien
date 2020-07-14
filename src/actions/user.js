@@ -1,6 +1,9 @@
 export const UPDATE_USER_FIELD = 'UPDATE_USER_FIELD';
 export const ON_CHANGE = 'ON_CHANGE';
+export const ON_CHANGE_BAR_CODE = 'ON_CHANGE_BAR_CODE';
+export const CATCH_BAR_CODE = 'CATCH_BAR_CODE';
 export const HANDLE_ADD_PRODUCT = 'HANDLE_ADD_PRODUCT';
+export const ADD_PRODUCT_TO_PANTRY = 'ADD_PRODUCT_TO_PANTRY';
 export const LOG_IN = 'LOG_IN';
 export const SAVE_USER = 'SAVE_USER';
 export const LOG_OUT = 'LOG_OUT';
@@ -18,8 +21,22 @@ export const onChange = (newValue, name) => ({
   name,
 });
 
+export const onChangeBarCode = (newValue) => ({
+  type: ON_CHANGE_BAR_CODE,
+  newValue,
+});
+
+export const catchBarCode = () => ({
+  type: CATCH_BAR_CODE,
+});
+
 export const handleAddProduct = () => ({
   type: HANDLE_ADD_PRODUCT,
+});
+
+export const addProductToPantry = (datas) => ({
+  type: ADD_PRODUCT_TO_PANTRY,
+  datas,
 });
 
 export const logIn = () => ({
