@@ -30,7 +30,9 @@ const datasMiddleware = (store) => (next) => (action) => {
             console.log(response.data);
             // on veut enregistrer les recettes dans le state => c'est le travail
             // du reducer => on dispatch une action qui sera traitée par un reducer
+
             store.dispatch(productRecovery(response.data));
+
           })
           .catch((error) => {
             console.warn(error);

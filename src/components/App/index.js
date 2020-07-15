@@ -3,6 +3,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 // == Import
+
 import Header from 'src/containers/Header';
 import Main from 'src/containers/Main';
 import Pantry from 'src/containers/Pantry';
@@ -14,9 +15,13 @@ import Product from 'src/components/Product';
 import ScanProduct from 'src/containers/ScanProduct';
 import Page404 from 'src/components/Page404';
 import About from 'src/components/About';
+import Laurie from 'src/assets/image/Blanche-neige.jpg';
+import sebastien from 'src/assets/image/Prof.png';
+import aurelien from 'src/assets/image/Timide.png';
+import alexis from 'src/assets/image/Dormeur.png';
+import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
-
 // == Composant
 const App = () => (
   <div className="app">
@@ -33,6 +38,7 @@ const App = () => (
       <Route path="/" component={Page404} />
     </Switch>
     <Footer />
+
   </div>
 );
 

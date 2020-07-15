@@ -28,23 +28,21 @@ const ScanProduct = ({
   };
 
   return (
-    <>
+    <div className="scanPage">
       {/* {console.log(scanDatas)}
       {console.log(scanCode)} */}
-
-      {modal && (
-        <div className="modal">
-          <i className="fas fa-times" onClick={toggleModal} />
-          <div className="modal-body">
-            <div className="modal-content">
-              <Scanner handleScan={onDetected} />
+      <div className="right_scanPage">
+        {modal && (
+          <div className="modal">
+            <i className="fas fa-times" onClick={toggleModal} />
+            <div className="modal-body">
+              <div className="modal-content">
+                <Scanner handleScan={onDetected} />
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {/* {console.log(datas.product)}
-      {console.log(datas)} */}
 
       {(status === 0 && productFound) && (
         <div className="scanError">
@@ -87,17 +85,36 @@ const ScanProduct = ({
         </div>
       )}
 
-      <div className="scanPage">
-        <animated.div
-          style={scanText}
-          config={{ delay: 2000, duration: 2000 }}
-        >
-          <div className="right_scanPage">
 
-            <div className="scanInput">
-              <h2>je scanne mon code barre :</h2>
-              <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
+        {(status === 0 && productFound) && (
+          <>
+            <div className="scanError">
+              <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+              <div className="text">
+                <p>Désolé,<br />
+                  votre scan n'a pas fonctionné...<br />
+                  Veuillez réessayer.
+                </p>
+              </div>
             </div>
+            <div className="arrow-down-error" />
+          </>
+        )}
+
+        {(status === 1 && productFound) && (
+          <>
+            <div className="scanSuccess">
+              <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+              <p>Félicitations !<br />
+                Votre scan a fonctionné.<br />
+                Retournez dans votre Pantry pour voir<br />
+                votre nouveau produit
+              </p>
+            </div>
+            <div className="arrow-down-success" />
+          </>
+        )}
+
 
             <div className="manualInput">
               <h2>je saisie mon code barre :</h2>
@@ -108,13 +125,34 @@ const ScanProduct = ({
               >
                 Valider
               </div>
+
             </div>
-
-          </div>
-        </animated.div>
-
+            <div className="arrow-down-notFound" />
+          </>
+        )}
       </div>
-    </>
+
+      <animated.div
+        style={scanText}
+        config={{ delay: 2000, duration: 2000 }}
+      >
+        <div className="left_scanPage">
+
+          <div className="scanInput">
+            <h2>je scanne mon code barre :</h2>
+            <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
+          </div>
+
+          <div className="manualInput">
+            <h2>je saisie mon code barre :</h2>
+            <input type="text" name="" required="" />
+            <div className="btn_validate_barcode">Valider</div>
+          </div>
+
+        </div>
+      </animated.div>
+
+    </div>
   );
 };
 

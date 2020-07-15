@@ -17,20 +17,25 @@ const initialState = {
   // contenu de l'input pour le mot de passe
   password: '',
   // informations sur l'utilisateur
+
   info: {},
   // indique si l'utilisateur est loggué
   isLogged: false,
   userProducts: staticDatas,
   currentProduct: {},
   productFound: true,
+
   finalProduct: {},
   status: 2,
+
   modal: false,
   scanCode: '',
   barCode: '',
   scanDatas: {},
+
   dlc: '',
   quantite: 1,
+
 };
 
 const user = (state = initialState, action = {}) => {
@@ -172,6 +177,7 @@ const user = (state = initialState, action = {}) => {
         ...state,
         status: 2,
         productFound: true,
+
       };
 
     default: return state;

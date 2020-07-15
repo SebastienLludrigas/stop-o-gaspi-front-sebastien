@@ -18,7 +18,7 @@
   row-gap: 1vmin;
   column-gap: 5vmin;
   padding: 115px 7vmin 7vmin;
-  height: 80vh;
+  height: max-content;
   width: 100vw;
   @media screen and (max-width: 1000px) {
   //grid-template-areas:
@@ -27,11 +27,22 @@
     grid-auto-columns: 1fr;
     width: max-content;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 620px) {
     display: grid;
-    grid-auto-flow: row;
-    grid-auto-columns: 1fr;
+    grid-template-areas:
+      "about_title about_title" 
+      "p_laurie  p_aurelien"
+      "a_laurie a_aurelien"
+      "p_sebastien p_greg"
+      "a_sebastien a_greg"
+      "p_alexis p_alexis"
+      "a_alexis a_alexis"
+      "tous tous"
+      ;
+    place-items: center;
     height: max-content;
+    width: 100vw;
+    row-gap: 2vmin;
   }
   .about_title{
     grid-area: about_title;

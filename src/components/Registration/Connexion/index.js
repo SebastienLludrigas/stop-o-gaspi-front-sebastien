@@ -20,15 +20,20 @@ const Connexion = ({
     handleLogin();
   };
 
+
   const handleChange = (evt) => {
     // console.log(evt.target.name);
+
+
     onChange(evt.target.value, evt.target.name);
   };
 
   return (
     <div className="connexionPage">
       <div className="login-form">
+
         {isLogged && (
+
         <div className="login-form-logged">
           <p className="login-form-message">
             {loggedMessage}
@@ -46,14 +51,15 @@ const Connexion = ({
 
         <div className="login-contain ">
           <h2>Login</h2>
+
           <form autoComplete="off" onSubmit={handleSubmitLoggin}>
+
             <div className="user-contain">
               <input
                 type="text"
                 name="email"
                 required="email"
                 onChange={handleChange}
-                // defaultValue="email"
               />
               <label>e-mail</label>
             </div>

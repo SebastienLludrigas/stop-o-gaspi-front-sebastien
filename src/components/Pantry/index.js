@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { useSpring, useChain, animated } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 

@@ -8,8 +8,10 @@ export const handleDatas = () => ({
   type: HANDLE_DATAS,
 });
 
+
 export const productRecovery = (datas) => ({
   type: PRODUCT_RECOVERY,
+
   datas,
 });
 

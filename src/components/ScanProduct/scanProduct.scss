@@ -9,37 +9,44 @@
 }
 #interactive.viewport > canvas,
 #interactive.viewport > video {
-  max-width: 100%;
-  // width: 100%;
+  max-width: 80vw;
 }
 canvas.drawing,
 canvas.drawingBuffer {
   position: absolute;
   left: 0;
   top: 0;
+  //max-width: 100%;
+  //max-height: 100%;
+  
 }
 
 .modal {
-  position: fixed;
-  z-index: 1000;
   border-radius: 5px;
-  top: 150px;
-  left: 50%;
-  right: 50%;
-  height: 300px;
-  width: 400px;
-  margin: 0 auto;
-  background-color: $thirdColor;
-  padding: 30px 20px 0 20px;
+  align-self: flex-end;
+  background-color: transparent;
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+  }
+
+}
+.modal-content{
+  top:5vmin;
+  background: darken($firstColor, 6%);
+  height: 65vh;
+  width: 100%;
+  border-radius: 5px;
+
 }
 
 .fa-times {
-  margin-bottom: 25px;
-  margin-top: -15px;
+  //margin-bottom: 25px;
+  //margin-top: -15px;
+  margin-right:40px ;
   float: right;
   color: $secondColor;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 2em;
 }
 
 .scan-info {
@@ -61,41 +68,71 @@ canvas.drawingBuffer {
   border: 1px solid $secondColor;
   border-radius: 3px;
 }
+@mixin modal_scan_page{
+  margin-top: 60px;
 
+}
 .scanError {
+
   position: fixed;
   top: 150px;
   left: 60%;
   width: 280px;
+
+ // @include modal_scan_page();
+
   padding: 15px;
   background-color: rgb(255, 194, 194);
   color: rgb(173, 0, 0);
-  border: 1px solid rgb(173, 0, 0);
-  border-radius: 3px;
+  //border: 1px solid rgb(173, 0, 0);
+  border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
 }
+.arrow-down-error {
+  width: 0;
+  height: 0;
+  margin-left: 16vmin;
 
+  border-right: 30px solid transparent;
+  border-left: 46px solid transparent;
+  
+  border-top: 70px solid rgb(255, 194, 194);
+}
 .productNotFound {
+
   position: fixed;
   top: 150px;
   left: 60%;
   width: 350px;
+
+ // @include modal_scan_page();
+
   padding: 15px;
-  background-color: rgb(255, 194, 194);
-  color: rgb(173, 0, 0);
-  border: 1px solid rgb(173, 0, 0);
-  border-radius: 3px;
+  background-color: rgb(233, 188, 137);
+  color: rgb(173, 92, 0);
+  // border: 1px solid rgb(173, 92, 0);
+  border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
 }
-
+.arrow-down-notFound {
+  width: 0;
+  height: 0;
+  border-right: 30px solid transparent;
+  border-left: 46px solid transparent;
+  margin-left: 6vmin;
+  border-top: 70px solid rgb(233, 188, 137);
+}
 .scanSuccess {
+
+ // @include modal_scan_page();
+
   padding: 15px;
   background-color: rgb(199, 255, 182);
   color: rgb(24, 102, 0);
-  border: 1px solid rgb(24, 102, 0);
-  border-radius: 3px;
+  //border: 0px solid rgb(24, 102, 0);
+  border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
   margin-bottom: 15px;
@@ -111,32 +148,50 @@ canvas.drawingBuffer {
     margin: 0 auto;
   }
 }
+.arrow-down-success {
+  width: 0;
+  height: 0;
+  margin-left: 6vmin;
+
+  border-right: 30px solid transparent;
+  border-left: 46px solid transparent;
+
+  border-top: 70px solid rgb(199, 255, 182);
+}
+
+
+
 
 .scanPage{
-
-  // background-image: url(../../assets/image/scanbackground.jpg);//url(/src/assets/image/scanbackground.jpg);
-  // background-size: cover;
-  // background-position-y: -100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: max-content;
   background-color: #fff;
   padding-top: 110px;
   text-align: left;
-  min-height: 90vh;
+  min-height: 80vh;
+  width: 100vw;
   @media screen and (max-width: 1162px) {
-    height: 80vh;
+    height: max-content;
     width: 100vw;
     background-size: cover;
     background-position: bottom;
   }
   @media screen and (max-width: 600px) {
-    height: 80vh;
+    height: max-content;
     background-color:$firstColor;
     background-image: none;
+    flex-direction: column;
+    width: 100vw;
   }
-  .right_scanPage{
+  .left_scanPage{
+    order: -1;
+    align-self: center;
     margin-left: 7vmin;
     padding: 3vmin 0;
+    height: 100%;
     width: 40vw;
-    height: max-content;
     background: rgba(0,0,0,.1);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.1);
@@ -211,6 +266,28 @@ canvas.drawingBuffer {
         }
       }
     }
+  }
+  .right_scanPage{
+  font-weight: bold;
+  order: 1;
+  align-self: center;
+  margin-right: 7vmin;
+  height: 65vh;
+  width: 40vw;
+  background: rgba(0,0,0,.1);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.1);
+  border-radius: 10px;
+  background-image: url(../../assets/image/scanbackground.jpg);
+  background-size: cover;
+  //background-clip: border-box;
+  background-position: right;
+  @media screen and (max-width: 600px) {
+    width: 100vw;
+    margin-left: 7vmin;
+    margin-right: 0;
+  }
+
   }
   @keyframes pulse {
     0%{
