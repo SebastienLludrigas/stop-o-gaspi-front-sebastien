@@ -191,7 +191,9 @@ canvas.drawingBuffer {
   flex-direction: row;
   justify-content: space-between;
   height: max-content;
-  background-color: #fff;
+  background-color: $firstColor;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
+
   padding-top: 110px;
   text-align: left;
   min-height: 80vh;
@@ -199,8 +201,6 @@ canvas.drawingBuffer {
   @media screen and (max-width: 1162px) {
     height: max-content;
     width: 100vw;
-    background-size: cover;
-    background-position: bottom;
   }
   @media screen and (max-width: 600px) {
     height: max-content;
@@ -216,10 +216,10 @@ canvas.drawingBuffer {
     padding: 3vmin 0;
     height: 100%;
     width: 40vw;
-    background: rgba(0,0,0,.1);
+    background:$firstColor;
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.1);
-    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0);
+    //border-radius: 10px;
     @media screen and (max-width: 600px) {
       width: 100vw;
       margin-left: 0;
@@ -233,7 +233,7 @@ canvas.drawingBuffer {
         font-size: 3vmin;
         margin-bottom: 3vmin;
         @media screen and (max-width: 600px) {
-          font-size: 7vmin;
+          font-size: 5vmin;
           white-space: nowrap;
         }
       }
@@ -276,12 +276,13 @@ canvas.drawingBuffer {
         font-size: 3vmin;
         margin-bottom: 3vmin;
         @media screen and (max-width: 600px) {
-          font-size: 7vmin;
+          font-size: 5vmin;
         }
     
 
       }
       & input{
+        width: 60%;
         margin-bottom: 3vmin;
         background-color: $fourthColor;
         color: $secondColor;
@@ -328,10 +329,10 @@ canvas.drawingBuffer {
   margin-right: 7vmin;
   height: 65vh;
   width: 40vw;
-  background: rgba(0,0,0,.1);
+  background: rgba(0,0,0,0.1);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.1);
-  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0,0,0);
+  //border-radius: 10px;
   background-image: url(../../assets/image/scanbackground.jpg);
   background-size: cover;
   //background-clip: border-box;

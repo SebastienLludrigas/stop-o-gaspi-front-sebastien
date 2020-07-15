@@ -24,6 +24,11 @@ const Header = ({ toggle, toggleMenu }) => (
         toggle={toggle}
       />
     </div>
+    <div className="cloud n1" />
+    <div className="cloud n2" />
+    <div className="cloud n3" />
+
+
   </div>
 );
 
