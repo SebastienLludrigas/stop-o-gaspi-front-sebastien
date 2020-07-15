@@ -74,12 +74,7 @@ canvas.drawingBuffer {
 }
 .scanError {
 
-  position: fixed;
-  top: 150px;
-  left: 60%;
-  width: 280px;
-
-  //@include modal_scan_page();
+  @include modal_scan_page();
 
   padding: 15px;
   background-color: rgb(255, 194, 194);
@@ -101,12 +96,12 @@ canvas.drawingBuffer {
 }
 .productNotFound {
 
-  position: fixed;
-  top: 150px;
-  left: 60%;
-  width: 350px;
+  //position: fixed;
+  //top: 150px;
+  //left: 60%;
+  //width: 350px;
 
- // @include modal_scan_page();
+ @include modal_scan_page();
 
   padding: 15px;
   background-color: rgb(233, 188, 137);
@@ -126,28 +121,57 @@ canvas.drawingBuffer {
 }
 .scanSuccess {
 
- // @include modal_scan_page();
-
+ @include modal_scan_page();
   padding: 15px;
   background-color: rgb(199, 255, 182);
   color: rgb(24, 102, 0);
-  //border: 0px solid rgb(24, 102, 0);
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
-  margin-bottom: 15px;
 }
 
-.add-product {
-  position: fixed;
-  top: 150px;
-  left: 60%;
+.input-dlc {
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    padding-bottom: 110px;
+    left: 0;
+    align-self:center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 7vmin;
+    //padding: 3vmin 0;
+    height: 50%;
+    width: 40vw;
+    background:rgb(199, 255, 182);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.1);
+    border-radius: 10px;
+    min-height: 80vh;
+    @media screen and (max-width: 600px) {
+      width: 100vw;
+      margin-left: 0vmin;
+      height: 100%;
+      font-size: 7vmin; 
+      justify-content: space-between;
+      & input{
+        font-weight: bold;
+        font-weight: 20px;}
+         
+    }
+    .infos-product-form{
+      width: 100%;
+    }
+    .infos-product-input{
+      margin-top: 20px;
+      width: 50%;
+      height: 30px;
+    } 
+  } 
 
-  & .input-dlc {
-    width: 200px;
-    margin: 0 auto;
-  }
-}
+
 .arrow-down-success {
   width: 0;
   height: 0;
@@ -198,6 +222,7 @@ canvas.drawingBuffer {
     border-radius: 10px;
     @media screen and (max-width: 600px) {
       width: 100vw;
+      margin-left: 0;
     }
     .scanInput{
       margin: 10vmin 5vmin;
@@ -207,6 +232,10 @@ canvas.drawingBuffer {
         font-weight: bold;
         font-size: 3vmin;
         margin-bottom: 3vmin;
+        @media screen and (max-width: 600px) {
+          font-size: 7vmin;
+          white-space: nowrap;
+        }
       }
       & .btn_scan_direct{
         height: 50px;
@@ -220,7 +249,15 @@ canvas.drawingBuffer {
         margin-left: auto;
         margin-right: auto;
         border: $secondColor 1px solid;
+        @media screen and (max-width: 600px) {
+          font-size: 60px;
+          height: 80px;
+          width: 80px;
+          line-height: 80px;
+          border-radius: 30px;
+          white-space: nowrap;
 
+        }
         &:hover{
           animation: pulse 1.5s infinite ease-in-out;
         }
@@ -238,6 +275,11 @@ canvas.drawingBuffer {
         font-weight: bold;
         font-size: 3vmin;
         margin-bottom: 3vmin;
+        @media screen and (max-width: 600px) {
+          font-size: 7vmin;
+        }
+    
+
       }
       & input{
         margin-bottom: 3vmin;
@@ -245,6 +287,10 @@ canvas.drawingBuffer {
         color: $secondColor;
         border: $secondColor 1px solid;
         font-weight: bold;
+        @media screen and (max-width: 600px) {
+          font-size: 7vmin;
+        }
+
 
       }
       & .btn_validate_barcode{
@@ -260,6 +306,14 @@ canvas.drawingBuffer {
         color: $secondColor;
         border: $secondColor 1px solid;
         cursor: pointer;
+        @media screen and (max-width: 600px) {
+          font-size: 23px;
+          height: 80px;
+          width: 80px;
+          line-height: 80px;
+          border-radius: 30px;
+        }
+
 
         &:hover{
           animation: pulse 1.5s infinite ease-in-out;
@@ -286,6 +340,7 @@ canvas.drawingBuffer {
     width: 100vw;
     margin-left: 7vmin;
     margin-right: 0;
+    display: none;
   }
 
   }
