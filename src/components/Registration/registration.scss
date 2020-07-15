@@ -18,6 +18,7 @@ width: 100vw;
   & h1{
     font-size: 6vmin;
     font-weight: bold;
+    margin-bottom: 10px; // voir en prod car en local ok
   }
 }
 .login-contain {
