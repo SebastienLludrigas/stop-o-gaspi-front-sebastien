@@ -11,8 +11,9 @@ const ScanProduct = ({
   scanCode,
   modal,
   scanDatas,
+  barCode,
+  currentProduct,
   onChange,
-  // barCode,
   onChangeBarCode,
   catchBarCode,
   handleAddProduct,
@@ -48,9 +49,9 @@ const ScanProduct = ({
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
-            <p>Félicitations !<br />
-              Le scan de votre produit : {}<br />
-              a fonctionné.<br />
+            <p>Votre produit<br />
+              <mark>{currentProduct.product.product_name_fr}</mark><br />
+              a bien été récupéré.<br />
               Entrez la date limite et la quantité.<br />
             </p>
           </div>
@@ -101,7 +102,7 @@ const ScanProduct = ({
 
           <div className="manualInput">
             <h2>je saisie mon code barre :</h2>
-            <input onChange={handleChange} type="text" /* name="" required="" */ />
+            <input onChange={handleChange} type="text" value={barCode} />
             <div
               onClick={catchBarCode}
               className="btn_validate_barcode"
@@ -114,7 +115,6 @@ const ScanProduct = ({
               <InfosProduct onChange={onChange} handleAddProduct={handleAddProduct} />
             </div>
           )}
-
 
         </div>
       </animated.div>
@@ -133,14 +133,15 @@ ScanProduct.propTypes = {
   toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
   scanCode: PropTypes.string.isRequired,
+  currentProduct: PropTypes.object.isRequired,
   modal: PropTypes.bool.isRequired,
   scanDatas: PropTypes.object.isRequired,
   status: PropTypes.number,
+  barCode: PropTypes.string.isRequired,
 };
 
 ScanProduct.defaultProps = {
   status: 2,
-  // datas: [],
 };
 
 export default ScanProduct;
