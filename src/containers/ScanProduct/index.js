@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { toggleModal, onDetected, toggleScanInfo } from 'src/actions/scanner';
+import { handleAddProduct, onChange, onChangeBarCode, catchBarCode } from 'src/actions/user';
 
 // === on importe le composant de présentation
 import ScanProduct from 'src/components/ScanProduct';
@@ -20,6 +21,21 @@ const mapStateToProps = (state) => ({
 // si j'ai besoin de dispatcher une action vers le store
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
+  onChange: (newValue, name) => {
+    console.log(`le champ ${name} a la valeur : ${newValue}`);
+    dispatch(onChange(newValue, name));
+  },
+  onChangeBarCode: (newValue) => {
+    console.log(`la nouvelle valeur du code-barres est : ${newValue}`);
+    dispatch(onChangeBarCode(newValue));
+  },
+  catchBarCode: (newValue) => {
+    console.log(`la nouvelle valeur du code-barres est : ${newValue}`);
+    dispatch(catchBarCode(newValue));
+  },
+  handleAddProduct: () => {
+    dispatch(handleAddProduct());
+  },
   toggleModal: () => {
     dispatch(toggleModal());
   },

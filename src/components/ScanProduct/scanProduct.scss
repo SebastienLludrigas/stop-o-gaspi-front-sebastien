@@ -73,7 +73,14 @@ canvas.drawingBuffer {
 
 }
 .scanError {
-  @include modal_scan_page();
+
+  position: fixed;
+  top: 150px;
+  left: 60%;
+  width: 280px;
+
+ // @include modal_scan_page();
+
   padding: 15px;
   background-color: rgb(255, 194, 194);
   color: rgb(173, 0, 0);
@@ -93,7 +100,14 @@ canvas.drawingBuffer {
   border-top: 70px solid rgb(255, 194, 194);
 }
 .productNotFound {
-  @include modal_scan_page();
+
+  position: fixed;
+  top: 150px;
+  left: 60%;
+  width: 350px;
+
+ // @include modal_scan_page();
+
   padding: 15px;
   background-color: rgb(233, 188, 137);
   color: rgb(173, 92, 0);
@@ -111,7 +125,9 @@ canvas.drawingBuffer {
   border-top: 70px solid rgb(233, 188, 137);
 }
 .scanSuccess {
-  @include modal_scan_page();
+
+ // @include modal_scan_page();
+
   padding: 15px;
   background-color: rgb(199, 255, 182);
   color: rgb(24, 102, 0);
@@ -119,6 +135,18 @@ canvas.drawingBuffer {
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
+  margin-bottom: 15px;
+}
+
+.add-product {
+  position: fixed;
+  top: 150px;
+  left: 60%;
+
+  & .input-dlc {
+    width: 200px;
+    margin: 0 auto;
+  }
 }
 .arrow-down-success {
   width: 0;
@@ -231,6 +259,7 @@ canvas.drawingBuffer {
         background-color: $fourthColor;
         color: $secondColor;
         border: $secondColor 1px solid;
+        cursor: pointer;
 
         &:hover{
           animation: pulse 1.5s infinite ease-in-out;
