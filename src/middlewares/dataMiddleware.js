@@ -50,8 +50,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       axios.get(`https://world.openfoodfacts.org/api/v0/product/${barCode}.json`)
         .then((response) => {
           console.log(response.data);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
+
           store.dispatch(productRecovery(response.data));
         })
         .catch((error) => {
@@ -127,7 +126,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       //   expiration_date: dlc,
       // };
 
-      axios.post('https://httpbin.org/post', {
+      axios.post('http://54-196-61-131/api/v0/user/205/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
         name: currentProduct.product.product_name_fr,
@@ -144,7 +143,7 @@ const datasMiddleware = (store) => (next) => (action) => {
           console.log(response);
           // on veut enregistrer les recettes dans le state => c'est le travail
           // du reducer => on dispatch une action qui sera traitée par un reducer
-          store.dispatch(addProductToPantry([response.data.json, ...staticDatas]));
+          // store.dispatch(addProductToPantry(response.data.json));
         })
         .catch((error) => {
           console.warn(error);

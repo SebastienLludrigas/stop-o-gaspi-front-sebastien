@@ -127,7 +127,7 @@ const user = (state = initialState, action = {}) => {
     case ADD_PRODUCT_TO_PANTRY:
       return {
         ...state,
-        userProducts: action.datas,
+        userProducts: [action.datas, ...state.userProducts],
       };
 
       // case HANDLE_ADD_PRODUCT: {
