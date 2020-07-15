@@ -15,6 +15,11 @@ import Product from 'src/components/Product';
 import ScanProduct from 'src/containers/ScanProduct';
 import Page404 from 'src/components/Page404';
 import About from 'src/components/About';
+import Laurie from 'src/assets/image/Blanche-neige.jpg';
+import sebastien from 'src/assets/image/Prof.png';
+import aurelien from 'src/assets/image/Timide.png';
+import alexis from 'src/assets/image/Dormeur.png';
+import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
 // == Composant
