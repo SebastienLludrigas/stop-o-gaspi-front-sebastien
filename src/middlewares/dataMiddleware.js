@@ -126,7 +126,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       //   expiration_date: dlc,
       // };
 
-      axios.post('http://54-196-61-131/api/v0/user/205/product/add/scan', {
+      axios.post('http://54.196.61.131/api/v0/user/250/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
         name: currentProduct.product.product_name_fr,
