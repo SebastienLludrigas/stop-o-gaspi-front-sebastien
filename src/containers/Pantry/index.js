@@ -8,6 +8,7 @@ import Pantry from 'src/components/Pantry';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   datas: state.user.userProducts,
+  dlc: state.user.dlc,
 });
 
 // === mapDispatchToProps

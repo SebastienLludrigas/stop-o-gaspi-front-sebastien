@@ -10,11 +10,14 @@ import './cards.scss';
 
 // == Composant
 const Card = ({
-  image_front_thumb_url,
-  product_name_fr,
+  image,
+  name,
+  // ingredients,
+  quantity,
+  expiration_date,
   nutriscore_grade,
   product_quantity,
-  brands,
+  brand,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -28,17 +31,18 @@ const Card = ({
   return (
     <div className="card-container" onClick={() => set((state) => !state)}>
       <anim.div className={flipped ? 'front' : 'card'} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-        <img className="product-img" src={image_front_thumb_url} alt="visuel par default" />
-        <p className="productTitle">{product_name_fr}</p>
-        <p>DLC : <span className="dlc">01 fevrier 2050</span></p>
-        <p>marque : {brands}</p>
+        <img className="product-img" src={image} alt="visuel par default" />
+        <p className="productTitle">{name}</p>
+        <p>DLC : <span className="dlc">{expiration_date}</span></p>
+        <p>marque : {brand}</p>
         <p>Date d'ajout : 01 novembre 1901</p>
-        <p>quantité : {product_quantity}</p>
+        <p>poids : {product_quantity} g</p>
+        <p>quantité : {quantity}</p>
       </anim.div>
 
       <anim.div className={flipped ? 'card' : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-        <img className="product-img" src={image_front_thumb_url} alt="visuel par default" />
-        <p className="productTitle">{product_name_fr}</p>
+        <img className="product-img" src={image} alt="visuel par default" />
+        <p className="productTitle">{name}</p>
         <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />
       </anim.div>
     </div>
@@ -46,11 +50,14 @@ const Card = ({
 };
 
 Card.propTypes = {
-  product_name_fr: PropTypes.string.isRequired,
-  brands: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  brand: PropTypes.string.isRequired,
+  // ingredients: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   product_quantity: PropTypes.any.isRequired,
   nutriscore_grade: PropTypes.string.isRequired,
-  image_front_thumb_url: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  expiration_date: PropTypes.string.isRequired,
 };
 
 // == Export
