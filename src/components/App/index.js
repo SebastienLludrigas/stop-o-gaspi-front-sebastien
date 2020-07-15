@@ -37,6 +37,13 @@ const App = () => (
       <Route path="/advice-sheet/about" component={About} />
       <Route path="/" component={Page404} />
     </Switch>
+    <div className="test_img">
+      <img alt="" src={Laurie} />
+      <img alt="" src={sebastien} />
+      <img alt="" src={aurelien} />
+      <img alt="" src={greg} />
+      <img alt="" src={alexis} />
+    </div>
     <Footer />
 
   </div>
