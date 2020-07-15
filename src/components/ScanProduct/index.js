@@ -114,21 +114,7 @@ const ScanProduct = ({
           </>
         )}
 
-        <>
-            <div className="manualInput">
-              <h2>je saisie mon code barre :</h2>
-              <input onChange={handleChange} type="text" /* name="" required="" */ />
-              <div
-                onClick={catchBarCode}
-                className="btn_validate_barcode"
-              >
-                Valider
-              </div>
 
-            </div>
-            <div className="arrow-down-notFound" />
-          </>
-        )}
       </div>
 
       <animated.div
@@ -144,8 +130,13 @@ const ScanProduct = ({
 
           <div className="manualInput">
             <h2>je saisie mon code barre :</h2>
-            <input type="text" name="" required="" />
-            <div className="btn_validate_barcode">Valider</div>
+            <input onChange={handleChange} type="text" /* name="" required="" */ />
+            <div
+              onClick={catchBarCode}
+              className="btn_validate_barcode"
+            >
+              Valider
+            </div>
           </div>
 
         </div>
