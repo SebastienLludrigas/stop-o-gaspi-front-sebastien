@@ -59,7 +59,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         info: action.data,
-        isLogged: action.isLogged,
+        // isLogged: action.isLogged,
         email: '',
         password: '',
       };

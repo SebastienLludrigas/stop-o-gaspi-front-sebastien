@@ -12,6 +12,7 @@ const ScanProduct = ({
   modal,
   scanDatas,
   onChange,
+  // barCode,
   onChangeBarCode,
   catchBarCode,
   handleAddProduct,
@@ -42,7 +43,6 @@ const ScanProduct = ({
             </div>
           </div>
         )}
-
 
         {(status === 1 && productFound) && (
         <div className="add-product">

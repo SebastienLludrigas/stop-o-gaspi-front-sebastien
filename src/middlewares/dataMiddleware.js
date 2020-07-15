@@ -32,7 +32,6 @@ const datasMiddleware = (store) => (next) => (action) => {
             // du reducer => on dispatch une action qui sera traitée par un reducer
 
             store.dispatch(productRecovery(response.data));
-
           })
           .catch((error) => {
             console.warn(error);
@@ -116,19 +115,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const seconds = now.getSeconds();
       const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
 
-      // const tempProduct = {
-      //   name: currentProduct.product.product_name_fr,
-      //   brand: currentProduct.product.brands,
-      //   image: currentProduct.product.image_front_thumb_url,
-      //   product_quantity: currentProduct.product.quantity,
-      //   ingredients: currentProduct.product.ingredients_text,
-      //   quantity: parseInt(quantite, 10),
-      //   nutriscore_grade: currentProduct.product.nutriscore_grade,
-      //   barcode: currentProduct.code,
-      //   expiration_date: dlc,
-      // };
-
-      axios.post('http://54.196.61.131/api/v0/user/205/product/add/scan', {
+      axios.post('https://jsonplaceholder.typicode.com/posts', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
         name: currentProduct.product.product_name_fr,
@@ -142,10 +129,8 @@ const datasMiddleware = (store) => (next) => (action) => {
         expiration_date: expDate,
       })
         .then((response) => {
-          console.log(response);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-          // store.dispatch(addProductToPantry(response.data.json));
+          console.log(response.data);
+          store.dispatch(addProductToPantry(response.data));
         })
         .catch((error) => {
           console.warn(error);
