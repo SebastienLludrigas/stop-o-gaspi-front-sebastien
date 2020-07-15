@@ -23,6 +23,11 @@
   cursor: pointer;
   position: relative;
   will-change: transform, opacity;
+  @media screen and (max-width: 450px) {
+    width: 90vw;
+    margin-left: 5vw;
+    font-size: 5vmin;
+  }
   
 
   & .productTitle{
