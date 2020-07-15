@@ -43,8 +43,7 @@ const ScanProduct = ({
           </div>
         )}
 
-
-      {(status === 0 && productFound) && (
+        {(status === 0 && productFound) && (
         <div className="scanError">
           <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
           <div className="text">
@@ -54,9 +53,9 @@ const ScanProduct = ({
             </p>
           </div>
         </div>
-      )}
+        )}
 
-      {(status === 1 && productFound) && (
+        {(status === 1 && productFound) && (
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
@@ -71,9 +70,9 @@ const ScanProduct = ({
             <InfosProduct onChange={onChange} handleAddProduct={handleAddProduct} />
           </div>
         </div>
-      )}
+        )}
 
-      {!productFound && (
+        {!productFound && (
         <div className="productNotFound">
           <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
           <p>Votre produit n'a pas été trouvé<br />
@@ -83,7 +82,7 @@ const ScanProduct = ({
             Veuillez réessayer avec un autre produit
           </p>
         </div>
-      )}
+        )}
 
 
         {(status === 0 && productFound) && (
@@ -115,7 +114,7 @@ const ScanProduct = ({
           </>
         )}
 
-
+        <>
             <div className="manualInput">
               <h2>je saisie mon code barre :</h2>
               <input onChange={handleChange} type="text" /* name="" required="" */ />
