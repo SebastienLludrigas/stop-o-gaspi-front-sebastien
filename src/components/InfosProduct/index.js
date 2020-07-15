@@ -20,12 +20,15 @@ const infosProduct = ({ handleAddProduct, onChange }) => {
   return (
     <div className="infos-product">
       <form className="infos-product-form" onSubmit={handleSubmit}>
+        Entrez maintenant la date limite de consommation<br />
         <input
           type="date"
           className="infos-product-input"
           onChange={handleChange}
           name="dlc"
         />
+        ainsi que la quantité, puis validez pour enregistrer<br />
+
         <input
           type="number"
           className="infos-product-input"
