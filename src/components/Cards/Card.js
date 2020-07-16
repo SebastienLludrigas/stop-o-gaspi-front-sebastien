@@ -28,12 +28,40 @@ const Card = ({
 
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
+  const date = new Date(expiration_date);
+
+  const options = {
+    // weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+
+  const currentDate = Date.now();
+
+  let classe = '';
+
+  const colorCode = () => {
+    if ((expiration_date - currentDate) <= 5184000) {
+      classe = 'card-container red';
+    }
+    else if ((expiration_date - currentDate) <= 10368000) {
+      classe = 'card-container orange';
+    }
+    else {
+      classe = 'card-container green';
+    }
+    return classe;
+  };
+
+  // console.log(date.toLocaleString('fr-FR', options));
+
   return (
-    <div className="card-container" onClick={() => set((state) => !state)}>
+    <div className={colorCode()} onClick={() => set((state) => !state)}>
       <anim.div className={flipped ? 'front' : 'card'} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
         <img className="product-img" src={image} alt="visuel par default" />
         <p className="productTitle">{name}</p>
-        <p>DLC : <span className="dlc">{expiration_date}</span></p>
+        <p>DLC : <span className="dlc">{date.toLocaleString('fr-FR', options)}</span></p>
         <p>marque : {brand}</p>
         <p>Date d'ajout : 01 novembre 1901</p>
         <p>poids : {product_quantity} g</p>

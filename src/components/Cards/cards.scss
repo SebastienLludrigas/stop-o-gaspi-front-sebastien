@@ -10,7 +10,7 @@
 .card{
   position: absolute;
   background-color: $firstColor;
-  border: solid 2px $secondColor;
+  border: solid 5px $secondColor;
   border-radius: 15px;
   width: 200px;
   height: 300px;
@@ -61,6 +61,25 @@
   }
  
 }
+
+.card-container {
+  border: solid 5px $secondColor;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.card-container.red {
+  border: solid 5px red;
+}
+
+.card-container.orange {
+  border: solid 5px orange;
+}
+
+.card-container.green {
+  border: solid 5px green;
+}
+
 .front, .back{
   display:none;
  

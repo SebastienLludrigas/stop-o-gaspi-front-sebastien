@@ -74,17 +74,21 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       // Transformation de la date rentrée par le user en chaîne de caractères au format ISO
       // avec l'heure courante en plus (nécessaire pour que la date soit acceptée par symfony)
-      const now = new Date();
-      const hour = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
+      // const now = new Date();
+      // const hour = now.getHours();
+      // const minutes = now.getMinutes();
+      // const seconds = now.getSeconds();
+      // const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
+
+      const date = new Date(dlc);
+      const expDate = date.toISOString();
 
       // Ajout de l'id au nouveau produit
       const ids = userProducts.map((product) => product.idi);
       const nextId = Math.max(...ids) + 1;
       console.log(nextId);
 
+      // https://jsonplaceholder.typicode.com/posts
       // http://54.196.61.131/api/v0/user/1/product/add/scan
       axios.post('https://jsonplaceholder.typicode.com/posts', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
