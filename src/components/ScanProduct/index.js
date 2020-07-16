@@ -45,14 +45,31 @@ const ScanProduct = ({
           </div>
         )}
 
-        {(status === 1 && productFound) && (
+        {(status === 1) && (
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
             <p>Votre produit<br />
               <mark>{currentProduct.product.product_name_fr}</mark><br />
+              de la marque<br />
+              <mark>{currentProduct.product.brands}</mark><br />
               a bien été récupéré.<br />
               Entrez la date limite et la quantité.<br />
+            </p>
+          </div>
+          <div className="arrow-down-success" />
+        </div>
+        )}
+
+        {(status === 3) && (
+        <div className="add-product">
+          <div className="scanSuccess">
+            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+            <p>Ajout de votre produit<br />
+              <mark>{currentProduct.product.product_name_fr}</mark><br />
+              de la marque<br />
+              <mark>{currentProduct.product.brands}</mark><br />
+              au Pantry réussie
             </p>
           </div>
           <div className="arrow-down-success" />
@@ -65,15 +82,15 @@ const ScanProduct = ({
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
             <p>Votre produit n'a pas été trouvé<br />
               dans notre base de données..<br />
-              Il est possible que vous n'ayez pas scanné<br />
-              un produit alimentaire.<br />
-              Veuillez réessayer avec un autre produit
+              Il est possible que ce produit ne soit pas<br />
+              un produit alimentaire, ou que le code-barres soit erroné.<br />
+              Veuillez réessayer.
             </p>
           </div>
           <div className="arrow-down-notFound" />
         </>
         )}
-        {(status === 0 && productFound) && (
+        {(status === 0) && (
           <>
             <div className="scanError">
               <i className="fas fa-times scan-info" onClick={toggleScanInfo} />

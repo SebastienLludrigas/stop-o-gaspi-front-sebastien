@@ -130,6 +130,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         userProducts: [action.datas, ...state.userProducts],
+        status: 3,
       };
 
       // case HANDLE_ADD_PRODUCT: {
