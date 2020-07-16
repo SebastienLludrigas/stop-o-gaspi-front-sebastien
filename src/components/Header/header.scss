@@ -2,7 +2,11 @@
 
 .header {
   height: 110px;
-  background-color: $firstColor;
+  background-color: lighten($thirdColor, 15%);
+  background-image: url(../../assets/image/shoppingBag.png);
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: top;
   padding: 20px 25px 0px 25px;
   display: flex;
   justify-content: space-between;
@@ -13,24 +17,82 @@
   z-index: 5;
   border-bottom: 2px solid $secondColor;
 
+  @media all and (max-width: 830px) {
+    background-image: none;
+    background-color: lighten($thirdColor, 15%);
+
+  }
+
+
+
   .right-container {
+    z-index: 20;
     display: flex;
     align-items: center;
     height: 100px;
   }
+  
 }
+
+.cloud {
+	width: 100px; height: 30px;
+	background: #fff;
+	border-radius: 100px;
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 50px; height: 40px;
+	position: absolute; top: -7.5px; left: 5px;
+	border-radius: 50px;
+	transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 60px; height: 60px;
+	top: -27.5px; left: auto; right: 7.5px;
+}
+
+
+
+
+@keyframes nuage{
+	0% {right: -200px;}
+	100% {right: 2000px;}
+}
+
+
+.n1{
+	position: absolute;
+	top: 30px;
+  animation: nuage 50s 15s linear infinite;
+  opacity: 0.65;
+}
+.n2{
+	position: absolute;
+	top: 45px;
+	animation: nuage 80s linear infinite;
+	z-index: 2;
+	opacity: 0.70;
+}
+.n3{
+	position: absolute;
+	top: 60px;
+	animation: nuage 60s linear infinite;
+	z-index: 3;
+	opacity: 0.75;
+}
+
 
 @media all and (max-width: 600px) {
   .header {
-    background-color: $firstColor;
     padding: 15px 25px 0px 25px;
     display: flex;
-    // justify-content: center;
     align-items: center;
     overflow: hidden;
-    
-
-    
     
     .logo-gaspi {
       align-self: center;
@@ -40,6 +102,10 @@
 
   .right-container {
     display: none;
+  }
+  @keyframes nuage{
+    0% {right: -200px;}
+    100% {right: 800px;}
   }
 }
 

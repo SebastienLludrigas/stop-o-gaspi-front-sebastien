@@ -10,7 +10,7 @@ import MyAccount from 'src/components/MyAccount';
 // import { Link } from 'react-router-dom';
 
 import './header.scss';
-
+// test
 // == Composant
 const Header = ({ toggle, toggleMenu }) => (
   <div className="header">
@@ -24,6 +24,11 @@ const Header = ({ toggle, toggleMenu }) => (
         toggle={toggle}
       />
     </div>
+    <div className="cloud n1" />
+    <div className="cloud n2" />
+    <div className="cloud n3" />
+
+
   </div>
 );
 
