@@ -1,5 +1,5 @@
 import axios from 'axios';
-import staticDatas from 'src/staticDatas';
+// import staticDatas from 'src/staticDatas';
 
 import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
@@ -66,6 +66,7 @@ const datasMiddleware = (store) => (next) => (action) => {
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
       const {
+        userProducts,
         currentProduct,
         quantite,
         dlc,
@@ -79,10 +80,16 @@ const datasMiddleware = (store) => (next) => (action) => {
       const seconds = now.getSeconds();
       const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
 
-      // http://54.196.61.131/api/v0/user/220/product/add/scan
-      axios.post('http://54.196.61.131/api/v0/user/1/product/add/scan', {
+      // Ajout de l'id au nouveau produit
+      const ids = userProducts.map((product) => product.idi);
+      const nextId = Math.max(...ids) + 1;
+      console.log(nextId);
+
+      // http://54.196.61.131/api/v0/user/1/product/add/scan
+      axios.post('https://jsonplaceholder.typicode.com/posts', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
+        idi: nextId,
         name: currentProduct.product.product_name_fr,
         brand: currentProduct.product.brands,
         image: currentProduct.product.image_front_thumb_url,

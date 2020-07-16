@@ -1,6 +1,6 @@
 export default [
   {
-    id: 1,
+    idi: 1,
     name: 'Steak haché Label Rouge',
     brand: 'Bigard',
     image: 'https://static.openfoodfacts.org/images/products/327/323/005/0245/front_fr.23.100.jpg',
@@ -9,11 +9,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3273230050245,
-    expiration_date: '2021-07-10',
+    expiration_date: '2021-07-10T16:31:07.000Z',
   },
 
   {
-    id: 2,
+    idi: 2,
     name: 'Sojasun nature sans sucre',
     brand: 'Sojasun',
     image: 'https://static.openfoodfacts.org/images/products/327/322/008/1068/front_fr.89.100.jpg',
@@ -22,11 +22,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'a',
     barcode: 3273220081068,
-    expiration_date: '2021-07-10',
+    expiration_date: '2021-07-10T15:31:07.000Z',
   },
 
   {
-    id: 3,
+    idi: 3,
     name: 'Lait frais entier',
     brand: 'Carrefour',
     image: 'https://static.openfoodfacts.org/images/products/356/007/047/5681/front_fr.19.100.jpg',
@@ -35,11 +35,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3560070475681,
-    expiration_date: '2021-07-10',
+    expiration_date: '2021-07-10T11:31:07.000Z',
   },
 
   {
-    id: 4,
+    idi: 4,
     name: 'Mon tranche fin de poulet, barquette de 4 tranches',
     brand: 'Monique Ranou',
     image: 'https://static.openfoodfacts.org/images/products/325/039/130/8415/front_fr.11.100.jpg',
@@ -48,11 +48,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'c',
     barcode: 3250391308415,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T16:55:07.000Z',
   },
 
   {
-    id: 5,
+    idi: 5,
     name: 'Pizza du pêcheur( saumon, thon, crevettes) cuite sur pierre',
     brand: 'Cora',
     image: 'https://static.openfoodfacts.org/images/products/325/798/394/0060/front_fr.5.100.jpg',
@@ -61,11 +61,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3257983940060,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T06:31:07.000Z',
   },
 
   {
-    id: 6,
+    idi: 6,
     name: 'Dés de fromage aux olives',
     brand: 'Milbona',
     image: 'https://static.openfoodfacts.org/images/products/405/648/901/2832/front_de.21.100.jpg',
@@ -74,11 +74,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 4056489012832,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T18:31:07.000Z',
   },
 
   {
-    id: 7,
+    idi: 7,
     name: 'Hachés de poulet rôtis 720g étui',
     brand: 'Maître Coq',
     image: 'https://static.openfoodfacts.org/images/products/323/089/084/3921/front_fr.22.100.jpg',
@@ -87,11 +87,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3230890843921,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T20:31:07.000Z',
   },
 
   {
-    id: 8,
+    idi: 8,
     name: 'Saucisses de volaille nature x9',
     brand: 'Le Gaulois',
     image: 'https://static.openfoodfacts.org/images/products/326/698/028/9768/front_fr.13.100.jpg',
@@ -100,11 +100,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3266980289768,
-    expiration_date: '2021-07-10',
+    expiration_date: '2021-07-10T02:31:07.000Z',
   },
 
   {
-    id: 9,
+    idi: 9,
     name: 'Darnes de Saumon aux petits légumes',
     brand: 'Les Entrées de la Mer',
     image: 'https://static.openfoodfacts.org/images/products/330/210/001/2400/front_fr.17.100.jpg',
@@ -113,11 +113,11 @@ export default [
     quantity: 10,
     nutriscore_grade: '',
     barcode: 3302100012400,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T05:31:07.000Z',
 
   },
   {
-    id: 10,
+    idi: 10,
     name: '4 Crêpes Bio de Froment',
     brand: 'Crêperie Colas',
     image: 'https://static.openfoodfacts.org/images/products/341/390/000/0310/front_fr.6.100.jpg',
@@ -126,11 +126,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'c',
     barcode: 3413900000310,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T14:31:07.000Z',
   },
 
   {
-    id: 11,
+    idi: 11,
     name: 'Crème fraîche',
     brand: 'Bridélice',
     image: 'https://static.openfoodfacts.org/images/products/315/525/120/5425/front_fr.43.100.jpg',
@@ -139,11 +139,11 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3155251205425,
-    expiration_date: '2020-07-10',
+    expiration_date: '2020-07-10T22:31:07.000Z',
   },
 
   {
-    id: 12,
+    idi: 12,
     name: 'Cabillaud Sauce Citron, Riz aux Petits Légumes',
     brand: 'Marie',
     image: 'https://static.openfoodfacts.org/images/products/316/635/393/1402/front_fr.91.100.jpg',
@@ -152,6 +152,6 @@ export default [
     quantity: 10,
     nutriscore_grade: 'a',
     barcode: 3166353931402,
-    expiration_date: '2021-07-10',
+    expiration_date: '2021-07-10T23:31:07.000Z',
   },
 ];
