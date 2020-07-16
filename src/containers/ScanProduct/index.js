@@ -15,6 +15,8 @@ const mapStateToProps = (state) => ({
   scanDatas: state.user.scanDatas,
   status: state.user.status,
   productFound: state.user.productFound,
+  currentProduct: state.user.currentProduct,
+  barCode: state.user.barCode,
 });
 
 // === mapDispatchToProps
@@ -30,7 +32,6 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(onChangeBarCode(newValue));
   },
   catchBarCode: (newValue) => {
-    console.log(`la nouvelle valeur du code-barres est : ${newValue}`);
     dispatch(catchBarCode(newValue));
   },
   handleAddProduct: () => {

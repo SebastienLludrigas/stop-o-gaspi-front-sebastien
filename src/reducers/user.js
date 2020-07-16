@@ -4,12 +4,12 @@ import {
   SAVE_USER,
   ON_CHANGE,
   ON_CHANGE_BAR_CODE,
-  CATCH_BAR_CODE,
   ADD_PRODUCT_TO_PANTRY,
   HANDLE_ADD_PRODUCT,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
+import { UPDATE_PRODUCT_FIELD, HANDMADE_PRODUCT, ADD_HANDMADE_PRODUCT } from '../actions/product';
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
@@ -32,7 +32,10 @@ const initialState = {
   scanDatas: {},
   dlc: '',
   quantite: 1,
-
+  productName: '',
+  manufactureDate: '',
+  expirationDate: '',
+  productQuantity: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -59,7 +62,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         info: action.data,
-        isLogged: action.isLogged,
+        // isLogged: action.isLogged,
         email: '',
         password: '',
       };
@@ -110,16 +113,6 @@ const user = (state = initialState, action = {}) => {
       };
     }
 
-    // case CATCH_BAR_CODE:
-    //   if (state.barCode !== 13) {
-    //     return {
-    //       ...state,
-    //       status: 8,
-    //       barCode: '',
-    //     };
-    //   }
-    //   return state;
-
     case HANDLE_ADD_PRODUCT:
       return {
         ...state,
@@ -130,35 +123,20 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         userProducts: [action.datas, ...state.userProducts],
+        status: 3,
       };
 
-      // case HANDLE_ADD_PRODUCT: {
-      //   // console.log(`Voici le dlc : ${state.dlc} et voici la quantité : ${state.quantite}`);
+    case UPDATE_PRODUCT_FIELD:
+      return {
+        ...state,
+        [action.name]: action.newValue,
+      };
 
-      //   // eslint-disable-next-line prefer-destructuring
-      //   const product = state.currentProduct.product;
-
-      //   const tempProduct = {
-      //     name: product.product_name_fr,
-      //     brand: product.brands,
-      //     image: product.image_front_thumb_url,
-      //     product_quantity: product.quantity,
-      //     ingredients: product.ingredients_text,
-      //     quantity: parseInt(state.quantite, 10),
-      //     nutriscore_grade: product.nutriscore_grade,
-      //     barcode: state.currentProduct.code,
-      //     expiration_date: state.dlc,
-      //   };
-
-      //   console.log(tempProduct);
-
-      //   return {
-      //     ...state,
-      //     finalProduct: tempProduct,
-      //     userProducts: [tempProduct, ...staticDatas],
-      //     status: 2,
-      //   };
-      // }
+    case ADD_HANDMADE_PRODUCT:
+      return {
+        ...state,
+        userProducts: [action.datas, ...state.userProducts],
+      };
 
     case TOGGLE_MODAL: {
       return {

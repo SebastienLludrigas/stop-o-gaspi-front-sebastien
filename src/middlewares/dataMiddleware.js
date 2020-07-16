@@ -1,9 +1,10 @@
 import axios from 'axios';
 import staticDatas from 'src/staticDatas';
 
-import { HANDLE_DATAS, productRecovery, SEND_DATAS } from 'src/actions/datas';
+import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
 import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE } from 'src/actions/user';
+import { HANDMADE_PRODUCT, addHandMadeProduct } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -32,7 +33,6 @@ const datasMiddleware = (store) => (next) => (action) => {
             // du reducer => on dispatch une action qui sera traitée par un reducer
 
             store.dispatch(productRecovery(response.data));
-
           })
           .catch((error) => {
             console.warn(error);
@@ -62,43 +62,6 @@ const datasMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    case HANDLE_DATAS:
-      // faire une requête vers l'API
-      axios.get('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/products')
-        .then((response) => {
-          console.log(response.data);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-          store.dispatch(saveDatas(response.data));
-        })
-        .catch((error) => {
-          console.warn(error);
-        });
-
-      next(action);
-      break;
-
-    case SEND_DATAS:
-    // faire une requête vers l'API
-      axios.post('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/user/registrer', {
-        email: 'fabclock@gmail',
-        name: 'Fabio',
-        City: 'Paris',
-        password: 'à plumes et à bec',
-        verifPassword: 'animal à plumes et à bec',
-        pseudo: 'bigeon',
-      })
-        .then((response) => {
-          console.log(response);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-        })
-        .catch((error) => {
-          console.warn(error);
-        });
-
-      next(action);
-      break;
 
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
@@ -116,19 +79,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const seconds = now.getSeconds();
       const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
 
-      // const tempProduct = {
-      //   name: currentProduct.product.product_name_fr,
-      //   brand: currentProduct.product.brands,
-      //   image: currentProduct.product.image_front_thumb_url,
-      //   product_quantity: currentProduct.product.quantity,
-      //   ingredients: currentProduct.product.ingredients_text,
-      //   quantity: parseInt(quantite, 10),
-      //   nutriscore_grade: currentProduct.product.nutriscore_grade,
-      //   barcode: currentProduct.code,
-      //   expiration_date: dlc,
-      // };
-
-      axios.post('http://54.196.61.131/api/v0/user/205/product/add/scan', {
+      axios.post('https://jsonplaceholder.typicode.com/posts', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
         name: currentProduct.product.product_name_fr,
@@ -142,10 +93,37 @@ const datasMiddleware = (store) => (next) => (action) => {
         expiration_date: expDate,
       })
         .then((response) => {
-          console.log(response);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-          // store.dispatch(addProductToPantry(response.data.json));
+          console.log(response.data);
+          store.dispatch(addProductToPantry(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case HANDMADE_PRODUCT: {
+      // Je récupère le code-barres qui est enregistré dans le state actuel
+      // via la saisie manuelle
+      const {
+        productName,
+        manufactureDate,
+        expirationDate,
+        productQuantity,
+      } = store.getState().user;
+
+      axios.get('https://jsonplaceholder.typicode.com/posts', {
+        productName,
+        manufactureDate,
+        expirationDate,
+        productQuantity,
+      })
+        .then((response) => {
+          console.log(response.data);
+
+          store.dispatch(addHandMadeProduct(response.data));
         })
         .catch((error) => {
           console.warn(error);

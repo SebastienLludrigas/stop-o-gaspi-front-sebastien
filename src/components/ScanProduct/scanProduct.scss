@@ -32,6 +32,7 @@ canvas.drawingBuffer {
 }
 .modal-content{
   top:5vmin;
+  // padding: 20px;
   background: darken($firstColor, 6%);
   height: 65vh;
   width: 100%;
@@ -128,6 +129,17 @@ canvas.drawingBuffer {
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
+
+  & mark {
+    color: $secondColor;
+    font-size: 1.3em;
+    background-color: $firstColor;
+    display: inline-block;
+    padding: 6px 10px;
+    border: 1px solid $secondColor;
+    border-radius: 3px;
+    margin: 5px;
+  }
 }
 
 .input-dlc {

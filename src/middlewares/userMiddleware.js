@@ -8,11 +8,11 @@ import {
 
 } from '../actions/user';
 
-
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN: {
       const { email, password } = store.getState().user;
+      console.log(`l'email est :${email} et le password est : ${password}`);
 
       // withCredentials : autorisation d'accéder au cookie
 

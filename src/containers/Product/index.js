@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 
 // === on importe le composant de présentation
-import Connexion from 'src/components/Registration/Connexion';
+import Product from 'src/components/Product';
 
-import { updateUserField, logIn, logOut } from 'src/actions/user';
+import { updateProductField, handmadeProduct } from 'src/actions/product';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
-  isLogged: state.user.isLogged,
-  email: state.user.email,
-  password: state.user.password,
+  productName: state.user.productName,
+  manufactureDate: state.user.manufactureDate,
+  expirationDate: state.user.expirationDate,
+  productQuantity: state.user.productQuantity,
 });
 
 // === mapDispatchToProps
@@ -20,15 +21,12 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   onChange: (newValue, name) => {
     console.log(`La valeur du champ ${name} est : ${newValue}`);
-    dispatch(updateUserField(newValue, name));
+    dispatch(updateProductField(newValue, name));
   },
-  handleLogin: () => {
-    dispatch(logIn());
-  },
-  handleLogout: () => {
-    dispatch(logOut());
+  handmadeProduct: () => {
+    dispatch(handmadeProduct());
   },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Connexion);
+export default connect(mapStateToProps, mapDispatchToProps)(Product);
