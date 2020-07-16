@@ -16,7 +16,7 @@ const Pantry = ({ datas, dlc }) => {
     <div className="pantry">
       <animated.div
         style={pantryText}
-        config={{ delay: 2000, duration: 2000 }}
+        config={{ delay: 100, duration: 2000 }}
       >
         <h1 className="pantryTitle">MON PANTRY</h1>
         <h2 className="label_pantry">Ajouter un nouveau produit</h2>

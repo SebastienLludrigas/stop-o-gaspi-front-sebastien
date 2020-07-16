@@ -10,9 +10,9 @@
 .slogan{
   position: relative;
   transform: translateY(-35px);
-  color: darken($thirdColor, 20%);
+  color: darken($secondColor, 0%);
   font-size: 1em;
   font-weight: bold;
-  text-shadow: $secondColor 1px 1px 1px ;
+  text-shadow: $firstColor 1px 1px 1px ;
 
 }

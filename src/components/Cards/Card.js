@@ -37,7 +37,7 @@ const Card = ({
         <p>marque : {brand}</p>
         <p>Date d'ajout : 01 novembre 1901</p>
         <p>poids : {product_quantity} g</p>
-        <p>quantité : {quantity}</p>
+        <p className="dlc">quantité : {quantity}</p>
       </anim.div>
 
       <anim.div className={flipped ? 'card' : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>

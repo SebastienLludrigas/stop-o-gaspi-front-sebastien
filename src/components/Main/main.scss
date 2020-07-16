@@ -4,51 +4,55 @@
   src: url("../../assets/fonts/Bubble.ttf");
  } 
 .main{
-  font-family: bubble ,Arial;
   height: max-content;
-  background-image: repeating-linear-gradient(90deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
-  overflow: hidden;
-  border-top: $secondColor 2px solid;
-  border-bottom: $secondColor 2px solid;
-  display: grid;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);  display: grid;
+  grid-template-columns: 250px 1fr;
   grid-template-areas: 
-  "title title"
-  "fridge text";
-  row-gap: 10vmin;
-  column-gap: 10vmin;
+  "fridge title"
+  "fridge texto";
+  row-gap: 5vmin;
+  column-gap: 5vmin;
   padding: 115px 7vmin 7vmin;
-
+  font-weight: bold;
   @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
     grid-template-areas:
     "title"
-    "text"
-    "fridge";
-    
+    "texto"
+    ;
+    row-gap: 3vmin;
+
   }
+  .main_left{grid-area: fridge;}
+  
   .titleMain{
+  font-family: bubble ,Arial;
+  font-weight: normal;
   grid-area: title;
+  height: max-content;
   text-align: center;
-  font-size: 9vmin;
+  font-size: 8vmin;
   @media screen and (max-width: 600px) {
-    font-size:9vmin;  
+    font-size:7vmin;
+    white-space: nowrap;
   }
 
   }
   .textMain{
-    line-height: 5vmin;
-    grid-area: text;
+    //line-height: 5vmin;
+    grid-area: texto;
     text-align: center;
-    width: 50vw;
+    width: 100%;
     font-size: 4vmin;
     @media screen and (max-width: 600px) {
       width: 100%;  
       }
     }
 
-  .button-tests {
+  /*.button-tests {
     display: inline-block;
     width: 200px;
-  }
+  }*/
 }
 
 // ---------------  FLIP TEXTE -------------------
