@@ -10,7 +10,7 @@ import MyAccount from 'src/components/MyAccount';
 // import { Link } from 'react-router-dom';
 
 import './header.scss';
-
+// test
 // == Composant
 const Header = ({ toggle, toggleMenu }) => (
   <div className="header">
