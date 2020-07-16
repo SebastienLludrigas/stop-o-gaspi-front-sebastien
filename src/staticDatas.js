@@ -1,5 +1,6 @@
 export default [
   {
+    id: 1,
     name: 'Steak haché Label Rouge',
     brand: 'Bigard',
     image: 'https://static.openfoodfacts.org/images/products/327/323/005/0245/front_fr.23.100.jpg',
@@ -12,6 +13,7 @@ export default [
   },
 
   {
+    id: 2,
     name: 'Sojasun nature sans sucre',
     brand: 'Sojasun',
     image: 'https://static.openfoodfacts.org/images/products/327/322/008/1068/front_fr.89.100.jpg',
@@ -24,6 +26,7 @@ export default [
   },
 
   {
+    id: 3,
     name: 'Lait frais entier',
     brand: 'Carrefour',
     image: 'https://static.openfoodfacts.org/images/products/356/007/047/5681/front_fr.19.100.jpg',
@@ -36,6 +39,7 @@ export default [
   },
 
   {
+    id: 4,
     name: 'Mon tranche fin de poulet, barquette de 4 tranches',
     brand: 'Monique Ranou',
     image: 'https://static.openfoodfacts.org/images/products/325/039/130/8415/front_fr.11.100.jpg',
@@ -48,6 +52,7 @@ export default [
   },
 
   {
+    id: 5,
     name: 'Pizza du pêcheur( saumon, thon, crevettes) cuite sur pierre',
     brand: 'Cora',
     image: 'https://static.openfoodfacts.org/images/products/325/798/394/0060/front_fr.5.100.jpg',
@@ -60,6 +65,7 @@ export default [
   },
 
   {
+    id: 6,
     name: 'Dés de fromage aux olives',
     brand: 'Milbona',
     image: 'https://static.openfoodfacts.org/images/products/405/648/901/2832/front_de.21.100.jpg',
@@ -72,6 +78,7 @@ export default [
   },
 
   {
+    id: 7,
     name: 'Hachés de poulet rôtis 720g étui',
     brand: 'Maître Coq',
     image: 'https://static.openfoodfacts.org/images/products/323/089/084/3921/front_fr.22.100.jpg',
@@ -84,6 +91,7 @@ export default [
   },
 
   {
+    id: 8,
     name: 'Saucisses de volaille nature x9',
     brand: 'Le Gaulois',
     image: 'https://static.openfoodfacts.org/images/products/326/698/028/9768/front_fr.13.100.jpg',
@@ -96,6 +104,7 @@ export default [
   },
 
   {
+    id: 9,
     name: 'Darnes de Saumon aux petits légumes',
     brand: 'Les Entrées de la Mer',
     image: 'https://static.openfoodfacts.org/images/products/330/210/001/2400/front_fr.17.100.jpg',
@@ -108,6 +117,7 @@ export default [
 
   },
   {
+    id: 10,
     name: '4 Crêpes Bio de Froment',
     brand: 'Crêperie Colas',
     image: 'https://static.openfoodfacts.org/images/products/341/390/000/0310/front_fr.6.100.jpg',
@@ -120,6 +130,7 @@ export default [
   },
 
   {
+    id: 11,
     name: 'Crème fraîche',
     brand: 'Bridélice',
     image: 'https://static.openfoodfacts.org/images/products/315/525/120/5425/front_fr.43.100.jpg',
@@ -132,6 +143,7 @@ export default [
   },
 
   {
+    id: 12,
     name: 'Cabillaud Sauce Citron, Riz aux Petits Légumes',
     brand: 'Marie',
     image: 'https://static.openfoodfacts.org/images/products/316/635/393/1402/front_fr.91.100.jpg',

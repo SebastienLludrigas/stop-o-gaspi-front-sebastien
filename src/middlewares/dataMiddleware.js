@@ -79,7 +79,8 @@ const datasMiddleware = (store) => (next) => (action) => {
       const seconds = now.getSeconds();
       const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
 
-      axios.post('http://54.196.61.131/api/v0/user/205/product/add/scan', {
+      // http://54.196.61.131/api/v0/user/220/product/add/scan
+      axios.post('http://54.196.61.131/api/v0/user/1/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
         name: currentProduct.product.product_name_fr,
@@ -93,8 +94,8 @@ const datasMiddleware = (store) => (next) => (action) => {
         expiration_date: expDate,
       })
         .then((response) => {
-          console.log(response.data);
-          // store.dispatch(addProductToPantry(response.data));
+          console.log(response);
+          store.dispatch(addProductToPantry(response.data));
         })
         .catch((error) => {
           console.warn(error);
