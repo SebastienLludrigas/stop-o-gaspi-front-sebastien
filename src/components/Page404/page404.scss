@@ -3,6 +3,8 @@
 .page_404{
   padding-top: 20px;
   background-color: $secondColor;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);  display: grid;
+
   color: $firstColor;
   
 }
@@ -29,8 +31,8 @@
     border-radius: 100px;
     font-weight: 400;
     display: block;
-    color: white;
-    text-shadow: $secondColor 2px 1px;
+    color: $secondColor;
+    text-shadow: $firstColor 2px 1px;
     text-align: center;
     text-decoration: none;
     letter-spacing : 2px;
@@ -134,8 +136,16 @@ top: 95%;
     & h2{
       z-index: 1;
       font-size: 30vmin;
-     &:nth-child(1){color: $fourthColor}
-     &:nth-child(3){color: $thirdColor}
+      color: $secondColor;
+     &:nth-child(1){
+       color: $fourthColor;
+       text-shadow:$secondColor 2px 2px 2px;
+      } 
+     &:nth-child(3){
+       color: $thirdColor;
+       text-shadow:$secondColor 2px 2px 2px;
+
+      }
 
     }
 }
@@ -153,3 +163,4 @@ top: 95%;
         padding-top: 25%;
     }
 }
+
