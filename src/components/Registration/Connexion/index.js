@@ -53,7 +53,7 @@ const Connexion = ({
 
         <div className="login-contain ">
           <h2>Se connecter
-            <Link to="/registration">
+            <Link to="/inscription">
               <h3>( vous n'avez pas encore de compte ? )</h3>
             </Link>
           </h2>
