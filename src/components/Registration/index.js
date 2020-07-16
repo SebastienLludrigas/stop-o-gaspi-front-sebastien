@@ -1,14 +1,19 @@
 // == Import npm
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // == Import
 import './registration.scss';
 
 // == Composant
 const Registration = () => (
-  <div className="inscriptionPage"> <h1>Bienvenue chez les gaspi Hunters</h1>
+  <div className="inscriptionPage">
     <div className="contain-inscription login-contain">
-      <h2>S'inscrire</h2>
+      <h2>S'inscrire
+        <Link to="/connexion">
+          <h3>( vous avez déja un compte ? )</h3>
+        </Link>
+      </h2>
       <form>
         <div className="user-contain">
           <input type="text" name="" required="" />
@@ -36,7 +41,7 @@ const Registration = () => (
           <span />
           <span />
           <span />
-          Submit
+          Valider
         </button>
       </form>
     </div>

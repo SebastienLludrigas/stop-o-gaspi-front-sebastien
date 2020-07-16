@@ -9,7 +9,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 70vh;
+  min-height: max-content;
 }
 
 .fridge--container {
@@ -39,7 +39,7 @@
       height: $freezer-height;
       margin-bottom: $fridge-section-margin;
 
-      &:after {
+      &:after { // line
         content: "";
         display: block;
         width: 100%;
@@ -61,7 +61,7 @@
           position: absolute;
           left: 20px;
           width: 0px;
-          border: 4px solid white;
+          border: 4px solid $secondColor;
           border-radius: 10px;
           bottom: 20px;
         }
@@ -73,7 +73,7 @@
         border-radius: $in-border-radius $out-border-radius $out-border-radius $in-border-radius;
 
         &:after {
-          border: $fridge-stroke-width solid white;
+          border: $fridge-stroke-width solid $secondColor;
           border-left: 0px;
           width: 10px;
           left: $fridge-thickness;
@@ -108,7 +108,7 @@
           position: absolute;
           top: 20px;
           left: 20px;
-          border: 4px solid white;
+          border: 4px solid $secondColor;
           height: 80px;
           border-radius: 10px;
         }
@@ -123,7 +123,7 @@
           top: 20px;
           left: $fridge-thickness;
           width: 2px;
-          border: $fridge-stroke-width solid white;
+          border: $fridge-stroke-width solid $secondColor;
           border-left: 0;
           padding-left: $fridge-stroke-width;
           z-index: -1;

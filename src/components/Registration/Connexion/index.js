@@ -1,5 +1,7 @@
 // == Import npm
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 // import { useSpring, useChain, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
@@ -50,7 +52,11 @@ const Connexion = ({
         {!isLogged && (
 
         <div className="login-contain ">
-          <h2>Login</h2>
+          <h2>Se connecter
+            <Link to="/registration">
+              <h3>( vous n'avez pas encore de compte ? )</h3>
+            </Link>
+          </h2>
 
           <form autoComplete="off" onSubmit={handleSubmitLoggin}>
 
@@ -78,7 +84,7 @@ const Connexion = ({
               <span />
               <span />
               <span />
-              Submit
+              Valider
             </button>
           </form>
         </div>
