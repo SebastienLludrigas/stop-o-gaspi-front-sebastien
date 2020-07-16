@@ -1,9 +1,10 @@
 import axios from 'axios';
 import staticDatas from 'src/staticDatas';
 
-import { HANDLE_DATAS, productRecovery, SEND_DATAS } from 'src/actions/datas';
+import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
 import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE } from 'src/actions/user';
+import { HANDMADE_PRODUCT, addHandMadeProduct } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -61,43 +62,6 @@ const datasMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
-    case HANDLE_DATAS:
-      // faire une requête vers l'API
-      axios.get('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/products')
-        .then((response) => {
-          console.log(response.data);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-          store.dispatch(saveDatas(response.data));
-        })
-        .catch((error) => {
-          console.warn(error);
-        });
-
-      next(action);
-      break;
-
-    case SEND_DATAS:
-    // faire une requête vers l'API
-      axios.post('http://ec2-54-161-17-91.compute-1.amazonaws.com/api/v0/user/registrer', {
-        email: 'fabclock@gmail',
-        name: 'Fabio',
-        City: 'Paris',
-        password: 'à plumes et à bec',
-        verifPassword: 'animal à plumes et à bec',
-        pseudo: 'bigeon',
-      })
-        .then((response) => {
-          console.log(response);
-          // on veut enregistrer les recettes dans le state => c'est le travail
-          // du reducer => on dispatch une action qui sera traitée par un reducer
-        })
-        .catch((error) => {
-          console.warn(error);
-        });
-
-      next(action);
-      break;
 
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
@@ -131,6 +95,35 @@ const datasMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response.data);
           store.dispatch(addProductToPantry(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case HANDMADE_PRODUCT: {
+      // Je récupère le code-barres qui est enregistré dans le state actuel
+      // via la saisie manuelle
+      const {
+        productName,
+        manufactureDate,
+        expirationDate,
+        productQuantity,
+      } = store.getState().user;
+
+      axios.get('https://jsonplaceholder.typicode.com/posts', {
+        productName,
+        manufactureDate,
+        expirationDate,
+        productQuantity,
+      })
+        .then((response) => {
+          console.log(response.data);
+
+          store.dispatch(addHandMadeProduct(response.data));
         })
         .catch((error) => {
           console.warn(error);
