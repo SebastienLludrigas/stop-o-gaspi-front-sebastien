@@ -2,18 +2,29 @@
 
 .pantry{
 
-  background-color: $firstColor;
+  //background-color: $firstColor;
   padding-top: 110px;
   text-align: center;
-  
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
+
+
 }
 .pantryTitle{
   padding-top: 20px;
   font-weight: bold;
+  font-size: 2em;
   margin-bottom: 3vmin;
+
+
+  
   }
 .label_pantry{
   margin-bottom: 3vmin;
+  font-size: 1.5em;
+  text-shadow: $firstColor 1px 1px;
+
+
+
 }
 .pantry_buttons{
 display: flex;
@@ -36,6 +47,9 @@ margin-bottom: 3vmin;
     align-self: center;
     height: 10vmin;
     width: 90vw;
+    
+    margin-left: 5vmin;
     line-height: 7vmin;
+    font-size: 1.5em;
   }
 }
