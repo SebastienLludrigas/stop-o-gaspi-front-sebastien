@@ -9,7 +9,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3273230050245,
-    expiration_date: '2020-10-09T16:31:07.000Z',
+    expiration_date: '2020-07-18T16:31:07.000Z',
   },
 
   {
@@ -22,7 +22,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'a',
     barcode: 3273220081068,
-    expiration_date: '2020-07-16T00:31:07.000Z',
+    expiration_date: '2020-08-16T00:31:07.000Z',
   },
 
   {
@@ -35,7 +35,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3560070475681,
-    expiration_date: '2020-07-10T11:31:07.000Z',
+    expiration_date: '2020-08-10T11:31:07.000Z',
   },
 
   {
@@ -48,7 +48,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'c',
     barcode: 3250391308415,
-    expiration_date: '2020-07-10T16:55:07.000Z',
+    expiration_date: '2020-08-15T16:55:07.000Z',
   },
 
   {
@@ -61,7 +61,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3257983940060,
-    expiration_date: '2020-07-10T06:31:07.000Z',
+    expiration_date: '2020-07-18T06:31:07.000Z',
   },
 
   {
@@ -74,7 +74,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 4056489012832,
-    expiration_date: '2020-07-10T18:31:07.000Z',
+    expiration_date: '2020-08-17T18:31:07.000Z',
   },
 
   {
@@ -87,7 +87,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'b',
     barcode: 3230890843921,
-    expiration_date: '2020-07-10T20:31:07.000Z',
+    expiration_date: '2020-07-17T20:31:07.000Z',
   },
 
   {
@@ -100,7 +100,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3266980289768,
-    expiration_date: '2020-07-10T02:31:07.000Z',
+    expiration_date: '2020-07-20T02:31:07.000Z',
   },
 
   {
@@ -113,7 +113,7 @@ export default [
     quantity: 10,
     nutriscore_grade: '',
     barcode: 3302100012400,
-    expiration_date: '2020-07-10T05:31:07.000Z',
+    expiration_date: '2020-07-18T05:31:07.000Z',
 
   },
   {
@@ -126,7 +126,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'c',
     barcode: 3413900000310,
-    expiration_date: '2020-07-10T14:31:07.000Z',
+    expiration_date: '2020-07-18T14:31:07.000Z',
   },
 
   {
@@ -139,7 +139,7 @@ export default [
     quantity: 10,
     nutriscore_grade: 'd',
     barcode: 3155251205425,
-    expiration_date: '2020-07-10T22:31:07.000Z',
+    expiration_date: '2020-07-18T22:31:07.000Z',
   },
 
   {
@@ -152,6 +152,6 @@ export default [
     quantity: 10,
     nutriscore_grade: 'a',
     barcode: 3166353931402,
-    expiration_date: '2020-07-10T23:31:07.000Z',
+    expiration_date: '2020-07-17T23:31:07.000Z',
   },
 ];
