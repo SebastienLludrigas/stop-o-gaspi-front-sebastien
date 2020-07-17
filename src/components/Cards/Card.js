@@ -68,7 +68,7 @@ Card.propTypes = {
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
   image: PropTypes.string.isRequired,
-  expiration_date: PropTypes.number.isRequired,
+  expiration_date: PropTypes.number.isRequired,   
 };
 
 Card.defaultProps = {
