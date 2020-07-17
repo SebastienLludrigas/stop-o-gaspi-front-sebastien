@@ -19,6 +19,7 @@ const infosProduct = ({ handleAddProduct, onChange }) => {
 
   return (
     <div className="infos-product">
+      <h2 className="infos-product-title">Votre scan a réussi</h2>
       <form className="infos-product-form" onSubmit={handleSubmit}>
         Entrez maintenant la date limite de consommation<br />
         <input
@@ -42,6 +43,7 @@ const infosProduct = ({ handleAddProduct, onChange }) => {
           Valider
         </button>
       </form>
+      <div className="img_barcode" />
     </div>
   );
 };

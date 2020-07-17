@@ -1,37 +1,24 @@
 @import 'src/styles/vars.scss';
+
 .connexionPage{
-padding: 300px;
-height: 100vh;
-width: 100vw;
+@include main_container;
 background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
 }
 .inscriptionPage {
-  width: 100vw;
-  height: 150vh;
-  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
-  padding-top: 110px;
+  @include main_container;
+  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff); 
   text-align: center;
 }
 .login-contain {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
   padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.8);
+  background: rgba(70, 35, 35, 0.8);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
 }
 .contain-inscription{
-  margin-top: 5vmin;
-  position: relative;
-  top: 50%;
-  left: 50%;
   width: 60vmin;
   padding: 20px;
-  transform: translate(-50%, -50%);
   background: rgba(0,0,0,.8);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
@@ -83,9 +70,9 @@ background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, r
   background: transparent;
 }
 .login-contain .user-contain label {
-  position: absolute;
-  top:0;
-  left: 0;
+  //position: absolute;
+  //top:0;
+  //left: 0;
   padding: 10px 0;
   font-size: 16px;
   color: #fff;
@@ -207,10 +194,10 @@ background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, r
 }
 @media screen and (max-width: 600px) {
   .inscriptionPage{
-    height: 120vh;
+    
     width: 100vw;
   }
   .connexionPage{
-    height: 95vh;
+    width: 100vw;
   }
 }
