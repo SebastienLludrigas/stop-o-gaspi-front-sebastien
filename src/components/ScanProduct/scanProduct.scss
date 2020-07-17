@@ -103,7 +103,10 @@ canvas.drawingBuffer {
   //width: 350px;
 
  @include modal_scan_page();
-
+  width: 90%;
+  height: max-content;
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px;
   background-color: rgb(233, 188, 137);
   color: rgb(173, 92, 0);
@@ -119,6 +122,7 @@ canvas.drawingBuffer {
   border-left: 46px solid transparent;
   margin-left: 6vmin;
   border-top: 70px solid rgb(233, 188, 137);
+  margin-left: 10vmin;
 }
 .add-product{
   width: 90%;
@@ -309,10 +313,10 @@ canvas.drawingBuffer {
   border-radius: 10px;
   background-image: url(../../assets/image/scanbackground.jpg);
   background-size: cover;
-  //background-clip: border-box;
   background-position: right;
 
   display:flex;
+  flex-direction: column;
   @media screen and (max-width: 980px) {
     width: 100vw;
     margin-left: 7vmin;
