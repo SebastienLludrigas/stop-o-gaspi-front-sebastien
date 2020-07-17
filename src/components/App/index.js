@@ -26,7 +26,7 @@ import './styles.scss';
 const App = () => (
   <div className="app">
     <Header />
-    <Switch >
+    <Switch>
       <Route exact path="/" component={Main} />
       <Route forceRefresh path="/pantry" component={Pantry} />
       <Route path="/connexion" component={Connexion} />
