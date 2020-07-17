@@ -6,10 +6,15 @@
 .app {
   background-color: $firstColor;
   color:$secondColor;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   list-style: none;
   font-family: roboto;
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  align-items: flex-start;
+
 }
 
 

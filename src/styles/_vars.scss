@@ -31,6 +31,19 @@ $out-border-radius: 20px;
 $in-border-radius: 20px;
 
 // ----- @mixin
+// Main position
+@mixin main_container(){
+  height: auto;
+  //flex: 1 1 auto;
+  width: 100vw;
+  padding: 20px;
+  overflow: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+
+
 // Button
 @mixin btn-style($colorText, $ColorBackground) {
   border: none;
@@ -38,7 +51,8 @@ $in-border-radius: 20px;
   background-color: $ColorBackground;
   border-radius: 10px;
   border: 2px solid $colorText;
-  padding: 5px;
+  padding:15px;
+  font-weight: bold;
   box-shadow: $ColorBackground 1px 1px 2px;
   &:hover{
     box-shadow: $ColorBackground 1px 1px 20px;

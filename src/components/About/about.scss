@@ -4,28 +4,28 @@
   src: url("../../assets/fonts/Bubble.ttf");
  } 
 .about_page{
+  @include main_container;
   font-family: bubble ,Arial;
-  height: max-content;
   background-image: repeating-linear-gradient(90deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(253, 164, 183,0.5) 0px, rgba(253, 164, 183,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
-  overflow: hidden;
   display: grid;
   grid-template-areas:
   "about_title about_title about_title about_title about_title" 
   "p_laurie p_sebastien p_aurelien p_greg p_alexis"
   "a_laurie a_sebastien a_aurelien a_greg a_alexis"
-  "tous tous tous tous tous"
-  ;
+  "tous tous tous tous tous";
   row-gap: 1vmin;
-  column-gap: 5vmin;
-  padding: 115px 7vmin 7vmin;
-  height: max-content;
-  width: 100vw;
-  @media screen and (max-width: 1000px) {
+  column-gap: 3vmin;
+  @media screen and (max-width: 1200px) {
   //grid-template-areas:
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    width: max-content;
+    grid-template-areas:
+  "about_title about_title about_title " 
+  "p_laurie p_sebastien p_aurelien" 
+  "a_laurie a_sebastien a_aurelien" 
+  "p_greg p_alexis 1fr"
+  "a_greg a_alexis 1fr"
+  "tous tous tous";
+  place-items: center;
   }
   @media screen and (max-width: 620px) {
     display: grid;
@@ -40,8 +40,6 @@
       "tous tous"
       ;
     place-items: center;
-    height: max-content;
-    width: 100vw;
     row-gap: 2vmin;
   }
   .about_title{
@@ -54,13 +52,13 @@
   }
   & img{
     border: ridge 10px $fourthColor;
-    width: 150px;
+    width: 200px;
   }
   .ul_about{
     list-style: none;
     text-align: center;
     border: ridge 10px $fourthColor;
-    width: 150px;
+    width: 200px;
     background-color: #76ead771;
 
 

@@ -1,8 +1,7 @@
 @import 'src/styles/vars.scss';
 
 .dashboard_page{
-  padding-top: 120px;
-  height: max-content ;
+  @include main_container;
   background-color: $firstColor;
   display: flex;
   flex-direction: row;
@@ -73,7 +72,6 @@
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 770px) {
-      margin-top: 10vmin;
       order:-1;
       width: 100vw;
         }

@@ -49,12 +49,12 @@ const ScanProduct = ({
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
-            <p>Votre produit<br />
+            <p>Je viens de scanner le produit  <br />
               <mark>{currentProduct.product.product_name_fr}</mark><br />
-              de la marque<br />
+              de la marque
               <mark>{currentProduct.product.brands}</mark><br />
-              a bien été récupéré.<br />
-              Entrez la date limite et la quantité.<br />
+              <br />
+             
             </p>
           </div>
           <div className="arrow-down-success" />
@@ -111,22 +111,22 @@ const ScanProduct = ({
         config={{ delay: 2000, duration: 2000 }}
       >
         <div className="left_scanPage">
+              <div className="scanInput">
+                <h2>je scanne mon code barre :</h2>
+                <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
+              </div>
 
-          <div className="scanInput">
-            <h2>je scanne mon code barre :</h2>
-            <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
-          </div>
+              <div className="manualInput">
+                <h2>je saisie mon code barre :</h2>
+                <input onChange={handleChange} type="text" value={barCode} />
+                <div
+                  onClick={catchBarCode}
+                  className="btn_validate_barcode"
+                >
+                  Valider
+                </div>
+              </div>
 
-          <div className="manualInput">
-            <h2>je saisie mon code barre :</h2>
-            <input onChange={handleChange} type="text" value={barCode} />
-            <div
-              onClick={catchBarCode}
-              className="btn_validate_barcode"
-            >
-              Valider
-            </div>
-          </div>
           {(status === 1 && productFound) && (
             <div className="input-dlc ">
               <InfosProduct onChange={onChange} handleAddProduct={handleAddProduct} />
