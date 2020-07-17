@@ -1,40 +1,36 @@
 @import 'src/styles/vars.scss';
 .productPage {
-  position: relative;
-  width: 100vw;
-  height: 120vh;
+  //position: relative;
+  //width: 100vw;
+  ////height: 120vh;
+  @include main_container;
   //background-color: $firstColor;
   background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);
-  padding-top: 120px;
   text-align: center;
+  
   & h1{
     font-size: 6vmin;
     font-weight: bold;
   }
 }
 .login-contain {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 80vmin;
+  //position: relative;
+  
+  width: 50%;
   padding: 40px;
-  transform: translate(-50%, -50%);
+  margin-left: 25%;
+  
+  //transform: translate(-50%, -50%);
   background: rgba(0,0,0,.8);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
-}
-.contain-inscription{
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 60vmin;
-  padding: 40px;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.8);
-  box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
-  border-radius: 10px;
+  @media screen and (max-width: 900px) {
+    width: 90%;
+    margin-left: 5%;
+
+  }
+  
 }
 
 
@@ -61,9 +57,9 @@
   outline: none;
   background: transparent;
 }
-.login-contain .user-contain label {
+/*.login-contain */.user-contain label {
   position: absolute;
-  top:0;
+  top:-20px;
   left: 0;
   padding: 10px 0;
   font-size: 16px;
@@ -186,7 +182,7 @@
 }
 @media screen and (max-width: 600px) {
   .productPage{
-    height: 100vh;
+    //height: 100vh;
   }
 
 }

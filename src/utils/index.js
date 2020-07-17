@@ -7,7 +7,10 @@ export const colorCode = (expiration_date, targetedClass) => {
 
   let classe = '';
 
-  if ((expiration_date - currentDate) <= 86400000) {
+  if ((expiration_date - currentDate) < 0) {
+    classe = `${targetedClass} finish`;
+  }
+  else if ((expiration_date - currentDate) <= 86400000) {
     classe = `${targetedClass} red`;
   }
   else if ((expiration_date - currentDate) <= 172800000) {

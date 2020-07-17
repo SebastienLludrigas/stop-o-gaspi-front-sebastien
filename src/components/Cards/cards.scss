@@ -12,7 +12,7 @@
   background-color: $firstColor;
   border: solid 10px $secondColor;
   border-radius: 15px;
-  width: 200px;
+  width: 250px;
   height: 300px;
   padding: 1vmin;
   margin: 2vmin;
@@ -24,7 +24,8 @@
   position: relative;
   will-change: transform, opacity;
   @media screen and (max-width: 450px) {
-    width: 90vw;
+    width: 80vw;
+    
     margin-left: 5vw;
     font-size: 5vmin;
   }
@@ -32,26 +33,53 @@
 
   & .productTitle{
     text-align: center;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 10px;
-    border-bottom: 1px $secondColor solid  ;
+    border-bottom: 1px $secondColor solid;
+    height: 15%;
+    line-height:1.4em;
+    overflow:hidden;
     // margin-top: 2px;
   }
-
+  @mixin detail_card(){
+    align-self: center;
+    font-size: 1.2em;
+  }
   & .dlc{
-    font-size: 1.1em;
+    order:1;
+    @include detail_card();    
+
     font-weight: bold;
+  }
+  & .qut{
+    order:2;
+    @include detail_card();    
+    font-weight: bold;
+  }
+  & .brand{
+    order:4;
+    @include detail_card();    
+  }
+  & .createDate{
+    order:5;
+    @include detail_card();    
+  }
+  & .poid{
+    order:3;
+    @include detail_card();    
   }
 
   & .product-img{
-    max-height: 200px;
+    height: 35%;
     display: block;
     margin: 0 auto;
   }
 
   & .nutri-img {
-    max-width: 150px;
+    width:90%;
+    content: "non communiquer";
     // display: block;
     margin: 0 auto;
   }
@@ -61,17 +89,52 @@
   }
  
 }
-
-.card.red {
-  border: solid 10px red;
+@mixin card_effect_peremption(){
+  box-shadow: black 2px 2px 20px;
+  &:hover{
+    box-shadow: none;
+ 
+  }
 }
+.card.red {
+  border: solid 5px rgb(255, 61, 61);
+  background-color:  rgb(252, 215, 206);
+  @include card_effect_peremption();
 
+}
+.card.finish {
+  border: solid 8px $secondColor;
+  background-color:  rgb(211, 208, 208);
+  @include card_effect_peremption();
+  background-image: url(../../assets/image/finishProduct.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  & .dlc{color:$secondColor; }
+  & .qut{}
+  & .brand{display:none;}
+  & .createDate{display:none;}
+  &.poid{} 
+  & .productTitle{
+    align-self: baseline;
+  }
+
+}
 .card.orange {
-  border: solid 10px orange;
+  border: solid 5px rgb(247, 176, 45);
+  background-color:  rgb(252, 224, 182);
+  @include card_effect_peremption();
+
+
 }
 
 .card.green {
-  border: solid 10px green;
+  border: solid 5px rgb(64, 146, 64);
+  background-color:  rgb(206, 255, 206);
+  @include card_effect_peremption();
+
+
+
 }
 
 .front, .back{
