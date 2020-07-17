@@ -83,10 +83,11 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       // https://jsonplaceholder.typicode.com/posts
       // http://54.196.61.131/api/v0/user/1/product/add/scan
-      axios.post('https://jsonplaceholder.typicode.com/posts', {
+      axios.post('http://54.196.61.131/api/v0/user/23/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
-        idi: nextId,
+
+        // idi: nextId,
         name: currentProduct.product.product_name_fr,
         brand: currentProduct.product.brands,
         image: currentProduct.product.image_front_thumb_url,
