@@ -31,7 +31,7 @@ export const sortByDate = (datas) => {
 
   // On trie les datas par ordre croissant de leur date
   // en ciblant leur propriété expiration_date
-  changeDatesFormat.sort((a, b) => a.expiration_date - b.expiration_date);
+  // changeDatesFormat.sort((a, b) => a.expiration_date - b.expiration_date);
 
   return changeDatesFormat;
 };

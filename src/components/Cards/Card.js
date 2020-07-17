@@ -66,13 +66,14 @@ Card.propTypes = {
   // ingredients: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   product_quantity: PropTypes.any,
-  nutriscore_grade: PropTypes.string.isRequired,
+  nutriscore_grade: PropTypes.string,
   image: PropTypes.string.isRequired,
   expiration_date: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {
   product_quantity: '',
+  nutriscore_grade: '',
 };
 
 // == Export

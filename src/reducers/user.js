@@ -21,7 +21,8 @@ const initialState = {
   info: {},
   // indique si l'utilisateur est loggué
   isLogged: false,
-  userProducts: staticDatas,
+  // userProducts: staticDatas,
+  userProducts: [],
   currentProduct: {},
   productFound: true,
   finalProduct: {},
@@ -122,7 +123,8 @@ const user = (state = initialState, action = {}) => {
     case ADD_PRODUCT_TO_PANTRY:
       return {
         ...state,
-        userProducts: [action.datas, ...state.userProducts],
+        // userProducts: [action.datas, ...state.userProducts],
+        userProducts: action.datas,
         status: 3,
       };
 
