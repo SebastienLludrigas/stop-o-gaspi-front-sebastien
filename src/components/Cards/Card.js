@@ -44,11 +44,11 @@ const Card = ({
       <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
         <img className="product-img" src={image} alt="visuel par default" />
         <p className="productTitle">{name}</p>
-        <p>DLC : <span className="dlc">{date.toLocaleString('fr-FR', options)}</span></p>
-        <p>marque : {brand}</p>
-        <p>Date d'ajout : 01 novembre 1901</p>
-        <p>poids : {product_quantity} g</p>
-        <p className="dlc">quantité : {quantity}</p>
+        <p className="dlc">DLC : <span>{date.toLocaleString('fr-FR', options)}</span></p>
+        <p className="brand">marque : {brand}</p>
+        <p className="createDate">Date d'ajout : 01 novembre 1901</p>
+        <p className="poid">poids : {product_quantity} g</p>
+        <p className="qut">quantité : {quantity}</p>
       </anim.div>
 
       <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
