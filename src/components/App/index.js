@@ -28,7 +28,7 @@ const App = () => (
     <Header />
     <Switch >
       <Route exact path="/" component={Main} />
-      <Route forceRefresh path="/pantry" component={Pantry} />
+      <Route path="/pantry" component={Pantry} />
       <Route path="/connexion" component={Connexion} />
       <Route path="/inscription" component={Inscription} />
       <Route path="/product" component={Product} />
