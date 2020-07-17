@@ -13,9 +13,6 @@
 }
 canvas.drawing,
 canvas.drawingBuffer {
-  //position: absolute;
-  //left: 0;
-  //top: 0;
   max-width: 100px;
   max-height: 100px;
   
@@ -23,7 +20,6 @@ canvas.drawingBuffer {
 
 .modal {
   border-radius: 5px;
-  //align-self: flex-end;
   background-color: transparent;
   @media screen and (max-width: 600px) {
     width: 100vw;
@@ -32,17 +28,13 @@ canvas.drawingBuffer {
 }
 .modal-content{
   top:5vmin;
-  // padding: 20px;
   background: darken($firstColor, 6%);
-  //height: 65vh;
   width: 100%;
   border-radius: 5px;
 
 }
 
 .fa-times {
-  //margin-bottom: 25px;
-  //margin-top: -15px;
   margin-right:40px ;
   float: right;
   color: $secondColor;
@@ -76,11 +68,13 @@ canvas.drawingBuffer {
 .scanError {
 
   @include modal_scan_page();
-
+  width: 90%;
+  height: max-content;
+  margin-left: auto;
+  margin-right: auto;
   padding: 15px;
   background-color: rgb(255, 194, 194);
   color: rgb(173, 0, 0);
-  //border: 1px solid rgb(173, 0, 0);
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
@@ -93,14 +87,9 @@ canvas.drawingBuffer {
   border-right: 30px solid transparent;
   border-left: 46px solid transparent;
   
-  border-top: 70px solid rgb(255, 194, 194);
+  border-top: 170px solid rgb(255, 194, 194);
 }
 .productNotFound {
-
-  //position: fixed;
-  //top: 150px;
-  //left: 60%;
-  //width: 350px;
 
  @include modal_scan_page();
   width: 90%;
@@ -110,7 +99,6 @@ canvas.drawingBuffer {
   padding: 15px;
   background-color: rgb(233, 188, 137);
   color: rgb(173, 92, 0);
-  // border: 1px solid rgb(173, 92, 0);
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
@@ -121,7 +109,7 @@ canvas.drawingBuffer {
   border-right: 30px solid transparent;
   border-left: 46px solid transparent;
   margin-left: 6vmin;
-  border-top: 70px solid rgb(233, 188, 137);
+  border-top: 150px solid rgb(233, 188, 137);
   margin-left: 10vmin;
 }
 .add-product{
@@ -138,30 +126,22 @@ canvas.drawingBuffer {
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
-  
 
   & mark {
-    
     color:$secondColor;
     font-size: 1.3em;
     background-color: transparent;
     display: inline-block;
-    padding: 6px 10px;
-    //border: 1px solid $secondColor;
-    //border-radius: 3px;
-    //margin: 5px;
-    
+    padding: 6px 10px;   
   }
 }
 .arrow-down-success {
   width: 0;
   height: 0;
   margin-left: 6vmin;
-
   border-right: 30px solid transparent;
   border-left: 46px solid transparent;
-
-  border-top: 70px solid rgb(199, 255, 182);
+  border-top: 100px solid rgb(199, 255, 182);
 }
 
 
@@ -338,7 +318,6 @@ canvas.drawingBuffer {
     position: absolute;
     top: 0;
     left: 20px;
-    //align-self:center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
