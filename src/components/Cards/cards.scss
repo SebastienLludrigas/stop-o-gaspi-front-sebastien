@@ -10,7 +10,7 @@
 .card{
   position: absolute;
   background-color: $firstColor;
-  border: solid 2px $secondColor;
+  border: solid 10px $secondColor;
   border-radius: 15px;
   width: 200px;
   height: 300px;
@@ -61,6 +61,19 @@
   }
  
 }
+
+.card.red {
+  border: solid 10px red;
+}
+
+.card.orange {
+  border: solid 10px orange;
+}
+
+.card.green {
+  border: solid 10px green;
+}
+
 .front, .back{
   display:none;
  

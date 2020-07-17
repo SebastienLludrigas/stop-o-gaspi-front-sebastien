@@ -1,5 +1,5 @@
 import axios from 'axios';
-import staticDatas from 'src/staticDatas';
+// import staticDatas from 'src/staticDatas';
 
 import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
@@ -29,8 +29,6 @@ const datasMiddleware = (store) => (next) => (action) => {
         axios.get(`https://world.openfoodfacts.org/api/v0/product/${barCode}.json`)
           .then((response) => {
             console.log(response.data);
-            // on veut enregistrer les recettes dans le state => c'est le travail
-            // du reducer => on dispatch une action qui sera traitée par un reducer
 
             store.dispatch(productRecovery(response.data));
           })
@@ -66,22 +64,29 @@ const datasMiddleware = (store) => (next) => (action) => {
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
       const {
+        userProducts,
         currentProduct,
         quantite,
         dlc,
       } = store.getState().user;
 
-      // Transformation de la date rentrée par le user en chaîne de caractères au format ISO
-      // avec l'heure courante en plus (nécessaire pour que la date soit acceptée par symfony)
-      const now = new Date();
-      const hour = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      const expDate = new Date(`${dlc} ${hour}:${minutes}:${seconds}`);
+      // On convertit la date du produit ajouté par l'utilisateur en date au format ISO
+      // afin quelle soit acceptée par Symfony
+      const date = new Date(dlc);
+      const expDate = date.toISOString();
 
+      // Ajout de l'id au nouveau produit. Juste pour les tests car Symfony me renverra
+      // un id différent pour chaque produit une fois que la connexion avec le back
+      // sera opérationnelle.
+      const ids = userProducts.map((product) => product.idi);
+      const nextId = Math.max(...ids) + 1;
+
+      // https://jsonplaceholder.typicode.com/posts
+      // http://54.196.61.131/api/v0/user/1/product/add/scan
       axios.post('https://jsonplaceholder.typicode.com/posts', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
+        idi: nextId,
         name: currentProduct.product.product_name_fr,
         brand: currentProduct.product.brands,
         image: currentProduct.product.image_front_thumb_url,
@@ -93,7 +98,7 @@ const datasMiddleware = (store) => (next) => (action) => {
         expiration_date: expDate,
       })
         .then((response) => {
-          console.log(response.data);
+          console.log(response);
           store.dispatch(addProductToPantry(response.data));
         })
         .catch((error) => {

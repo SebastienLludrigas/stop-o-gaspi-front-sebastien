@@ -9,7 +9,7 @@ import {
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
-import { UPDATE_PRODUCT_FIELD, HANDMADE_PRODUCT, ADD_HANDMADE_PRODUCT } from '../actions/product';
+import { UPDATE_PRODUCT_FIELD, ADD_HANDMADE_PRODUCT } from '../actions/product';
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
