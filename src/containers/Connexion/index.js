@@ -10,7 +10,7 @@ import { updateUserField, logIn, logOut } from 'src/actions/user';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   isLogged: state.user.isLogged,
-  email: state.user.email,
+  username: state.user.username,
   password: state.user.password,
 });
 

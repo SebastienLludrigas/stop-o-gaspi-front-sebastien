@@ -10,7 +10,12 @@ import Burger from './Burger';
 import './nav.scss';
 
 // == Composant
-const Nav = ({ handleBurger, cross }) => (
+const Nav = ({
+  handleBurger,
+  cross,
+  isLogged,
+  logOut,
+}) => (
   <div className="nav">
 
     <nav id="row-menu">
@@ -73,6 +78,13 @@ const Nav = ({ handleBurger, cross }) => (
           </NavLink>
         </li>
 
+        <li
+          className="nav"
+          onClick={logOut}
+        >
+          Déconnexion
+        </li>
+
         <li className="nav">
           <Link
             to="/connexion"
@@ -112,7 +124,9 @@ const Nav = ({ handleBurger, cross }) => (
 
 Nav.propTypes = {
   handleBurger: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired,
   cross: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

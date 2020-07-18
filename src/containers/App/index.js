@@ -1,30 +1,28 @@
 import { connect } from 'react-redux';
 
-import { toggleMenu } from 'src/actions/myaccount';
-import { logOut } from 'src/actions/user';
-
 // === on importe le composant de présentation
-import Header from 'src/components/Header';
+import App from 'src/components/App';
+
+import { getAllProducts } from 'src/actions/product';
+import { saveUser } from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
-  toggle: state.myaccount.toggle,
-  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps
 // si j'ai besoin de dispatcher une action vers le store
 const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
-  toggleMenu: () => {
-    dispatch(toggleMenu());
+  getAllProducts: () => {
+    dispatch(getAllProducts());
   },
-  logOut: () => {
-    dispatch(logOut());
+  saveUser: () => {
+    dispatch(saveUser());
   },
 });
 
 // === création de l'assistant
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

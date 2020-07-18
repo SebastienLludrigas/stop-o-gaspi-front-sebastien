@@ -6,14 +6,15 @@ import {
   ON_CHANGE_BAR_CODE,
   ADD_PRODUCT_TO_PANTRY,
   HANDLE_ADD_PRODUCT,
+  LOG_OUT,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
-import { UPDATE_PRODUCT_FIELD, ADD_HANDMADE_PRODUCT } from '../actions/product';
+import { UPDATE_PRODUCT_FIELD, ADD_HANDMADE_PRODUCT, FILL_PANTRY } from '../actions/product';
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
-  email: '',
+  username: '',
   // contenu de l'input pour le mot de passe
   password: '',
   // informations sur l'utilisateur
@@ -63,9 +64,25 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         info: action.data,
-        // isLogged: action.isLogged,
-        email: '',
+        // userProducts: action.data.productPerso,
+        isLogged: true,
+        username: '',
         password: '',
+      };
+
+    case LOG_OUT: {
+      localStorage.removeItem('token');
+
+      return {
+        ...state,
+        isLogged: false,
+      };
+    }
+
+    case FILL_PANTRY:
+      return {
+        ...state,
+        userProducts: action.datas,
       };
 
     case ON_DETECTED: {

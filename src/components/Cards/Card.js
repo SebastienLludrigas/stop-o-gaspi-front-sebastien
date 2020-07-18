@@ -61,19 +61,23 @@ const Card = ({
 };
 
 Card.propTypes = {
-  name: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  brand: PropTypes.string,
   // ingredients: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired,
+  quantity: PropTypes.number,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
-  image: PropTypes.string.isRequired,
-  expiration_date: PropTypes.number.isRequired,   
+  image: PropTypes.string,
+  expiration_date: PropTypes.number.isRequired,
 };
 
 Card.defaultProps = {
   product_quantity: '',
   nutriscore_grade: '',
+  name: '',
+  brand: '',
+  quantity: 1,
+  image: '',
 };
 
 // == Export

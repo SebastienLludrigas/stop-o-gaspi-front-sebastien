@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -10,7 +10,11 @@ import Cards from '../Cards';
 import './pantry.scss';
 
 // == Composant
-const Pantry = ({ datas }) => {
+const Pantry = ({ datas, getAllProducts }) => {
+  useEffect(() => {
+    getAllProducts();
+  }, []);
+
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
@@ -36,6 +40,7 @@ const Pantry = ({ datas }) => {
 
 Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
+  getAllProducts: PropTypes.func.isRequired,
 };
 
 // == Export

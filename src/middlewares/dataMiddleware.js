@@ -4,7 +4,7 @@ import axios from 'axios';
 import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
 import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE } from 'src/actions/user';
-import { HANDMADE_PRODUCT, addHandMadeProduct } from 'src/actions/product';
+import { HANDMADE_PRODUCT, addHandMadeProduct, GET_ALL_PRODUCTS, fillPantry } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -61,6 +61,23 @@ const datasMiddleware = (store) => (next) => (action) => {
       break;
     }
 
+    case GET_ALL_PRODUCTS: {
+      const token = localStorage.getItem('token');
+      axios.get('http://54.196.61.131/api/user/23/product/all/order-by-name-asc', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(fillPantry(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
       const {
@@ -69,6 +86,8 @@ const datasMiddleware = (store) => (next) => (action) => {
         quantite,
         dlc,
       } = store.getState().user;
+
+      const token = localStorage.getItem('token');
 
       // On convertit la date du produit ajouté par l'utilisateur en date au format ISO
       // afin quelle soit acceptée par Symfony
@@ -83,7 +102,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       // https://jsonplaceholder.typicode.com/posts
       // http://54.196.61.131/api/v0/user/1/product/add/scan
-      axios.post('http://54.196.61.131/api/v0/user/23/product/add/scan', {
+      axios.post('http://54.196.61.131/api/user/23/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
 
@@ -97,6 +116,8 @@ const datasMiddleware = (store) => (next) => (action) => {
         nutriscore_grade: currentProduct.product.nutriscore_grade,
         barcode: currentProduct.code,
         expiration_date: expDate,
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
           console.log(response);

@@ -43,10 +43,8 @@ export const logIn = () => ({
   type: LOG_IN,
 });
 
-export const saveUser = (data, isLogged) => ({
+export const saveUser = () => ({
   type: SAVE_USER,
-  data,
-  isLogged,
 });
 
 export const logOut = () => ({
