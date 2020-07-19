@@ -2,99 +2,168 @@
 @font-face {
   font-family: "bubble";
   src: url("../../assets/fonts/Bubble.ttf");
- } 
+ }
+ @font-face {
+  font-family: "robot";
+  src: url("../../assets/fonts/Roboto-Regular.ttf");
+ }
 .main{
   @include main_container;
-  background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff);  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-template-areas: 
-  "fridge title"
-  "fridge texto";
-  row-gap: 5vmin;
-  column-gap: 5vmin;
-  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   @media screen and (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-  
+   }
+}
+.main-explain{
+  position: relative;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+
+}
+//------------- carroussel -----------
+.simple-trans-main > div {
+  cursor: pointer;
+
+  position: absolute;
+  left:15vw;
+  top: 20vh; //header footer 15vh
+  width: 70vw;
+  height: 60vh;
+
+  z-index: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  border: solid 4px $firstColor;
+  box-shadow: 4px 4px 30px $secondColor;
+  font-weight: 800;
+  font-size:5em;
+  will-change: transform, opacity;
+  text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+  overflow: hidden;
+  @media all and (max-width: 950px) {
+   
+  }
+}
+//------ pageMain -------
+.kawaii{
+  position: relative;
+  top: 10vmin;
+  cursor: pointer;
+}
+
+//-------------button translate -------
+
+.btn_transHome{
+  position: absolute;
+  top: 50%;
+  right: 7.5vw;
+  z-index: 200;
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: $thirdColor;
+  border: solid 2px $secondColor;
+  &:hover{
+    color: $thirdColor;
+    background-color: $secondColor;
+    border: solid 2px $thirdColor;
 
   }
-  .main_left{grid-area: fridge;}
-  
-  .titleMain{
-  font-family: bubble ,Arial;
-  font-weight: normal;
-  grid-area: title;
-  height: max-content;
+}
+
+
+//---------------- FIN button translate --------------
+.A_main{
+  display: flex;
+  flex-direction: rows;
+  justify-content: center;
+  //align-items: center;
+
+}
+.textMain_A{
   text-align: center;
-  font-size: 8vmin;
-  @media screen and (max-width: 600px) {
-    font-size:7vmin;
-    white-space: nowrap;
-  }
-
-  }
-  .textMain{
-    //line-height: 5vmin;
-    grid-area: texto;
-    text-align: center;
-    width: 100%;
-    font-size: 4vmin;
-    @media screen and (max-width: 600px) {
-      width: 100%;  
-      }
-    }
-
-  /*.button-tests {
-    display: inline-block;
-    width: 200px;
-  }*/
-}
-
-// ---------------  FLIP TEXTE -------------------
-#container {
+  height: 100%;
+  font-size: 4vmin;
+  line-height: 3vmin;
+  color: $secondColor;
   text-transform: uppercase;
-  font-size:4vmin;
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden;
+  & h3{font-size: 2.5vmin;}
+}
+.cloudMain {
+	width: 60%; height: 50%;
+	background: #fff;
+	border-radius: 10em;
+  position: relative;
+  margin-left: 30px;
+  top: -40px;
+
 }
 
-#flip {
-  height:36px;
-  overflow:hidden;
+.cloudMain:before, .cloudMain:after {
+	content: '';
+  position: absolute; 
+  z-index: -5;
+	background: transparent;
+	//width: 50px; height: 50px;
+	position: absolute; bottom: 10px; left: 10px;
+	//border-radius: 50px;
+  transform: rotate(30deg);
+  width: 0;
+  height: 0;
+  border-right: 80px solid transparent;
+  border-left: 26px solid transparent;
+  border-top: 150px solid #fff;
+  
 }
 
-#flip > div > div {
-  color:$secondColor;
-  padding:0px 12px;
-  height:45px;
-  margin-bottom:45px;
-  display:inline-block;
+
+.caddie_home{
+
+  width: 200px;
+  justify-self: right;
+  position: absolute;
+  z-index: 150;
+  right:0;
+  bottom: 0px;
+  @media all and (max-width: 950px) {
+    display: none;   
+  }
 }
 
-#flip div:first-child {
-  animation: show 7s linear infinite;
-}
 
-#flip div div {
-  background:transparent;
-}
-#flip div:first-child div {
-  background:transparent;
-}
-#flip div:last-child div {
-  background:transparent;
-}
 
-@keyframes show {
-  0% {margin-top:-270px;}
-  5% {margin-top:-180px;}
-  33% {margin-top:-180px;}
-  38% {margin-top:-90px;}
-  66% {margin-top:-90px;}
-  71% {margin-top:0px;}
-  99.99% {margin-top:0px;}
-  100% {margin-top:-270px;} // on remet a zero
-}
+
+
+
+
+
+/*@supports (display: grid) {
+  body {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0.625rem;
+  grid-template-areas: ". main main ." ". main main .";
+  }
+  
+  #container {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+  }
+}*/
+
+
+
 // .datas {
 //   background-color: $firstColor;
 //   color: $secondColor;
 // }
+
+

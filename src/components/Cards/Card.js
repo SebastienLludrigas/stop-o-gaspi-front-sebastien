@@ -47,7 +47,7 @@ const Card = ({
         <p className="dlc">DLC : <span>{date.toLocaleString('fr-FR', options)}</span></p>
         <p className="brand">marque : {brand}</p>
         <p className="createDate">Date d'ajout : 01 novembre 1901</p>
-        <p className="poid">poids : {product_quantity} g</p>
+        <p className="poid">poids : {product_quantity}</p>
         <p className="qut">quantité : {quantity}</p>
       </anim.div>
 

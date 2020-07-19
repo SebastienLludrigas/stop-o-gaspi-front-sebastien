@@ -22,9 +22,9 @@ const MyAccount = ({ toggle, toggleMenu }) => (
     {toggle && (
       <div className="account-menu">
         <ul className="list-menu">
-          <li><Link to="/settings" title="instagram">Tableau de bord</Link></li>
+          <li><Link to="/settings" title="tableau de bord">Tableau de bord</Link></li>
           <div />
-          <li><Link to="/pantry" title="instagram">Pantry</Link></li>
+          <li><Link to="/pantry" title="garde manger">Pantry</Link></li>
           <div />
           <li><Link to="/connexion" title="connexion">Connexion</Link></li>
           <div />
