@@ -37,7 +37,7 @@
   justify-content: space-evenly;
   align-items: center;
   color: white;
-  border: solid 4px $firstColor;
+  border: solid 10px $firstColor;
   box-shadow: 4px 4px 30px $secondColor;
   font-weight: 800;
   font-size:5em;
@@ -49,18 +49,37 @@
   }
 }
 //------ pageMain -------
-.kawaii{
+.kawaii_large{
   position: relative;
-  top: 10vmin;
+  top: 7vmin;
   cursor: pointer;
+  @media all and (max-width: 950px) {
+   display: none;
+  }
+
 }
+.kawaii_small{
+  //position: relative;
+  //top: 30vmin;
+  cursor: pointer;
+  @media all and (min-width: 950px) {
+   display: none;
+   order:1;
+   
+  }
+}
+
 
 //-------------button translate -------
 
 .btn_transHome{
   position: absolute;
-  top: 50%;
-  right: 7.5vw;
+  top: 45%;
+  right: -6vw;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  text-align: center;
   z-index: 200;
   font-size: 30px;
   border-radius: 50%;
@@ -82,30 +101,69 @@
   flex-direction: rows;
   justify-content: center;
   //align-items: center;
+  @media all and (max-width: 950px) {
+    flex-direction: column;
+  }
+ 
 
 }
 .textMain_A{
   text-align: center;
   height: 100%;
-  font-size: 4vmin;
+  font-size: 4.5vmin;
+  
   line-height: 3vmin;
   color: $secondColor;
   text-transform: uppercase;
   margin: 20px;
   padding: 20px;
   overflow: hidden;
-  & h3{font-size: 2.5vmin;}
-}
+  @media all and (max-width: 950px) {
+    background-color:  #fff;
+    margin: 0;
+    font-size: 20px;
+  }
+  & h3{
+    font-size: 0.5em;
+  }
+
+  }  
+
+
 .cloudMain {
-	width: 60%; height: 50%;
+	width: 40vw; 
 	background: #fff;
 	border-radius: 10em;
   position: relative;
   margin-left: 30px;
   top: -40px;
+  @media all and (max-width: 950px) {
+    background-color: transparent;
+    order:-1;
+    width: 100%;
+    position: static;
+  }
 
 }
-
+.clou_A{
+  height: 30vh;
+}
+.cloud_B{
+  height: 100%;
+  padding: 10px 0;
+}
+.cloud_C{
+  height: 80%;
+  width: 30vw;
+}
+.registerYou{
+  color: red;
+  &:hover{
+  cursor: pointer;
+  color: blue;
+  }
+  
+}
 .cloudMain:before, .cloudMain:after {
 	content: '';
   position: absolute; 
@@ -120,6 +178,10 @@
   border-right: 80px solid transparent;
   border-left: 26px solid transparent;
   border-top: 150px solid #fff;
+  @media all and (max-width: 950px) {
+    border-top: 150px solid transparent;
+  }
+
   
 }
 
@@ -132,10 +194,11 @@
   z-index: 150;
   right:0;
   bottom: 0px;
-  @media all and (max-width: 950px) {
+  @media all and (max-width: 1150px) {
     display: none;   
   }
 }
+
 
 
 

@@ -125,7 +125,9 @@ class KawaiiAnimation extends Component {
   render() {
     return (
       <div ref={this.chocoRef}>
-        <Chocolate className="kawaii" />
+        <Chocolate className="kawaii_large" />
+        <Chocolate className="kawaii_small" size={200} />
+
       </div>
     );
   }

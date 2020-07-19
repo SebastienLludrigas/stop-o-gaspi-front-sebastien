@@ -21,11 +21,10 @@ const A = () => (
 
       </div>
 
-
-
-        <img className="caddie_home" alt="" src={caddy} />
-
-
+      <img className="caddie_home" alt="" src={caddy} />
+      <div className="btn_transHome">
+        <span className="fas fa-angle-double-right" />
+      </div>
     </div>
 );
 
