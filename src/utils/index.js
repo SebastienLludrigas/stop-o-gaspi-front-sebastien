@@ -34,7 +34,18 @@ export const sortByDate = (datas) => {
 
   // On trie les datas par ordre croissant de leur date
   // en ciblant leur propriété expiration_date
-  // changeDatesFormat.sort((a, b) => a.expiration_date - b.expiration_date);
+  changeDatesFormat.sort((a, b) => a.expiration_date - b.expiration_date);
 
   return changeDatesFormat;
+};
+
+export const dateConverter = (dateName) => {
+  const date = new Date(dateName);
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const result = date.toLocaleString('fr-FR', options);
+  return result;
 };

@@ -11,7 +11,7 @@ import '../registration.scss';
 
 // == Composant
 const Connexion = ({
-  email,
+  username,
   password,
   onChange,
   handleLogin,
@@ -34,61 +34,60 @@ const Connexion = ({
       <div className="login-form">
 
         {isLogged && (
-
-        <div className="login-form-logged">
-          <p className="login-form-message">
-            {loggedMessage}
-          </p>
-          <button
-            type="button"
-            className="login-form-button"
-            onClick={handleLogout}
-          >
-            Déconnexion
-          </button>
-        </div>
-        )}
-        {!isLogged && (
-
-        <div className="login-contain ">
-          <h2>Se connecter
-            <Link to="/inscription">
-              <h3>( vous n'avez pas encore de compte ? )</h3>
-            </Link>
-          </h2>
-
-          <form autoComplete="off" onSubmit={handleSubmitLoggin}>
-
-            <div className="user-contain">
-              <input
-                type="text"
-                name="email"
-                required="email"
-                onChange={handleChange}
-                value={email}
-              />
-              <label>e-mail</label>
-            </div>
-            <div className="user-contain">
-              <input
-                type="text"
-                name="password"
-                required="password"
-                onChange={handleChange}
-                value={password}
-              />
-              <label>Password</label>
-            </div>
-            <button type="submit">
-              <span />
-              <span />
-              <span />
-              <span />
-              Valider
+          <div className="login-form-logged">
+            <p className="login-form-message">
+              {loggedMessage}
+            </p>
+            <button
+              type="button"
+              className="login-form-button"
+              onClick={handleLogout}
+            >
+              Déconnexion
             </button>
-          </form>
-        </div>
-        )};
+          </div>
+        )}
+
+        {!isLogged && (
+          <div className="login-contain ">
+            <h2>Se connecter
+              <Link to="/inscription">
+                <h3>( vous n'avez pas encore de compte ? )</h3>
+              </Link>
+            </h2>
+
+            <form autoComplete="off" onSubmit={handleSubmitLoggin}>
+
+              <div className="user-contain">
+                <input
+                  type="text"
+                  name="username"
+                  required="email"
+                  onChange={handleChange}
+                  value={username}
+                />
+                <label>e-mail</label>
+              </div>
+              <div className="user-contain">
+                <input
+                  type="text"
+                  name="password"
+                  required="password"
+                  onChange={handleChange}
+                  value={password}
+                />
+                <label>Password</label>
+              </div>
+              <button type="submit">
+                <span />
+                <span />
+                <span />
+                <span />
+                Valider
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -100,7 +99,7 @@ Connexion.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
   loggedMessage: PropTypes.string,
-  email: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
 };
 

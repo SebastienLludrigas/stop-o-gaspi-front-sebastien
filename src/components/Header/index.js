@@ -12,7 +12,12 @@ import MyAccount from 'src/components/MyAccount';
 import './header.scss';
 // test
 // == Composant
-const Header = ({ toggle, toggleMenu }) => (
+const Header = ({
+  toggle,
+  toggleMenu,
+  logOut,
+  isLogged,
+}) => (
   <div className="header">
     <Link to="/">
       <LogoGaspi className="logo-gaspi" />
@@ -22,19 +27,22 @@ const Header = ({ toggle, toggleMenu }) => (
       <MyAccount
         toggleMenu={toggleMenu}
         toggle={toggle}
+        isLogged={isLogged}
+        logOut={logOut}
       />
     </div>
     <div className="cloud n1" />
     <div className="cloud n2" />
     <div className="cloud n3" />
 
-
   </div>
 );
 
 Header.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired,
   toggle: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

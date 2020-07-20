@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { burgerTransform } from 'src/actions/burger';
+import { logOut } from 'src/actions/user';
 
 // === on importe le composant de présentation
 import Nav from 'src/components/Nav';
@@ -10,6 +11,7 @@ import Nav from 'src/components/Nav';
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   cross: state.burger.cross,
+  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps
@@ -18,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   handleBurger: () => {
     dispatch(burgerTransform());
+  },
+  logOut: () => {
+    dispatch(logOut());
   },
 });
 

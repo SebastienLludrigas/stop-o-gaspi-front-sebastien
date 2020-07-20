@@ -9,10 +9,10 @@ import { updateProductField, handmadeProduct } from 'src/actions/product';
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
-  productName: state.user.productName,
-  manufactureDate: state.user.manufactureDate,
-  expirationDate: state.user.expirationDate,
-  productQuantity: state.user.productQuantity,
+  name: state.user.name,
+  elaboration_date: state.user.elaboration_date,
+  expiration_date: state.user.expiration_date,
+  quantity: state.user.quantity,
 });
 
 // === mapDispatchToProps
