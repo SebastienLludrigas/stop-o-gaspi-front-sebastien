@@ -1,7 +1,13 @@
 import { connect } from 'react-redux';
 
 import { toggleModal, onDetected, toggleScanInfo } from 'src/actions/scanner';
-import { handleAddProduct, onChange, onChangeBarCode, catchBarCode } from 'src/actions/user';
+import {
+  handleAddProduct,
+  onChange,
+  onChangeBarCode,
+  catchBarCode,
+  cleanUp,
+} from 'src/actions/user';
 
 // === on importe le composant de présentation
 import ScanProduct from 'src/components/ScanProduct';
@@ -45,6 +51,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   onDetected: (result) => {
     dispatch(onDetected(result));
+  },
+  cleanUp: () => {
+    dispatch(cleanUp());
   },
 });
 

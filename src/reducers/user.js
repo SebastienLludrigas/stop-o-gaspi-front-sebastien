@@ -7,18 +7,24 @@ import {
   ADD_PRODUCT_TO_PANTRY,
   HANDLE_ADD_PRODUCT,
   LOG_OUT,
+  CLEAN_UP,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
-import { UPDATE_PRODUCT_FIELD, ADD_HANDMADE_PRODUCT, FILL_PANTRY } from '../actions/product';
+import {
+  UPDATE_PRODUCT_FIELD,
+  ADD_HANDMADE_PRODUCT,
+  FILL_PANTRY,
+  TOGGLE_DELETE_CONFIRM,
+} from '../actions/product';
+import { TOGGLE_MENU } from '../actions/myaccount';
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
-  username: '',
+  username: 'sebastienlludrigas@gmail.com',
   // contenu de l'input pour le mot de passe
-  password: '',
+  password: 'olaola',
   // informations sur l'utilisateur
-
   info: {},
   // indique si l'utilisateur est loggué
   isLogged: false,
@@ -34,10 +40,12 @@ const initialState = {
   scanDatas: {},
   dlc: '',
   quantite: 1,
-  productName: '',
-  manufactureDate: '',
-  expirationDate: '',
-  productQuantity: '',
+  name: '',
+  elaboration_date: '',
+  expiration_date: '',
+  quantity: '',
+  toggle: false,
+  displayDeleteConfirm: false,
 };
 
 const user = (state = initialState, action = {}) => {
@@ -46,6 +54,27 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.name]: action.newValue,
+      };
+
+    case TOGGLE_MENU:
+      return {
+        ...state,
+        toggle: !state.toggle,
+      };
+
+    case TOGGLE_DELETE_CONFIRM:
+      return {
+        ...state,
+        displayDeleteConfirm: true,
+      };
+
+    case CLEAN_UP:
+      return {
+        ...state,
+        toggle: false,
+        status: 2,
+        productFound: true,
+        // modal: false,
       };
 
     case ON_CHANGE:
@@ -154,7 +183,7 @@ const user = (state = initialState, action = {}) => {
     case ADD_HANDMADE_PRODUCT:
       return {
         ...state,
-        userProducts: [action.datas, ...state.userProducts],
+        userProducts: action.datas,
       };
 
     case TOGGLE_MODAL: {

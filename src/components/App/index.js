@@ -2,7 +2,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // == Import
 
 import Header from 'src/containers/Header';
@@ -24,15 +24,14 @@ import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
 // == Composant
-const App = ({ getAllProducts, saveUser }) => {
+const App = ({ getAllProducts, saveUser, isLogged }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      saveUser();
+      getAllProducts();
     }
-    // getAllProducts();
     console.log('Je use l\'effect !');
-  });
+  }, []);
 
   return (
     <div className="app">
@@ -54,8 +53,9 @@ const App = ({ getAllProducts, saveUser }) => {
 };
 
 App.propTypes = {
-  // getAllProducts: PropTypes.func.isRequired,
+  getAllProducts: PropTypes.func.isRequired,
   saveUser: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

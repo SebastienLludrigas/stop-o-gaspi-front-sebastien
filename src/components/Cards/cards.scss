@@ -30,6 +30,13 @@
     font-size: 5vmin;
   }
   
+  & .fa-trash-alt {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    color: red;
+  } 
 
   & .productTitle{
     text-align: center;
@@ -104,17 +111,18 @@
 }
 .card.finish {
   border: solid 8px $secondColor;
+  transform: scale(0.7);
   background-color:  rgb(211, 208, 208);
   @include card_effect_peremption();
   background-image: url(../../assets/image/finishProduct.png);
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  & .dlc{color:$secondColor; }
-  & .qut{}
+  & .dlc{color:$secondColor; font-size:1.4em; background-color: blanchedalmond;}
+  & .qut{display:none;}
   & .brand{display:none;}
   & .createDate{display:none;}
-  &.poid{} 
+  & .poid{display:none;} 
   & .productTitle{
     align-self: baseline;
   }

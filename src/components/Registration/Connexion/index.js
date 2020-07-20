@@ -33,57 +33,61 @@ const Connexion = ({
     <div className="connexionPage">
       <div className="login-form">
 
-        <div className="login-form-logged">
-          <p className="login-form-message">
-            {loggedMessage}
-          </p>
-          <button
-            type="button"
-            className="login-form-button"
-            onClick={handleLogout}
-          >
-            Déconnexion
-          </button>
-        </div>
-
-        <div className="login-contain ">
-          <h2>Se connecter
-            <Link to="/inscription">
-              <h3>( vous n'avez pas encore de compte ? )</h3>
-            </Link>
-          </h2>
-
-          <form autoComplete="off" onSubmit={handleSubmitLoggin}>
-
-            <div className="user-contain">
-              <input
-                type="text"
-                name="username"
-                required="email"
-                onChange={handleChange}
-                value={username}
-              />
-              <label>e-mail</label>
-            </div>
-            <div className="user-contain">
-              <input
-                type="text"
-                name="password"
-                required="password"
-                onChange={handleChange}
-                value={password}
-              />
-              <label>Password</label>
-            </div>
-            <button type="submit">
-              <span />
-              <span />
-              <span />
-              <span />
-              Valider
+        {isLogged && (
+          <div className="login-form-logged">
+            <p className="login-form-message">
+              {loggedMessage}
+            </p>
+            <button
+              type="button"
+              className="login-form-button"
+              onClick={handleLogout}
+            >
+              Déconnexion
             </button>
-          </form>
-        </div>
+          </div>
+        )}
+
+        {!isLogged && (
+          <div className="login-contain ">
+            <h2>Se connecter
+              <Link to="/inscription">
+                <h3>( vous n'avez pas encore de compte ? )</h3>
+              </Link>
+            </h2>
+
+            <form autoComplete="off" onSubmit={handleSubmitLoggin}>
+
+              <div className="user-contain">
+                <input
+                  type="text"
+                  name="username"
+                  required="email"
+                  onChange={handleChange}
+                  value={username}
+                />
+                <label>e-mail</label>
+              </div>
+              <div className="user-contain">
+                <input
+                  type="text"
+                  name="password"
+                  required="password"
+                  onChange={handleChange}
+                  value={password}
+                />
+                <label>Password</label>
+              </div>
+              <button type="submit">
+                <span />
+                <span />
+                <span />
+                <span />
+                Valider
+              </button>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   );

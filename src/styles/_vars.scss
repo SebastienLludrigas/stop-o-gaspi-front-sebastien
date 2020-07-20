@@ -12,23 +12,23 @@ $fourthColor: #cff395;
 // ----- color & size FRIDGE 
 
 
-$c-dark: #393e46; //#C62828; // bordure frigo
-$fridge-color:  #f5d273 ;//hsl(83, 77%, 66%); //#EF5350; // porte
-$width: 200px;
-$height: 400px;
+  $c-dark: #393e46; //#C62828; // bordure frigo
+  $fridge-color:  #f5d273 ;//hsl(83, 77%, 66%); //#EF5350; // porte
+  $width: 200px;
+  $height: 400px;
 
-$fridge-stroke: rgb(142, 200, 247); // bordure interieur
-$fridge-stroke-width: 9px;
-$fridge-bgc: #E3F2FD; // background
-$fridge-section-margin: 9px;
+  $fridge-stroke: rgb(142, 200, 247); // bordure interieur
+  $fridge-stroke-width: 9px;
+  $fridge-bgc: #E3F2FD; // background
+  $fridge-section-margin: 9px;
 
-$freezer-height: 130px;
+  $freezer-height: 130px;
 
-$fridge-shelf-height: 4px;
-$fridge-thickness: 50px;
+  $fridge-shelf-height: 4px;
+  $fridge-thickness: 50px;
 
-$out-border-radius: 20px;
-$in-border-radius: 20px;
+  $out-border-radius: 20px;
+  $in-border-radius: 20px;
 
 // ----- @mixin
 // Main position
@@ -37,9 +37,16 @@ $in-border-radius: 20px;
   //flex: 1 1 auto;
   width: 100vw;
   padding: 20px;
-  overflow: auto;
+  overflow: hidden;
   flex-grow: 1;
   flex-shrink: 1;
+  background-color: darken($firstColor, 0%);
+  background-image: repeating-linear-gradient(0deg, hsla(123,74%,43%,0.15) 0px, hsla(123,74%,43%,0.15) 35px,transparent 35px, transparent 70px),repeating-linear-gradient(90deg, hsla(123,74%,43%,0.15) 0px, hsla(123,74%,43%,0.15) 35px,transparent 35px, transparent 70px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
+  @media screen and (max-width: 600px) {
+  //overflow: auto;
+  height: 70vh;
+
+  }
 }
 
 

@@ -38,3 +38,14 @@ export const sortByDate = (datas) => {
 
   return changeDatesFormat;
 };
+
+export const dateConverter = (dateName) => {
+  const date = new Date(dateName);
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
+  const result = date.toLocaleString('fr-FR', options);
+  return result;
+};

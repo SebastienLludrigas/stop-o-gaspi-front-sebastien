@@ -58,7 +58,7 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
-            to="/settings"
+            to={isLogged ? '/dashboard' : '/connexion'}
             title="DashBoard"
             onClick={() => {
               handleBurger();
@@ -69,7 +69,7 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
-            to="/pantry"
+            to={isLogged ? '/pantry' : '/connexion'}
             title="Garde Manger"
             onClick={() => {
               handleBurger();
@@ -78,34 +78,40 @@ const Nav = ({
           </NavLink>
         </li>
 
-        <li
-          className="nav"
-          onClick={logOut}
-        >
-          Déconnexion
-        </li>
+        {isLogged && (
+          <li
+            className="nav"
+            onClick={logOut}
+          >
+            Déconnexion
+          </li>
+        )}
 
-        <li className="nav">
-          <Link
-            to="/connexion"
-            title="Connexion"
-            onClick={() => {
-              handleBurger();
-            }}
-          >Connexion
-          </Link>
-        </li>
+        {!isLogged && (
+          <li className="nav">
+            <Link
+              to="/connexion"
+              title="Connexion"
+              onClick={() => {
+                handleBurger();
+              }}
+            >Connexion
+            </Link>
+          </li>
+        )}
 
-        <li className="nav">
-          <Link
-            to="/inscription"
-            title="inscription"
-            onClick={() => {
-              handleBurger();
-            }}
-          >Inscription
-          </Link>
-        </li>
+        {!isLogged && (
+          <li className="nav">
+            <Link
+              to="/inscription"
+              title="inscription"
+              onClick={() => {
+                handleBurger();
+              }}
+            >Inscription
+            </Link>
+          </li>
+        )}
 
         <div className="social-media">
           <li><p>Réseaux sociaux</p></li>
