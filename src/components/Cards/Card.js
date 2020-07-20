@@ -53,7 +53,7 @@ const Card = ({
       </anim.div>
 
       <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-        {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
+        {image !== null ? <img className="product-img" src={image} alt="votre produit" />:<img className="product-img" src={logo} alt="visuel par default" />}
         <p className="productTitle">{name}</p>
         {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />}
       </anim.div>
