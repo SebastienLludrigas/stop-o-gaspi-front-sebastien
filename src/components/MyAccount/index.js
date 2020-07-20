@@ -27,9 +27,11 @@ const MyAccount = ({
     {toggle && (
       <div className="account-menu">
         <ul className="list-menu">
+
           <li><Link to={isLogged ? '/dashboard' : '/connexion'} title="instagram">Tableau de bord</Link></li>
           <div />
           <li><Link to={isLogged ? '/pantry' : '/connexion'} title="instagram">Pantry</Link></li>
+
           <div />
           {!isLogged && <li><Link to="/connexion" title="connexion">Connexion</Link></li>}
 

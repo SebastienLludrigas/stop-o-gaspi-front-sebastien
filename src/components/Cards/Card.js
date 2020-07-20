@@ -44,11 +44,13 @@ const Card = ({
         <i className="fas fa-trash-alt" onClick={toggleDeleteConfirm} />
         {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
         <p className="productTitle">{name}</p>
+
         <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
         {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
         {brand !== null && <p className="brand">marque : {brand}</p>}
         <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
         {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
+
         <p className="qut">quantité : {quantity}</p>
       </anim.div>
 
