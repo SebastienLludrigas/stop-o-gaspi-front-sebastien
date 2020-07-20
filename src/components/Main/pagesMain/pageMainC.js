@@ -13,7 +13,7 @@ const C = () => (
         <h3>pain au chocolat</h3><br />
         <h3>ou</h3><br />
         <h3>Chocolatine</h3><br />
-        <Link exact to="/inscription">
+        <Link to="/inscription">
           <h3 className="registerYou">sinon Inscris toi ici pour commencer</h3>
         </Link>
 
