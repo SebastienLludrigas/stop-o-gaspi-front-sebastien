@@ -1,7 +1,8 @@
 /* eslint-disable import/no-unresolved */
 // == Import npm
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Switch, Route, Redirect } from 'react-router-dom';
 // == Import
 
 import Header from 'src/containers/Header';
@@ -23,24 +24,39 @@ import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
 // == Composant
-const App = () => (
-  <div className="app">
-    <Header />
-    <Switch>
-      <Route exact path="/" component={Main} />
-      <Route path="/pantry" component={Pantry} />
-      <Route path="/connexion" component={Connexion} />
-      <Route path="/inscription" component={Inscription} />
-      <Route path="/product" component={Product} />
-      <Route path="/settings" component={Dashboard} />
-      <Route path="/scan-product" component={ScanProduct} />
-      <Route path="/advice-sheet/about" component={About} />
-      <Route path="/" component={Page404} />
-    </Switch>
-    <Footer />
+const App = ({ getAllProducts, saveUser, isLogged }) => {
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      getAllProducts();
+    }
+    console.log('Je use l\'effect !');
+  }, []);
 
-  </div>
-);
+  return (
+    <div className="app">
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route path="/pantry" component={Pantry} />
+        <Route path="/connexion" component={Connexion} />
+        <Route path="/inscription" component={Inscription} />
+        <Route path="/product" component={Product} />
+        <Route path="/settings" component={Dashboard} />
+        <Route path="/scan-product" component={ScanProduct} />
+        <Route path="/advice-sheet/about" component={About} />
+        <Route path="/" component={Page404} />
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
+
+App.propTypes = {
+  getAllProducts: PropTypes.func.isRequired,
+  saveUser: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
+};
 
 // == Export
 export default App;

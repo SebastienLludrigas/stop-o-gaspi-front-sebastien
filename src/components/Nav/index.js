@@ -10,7 +10,12 @@ import Burger from './Burger';
 import './nav.scss';
 
 // == Composant
-const Nav = ({ handleBurger, cross }) => (
+const Nav = ({
+  handleBurger,
+  cross,
+  isLogged,
+  logOut,
+}) => (
   <div className="nav">
 
     <nav id="row-menu">
@@ -53,7 +58,7 @@ const Nav = ({ handleBurger, cross }) => (
 
         <li className="nav">
           <NavLink
-            to="/settings"
+            to={isLogged ? '/dashboard' : '/connexion'}
             title="DashBoard"
             onClick={() => {
               handleBurger();
@@ -64,7 +69,7 @@ const Nav = ({ handleBurger, cross }) => (
 
         <li className="nav">
           <NavLink
-            to="/pantry"
+            to={isLogged ? '/pantry' : '/connexion'}
             title="Garde Manger"
             onClick={() => {
               handleBurger();
@@ -73,27 +78,40 @@ const Nav = ({ handleBurger, cross }) => (
           </NavLink>
         </li>
 
-        <li className="nav">
-          <Link
-            to="/connexion"
-            title="Connexion"
-            onClick={() => {
-              handleBurger();
-            }}
-          >Connexion
-          </Link>
-        </li>
+        {isLogged && (
+          <li
+            className="nav"
+            onClick={logOut}
+          >
+            Déconnexion
+          </li>
+        )}
 
-        <li className="nav">
-          <Link
-            to="/inscription"
-            title="inscription"
-            onClick={() => {
-              handleBurger();
-            }}
-          >Inscription
-          </Link>
-        </li>
+        {!isLogged && (
+          <li className="nav">
+            <Link
+              to="/connexion"
+              title="Connexion"
+              onClick={() => {
+                handleBurger();
+              }}
+            >Connexion
+            </Link>
+          </li>
+        )}
+
+        {!isLogged && (
+          <li className="nav">
+            <Link
+              to="/inscription"
+              title="inscription"
+              onClick={() => {
+                handleBurger();
+              }}
+            >Inscription
+            </Link>
+          </li>
+        )}
 
         <div className="social-media">
           <li><p>Réseaux sociaux</p></li>
@@ -112,7 +130,9 @@ const Nav = ({ handleBurger, cross }) => (
 
 Nav.propTypes = {
   handleBurger: PropTypes.func.isRequired,
+  logOut: PropTypes.func.isRequired,
   cross: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

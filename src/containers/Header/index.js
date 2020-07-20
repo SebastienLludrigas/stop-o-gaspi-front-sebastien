@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { toggleMenu } from 'src/actions/myaccount';
+import { logOut } from 'src/actions/user';
 
 // === on importe le composant de présentation
 import Header from 'src/components/Header';
@@ -9,7 +10,8 @@ import Header from 'src/components/Header';
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
-  toggle: state.myaccount.toggle,
+  toggle: state.user.toggle,
+  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps
@@ -18,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   toggleMenu: () => {
     dispatch(toggleMenu());
+  },
+  logOut: () => {
+    dispatch(logOut());
   },
 });
 

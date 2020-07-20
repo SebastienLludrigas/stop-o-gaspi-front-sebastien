@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { useSpring, animated as anim } from 'react-spring';
-import { colorCode } from 'src/utils';
+import { colorCode, dateConverter } from 'src/utils';
+
+import Delete from 'src/components/Delete';
 
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
@@ -20,6 +22,11 @@ const Card = ({
   nutriscore_grade,
   product_quantity,
   brand,
+  elaboration_date,
+  created_at,
+  toggleDeleteConfirm,
+  deleteProduct,
+  displayDeleteConfirm,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -31,49 +38,55 @@ const Card = ({
   // Variable qui permet d'afficher l'image du nutriscore en fonction du nutriscore_grade
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
-  // On convertit la date au format ISO en date lisible par l'utilisateur
-  const date = new Date(expiration_date);
-  const options = {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  };
-
   return (
     <div className="container-date" onClick={() => set((state) => !state)}>
       <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-        <img className="product-img" src={image} alt="visuel par default" />
+        <i className="fas fa-trash-alt" onClick={toggleDeleteConfirm} />
+        {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
         <p className="productTitle">{name}</p>
-        <p className="dlc">DLC : <span>{date.toLocaleString('fr-FR', options)}</span></p>
-        <p className="brand">marque : {brand}</p>
-        <p className="createDate">Date d'ajout : 01 novembre 1901</p>
-        <p className="poid">poids : {product_quantity}</p>
+
+        <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
+        {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
+        {brand !== null && <p className="brand">marque : {brand}</p>}
+        <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
+        {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
+
         <p className="qut">quantité : {quantity}</p>
       </anim.div>
 
       <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-        <img className="product-img" src={image} alt="visuel par default" />
+        {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
         <p className="productTitle">{name}</p>
-        <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />
+        {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />}
       </anim.div>
     </div>
   );
 };
 
 Card.propTypes = {
-  name: PropTypes.string.isRequired,
-  brand: PropTypes.string.isRequired,
-  // ingredients: PropTypes.string.isRequired,
-  quantity: PropTypes.number.isRequired,
+  displayDeleteConfirm: PropTypes.bool.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+  toggleDeleteConfirm: PropTypes.func.isRequired,
+  name: PropTypes.string,
+  brand: PropTypes.string,
+  quantity: PropTypes.number,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
-  image: PropTypes.string.isRequired,
-  expiration_date: PropTypes.number.isRequired,   
+  image: PropTypes.string,
+  expiration_date: PropTypes.number.isRequired,
+  elaboration_date: PropTypes.string,
+  created_at: PropTypes.string,
 };
 
 Card.defaultProps = {
   product_quantity: '',
   nutriscore_grade: '',
+  name: '',
+  brand: '',
+  quantity: 1,
+  image: '',
+  elaboration_date: '',
+  created_at: '',
 };
 
 // == Export

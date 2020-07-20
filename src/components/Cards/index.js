@@ -8,12 +8,20 @@ import Card from './Card';
 import './cards.scss';
 
 // == Composant
-const Cards = ({ datas }) => (
+const Cards = ({
+  datas,
+  toggleDeleteConfirm,
+  deleteProduct,
+  displayDeleteConfirm,
+}) => (
   <div className="cards">
     {sortByDate(datas).map((data) => (
       <Card
         key={data.id}
         {...data}
+        toggleDeleteConfirm={toggleDeleteConfirm}
+        deleteProduct={deleteProduct}
+        displayDeleteConfirm={displayDeleteConfirm}
       />
     ))}
   </div>
@@ -22,6 +30,9 @@ const Cards = ({ datas }) => (
 
 Cards.propTypes = {
   datas: PropTypes.array.isRequired,
+  displayDeleteConfirm: PropTypes.bool.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+  toggleDeleteConfirm: PropTypes.func.isRequired,
 };
 
 // == Export
