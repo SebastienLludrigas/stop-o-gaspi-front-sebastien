@@ -10,7 +10,13 @@ import Cards from '../Cards';
 import './pantry.scss';
 
 // == Composant
-const Pantry = ({ datas, getAllProducts }) => {
+const Pantry = ({
+  datas,
+  getAllProducts,
+  displayDeleteConfirm,
+  deleteProduct,
+  toggleDeleteConfirm,
+}) => {
   useEffect(() => {
     getAllProducts();
   }, []);
@@ -25,15 +31,20 @@ const Pantry = ({ datas, getAllProducts }) => {
         <h1 className="pantryTitle">MON PANTRY</h1>
         <h2 className="label_pantry">Ajouter un nouveau produit</h2>
         <div className="pantry_buttons">
-          <Link exact to="/product">
+          <Link to="/product">
             <div className="btn_manual btn">Je saisie mon produit</div>
           </Link>
-          <Link exact to="/scan-product">
+          <Link to="/scan-product">
             <div className="btn_scan btn">Je scanne mon produit</div>
           </Link>
         </div>
       </animated.div>
-      <Cards datas={datas} />
+      <Cards
+        datas={datas}
+        displayDeleteConfirm={displayDeleteConfirm}
+        toggleDeleteConfirm={toggleDeleteConfirm}
+        deleteProduct={deleteProduct}
+      />
     </div>
   );
 };
@@ -41,6 +52,9 @@ const Pantry = ({ datas, getAllProducts }) => {
 Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
   getAllProducts: PropTypes.func.isRequired,
+  displayDeleteConfirm: PropTypes.bool.isRequired,
+  deleteProduct: PropTypes.func.isRequired,
+  toggleDeleteConfirm: PropTypes.func.isRequired,
 };
 
 // == Export

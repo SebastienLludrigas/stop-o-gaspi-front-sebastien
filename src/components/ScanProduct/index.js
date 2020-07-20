@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
@@ -22,12 +22,18 @@ const ScanProduct = ({
   status,
   toggleScanInfo,
   productFound,
+  cleanUp,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
 
   const handleChange = (evt) => {
     onChangeBarCode(evt.target.value);
   };
+
+  useEffect(() => {
+    cleanUp();
+    console.log('Je cleane le up!');
+  }, []);
 
   return (
     <div className="scanPage">
@@ -54,7 +60,6 @@ const ScanProduct = ({
               de la marque
               <mark>{currentProduct.product.brands}</mark><br />
               <br />
-             
             </p>
           </div>
           <div className="arrow-down-success" />
@@ -142,6 +147,7 @@ const ScanProduct = ({
 
 ScanProduct.propTypes = {
   toggleModal: PropTypes.func.isRequired,
+  cleanUp: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   onChangeBarCode: PropTypes.func.isRequired,
   catchBarCode: PropTypes.func.isRequired,

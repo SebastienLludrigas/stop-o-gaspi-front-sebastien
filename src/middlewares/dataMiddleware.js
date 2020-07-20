@@ -1,10 +1,11 @@
+/* eslint-disable camelcase */
 import axios from 'axios';
 // import staticDatas from 'src/staticDatas';
 
 import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
-import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE } from 'src/actions/user';
-import { HANDMADE_PRODUCT, addHandMadeProduct, GET_ALL_PRODUCTS, fillPantry } from 'src/actions/product';
+import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE, saveUser, logOut } from 'src/actions/user';
+import { HANDMADE_PRODUCT, getAllProducts, GET_ALL_PRODUCTS, fillPantry } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -69,9 +70,11 @@ const datasMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response);
           store.dispatch(fillPantry(response.data));
+          store.dispatch(saveUser());
         })
         .catch((error) => {
           console.warn(error);
+          store.dispatch(logOut());
         });
 
       next(action);
@@ -132,25 +135,36 @@ const datasMiddleware = (store) => (next) => (action) => {
     }
 
     case HANDMADE_PRODUCT: {
-      // Je récupère le code-barres qui est enregistré dans le state actuel
-      // via la saisie manuelle
       const {
-        productName,
-        manufactureDate,
-        expirationDate,
-        productQuantity,
+        name,
+        elaboration_date,
+        expiration_date,
+        quantity,
       } = store.getState().user;
 
-      axios.get('https://jsonplaceholder.typicode.com/posts', {
-        productName,
-        manufactureDate,
-        expirationDate,
-        productQuantity,
+      const token = localStorage.getItem('token');
+
+      // On convertit la date du produit ajouté par l'utilisateur en date au format ISO
+      // afin quelle soit acceptée par Symfony
+      const dateElb = new Date(elaboration_date);
+      const elbDate = dateElb.toISOString();
+
+      const dateExp = new Date(expiration_date);
+      const expDate = dateExp.toISOString();
+
+      axios.post('http://54.196.61.131/api/user/23/product/add/manual', {
+        name,
+        elaboration_date: elbDate,
+        expiration_date: expDate,
+        quantity: parseInt(quantity, 10),
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
           console.log(response.data);
+          console.log(response);
 
-          store.dispatch(addHandMadeProduct(response.data));
+          store.dispatch(getAllProducts(response.data));
         })
         .catch((error) => {
           console.warn(error);

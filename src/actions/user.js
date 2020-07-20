@@ -8,6 +8,7 @@ export const LOG_IN = 'LOG_IN';
 export const SAVE_USER = 'SAVE_USER';
 export const LOG_OUT = 'LOG_OUT';
 export const CHECK_LOGGED = 'CHECK_LOGGED';
+export const CLEAN_UP = 'CLEAN_UP';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -53,4 +54,8 @@ export const logOut = () => ({
 
 export const checkLogged = () => ({
   type: CHECK_LOGGED,
+});
+
+export const cleanUp = () => ({
+  type: CLEAN_UP,
 });

@@ -4,6 +4,8 @@ export const HANDMADE_PRODUCT = 'HANDMADE_PRODUCT';
 export const ADD_HANDMADE_PRODUCT = 'ADD_HANDMADE_PRODUCT';
 export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
 export const FILL_PANTRY = 'FILL_PANTRY';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
+export const TOGGLE_DELETE_CONFIRM = 'DELETE_CONFIRM';
 
 // === action creators
 export const updateProductField = (newValue, name) => ({
@@ -29,4 +31,13 @@ export const getAllProducts = (datas) => ({
 export const fillPantry = (datas) => ({
   type: FILL_PANTRY,
   datas,
+});
+
+export const deleteProduct = (id) => ({
+  type: DELETE_PRODUCT,
+  id,
+});
+
+export const toggleDeleteConfirm = () => ({
+  type: TOGGLE_DELETE_CONFIRM,
 });

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -10,10 +11,10 @@ import './product.scss';
 const Product = ({
   handmadeProduct,
   onChange,
-  productName,
-  manufactureDate,
-  expirationDate,
-  productQuantity,
+  name,
+  elaboration_date,
+  expiration_date,
+  quantity,
 }) => {
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
@@ -33,39 +34,39 @@ const Product = ({
           <div className="user-contain">
             <input
               type="text"
-              name="productName"
+              name="name"
               required
               onChange={handleChange}
-              value={productName}
+              value={name}
             />
             <label>Nom du produit *</label>
           </div>
           <div className="user-contain">
             <input
               type="date"
-              name="manufactureDate"
+              name="elaboration_date"
               onChange={handleChange}
-              value={manufactureDate}
+              value={elaboration_date}
             />
             <label>Date de fabriction (si vous avez cuisiné vous même)</label>
           </div>
           <div className="user-contain">
             <input
               type="date"
-              name="expirationDate"
+              name="expiration_date"
               required
               onChange={handleChange}
-              value={expirationDate}
+              value={expiration_date}
             />
             <label>Date de péremption *</label>
           </div>
           <div className="user-contain">
             <input
               type="text"
-              name="productQuantity"
+              name="quantity"
               required
               onChange={handleChange}
-              value={productQuantity}
+              value={quantity}
             />
             <label>Quantité</label>
           </div>
@@ -85,10 +86,10 @@ const Product = ({
 Product.propTypes = {
   onChange: PropTypes.func.isRequired,
   handmadeProduct: PropTypes.func.isRequired,
-  productName: PropTypes.string.isRequired,
-  manufactureDate: PropTypes.string.isRequired,
-  expirationDate: PropTypes.string.isRequired,
-  productQuantity: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  elaboration_date: PropTypes.string.isRequired,
+  expiration_date: PropTypes.string.isRequired,
+  quantity: PropTypes.string.isRequired,
 };
 
 // == Export
