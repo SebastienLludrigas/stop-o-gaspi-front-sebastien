@@ -19,9 +19,6 @@ const B = () => (
       </div>
 
     </div>
-  <div className="btn_transHome">
-    <span className="fas fa-angle-double-right" />
-  </div>
 </div>
 );
 

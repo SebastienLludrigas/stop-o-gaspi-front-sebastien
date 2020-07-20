@@ -9,7 +9,7 @@ import '../main.scss';
 const A = () => (
     <div className="A_main">
       <KawaiiAnimation className="kawaii" />
-      <div className="cloudMain ">
+      <div className="cloudMain clou_A">
         <div className="textMain_A">
           <h2>Bienvenue</h2><br />
           <h3>Vous venez de faire vos courses ?</h3><br />
@@ -22,11 +22,7 @@ const A = () => (
       </div>
 
       <img className="caddie_home" alt="" src={caddy} />
-      <div className="btn_transHome">
-        <span className="fas fa-angle-double-right" />
-      </div>
     </div>
 );
-
 
 export default A;

@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import A from './pagesMain/pageMainA';
 import B from './pagesMain/pageMainB';
 import C from './pagesMain/pageMainC';
-
+import logo from 'src/assets/image/logoStopOGaspi.PNG';
 import './main.scss';
 
 //
@@ -36,6 +36,10 @@ const Main = ({ handleDatas, sendDatas }) => {
             return <Page key={key} style={props} />;
           })}
         </div>
+        <div className="btn_transHome">
+        <span className="fas fa-angle-double-right" />
+      </div>
+
 
       {/* <button
         className="button-tests"
