@@ -12,7 +12,7 @@
   background-size: 200px;
   background-repeat: no-repeat;
   background-position: top;
-  padding: 20px 10vmin;
+  padding: 20px 25px 0px 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +20,7 @@
   z-index: 5;
   border-bottom: 2px solid $secondColor;
 
-  @media all and (max-width: 940px) {
+  @media all and (max-width: 830px) {
     background-image: none;
     background-color: lighten($thirdColor, 15%);
 
@@ -31,9 +31,8 @@
   .right-container {
     z-index: 20;
     display: flex;
-    //justify-content: space-around;
     align-items: center;
-    //height: 100px;
+    height: 100px;
   }
   
 }
