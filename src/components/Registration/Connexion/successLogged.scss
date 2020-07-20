@@ -41,7 +41,7 @@ $secondary: #99DBB4;
 
 
 
-.green {
+.greenSuccess {
   color: darken($secondary, 20%);
   letter-spacing: 3px;
   font-size: 2em;
@@ -53,7 +53,7 @@ $secondary: #99DBB4;
 
 }
 
-.red {
+.redSuccess {
   color: darken($error, 10%);
 }
 
@@ -77,9 +77,6 @@ $secondary: #99DBB4;
   letter-spacing: 1px;
 }
 
-button, .dot {
-  cursor: pointer;
-}
 
 #success-box {
   //position: absolute;

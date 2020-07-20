@@ -7,7 +7,7 @@ import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
 
 import Delete from 'src/components/Delete';
-
+import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
 import './cards.scss';
@@ -42,7 +42,7 @@ const Card = ({
     <div className="container-date" onClick={() => set((state) => !state)}>
       <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
         <i className="fas fa-trash-alt" onClick={toggleDeleteConfirm} />
-        {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
+        {image !== null ? <img className="product-img" src={image} alt="votre produit" />:<img className="product-img" src={logo} alt="visuel par default" />}
         <p className="productTitle">{name}</p>
         <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
         {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}

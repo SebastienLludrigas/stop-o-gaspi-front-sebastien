@@ -51,7 +51,7 @@ const Connexion = ({
                 <div className="shadow scale"></div>
                 <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
                 <Link to="/pantry">
-                  <button className="button-box"><h1 className="green">Mon Pantry</h1></button>
+                  <button className="button-box"><h1 className="greenSuccess">Mon Pantry</h1></button>
                 </Link>
               </div>
             </div>
