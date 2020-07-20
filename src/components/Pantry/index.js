@@ -19,7 +19,7 @@ const Pantry = ({
 }) => {
   useEffect(() => {
     getAllProducts();
-  }, [displayDeleteConfirm, deleteProduct, toggleDeleteConfirm]);
+  }, []);
 
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
