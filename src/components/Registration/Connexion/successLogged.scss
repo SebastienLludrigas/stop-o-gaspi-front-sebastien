@@ -46,6 +46,11 @@ $secondary: #99DBB4;
   letter-spacing: 3px;
   font-size: 2em;
   font-weight: bold;
+  @media only screen and (max-width: 600px){
+    font-size: 1.5em;
+
+  }
+
 }
 
 .red {
@@ -147,13 +152,19 @@ button, .dot {
   @media only screen and (max-width: 600px){
     width: 10px;
     height: 10px;
-  
+  }
+  @media only screen and (max-width: 1150px){
+    left: 40%;
   }
 
 }
 
 .right {
   left: 58%;
+  @media only screen and (max-width: 1150px){
+    left: 68%;
+  }
+
 }
 
 .mouth {
@@ -163,6 +174,10 @@ button, .dot {
   width: 15px;
   height: 17px;
   border-radius: 50%;
+  @media only screen and (max-width: 1150px){
+    left: 58%;
+  }
+
 }
 
 .happy {

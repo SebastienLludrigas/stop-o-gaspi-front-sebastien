@@ -15,6 +15,7 @@ const Connexion = ({
   username,
   password,
   onChange,
+  info,
   handleLogin,
   handleLogout,
   isLogged,
@@ -29,6 +30,7 @@ const Connexion = ({
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
   };
+  
 
   return (
     <div className="connexionPage">
@@ -47,7 +49,7 @@ const Connexion = ({
                   <div className="mouth happy"></div>
                 </div>
                 <div className="shadow scale"></div>
-                <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {username}</p></div>
+                <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
                 <Link to="/pantry">
                   <button className="button-box"><h1 className="green">Mon Pantry</h1></button>
                 </Link>
