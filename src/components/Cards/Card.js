@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
-//import Delete from '../Delete';
 import Delete from 'src/components/Delete';
+import MajDlc from 'src/components/MajDlc';
 import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
@@ -28,7 +28,11 @@ const Card = ({
   toggleDeleteConfirm,
   deleteProduct,
   displayDeleteConfirm,
+  displayUpdateQuantity,
+  displayUpdateDlc,
   currentProductId,
+  toggleUpdateDlc,
+  toggleUpdateQuantity,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -59,7 +63,7 @@ const Card = ({
             <i
               className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
               onClick={() => {
-                toggleDeleteConfirm(id);
+                toggleUpdateDlc(id);
               }}
             />
           </p>
@@ -67,7 +71,14 @@ const Card = ({
           {brand !== null && <p className="brand">marque : {brand}</p>}
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
-          <p className="qut">quantité : {quantity}<i className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'} /></p>
+          <p className="qut">quantité : {quantity}
+            <i
+              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
+              onClick={() => {
+                toggleUpdateQuantity(id);
+              }}
+            />
+          </p>
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
@@ -84,6 +95,14 @@ const Card = ({
           toggleDeleteConfirm={toggleDeleteConfirm}
         />
       )}
+      {displayUpdateDlc && (
+        <MajDlc
+          displayUpdateDlc={displayUpdateDlc}
+          deleteProduct={deleteProduct}
+          currentProductId={currentProductId}
+          toggleUpdateDlc={toggleUpdateDlc}
+        />
+      )}
     </>
 
   );
@@ -91,8 +110,12 @@ const Card = ({
 
 Card.propTypes = {
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  displayUpdateDlc: PropTypes.bool.isRequired,
+  displayUpdateQuantity: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  toggleUpdateDlc: PropTypes.func.isRequired,
+  toggleUpdateQuantity: PropTypes.func.isRequired,
   name: PropTypes.string,
   brand: PropTypes.string,
   quantity: PropTypes.number,

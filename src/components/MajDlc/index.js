@@ -5,8 +5,7 @@ import PropTypes from 'prop-types';
 import '../Delete/delete.scss';
 
 const MajDlc = ({
-  deleteProduct,
-  toggleDeleteConfirm,
+  toggleUpdateDlc,
   currentProductId,
   dlcChange,
 }) => {

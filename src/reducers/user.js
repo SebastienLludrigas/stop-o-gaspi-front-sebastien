@@ -16,6 +16,8 @@ import {
   ADD_HANDMADE_PRODUCT,
   FILL_PANTRY,
   TOGGLE_DELETE_CONFIRM,
+  TOGGLE_UPDATE_DLC,
+  TOGGLE_UPDATE_QUANTITY,
 } from '../actions/product';
 import { TOGGLE_MENU } from '../actions/myaccount';
 
@@ -46,6 +48,8 @@ const initialState = {
   quantity: '',
   toggle: false,
   displayDeleteConfirm: false,
+  displayUpdateDlc: false,
+  displayUpdateQuantity: false,
   currentProductId: 0,
 };
 
@@ -67,6 +71,20 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         displayDeleteConfirm: !state.displayDeleteConfirm,
+        currentProductId: action.id,
+      };
+
+    case TOGGLE_UPDATE_QUANTITY:
+      return {
+        ...state,
+        displayUpdateQuantity: !state.displayUpdateQuantity,
+        currentProductId: action.id,
+      };
+
+    case TOGGLE_UPDATE_DLC:
+      return {
+        ...state,
+        displayUpdateDlc: !state.displayUpdateDlc,
         currentProductId: action.id,
       };
 

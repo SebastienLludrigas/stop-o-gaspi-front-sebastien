@@ -11,8 +11,12 @@ import './cards.scss';
 const Cards = ({
   datas,
   toggleDeleteConfirm,
+  toggleUpdateDlc,
+  toggleUpdateQuantity,
   deleteProduct,
   displayDeleteConfirm,
+  displayUpdateQuantity,
+  displayUpdateDlc,
   currentProductId,
 }) => (
   <div className="cards">
@@ -22,8 +26,12 @@ const Cards = ({
         id={data.id}
         {...data}
         toggleDeleteConfirm={toggleDeleteConfirm}
+        toggleUpdateDlc={toggleUpdateDlc}
+        toggleUpdateQuantity={toggleUpdateQuantity}
         deleteProduct={deleteProduct}
         displayDeleteConfirm={displayDeleteConfirm}
+        displayUpdateQuantity={displayUpdateQuantity}
+        displayUpdateDlc={displayUpdateDlc}
         currentProductId={currentProductId}
       />
     ))}
@@ -34,8 +42,12 @@ const Cards = ({
 Cards.propTypes = {
   datas: PropTypes.array.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  displayUpdateDlc: PropTypes.bool.isRequired,
+  displayUpdateQuantity: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  toggleUpdateDlc: PropTypes.func.isRequired,
+  toggleUpdateQuantity: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
 };
 

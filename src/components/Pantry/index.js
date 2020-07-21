@@ -15,8 +15,12 @@ const Pantry = ({
   currentProductId,
   getAllProducts,
   displayDeleteConfirm,
+  displayUpdateQuantity,
+  displayUpdateDlc,
   deleteProduct,
   toggleDeleteConfirm,
+  toggleUpdateDlc,
+  toggleUpdateQuantity,
 }) => {
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
@@ -39,7 +43,11 @@ const Pantry = ({
       <Cards
         datas={datas}
         displayDeleteConfirm={displayDeleteConfirm}
+        displayUpdateDlc={displayUpdateDlc}
+        displayUpdateQuantity={displayUpdateQuantity}
         toggleDeleteConfirm={toggleDeleteConfirm}
+        toggleUpdateDlc={toggleUpdateDlc}
+        toggleUpdateQuantity={toggleUpdateQuantity}
         deleteProduct={deleteProduct}
         currentProductId={currentProductId}
       />
@@ -52,8 +60,12 @@ Pantry.propTypes = {
   currentProductId: PropTypes.number.isRequired,
   getAllProducts: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  displayUpdateQuantity: PropTypes.bool.isRequired,
+  displayUpdateDlc: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  toggleUpdateDlc: PropTypes.func.isRequired,
+  toggleUpdateQuantity: PropTypes.func.isRequired,
 };
 
 // == Export
