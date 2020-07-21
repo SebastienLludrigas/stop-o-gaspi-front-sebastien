@@ -100,13 +100,19 @@
 }
 @mixin card_effect_peremption(){
   box-shadow: black 2px 2px 20px;
+  @media all and (max-width: 450px) {
+    & .createDate{display:none;}
+
+
+  }
+
   &:hover{
     box-shadow: none;
  
   }
 }
 .card.red {
-  border: solid 5px rgb(255, 61, 61);
+  border: solid 8px rgb(255, 61, 61);
   background-color:  rgb(252, 215, 206);
   @include card_effect_peremption();
 
@@ -137,7 +143,7 @@
 
 }
 .card.orange {
-  border: solid 5px rgb(247, 176, 45);
+  border: solid 8px rgb(247, 176, 45);
   background-color:  rgb(252, 224, 182);
   @include card_effect_peremption();
 
@@ -145,7 +151,7 @@
 }
 
 .card.green {
-  border: solid 5px rgb(64, 146, 64);
+  border: solid 8px rgb(64, 146, 64);
   background-color:  rgb(206, 255, 206);
   @include card_effect_peremption();
 

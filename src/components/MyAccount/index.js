@@ -28,8 +28,7 @@ const MyAccount = ({
       <div className="account-menu">
         <ul className="list-menu">
 
-          <li><Link to={isLogged ? '/settings' : '/connexion'} title="instagram">Tableau de bord</Link></li>
-          <div />
+
           <li><Link to={isLogged ? '/pantry' : '/connexion'} title="mon garde manger">Pantry</Link></li>          
           <div />
           <li><Link to={isLogged ? '/scan-product' : '/connexion'} title="je scanne un produit">je scanne un produit</Link></li>
@@ -52,7 +51,7 @@ const MyAccount = ({
             </li>
           )}
 
-          <div />
+          
           {!isLogged && <li><Link to="/inscription" title="inscription">Inscription</Link></li>}
         </ul>
       </div>
