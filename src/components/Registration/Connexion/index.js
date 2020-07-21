@@ -30,7 +30,6 @@ const Connexion = ({
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
   };
-  
 
   return (
     <div className="connexionPage">
@@ -38,26 +37,36 @@ const Connexion = ({
 
         {isLogged && (
           <div className="login-form-logged">
-            <p className="login-form-message">
-              
-            <div id="containerSuccess">
-              <div id="success-box">
-                <div className="face">
-                <img className="tomate_face_success" src={tomate}  />
-                  <div className="eye"></div>
-                  <div className="eye right"></div>
-                  <div className="mouth happy"></div>
+            <div className="login-form-message">
+              <div id="containerSuccess">
+                <div id="success-box">
+                  <div className="face">
+                    <img
+                      className="tomate_face_success"
+                      src={tomate}
+                      alt=""
+                    />
+                    <div className="eye" />
+                    <div className="eye right" />
+                    <div className="mouth happy" />
+                  </div>
+                  <div className="shadow scale" />
+                  <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
+                  <Link to="/pantry">
+                    <button
+                      type="button"
+                      className="button-box"
+                    >
+                      <h1
+                        className="greenSuccess"
+                      >
+                        Mon Pantry
+                      </h1>
+                    </button>
+                  </Link>
                 </div>
-                <div className="shadow scale"></div>
-                <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
-                <Link to="/pantry">
-                  <button className="button-box"><h1 className="greenSuccess">Mon Pantry</h1></button>
-                </Link>
               </div>
             </div>
-
-            </p>
-
           </div>
         )}
 

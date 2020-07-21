@@ -39,8 +39,8 @@ const Card = ({
   // Variable qui permet d'afficher l'image du nutriscore en fonction du nutriscore_grade
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
+  // console.log(Date.parse(expiration_date));
   return (
-
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
@@ -52,12 +52,22 @@ const Card = ({
           />
           {image !== null && <img className="product-img" src={image} alt="visuel par default" />}
           <p className="productTitle">{name}</p>
-          <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
+          <p
+            className="dlc"
+          >
+            DLC : <span>{dateConverter(expiration_date)}</span>
+            <i
+              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
+              onClick={() => {
+                toggleDeleteConfirm(id);
+              }}
+            />
+          </p>
           {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
           {brand !== null && <p className="brand">marque : {brand}</p>}
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
-          <p className="qut">quantité : {quantity}</p>
+          <p className="qut">quantité : {quantity}<i className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'} /></p>
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
