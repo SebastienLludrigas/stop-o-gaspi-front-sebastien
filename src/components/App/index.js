@@ -39,7 +39,7 @@ const App = ({ getAllProducts, saveUser, isLogged}) => {
         <Route path="/product" component={Product} />
         <Route path="/settings" component={Dashboard} />
         <Route path="/scan-product" component={ScanProduct} />
-        <Route path="/advice-sheet/about" component={About} />
+        <Route path="/about" component={About} />
         <Route path="/" component={Page404} />
       </Switch>
       <Footer />
