@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 // == Import
 import User from '@bit/feathericons.react-feather.user';
@@ -29,24 +29,26 @@ const MyAccount = ({
         <ul className="list-menu">
 
           <li><Link to={isLogged ? '/settings' : '/connexion'} title="instagram">Tableau de bord</Link></li>
-
+          <div />
           <li><Link to={isLogged ? '/pantry' : '/connexion'} title="mon garde manger">Pantry</Link></li>          
-
           <div />
           <li><Link to={isLogged ? '/scan-product' : '/connexion'} title="je scanne un produit">je scanne un produit</Link></li>
           <div />
-          <li><Link to={isLogged ? '/product' : '/connexion'} title="mon garde manger">je saisie un code-barre</Link></li>
+          <li><Link to={isLogged ? '/product' : '/connexion'} title="je rentre un produit sans code-barre">je saisie un produit</Link></li>
           <div />
           <li><Link to={isLogged ? '/settings' : '/connexion'} title="parametre">Tableau de bord</Link></li>
           <div />
           {!isLogged && <li><Link to="/connexion" title="connexion">Connexion</Link></li>}
 
           {isLogged && (
+        
             <li
               title="connexion"
-              onClick={logOut}
+              onClick={logOut}  
             >
+            
               Déconnexion
+            
             </li>
           )}
 

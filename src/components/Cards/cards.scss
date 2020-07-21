@@ -71,7 +71,9 @@
   }
   & .createDate{
     order:5;
-    @include detail_card();    
+    @include detail_card(); 
+    font-size: 1.1em;
+    letter-spacing: 1px;   
   }
   & .poid{
     order:3;
@@ -114,16 +116,23 @@
   background-color:  rgb(211, 208, 208);
   @include card_effect_peremption();
   background-image: url(../../assets/image/finishProduct.png);
-  background-size: 100%;
+  background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
-  & .dlc{color:$secondColor; }
+  & .dlc{color:$secondColor; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
   & .qut{}
   & .brand{display:none;}
   & .createDate{display:none;}
-  &.poid{} 
+  & .poid{display: none;} 
   & .productTitle{
     align-self: baseline;
+    background-color: $firstColor;
+    border:2px solid red;
+    border-radius: 10px 10px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    //align-self: center;
   }
 
 }
