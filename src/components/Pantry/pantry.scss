@@ -1,5 +1,17 @@
 @import 'src/styles/vars.scss';
 
+@font-face {
+  font-family: "beni";
+  src: url("../../assets/fonts/Benilla_Calligraphy.ttf");
+ }
+ @font-face {
+  font-family: "bubble";
+  src: url("../../assets/fonts/Bubble.ttf");
+ }
+ @font-face {
+  font-family: "robot";
+  src: url("../../assets/fonts/Roboto-Regular.ttf");
+ }
 .pantry{
   @include main_container;
   text-align: center;
@@ -7,11 +19,17 @@
 
 }
 .pantryTitle{
-  padding-top: 20px;
-  font-weight: bold;
-  font-size: 2em;
+  padding-top: 0px;
+  font-size: 60px;
+  font-weight: normal;
   margin-bottom: 3vmin;
-  
+  font-family: bubble;
+  margin: auto auto 20px;
+  background-color: lighten($thirdColor,15%);
+  height: 60px;
+  border-radius: 20px;
+  border:2px solid $secondColor;
+  width: 340px;
   }
 .label_pantry{
   margin-bottom: 3vmin;
@@ -25,9 +43,11 @@
 display: flex;
 justify-content: space-evenly;
 margin-bottom: 3vmin;
+margin-top: -20px;
 }
 .btn_manual{
-  @include btn-style($thirdColor, $secondColor)
+  @include btn-style($thirdColor, $secondColor);
+  cursor: pointer;
 }
 .btn_scan{
   @include btn-style($fourthColor, $secondColor);
@@ -38,12 +58,11 @@ margin-bottom: 3vmin;
     flex-direction: column;
   }
   .btn{
-    margin-bottom: 4vmax;
+    //margin-bottom: 4vmax;
     align-self: center;
     height: 10vmin;
-    width: 90vw;
-    
-    margin-left: 5vmin;
+    width: 85vw;
+    margin-left: auto;
     line-height: 7vmin;
     font-size: 1.5em;
   }

@@ -21,7 +21,7 @@ const Nav = ({
     <nav id="row-menu">
       <ul className="row-menu-content">
         <li><NavLink to="/" title="Accueil">Accueil</NavLink></li>
-        <li><NavLink to="/advice-sheet/about" title="Notre vision">Notre vision</NavLink></li>
+        <li><NavLink to="/about" title="Notre vision">Notre vision</NavLink></li>
       </ul>
       <ul className="row-social-media">
         <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
