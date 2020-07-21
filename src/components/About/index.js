@@ -4,10 +4,11 @@ import { useSpring, animated as a } from 'react-spring';
 // == Import
 
 import Laurie from 'src/assets/image/Blanche-neige.jpg';
-import sebastien from 'src/assets/image/Prof.png';
+import sebastien from 'src/assets/image/prof.png';
 import aurelien from 'src/assets/image/Timide.png';
 import alexis from 'src/assets/image/Dormeur.png';
-import greg from 'src/assets/image/Grincheux.png';
+import greg from '../../assets/image/Grincheux.png';
+
 import './about.scss';
 // == Composant
 const About = () => {

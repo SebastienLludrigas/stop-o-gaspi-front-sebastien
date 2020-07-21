@@ -38,7 +38,7 @@ const Connexion = ({
 
         {isLogged && (
           <div className="login-form-logged">
-            <p className="login-form-message">
+            <div className="login-form-message">
               
             <div id="containerSuccess">
               <div id="success-box">
@@ -56,7 +56,7 @@ const Connexion = ({
               </div>
             </div>
 
-            </p>
+            </div>
 
           </div>
         )}
