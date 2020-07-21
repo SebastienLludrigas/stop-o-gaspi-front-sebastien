@@ -21,7 +21,7 @@
   margin-left: 25%;
   
   //transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.7);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
@@ -38,7 +38,7 @@
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
 }
 
@@ -49,7 +49,7 @@
 .login-contain .user-contain input {
   width: 100%;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   margin-bottom: 30px;
   border: none;
@@ -110,8 +110,8 @@
   top: 0;
   left: -100%;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent,$thirdColor);
+  height: 4px;
+  background: linear-gradient(90deg, transparent,$fourthColor);
   animation: btn-top-mvt 1s linear infinite;
 }
 
@@ -127,11 +127,11 @@
 .login-contain button span:nth-child(2) {
   top: -100%;
   right: 0;
-  width: 2px;
+  width: 4px;
   height: 100%;
   background: linear-gradient(180deg, transparent, $fourthColor);
   animation: btn-right-mvt 1s linear infinite;
-  animation-delay: .25s
+  animation-delay: .50s
 }
 
 @keyframes btn-right-mvt {
@@ -147,10 +147,10 @@
   bottom: 0;
   right: -100%;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(270deg, transparent, $thirdColor);
+  height: 4px;
+  background: linear-gradient(270deg, transparent, $fourthColor);
   animation: btn-bottom-mvt 1s linear infinite;
-  animation-delay: .5s
+  animation-delay: 1s
 }
 
 @keyframes btn-bottom-mvt {
@@ -165,11 +165,11 @@
 .login-contain button span:nth-child(4) {
   bottom: -100%;
   left: 0;
-  width: 2px;
+  width: 4px;
   height: 100%;
   background: linear-gradient(360deg, transparent, $fourthColor);
   animation: btn-left-mvt 1s linear infinite;
-  animation-delay: .75s
+  animation-delay: 1.5s
 }
 
 @keyframes btn-left-mvt {

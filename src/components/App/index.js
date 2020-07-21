@@ -24,7 +24,7 @@ import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
 // import MyAccount from '../MyAccount';
 // == Composant
-const App = ({ getAllProducts, saveUser, isLogged }) => {
+const App = ({ getAllProducts, saveUser, isLogged}) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {

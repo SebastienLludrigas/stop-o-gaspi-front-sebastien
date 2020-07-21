@@ -36,9 +36,7 @@ const Main = ({ handleDatas, sendDatas }) => {
             return <Page key={key} style={props} />;
           })}
         </div>
-        <div className="btn_transHome">
-        <span className="fas fa-angle-double-right" />
-      </div>
+
 
 
       {/* <button
