@@ -11,6 +11,7 @@ const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
   datas: state.user.userProducts,
   displayDeleteConfirm: state.user.displayDeleteConfirm,
+  currentProductId: state.user.currentProductId,
 });
 
 // === mapDispatchToProps
@@ -20,11 +21,11 @@ const mapDispatchToProps = (dispatch) => ({
   getAllProducts: () => {
     dispatch(getAllProducts());
   },
-  deleteProduct: () => {
-    dispatch(deleteProduct());
+  deleteProduct: (id) => {
+    dispatch(deleteProduct(id));
   },
-  toggleDeleteConfirm: () => {
-    dispatch(toggleDeleteConfirm());
+  toggleDeleteConfirm: (id) => {
+    dispatch(toggleDeleteConfirm(id));
   },
 });
 

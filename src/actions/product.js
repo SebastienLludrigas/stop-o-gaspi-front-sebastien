@@ -5,7 +5,7 @@ export const ADD_HANDMADE_PRODUCT = 'ADD_HANDMADE_PRODUCT';
 export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
 export const FILL_PANTRY = 'FILL_PANTRY';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
-export const TOGGLE_DELETE_CONFIRM = 'DELETE_CONFIRM';
+export const TOGGLE_DELETE_CONFIRM = 'TOGGLE_DELETE_CONFIRM';
 
 // === action creators
 export const updateProductField = (newValue, name) => ({
@@ -38,6 +38,7 @@ export const deleteProduct = (id) => ({
   id,
 });
 
-export const toggleDeleteConfirm = () => ({
+export const toggleDeleteConfirm = (id) => ({
   type: TOGGLE_DELETE_CONFIRM,
+  id,
 });

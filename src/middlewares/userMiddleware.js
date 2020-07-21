@@ -5,7 +5,7 @@ import {
   LOG_IN,
   saveUser,
 } from '../actions/user';
-// import { getAllProducts } from '../actions/product';
+import { getAllProducts } from '../actions/product';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -23,7 +23,7 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(saveUser());
           localStorage.setItem('token', response.data.token);
           // history.push('/pantry');
-          // store.dispatch(getAllProducts());
+          store.dispatch(getAllProducts());
         })
         .catch((error) => {
           console.warn(error);
