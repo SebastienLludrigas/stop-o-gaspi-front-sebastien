@@ -15,16 +15,21 @@
 
   .account-menu {
     position: absolute;
-    top: 90px;
-    right: 10px;
-    border: 1px solid $secondColor;
+    top: 95px;
+    right: 15px;
+    border: 2px solid $secondColor;
+    font-weight: bold;
+    letter-spacing: 2px;
+
     border-radius: 3px;
     padding: 1em 0.5em;
-    background-color: $firstColor;
-
+    background-color: $fourthColor;
+    height: max-content;
+    width: 260px;
+    z-index: 500;
     & div {
       width: 60px;
-      height: 1px;
+      height: 2px;
       background-color: $secondColor;
       margin: 1em auto;
     }
@@ -33,8 +38,14 @@
       text-align: center;
       
       & li {
-        font-size: 0.9em;
+        font-size: 1em;
+        padding: 10px 0;
         cursor: pointer;
+        &:hover{
+          background-color: transparentize($secondColor, 0.7);
+          border-radius: 10px;
+          font-size: 1.2em;
+        }
 
         &:not(:first-child) {
           margin-top: 1em;

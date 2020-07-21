@@ -75,7 +75,11 @@
 
 
 //-------------button translate -------
-
+/*
+        <div className="btn_transHome" onClick={onClick}>
+        <span className="fas fa-angle-double-right" />
+      </div>
+*/
 .btn_transHome{
   position: absolute;
   top: 50%;

@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import
-
+import tomate from 'src/assets/image/tomate.png';
+import './successLogged.scss';
 import '../registration.scss';
 
 // == Composant
@@ -14,6 +15,7 @@ const Connexion = ({
   username,
   password,
   onChange,
+  info,
   handleLogin,
   handleLogout,
   isLogged,
@@ -28,6 +30,7 @@ const Connexion = ({
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
   };
+  
 
   return (
     <div className="connexionPage">
@@ -36,15 +39,25 @@ const Connexion = ({
         {isLogged && (
           <div className="login-form-logged">
             <p className="login-form-message">
-              {loggedMessage}
+              
+            <div id="containerSuccess">
+              <div id="success-box">
+                <div className="face">
+                <img className="tomate_face_success" src={tomate}  />
+                  <div className="eye"></div>
+                  <div className="eye right"></div>
+                  <div className="mouth happy"></div>
+                </div>
+                <div className="shadow scale"></div>
+                <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
+                <Link to="/pantry">
+                  <button className="button-box"><h1 className="greenSuccess">Mon Pantry</h1></button>
+                </Link>
+              </div>
+            </div>
+
             </p>
-            <button
-              type="button"
-              className="login-form-button"
-              onClick={handleLogout}
-            >
-              Déconnexion
-            </button>
+
           </div>
         )}
 

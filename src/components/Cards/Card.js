@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 
 import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
-
+//import Delete from '../Delete';
 import Delete from 'src/components/Delete';
-
+import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
 import './cards.scss';
@@ -36,11 +36,11 @@ const Card = ({
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
-
   // Variable qui permet d'afficher l'image du nutriscore en fonction du nutriscore_grade
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
   return (
+
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
@@ -75,6 +75,7 @@ const Card = ({
         />
       )}
     </>
+
   );
 };
 
