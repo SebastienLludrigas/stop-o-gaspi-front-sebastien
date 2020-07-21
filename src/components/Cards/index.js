@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
-import { sortByDate } from 'src/utils';
+// import Delete from 'src/components/Delete';
 import Card from './Card';
 import './cards.scss';
 
@@ -13,15 +13,18 @@ const Cards = ({
   toggleDeleteConfirm,
   deleteProduct,
   displayDeleteConfirm,
+  currentProductId,
 }) => (
   <div className="cards">
-    {sortByDate(datas).map((data) => (
+    {datas.map((data) => (
       <Card
         key={data.id}
+        id={data.id}
         {...data}
         toggleDeleteConfirm={toggleDeleteConfirm}
         deleteProduct={deleteProduct}
         displayDeleteConfirm={displayDeleteConfirm}
+        currentProductId={currentProductId}
       />
     ))}
   </div>
@@ -33,6 +36,7 @@ Cards.propTypes = {
   displayDeleteConfirm: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  currentProductId: PropTypes.number.isRequired,
 };
 
 // == Export

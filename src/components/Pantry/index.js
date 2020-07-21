@@ -12,15 +12,12 @@ import './pantry.scss';
 // == Composant
 const Pantry = ({
   datas,
+  currentProductId,
   getAllProducts,
   displayDeleteConfirm,
   deleteProduct,
   toggleDeleteConfirm,
 }) => {
-  useEffect(() => {
-    getAllProducts();
-  }, []);
-
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
@@ -44,6 +41,7 @@ const Pantry = ({
         displayDeleteConfirm={displayDeleteConfirm}
         toggleDeleteConfirm={toggleDeleteConfirm}
         deleteProduct={deleteProduct}
+        currentProductId={currentProductId}
       />
     </div>
   );
@@ -51,6 +49,7 @@ const Pantry = ({
 
 Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
+  currentProductId: PropTypes.number.isRequired,
   getAllProducts: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,

@@ -38,6 +38,7 @@ export const deleteProduct = (id) => ({
   id,
 });
 
-export const toggleDeleteConfirm = () => ({
+export const toggleDeleteConfirm = (id) => ({
   type: TOGGLE_DELETE_CONFIRM,
+  id,
 });

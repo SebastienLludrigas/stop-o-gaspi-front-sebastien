@@ -46,6 +46,7 @@ const initialState = {
   quantity: '',
   toggle: false,
   displayDeleteConfirm: false,
+  currentProductId: 0,
 };
 
 const user = (state = initialState, action = {}) => {
@@ -65,7 +66,8 @@ const user = (state = initialState, action = {}) => {
     case TOGGLE_DELETE_CONFIRM:
       return {
         ...state,
-        displayDeleteConfirm: true,
+        displayDeleteConfirm: !state.displayDeleteConfirm,
+        currentProductId: action.id,
       };
 
     case CLEAN_UP:
@@ -95,8 +97,8 @@ const user = (state = initialState, action = {}) => {
         info: action.data,
         // userProducts: action.data.productPerso,
         isLogged: true,
-        username: '',
-        password: '',
+        // username: '',
+        // password: '',
       };
 
     case LOG_OUT: {
@@ -112,6 +114,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         userProducts: action.datas,
+        displayDeleteConfirm: false,
       };
 
     case ON_DETECTED: {
