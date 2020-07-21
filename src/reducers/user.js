@@ -27,7 +27,7 @@ const initialState = {
   // informations sur l'utilisateur
   info: {},
   // indique si l'utilisateur est loggué
-  isLogged: false,
+  isLogged: true,
   // userProducts: staticDatas,
   userProducts: [],
   currentProduct: {},
