@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
-
+import styled from 'styled-components';
 // == Import
 import User from '@bit/feathericons.react-feather.user';
 
@@ -14,15 +14,16 @@ const MyAccount = ({
   toggleMenu,
   isLogged,
   logOut,
+
 }) => (
   <div
     className="my-account"
     onClick={() => {
-      //console.log(toggle);
+      // console.log(toggle);
       toggleMenu();
     }}
-  >
-    <p>Mon compte</p>
+  > {toggle ? <p>Mon compte</p> : <p>Mon compte</p>}
+
     <User />
     {toggle && (
       <div className="account-menu">
@@ -40,15 +41,14 @@ const MyAccount = ({
           {!isLogged && <li><Link to="/connexion" title="connexion">Connexion</Link></li>}
 
           {isLogged && (
-        
+
             <li
               title="connexion"
-              onClick={logOut}  
+              onClick={logOut}
             >
-            
+
               Déconnexion
-            
-            </li>
+                        </li>
           )}
 
           

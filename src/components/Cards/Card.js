@@ -53,7 +53,7 @@ const Card = ({
           {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
           <p className="productTitle">{name}</p>
           <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
-          {elaboration_date !== null && <p className="dlc">Date de fabrication : <br/><span>{dateConverter(elaboration_date)}</span></p>}
+          {elaboration_date !== null && <p className="dlc">Date de fabrication : <br /><span>{dateConverter(elaboration_date)}</span></p>}
           {brand !== null && <p className="brand">marque : {brand}</p>}
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
