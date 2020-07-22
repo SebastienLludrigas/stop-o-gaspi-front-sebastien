@@ -1,15 +1,18 @@
 /* eslint-disable react/jsx-indent */
 // == Import npm
 import React, { useState, useCallback } from 'react';
+import Media from 'react-media';
 import { useTransition, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 
 // == Import
+//import logo from 'src/assets/image/logoStopOGaspi.PNG';
 import A from './pagesMain/pageMainA';
 import B from './pagesMain/pageMainB';
 import C from './pagesMain/pageMainC';
-import logo from 'src/assets/image/logoStopOGaspi.PNG';
+import MainSmall from './MainSmall';
+
 import './main.scss';
 
 //
@@ -30,14 +33,29 @@ const Main = ({ handleDatas, sendDatas }) => {
   });
   return (
     <div className="main">
-        <div className="simple-trans-main" onClick={onClick}>
-          {transitions.map(({ item, props, key }) => {
-            const Page = pages[item];
-            return <Page key={key} style={props} />;
-          })}
-        </div>
 
+    <Media queries={{
+      small: '(max-width: 1314px)',
+      large: '(min-width: 1315px)',
+    }}
+    >
 
+      {(matches) => (
+        <>
+          {matches.large && (
+            <div className="simple-trans-main" onClick={onClick}>
+              {transitions.map(({ item, props, key }) => {
+                const Page = pages[item];
+                return <Page key={key} style={props} />;
+              })}
+            </div>
+          )}
+          {matches.small && (
+            <MainSmall />
+          )}
+        </>
+      )}
+    </Media>
 
       {/* <button
         className="button-tests"

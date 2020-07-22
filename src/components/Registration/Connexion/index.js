@@ -89,7 +89,7 @@ const Connexion = ({
                   onChange={handleChange}
                   value={password}
                 />
-                <label>Password</label>
+                <label>Mot de passe</label>
               </div>
               <button type="submit">
                 <span />
