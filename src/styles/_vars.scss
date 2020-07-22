@@ -70,3 +70,28 @@ $in-border-radius: 20px;
 
 
 }
+
+//- ----------------- MODAL BTN  ----------------------
+@mixin btnDelete($colorDeleteBtn){
+  padding: 8px 20px;
+  margin: 120px 10px 0 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+  display: inline-block;
+  background-color:lighten($colorDeleteBtn, 40%);
+  color: $colorDeleteBtn;
+  border: 4px solid $colorDeleteBtn;
+  transition: ease-in-out 0.4s all;
+  &:hover{
+    //border: 8px solid $colorDeleteBtn;
+    background-color: $colorDeleteBtn;
+    color: $firstColor;
+  
+  }
+}

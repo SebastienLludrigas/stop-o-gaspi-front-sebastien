@@ -39,7 +39,7 @@ const MajDlc = ({
             }}
           />
           <p>Mettre à jour la date limite de consommation</p>
-          <form onSubmit={handleSubmit}>
+          <form className="formDlcModal" onSubmit={handleSubmit}>
             <input
               className="inputDlc"
               type="date"
@@ -52,7 +52,7 @@ const MajDlc = ({
               type="submit"
               className="dateValidation"
             >
-              Valider
+              OK
             </button>
           </form>
         </div>

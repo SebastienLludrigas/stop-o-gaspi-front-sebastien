@@ -38,7 +38,7 @@ const MajQuantity = ({
             }}
           />
           <p>Mettre à jour la quantité</p>
-          <form onSubmit={handleSubmit}>
+          <form  onSubmit={handleSubmit}>
             <input
               className="inputQuantity"
               type="number"
