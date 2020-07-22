@@ -43,7 +43,6 @@ const Card = ({
   // Variable qui permet d'afficher l'image du nutriscore en fonction du nutriscore_grade
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
-  // console.log(Date.parse(expiration_date));
   return (
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
