@@ -17,8 +17,7 @@ const A = () => (
           <h3>tu achètes plein de trucs que tu oublies de manger ? </h3><br />
           <h3>Te rappelles tu ce que tu as jeté dernierement?</h3>
           <br />
-        </div>
-
+        </div><p className="nextMain"> suivant {">>"} </p>
       </div>
 
       <img className="caddie_home" alt="" src={caddy} />

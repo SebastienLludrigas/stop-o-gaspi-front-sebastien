@@ -19,7 +19,7 @@ const C = () => (
 
         <br />
       </div>
-
+      <p className="nextMain"> suivant {">>"} </p>
     </div>
 
   </div>
