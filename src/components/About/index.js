@@ -10,7 +10,7 @@ import alexis from 'src/assets/image/Dormeur.png';
 import greg from '../../assets/image/Grincheux.png';
 
 import './about.scss';
-import './AboutTwo/aboutTwo.scss';
+// import './AboutTwo/aboutTwo.scss';
 // == Composant
 const About = () => {
   const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
