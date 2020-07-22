@@ -38,6 +38,7 @@ const Connexion = ({
         {isLogged && (
           <div className="login-form-logged">
             <div className="login-form-message">
+
               <div id="containerSuccess">
                 <div id="success-box">
                   <div className="face">
@@ -64,9 +65,11 @@ const Connexion = ({
                       </h1>
                     </button>
                   </Link>
+
                 </div>
               </div>
             </div>
+
           </div>
         )}
 
@@ -98,7 +101,7 @@ const Connexion = ({
                   onChange={handleChange}
                   value={password}
                 />
-                <label>Password</label>
+                <label>Mot de passe</label>
               </div>
               <button type="submit">
                 <span />

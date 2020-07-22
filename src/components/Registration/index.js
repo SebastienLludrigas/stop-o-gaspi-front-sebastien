@@ -54,7 +54,7 @@ const Registration = ({
               onChange={handleChange}
               value={name}
             />
-            <label>Name</label>
+            <label>Nom</label>
           </div>
           <div className="user-contain">
             <input
@@ -64,7 +64,7 @@ const Registration = ({
               onChange={handleChange}
               value={City}
             />
-            <label>City</label>
+            <label>Ville</label>
           </div>
           <div className="user-contain">
             <input
@@ -74,7 +74,7 @@ const Registration = ({
               onChange={handleChange}
               value={password}
             />
-            <label>Password</label>
+            <label>Mot de passe</label>
           </div>
           <div className="user-contain">
             <input
@@ -84,7 +84,7 @@ const Registration = ({
               onChange={handleChange}
               value={verifPassword}
             />
-            <label>Verif Password</label>
+            <label>Verification du mot de passe</label>
           </div>
           <div className="user-contain">
             <input
