@@ -17,6 +17,7 @@ import ScanProduct from 'src/containers/ScanProduct';
 import Page404 from 'src/components/Page404';
 import About from 'src/components/About';
 import './styles.scss';
+
 // import MyAccount from '../MyAccount';
 // == Composant
 const App = ({ getAllProducts, saveUser, isLogged}) => {

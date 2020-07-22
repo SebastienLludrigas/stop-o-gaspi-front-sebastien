@@ -13,10 +13,20 @@ import './pantry.scss';
 const Pantry = ({
   datas,
   currentProductId,
+  currentProductDlc,
+  currentProductQuantity,
   getAllProducts,
   displayDeleteConfirm,
+  displayUpdateQuantity,
+  displayUpdateDlc,
   deleteProduct,
   toggleDeleteConfirm,
+  toggleUpdateDlc,
+  toggleUpdateQuantity,
+  dlcChange,
+  quantityChange,
+  submitNewDlc,
+  submitNewQuantity,
 }) => {
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
@@ -39,9 +49,19 @@ const Pantry = ({
       <Cards
         datas={datas}
         displayDeleteConfirm={displayDeleteConfirm}
+        displayUpdateDlc={displayUpdateDlc}
+        displayUpdateQuantity={displayUpdateQuantity}
         toggleDeleteConfirm={toggleDeleteConfirm}
+        toggleUpdateDlc={toggleUpdateDlc}
+        toggleUpdateQuantity={toggleUpdateQuantity}
         deleteProduct={deleteProduct}
         currentProductId={currentProductId}
+        currentProductDlc={currentProductDlc}
+        currentProductQuantity={currentProductQuantity}
+        dlcChange={dlcChange}
+        quantityChange={quantityChange}
+        submitNewDlc={submitNewDlc}
+        submitNewQuantity={submitNewQuantity}
       />
     </div>
   );
@@ -50,10 +70,20 @@ const Pantry = ({
 Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
   currentProductId: PropTypes.number.isRequired,
+  currentProductDlc: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.string.isRequired,
   getAllProducts: PropTypes.func.isRequired,
+  submitNewDlc: PropTypes.func.isRequired,
+  submitNewQuantity: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  displayUpdateQuantity: PropTypes.bool.isRequired,
+  displayUpdateDlc: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  dlcChange: PropTypes.func.isRequired,
+  quantityChange: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  toggleUpdateDlc: PropTypes.func.isRequired,
+  toggleUpdateQuantity: PropTypes.func.isRequired,
 };
 
 // == Export

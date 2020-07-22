@@ -11,6 +11,8 @@ import {
   GET_ALL_PRODUCTS,
   fillPantry,
   DELETE_PRODUCT,
+  SUBMIT_NEW_DLC,
+  SUBMIT_NEW_QUANTITY,
 } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
@@ -196,6 +198,65 @@ const datasMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log(response.data);
+          console.log(response);
+
+          store.dispatch(getAllProducts(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case SUBMIT_NEW_DLC: {
+      const {
+        currentProductId,
+        currentProductDlc,
+      } = store.getState().user;
+
+      const token = localStorage.getItem('token');
+
+      // On convertit la date du produit ajouté par l'utilisateur en date au format ISO
+      // afin quelle soit acceptée par Symfony
+      const dateExp = new Date(currentProductDlc);
+      const expDate = dateExp.toISOString();
+
+      axios.post(`http://54.196.61.131/api/product/edit/expiration-date/${currentProductId}`, {
+        expiration_date: expDate,
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          console.log(response.data);
+          console.log(response);
+
+          store.dispatch(getAllProducts(response.data));
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case SUBMIT_NEW_QUANTITY: {
+      const {
+        currentProductId,
+        currentProductQuantity,
+      } = store.getState().user;
+
+      const token = localStorage.getItem('token');
+
+      axios.post(`http://54.196.61.131/api/product/edit/quantity/${currentProductId}`, {
+        quantity: parseInt(currentProductQuantity, 10),
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          console.log(response.data);
           console.log(response);
 
           store.dispatch(getAllProducts(response.data));

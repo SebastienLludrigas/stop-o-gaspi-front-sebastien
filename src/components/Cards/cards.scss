@@ -38,6 +38,14 @@
     color: red;
   } 
 
+  & .fa-pen-square {
+    position: relative;
+    left: 7px;
+    top: 2px;
+    font-size: 1.5em;
+    color: rgb(42, 152, 255);
+  }
+
   & .productTitle{
     text-align: center;
     font-size: 1.2em;
