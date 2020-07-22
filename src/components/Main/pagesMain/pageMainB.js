@@ -5,7 +5,7 @@ import '../main.scss';
 
 const B = () => (
   <div className="A_main">
-  <KawaiiAnimation className="kawaii" />
+  <KawaiiAnimation className="kawaii"/>
     <div className="cloudMain cloud_B">
       <div className="textMain_A">
         <h2>Et si je pouvais t'aider ?</h2><br />
