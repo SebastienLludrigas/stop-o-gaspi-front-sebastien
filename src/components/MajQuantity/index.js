@@ -62,7 +62,7 @@ MajQuantity.propTypes = {
   submitNewQuantity: PropTypes.func.isRequired,
   quantityChange: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
-  currentProductQuantity: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.number.isRequired,
 };
 
 export default MajQuantity;

@@ -3,7 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // == Import
-// import Delete from 'src/components/Delete';
 import Card from './Card';
 import './cards.scss';
 
@@ -66,7 +65,7 @@ Cards.propTypes = {
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
-  currentProductQuantity: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.number.isRequired,
   currentProductDlc: PropTypes.string.isRequired,
 };
 

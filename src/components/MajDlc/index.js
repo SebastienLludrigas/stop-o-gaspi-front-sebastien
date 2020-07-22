@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 // import findOldDlc from 'src/utils';
 
 import './majdlc.scss';
-import { findOldDlc } from '../../utils';
+// import { findOldDlc } from '../../utils';
 
 const MajDlc = ({
   toggleUpdateDlc,
@@ -46,7 +46,6 @@ const MajDlc = ({
             required
             onChange={handleChange}
             value={currentProductDlc}
-            // defaultValue={}
           />
           <button
             type="submit"
