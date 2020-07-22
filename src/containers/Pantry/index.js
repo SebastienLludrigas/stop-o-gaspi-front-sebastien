@@ -9,6 +9,10 @@ import {
   toggleDeleteConfirm,
   toggleUpdateDlc,
   toggleUpdateQuantity,
+  dlcChange,
+  quantityChange,
+  submitNewDlc,
+  submitNewQuantity,
 } from 'src/actions/product';
 
 // === mapStateToProps
@@ -20,6 +24,8 @@ const mapStateToProps = (state) => ({
   displayUpdateDlc: state.user.displayUpdateDlc,
   displayUpdateQuantity: state.user.displayUpdateQuantity,
   currentProductId: state.user.currentProductId,
+  currentProductDlc: state.user.currentProductDlc,
+  currentProductQuantity: state.user.currentProductQuantity,
 });
 
 // === mapDispatchToProps
@@ -40,6 +46,20 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleUpdateDlc: (id) => {
     dispatch(toggleUpdateDlc(id));
+  },
+  dlcChange: (newValue) => {
+    console.log(`La nouvelle date est ${newValue}`);
+    dispatch(dlcChange(newValue));
+  },
+  quantityChange: (newValue) => {
+    console.log(`La nouvelle quantité est ${newValue}`);
+    dispatch(quantityChange(newValue));
+  },
+  submitNewDlc: () => {
+    dispatch(submitNewDlc());
+  },
+  submitNewQuantity: () => {
+    dispatch(submitNewQuantity());
   },
 });
 

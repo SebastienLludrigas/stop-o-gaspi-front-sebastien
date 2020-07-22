@@ -58,3 +58,8 @@ export const dateConverter = (dateName) => {
   const result = date.toLocaleString('fr-FR', options);
   return result;
 };
+
+export const findOldDlc = (productsArray, id) => {
+  const findDlc = productsArray.find((data) => data.id === id);
+  return findDlc.expiration_date;
+};

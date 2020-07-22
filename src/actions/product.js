@@ -8,6 +8,10 @@ export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 export const TOGGLE_DELETE_CONFIRM = 'TOGGLE_DELETE_CONFIRM';
 export const TOGGLE_UPDATE_DLC = 'TOGGLE_UPDATE_DLC';
 export const TOGGLE_UPDATE_QUANTITY = 'TOGGLE_UPDATE_QUANTITY';
+export const DLC_CHANGE = 'DLC_CHANGE';
+export const QUANTITY_CHANGE = 'QUANTITY_CHANGE';
+export const SUBMIT_NEW_DLC = 'SUBMIT_NEW_DLC';
+export const SUBMIT_NEW_QUANTITY = 'SUBMIT_NEW_QUANTITY';
 
 // === action creators
 export const updateProductField = (newValue, name) => ({
@@ -53,4 +57,22 @@ export const toggleUpdateDlc = (id) => ({
 export const toggleUpdateQuantity = (id) => ({
   type: TOGGLE_UPDATE_QUANTITY,
   id,
+});
+
+export const dlcChange = (newValue) => ({
+  type: DLC_CHANGE,
+  newValue,
+});
+
+export const quantityChange = (newValue) => ({
+  type: QUANTITY_CHANGE,
+  newValue,
+});
+
+export const submitNewDlc = () => ({
+  type: SUBMIT_NEW_DLC,
+});
+
+export const submitNewQuantity = () => ({
+  type: SUBMIT_NEW_QUANTITY,
 });

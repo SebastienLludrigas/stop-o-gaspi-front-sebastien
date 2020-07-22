@@ -7,6 +7,7 @@ import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
 import Delete from 'src/components/Delete';
 import MajDlc from 'src/components/MajDlc';
+import MajQuantity from 'src/components/MajQuantity';
 import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
@@ -30,9 +31,16 @@ const Card = ({
   displayDeleteConfirm,
   displayUpdateQuantity,
   displayUpdateDlc,
+  submitNewDlc,
+  submitNewQuantity,
   currentProductId,
+  currentProductDlc,
+  currentProductQuantity,
   toggleUpdateDlc,
   toggleUpdateQuantity,
+  dlcChange,
+  quantityChange,
+  datas,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -88,7 +96,6 @@ const Card = ({
       </div>
       {displayDeleteConfirm && (
         <Delete
-          displayDeleteConfirm={displayDeleteConfirm}
           deleteProduct={deleteProduct}
           currentProductId={currentProductId}
           toggleDeleteConfirm={toggleDeleteConfirm}
@@ -96,10 +103,22 @@ const Card = ({
       )}
       {displayUpdateDlc && (
         <MajDlc
-          displayUpdateDlc={displayUpdateDlc}
-          deleteProduct={deleteProduct}
           currentProductId={currentProductId}
           toggleUpdateDlc={toggleUpdateDlc}
+          dlcChange={dlcChange}
+          currentProductDlc={currentProductDlc}
+          submitNewDlc={submitNewDlc}
+          datas={datas}
+        />
+      )}
+      {displayUpdateQuantity && (
+        <MajQuantity
+          currentProductId={currentProductId}
+          toggleUpdateQuantity={toggleUpdateQuantity}
+          quantityChange={quantityChange}
+          currentProductQuantity={currentProductQuantity}
+          submitNewQuantity={submitNewQuantity}
+          datas={datas}
         />
       )}
     </>
@@ -108,10 +127,15 @@ const Card = ({
 };
 
 Card.propTypes = {
+  datas: PropTypes.array.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
   displayUpdateDlc: PropTypes.bool.isRequired,
   displayUpdateQuantity: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  submitNewDlc: PropTypes.func.isRequired,
+  submitNewQuantity: PropTypes.func.isRequired,
+  dlcChange: PropTypes.func.isRequired,
+  quantityChange: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
@@ -120,6 +144,8 @@ Card.propTypes = {
   quantity: PropTypes.number,
   id: PropTypes.number.isRequired,
   currentProductId: PropTypes.number.isRequired,
+  currentProductDlc: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.string.isRequired,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
   image: PropTypes.string,

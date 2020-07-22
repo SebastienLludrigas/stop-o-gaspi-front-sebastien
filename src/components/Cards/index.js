@@ -18,6 +18,12 @@ const Cards = ({
   displayUpdateQuantity,
   displayUpdateDlc,
   currentProductId,
+  currentProductDlc,
+  currentProductQuantity,
+  dlcChange,
+  quantityChange,
+  submitNewDlc,
+  submitNewQuantity,
 }) => (
   <div className="cards">
     {datas.map((data) => (
@@ -33,6 +39,13 @@ const Cards = ({
         displayUpdateQuantity={displayUpdateQuantity}
         displayUpdateDlc={displayUpdateDlc}
         currentProductId={currentProductId}
+        currentProductDlc={currentProductDlc}
+        currentProductQuantity={currentProductQuantity}
+        dlcChange={dlcChange}
+        quantityChange={quantityChange}
+        submitNewDlc={submitNewDlc}
+        submitNewQuantity={submitNewQuantity}
+        datas={datas}
       />
     ))}
   </div>
@@ -45,10 +58,16 @@ Cards.propTypes = {
   displayUpdateDlc: PropTypes.bool.isRequired,
   displayUpdateQuantity: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  submitNewDlc: PropTypes.func.isRequired,
+  submitNewQuantity: PropTypes.func.isRequired,
+  dlcChange: PropTypes.func.isRequired,
+  quantityChange: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
+  currentProductQuantity: PropTypes.string.isRequired,
+  currentProductDlc: PropTypes.string.isRequired,
 };
 
 // == Export

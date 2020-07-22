@@ -22,6 +22,7 @@ import aurelien from 'src/assets/image/Timide.png';
 import alexis from 'src/assets/image/Dormeur.png';
 import greg from 'src/assets/image/Grincheux.png';
 import './styles.scss';
+
 // import MyAccount from '../MyAccount';
 // == Composant
 const App = ({ getAllProducts, saveUser, isLogged}) => {

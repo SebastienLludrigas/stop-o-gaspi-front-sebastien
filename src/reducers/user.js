@@ -18,6 +18,8 @@ import {
   TOGGLE_DELETE_CONFIRM,
   TOGGLE_UPDATE_DLC,
   TOGGLE_UPDATE_QUANTITY,
+  DLC_CHANGE,
+  QUANTITY_CHANGE,
 } from '../actions/product';
 import { TOGGLE_MENU } from '../actions/myaccount';
 
@@ -51,6 +53,8 @@ const initialState = {
   displayUpdateDlc: false,
   displayUpdateQuantity: false,
   currentProductId: 0,
+  currentProductDlc: '',
+  currentProductQuantity: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -86,6 +90,18 @@ const user = (state = initialState, action = {}) => {
         ...state,
         displayUpdateDlc: !state.displayUpdateDlc,
         currentProductId: action.id,
+      };
+
+    case DLC_CHANGE:
+      return {
+        ...state,
+        currentProductDlc: action.newValue,
+      };
+
+    case QUANTITY_CHANGE:
+      return {
+        ...state,
+        currentProductQuantity: action.newValue,
       };
 
     case CLEAN_UP:

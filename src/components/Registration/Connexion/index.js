@@ -25,7 +25,7 @@ const Connexion = ({
     evt.preventDefault();
     handleLogin();
   };
-
+  
   const handleChange = (evt) => {
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
