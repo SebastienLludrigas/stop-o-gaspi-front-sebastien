@@ -60,6 +60,6 @@ export const dateConverter = (dateName) => {
 };
 
 export const findOldDlc = (productsArray, id) => {
-  const findDlc = productsArray.find((data) => data.id === id);
-  return findDlc.expiration_date;
+  const dlcFound = productsArray.find((data) => data.id === id);
+  return dlcFound;
 };

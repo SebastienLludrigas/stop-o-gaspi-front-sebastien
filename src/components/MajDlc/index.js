@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 // import findOldDlc from 'src/utils';
 
 import './majdlc.scss';
+import { findOldDlc } from '../../utils';
 
 const MajDlc = ({
   toggleUpdateDlc,
@@ -25,6 +26,8 @@ const MajDlc = ({
     submitNewDlc();
   };
 
+  // console.log(findOldDlc(datas, currentProductId));
+
   return (
     <div className="displayUpdateDlc_shadow-layer">
       <div className="displayUpdateDlc_container">
@@ -36,6 +39,7 @@ const MajDlc = ({
         />
         <p>Mettre à jour la date limite de consommation</p>
         <form onSubmit={handleSubmit}>
+          {/* {console.log(findOldDlc(datas, currentProductId))} */}
           <input
             className="inputDlc"
             type="date"

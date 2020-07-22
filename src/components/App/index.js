@@ -11,7 +11,7 @@ import Pantry from 'src/containers/Pantry';
 import Footer from 'src/components/Footer';
 import Connexion from 'src/containers/Connexion';
 import Inscription from 'src/components/Registration';
-import Dashboard from 'src/components/Dashboard';
+import Dashboard from 'src/containers/Dashboard';
 import Product from 'src/containers/Product';
 import ScanProduct from 'src/containers/ScanProduct';
 import Page404 from 'src/components/Page404';

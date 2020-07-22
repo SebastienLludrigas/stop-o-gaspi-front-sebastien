@@ -4,6 +4,7 @@ import axios from 'axios';
 import {
   LOG_IN,
   saveUser,
+  ALERT_CHANGE,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -24,6 +25,27 @@ const userMiddleware = (store) => (next) => (action) => {
           localStorage.setItem('token', response.data.token);
           // history.push('/pantry');
           store.dispatch(getAllProducts());
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case ALERT_CHANGE: {
+      const token = localStorage.getItem('token');
+      const alertLevel = action.value;
+
+      axios.post(`http://54.196.61.131/api/user/edit/alertday/${alertLevel}`, {
+        alertLevel,
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          // console.log(response.data);
+          console.log(response);
         })
         .catch((error) => {
           console.warn(error);
