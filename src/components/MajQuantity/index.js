@@ -38,7 +38,7 @@ const MajQuantity = ({
             }}
           />
           <p>Mettre à jour la quantité</p>
-          <form  onSubmit={handleSubmit}>
+          <form className="formQuantityModal" onSubmit={handleSubmit}>
             <input
               className="inputQuantity"
               type="number"
@@ -51,7 +51,7 @@ const MajQuantity = ({
               type="submit"
               className="quantityValidation"
             >
-              Valider
+              OK
             </button>
           </form>
         </div>
