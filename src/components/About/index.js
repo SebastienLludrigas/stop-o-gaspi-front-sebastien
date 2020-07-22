@@ -10,10 +10,29 @@ import alexis from 'src/assets/image/Dormeur.png';
 import greg from '../../assets/image/Grincheux.png';
 
 import './about.scss';
+import './AboutTwo/aboutTwo.scss';
 // == Composant
 const About = () => {
-const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
-
+  const effectAbout = useSpring({ marginTop: 0, from: { marginTop: 500 } });
+  /* return (
+    <div className="images-leaning">
+      <div>
+        <img src={Laurie} alt="Eleanor from The Good Place" />
+      </div>
+      <div>
+        <img src={greg} alt="Chidi from The Good Place" />
+      </div>
+      <div>
+        <img src={aurelien} alt="Jason from The Good Place" />
+      </div>
+      <div>
+        <img src={sebastien} alt="Tahani from The Good Place" />
+      </div>
+      <div>
+        <img src={alexis} alt="Tahani from The Good Place" />
+      </div>
+    </div>
+  );*/
   return (
     <div className="about_page">
       <a.div

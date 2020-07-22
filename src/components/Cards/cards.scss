@@ -38,6 +38,14 @@
     color: red;
   } 
 
+  & .fa-pen-square {
+    position: relative;
+    left: 7px;
+    top: 2px;
+    font-size: 1.5em;
+    color: rgb(42, 152, 255);
+  }
+
   & .productTitle{
     text-align: center;
     font-size: 1.2em;
@@ -82,9 +90,18 @@
 
   & .product-img{
     height: 35%;
+    max-width: 100% ;
     display: block;
     margin: 0 auto;
+    border: 6px solid $firstColor;
   }
+  & .product-img-logo{
+    height: 35%;
+    display: block;
+    margin: 0 auto;
+    
+  }
+  
 
   & .nutri-img {
     width:90%;

@@ -2,13 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../Delete/delete.scss';
+import './delete.scss';
 
 const Delete = ({ deleteProduct, toggleDeleteConfirm, currentProductId }) => {
-  // const handleProduct = (evt) => {
-  //   // deleteProduct(evt.target.id);
-  //   console.log(evt);
-  // };
+  
 
   return (
     <div className="deleteConfirm_shadow-layer">
@@ -24,12 +21,10 @@ const Delete = ({ deleteProduct, toggleDeleteConfirm, currentProductId }) => {
           Ok
         </button>
         <button
-          // id={id}
           type="button"
           className="cancel"
           onClick={() => {
             toggleDeleteConfirm(currentProductId);
-            // console.log(currentProductId);
           }}
         >
           Annuler
@@ -42,7 +37,6 @@ const Delete = ({ deleteProduct, toggleDeleteConfirm, currentProductId }) => {
 Delete.propTypes = {
   deleteProduct: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
-  // id: PropTypes.number.isRequired,
   currentProductId: PropTypes.number.isRequired,
 };
 

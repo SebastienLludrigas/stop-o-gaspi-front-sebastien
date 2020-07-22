@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
-
+import { Link } from 'react-router-dom';
 import InfosProduct from 'src/components/InfosProduct';
 import Scanner from './Scanner';
 import './scanProduct.scss';
@@ -74,7 +74,11 @@ const ScanProduct = ({
               <mark>{currentProduct.product.product_name_fr}</mark><br />
               de la marque<br />
               <mark>{currentProduct.product.brands}</mark><br />
-              au Pantry réussie
+
+
+              <Link to="pantry">
+                au Pantry réussie
+              </Link>
             </p>
           </div>
           <div className="arrow-down-success" />

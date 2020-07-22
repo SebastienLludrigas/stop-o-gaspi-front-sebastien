@@ -1,0 +1,49 @@
+.displayUpdateDlc_shadow-layer {
+	background-color: rgba(128, 128, 128, 0.055);
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.displayUpdateDlc_container {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 15px;
+  width: 400px;
+  position: fixed;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+
+  & p {
+    margin-bottom: 20px;
+  }
+
+  & .fa-times {
+    position: relative;
+    top: -8px;
+    left: 45px;
+    font-size: 1.2em;
+    color: red;
+    margin-left: -30px;
+  }
+}
+
+.dateValidation {
+  padding: 5px 14px;
+  margin: 20px auto 0 auto;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: block;
+  background-color: rgb(206, 255, 206);
+  color: rgb(64, 146, 64);
+  border: 1px solid rgb(64, 146, 64);
+  font-size: 0.7em;
+  width: 100px;
+}
+
+

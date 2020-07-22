@@ -16,6 +16,10 @@ import {
   ADD_HANDMADE_PRODUCT,
   FILL_PANTRY,
   TOGGLE_DELETE_CONFIRM,
+  TOGGLE_UPDATE_DLC,
+  TOGGLE_UPDATE_QUANTITY,
+  DLC_CHANGE,
+  QUANTITY_CHANGE,
 } from '../actions/product';
 import { TOGGLE_MENU } from '../actions/myaccount';
 
@@ -46,7 +50,11 @@ const initialState = {
   quantity: '',
   toggle: false,
   displayDeleteConfirm: false,
+  displayUpdateDlc: false,
+  displayUpdateQuantity: false,
   currentProductId: 0,
+  currentProductDlc: '',
+  currentProductQuantity: '',
 };
 
 const user = (state = initialState, action = {}) => {
@@ -68,6 +76,32 @@ const user = (state = initialState, action = {}) => {
         ...state,
         displayDeleteConfirm: !state.displayDeleteConfirm,
         currentProductId: action.id,
+      };
+
+    case TOGGLE_UPDATE_QUANTITY:
+      return {
+        ...state,
+        displayUpdateQuantity: !state.displayUpdateQuantity,
+        currentProductId: action.id,
+      };
+
+    case TOGGLE_UPDATE_DLC:
+      return {
+        ...state,
+        displayUpdateDlc: !state.displayUpdateDlc,
+        currentProductId: action.id,
+      };
+
+    case DLC_CHANGE:
+      return {
+        ...state,
+        currentProductDlc: action.newValue,
+      };
+
+    case QUANTITY_CHANGE:
+      return {
+        ...state,
+        currentProductQuantity: action.newValue,
       };
 
     case CLEAN_UP:
@@ -115,6 +149,8 @@ const user = (state = initialState, action = {}) => {
         ...state,
         userProducts: action.datas,
         displayDeleteConfirm: false,
+        displayUpdateDlc: false,
+        displayUpdateQuantity: false,
       };
 
     case ON_DETECTED: {

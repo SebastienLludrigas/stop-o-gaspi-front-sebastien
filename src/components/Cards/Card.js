@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 
 import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
-//import Delete from '../Delete';
 import Delete from 'src/components/Delete';
+import MajDlc from 'src/components/MajDlc';
+import MajQuantity from 'src/components/MajQuantity';
 import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
 // import emptyVisual from 'src/assets/image/food.png';
@@ -28,7 +29,18 @@ const Card = ({
   toggleDeleteConfirm,
   deleteProduct,
   displayDeleteConfirm,
+  displayUpdateQuantity,
+  displayUpdateDlc,
+  submitNewDlc,
+  submitNewQuantity,
   currentProductId,
+  currentProductDlc,
+  currentProductQuantity,
+  toggleUpdateDlc,
+  toggleUpdateQuantity,
+  dlcChange,
+  quantityChange,
+  datas,
 }) => {
   const [flipped, set] = useState(false);
   const { transform, opacity } = useSpring({
@@ -40,7 +52,6 @@ const Card = ({
   const nutriscoreUrl = `https://static.openfoodfacts.org/images/misc/nutriscore-${nutriscore_grade}.svg`;
 
   return (
-
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
@@ -50,28 +61,66 @@ const Card = ({
               toggleDeleteConfirm(id);
             }}
           />
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img" src={logo} alt="visuel par default" />}
+          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
           <p className="productTitle">{name}</p>
-          <p className="dlc">DLC : <span>{dateConverter(expiration_date)}</span></p>
-          {elaboration_date !== null && <p className="dlc">Date de fabrication : <br/><span>{dateConverter(elaboration_date)}</span></p>}
+
+          <p
+            className="dlc"
+          >
+            DLC : <span>{dateConverter(expiration_date)}</span>
+            <i
+              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
+              onClick={() => {
+                toggleUpdateDlc(id);
+              }}
+            />
+          </p>
+          {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
+
           {brand !== null && <p className="brand">marque : {brand}</p>}
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
-          <p className="qut">quantité : {quantity}</p>
+          <p className="qut">quantité : {quantity}
+            <i
+              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
+              onClick={() => {
+                toggleUpdateQuantity(id);
+              }}
+            />
+          </p>
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img" src={logo} alt="visuel par default" />}
+          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
           <p className="productTitle">{name}</p>
           {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />}
         </anim.div>
       </div>
       {displayDeleteConfirm && (
         <Delete
-          displayDeleteConfirm={displayDeleteConfirm}
           deleteProduct={deleteProduct}
           currentProductId={currentProductId}
           toggleDeleteConfirm={toggleDeleteConfirm}
+        />
+      )}
+      {displayUpdateDlc && (
+        <MajDlc
+          currentProductId={currentProductId}
+          toggleUpdateDlc={toggleUpdateDlc}
+          dlcChange={dlcChange}
+          currentProductDlc={currentProductDlc}
+          submitNewDlc={submitNewDlc}
+          datas={datas}
+        />
+      )}
+      {displayUpdateQuantity && (
+        <MajQuantity
+          currentProductId={currentProductId}
+          toggleUpdateQuantity={toggleUpdateQuantity}
+          quantityChange={quantityChange}
+          currentProductQuantity={currentProductQuantity}
+          submitNewQuantity={submitNewQuantity}
+          datas={datas}
         />
       )}
     </>
@@ -80,14 +129,25 @@ const Card = ({
 };
 
 Card.propTypes = {
+  datas: PropTypes.array.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  displayUpdateDlc: PropTypes.bool.isRequired,
+  displayUpdateQuantity: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
+  submitNewDlc: PropTypes.func.isRequired,
+  submitNewQuantity: PropTypes.func.isRequired,
+  dlcChange: PropTypes.func.isRequired,
+  quantityChange: PropTypes.func.isRequired,
   toggleDeleteConfirm: PropTypes.func.isRequired,
+  toggleUpdateDlc: PropTypes.func.isRequired,
+  toggleUpdateQuantity: PropTypes.func.isRequired,
   name: PropTypes.string,
   brand: PropTypes.string,
   quantity: PropTypes.number,
   id: PropTypes.number.isRequired,
   currentProductId: PropTypes.number.isRequired,
+  currentProductDlc: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.string.isRequired,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
   image: PropTypes.string,

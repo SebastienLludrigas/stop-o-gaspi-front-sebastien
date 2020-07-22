@@ -136,7 +136,15 @@
   }
 
   }  
+.nextMain{
+  font-size: 18px;
+  color: $secondColor;
 
+  &:hover{
+    color: $firstColor;
+  }
+
+}
 
 .cloudMain {
 	width: 40vw; 
