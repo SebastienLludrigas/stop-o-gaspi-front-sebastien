@@ -70,7 +70,10 @@ Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
   currentProductId: PropTypes.number.isRequired,
   currentProductDlc: PropTypes.string.isRequired,
-  currentProductQuantity: PropTypes.number.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   submitNewDlc: PropTypes.func.isRequired,
   submitNewQuantity: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,

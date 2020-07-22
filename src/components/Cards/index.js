@@ -65,7 +65,10 @@ Cards.propTypes = {
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
-  currentProductQuantity: PropTypes.number.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   currentProductDlc: PropTypes.string.isRequired,
 };
 

@@ -39,7 +39,6 @@ const MajDlc = ({
         />
         <p>Mettre à jour la date limite de consommation</p>
         <form onSubmit={handleSubmit}>
-          {/* {console.log(findOldDlc(datas, currentProductId))} */}
           <input
             className="inputDlc"
             type="date"

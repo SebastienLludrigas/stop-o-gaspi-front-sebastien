@@ -39,7 +39,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="email"
-              name="email"
+              name="registrationEmail"
               required
               onChange={handleChange}
               value={email}
@@ -49,7 +49,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="text"
-              name="name"
+              name="registrationName"
               required
               onChange={handleChange}
               value={name}
@@ -59,7 +59,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="text"
-              name="City"
+              name="registrationCity"
               required
               onChange={handleChange}
               value={City}
@@ -69,7 +69,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="text"
-              name="password"
+              name="registrationPassword"
               required
               onChange={handleChange}
               value={password}
@@ -79,7 +79,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="text"
-              name="verifPassword"
+              name="registrationVerifPassword"
               required
               onChange={handleChange}
               value={verifPassword}
@@ -89,7 +89,7 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="text"
-              name="pseudo"
+              name="registrationPseudo"
               required
               onChange={handleChange}
               value={pseudo}

@@ -146,7 +146,10 @@ Card.propTypes = {
   id: PropTypes.number.isRequired,
   currentProductId: PropTypes.number.isRequired,
   currentProductDlc: PropTypes.string.isRequired,
-  currentProductQuantity: PropTypes.number.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
   image: PropTypes.string,

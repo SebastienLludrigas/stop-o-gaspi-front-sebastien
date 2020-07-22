@@ -2,7 +2,7 @@
 // == Import npm
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 // == Import
 
 import Header from 'src/containers/Header';
@@ -10,7 +10,7 @@ import Main from 'src/containers/Main';
 import Pantry from 'src/containers/Pantry';
 import Footer from 'src/components/Footer';
 import Connexion from 'src/containers/Connexion';
-import Inscription from 'src/components/Registration';
+import Inscription from 'src/containers/Registration';
 import Dashboard from 'src/containers/Dashboard';
 import Product from 'src/containers/Product';
 import ScanProduct from 'src/containers/ScanProduct';
@@ -20,7 +20,7 @@ import './styles.scss';
 
 // import MyAccount from '../MyAccount';
 // == Composant
-const App = ({ getAllProducts, saveUser, isLogged}) => {
+const App = ({ getAllProducts }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
@@ -50,8 +50,6 @@ const App = ({ getAllProducts, saveUser, isLogged}) => {
 
 App.propTypes = {
   getAllProducts: PropTypes.func.isRequired,
-  saveUser: PropTypes.func.isRequired,
-  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

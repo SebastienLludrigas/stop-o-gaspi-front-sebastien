@@ -2,8 +2,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import findOldDlc from 'src/utils';
-
 import './majquantity.scss';
 
 const MajQuantity = ({
@@ -12,7 +10,6 @@ const MajQuantity = ({
   currentProductQuantity,
   quantityChange,
   submitNewQuantity,
-  datas,
 }) => {
   const handleChange = (evt) => {
     console.log(evt.target.value);
@@ -42,7 +39,6 @@ const MajQuantity = ({
             required
             onChange={handleChange}
             value={currentProductQuantity}
-            // defaultValue={}
           />
           <button
             type="submit"
@@ -57,12 +53,14 @@ const MajQuantity = ({
 };
 
 MajQuantity.propTypes = {
-  datas: PropTypes.array.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
   submitNewQuantity: PropTypes.func.isRequired,
   quantityChange: PropTypes.func.isRequired,
   currentProductId: PropTypes.number.isRequired,
-  currentProductQuantity: PropTypes.number.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
 };
 
 export default MajQuantity;

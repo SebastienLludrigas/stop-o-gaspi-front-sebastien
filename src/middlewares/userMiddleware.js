@@ -4,6 +4,7 @@ import {
   LOG_IN,
   saveUser,
   ALERT_CHANGE,
+  HANDLE_REGISTRATION,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -42,6 +43,36 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log(response.data);
+          console.log(response);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case HANDLE_REGISTRATION: {
+      const {
+        registrationEmail,
+        registrationName,
+        registrationCity,
+        registrationPassword,
+        registrationVerifPassword,
+        registrationPseudo,
+      } = store.getState().user;
+      // console.log(`l'email est :${username} et le password est : ${password}`);
+
+      axios.post('http://54.196.61.131/api/login/signon', {
+        email: registrationEmail,
+        name: registrationName,
+        City: registrationCity,
+        password: registrationPassword,
+        verifPassword: registrationVerifPassword,
+        pseudo: registrationPseudo,
+      })
+        .then((response) => {
           console.log(response);
         })
         .catch((error) => {
