@@ -29,7 +29,7 @@ const MajDlc = ({
   return (
     <div className="displayUpdateDlc_shadow-layer">
       <div className="imgDelete">
-        <SpeechBubble size={320} mood="happy" color="#83D1FB"/>
+        <SpeechBubble size={320} mood="excited" color="#83D1FB"/>
 
         <div className="displayUpdateDlc_container">
           <i

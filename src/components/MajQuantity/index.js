@@ -29,7 +29,7 @@ const MajQuantity = ({
   return (
     <div className="displayUpdateQuantity_shadow-layer">
       <div className="imgDelete">
-        <SpeechBubble size={320} mood="happy" color="#83D1FB" />
+        <SpeechBubble size={320} mood="blissful" color="#83D1FB" />
         <div className="displayUpdateQuantity_container">
           <i
             className="fas fa-times"

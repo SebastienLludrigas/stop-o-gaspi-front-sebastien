@@ -11,7 +11,7 @@ const Delete = ({ deleteProduct, toggleDeleteConfirm, currentProductId }) => {
   return (
     <div className="deleteConfirm_shadow-layer">
       <div className="imgDelete">
-        <SpeechBubble size={320} mood="happy" color="#83D1FB"/>
+        <SpeechBubble size={320} mood="ko" color="#83D1FB"/>
         <div className="deleteConfirm_container">
           <p>Supprimer ce produit ?</p>
           <div className="btns_Delete">
