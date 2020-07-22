@@ -1,5 +1,7 @@
+@import 'src/styles/vars.scss';
+
 .deleteConfirm_shadow-layer {
-	background-color: rgba(128, 128, 128, 0.055);
+	background-color: transparentize( lightpink, 0.98);
   position: fixed;
   z-index: 100;
   top: 0;
@@ -7,40 +9,78 @@
   left: 0;
   right: 0;
 }
-
-.deleteConfirm_container {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 15px;
+.imgDelete{
+  //background-color: $firstColor;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  padding-top: 140px;
   position: fixed;
-  top: 40%;
+  top: 20%;
   transform: translateY(-50%);
   left: 50%;
   transform: translateX(-50%);
 
-  & p {
-    margin-bottom: 20px;
+}
+
+.deleteConfirm_container {
+  //border: solid yellow 2px;
+  width: 420px;
+  height: 262px;
+  border-radius: 40px;
+  margin-top: 140px;
+  padding: 15px 15px 0;
+  position: fixed;
+  top: 0%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  
+  overflow: hidden;
+  > p {
+    width: 110%;
+    margin-top: 0%;
+    padding: 1vmin 0;
+    font-size: 17px;
+    font-weight: bold;
+    background-color: black;
+    color: $firstColor;
+    transform: rotate(-18deg) translate(-80px, -10px);
+
+  }
+}
+.btns_Delete{
+  display: flex;
+  justify-content: space-between;
+}
+@mixin btnDelete($colorDeleteBtn){
+  padding: 8px 20px;
+  margin: 120px 10px 0 10px;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  text-transform: uppercase;
+  display: inline-block;
+  background-color:lighten($colorDeleteBtn, 40%);
+  color: $colorDeleteBtn;
+  border: 4px solid $colorDeleteBtn;
+  transition: ease-in-out 0.4s all;
+  &:hover{
+    //border: 8px solid $colorDeleteBtn;
+    background-color: $colorDeleteBtn;
+    color: $firstColor;
+  
   }
 }
 
 .validate {
-  padding: 8px 20px;
-  margin: 0 10px 0 10px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  display: inline-block;
-  background-color: rgb(206, 255, 206);
-  color: rgb(64, 146, 64);
-  border: 1px solid rgb(64, 146, 64);
+  @include btnDelete(rgb(64, 146, 64));
 }
 
 .cancel {
-  padding: 8px 20px;
-  margin: 0 10px 0 10px;
-  border-radius: 3px;
-  text-transform: uppercase;
-  display: inline-block;
-  background-color: rgb(252, 215, 206);
-  color: rgb(255, 61, 61);
-  border: 1px solid rgb(255, 61, 61);
+  @include btnDelete(rgb(255, 61, 61));
 }
