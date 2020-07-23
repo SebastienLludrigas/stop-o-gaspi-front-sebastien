@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // import findOldDlc from 'src/utils';
+import { SpeechBubble } from 'react-kawaii'
 
 import './majdlc.scss';
 // import { findOldDlc } from '../../utils';
@@ -30,29 +31,35 @@ const MajDlc = ({
 
   return (
     <div className="displayUpdateDlc_shadow-layer">
-      <div className="displayUpdateDlc_container">
-        <i
-          className="fas fa-times"
-          onClick={() => {
-            toggleUpdateDlc(currentProductId);
-          }}
-        />
-        <p>Mettre à jour la date limite de consommation</p>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="inputDlc"
-            type="date"
-            required
-            onChange={handleChange}
-            value={currentProductDlc}
+
+      <div className="imgDelete">
+        <SpeechBubble size={320} mood="excited" color="#83D1FB"/>
+
+        <div className="displayUpdateDlc_container">
+          <i
+            className="fas fa-times"
+            onClick={() => {
+              toggleUpdateDlc(currentProductId);
+            }}
+
           />
-          <button
-            type="submit"
-            className="dateValidation"
-          >
-            Valider
-          </button>
-        </form>
+          <p>Mettre à jour la date limite de consommation</p>
+          <form className="formDlcModal" onSubmit={handleSubmit}>
+            <input
+              className="inputDlc"
+              type="date"
+              required
+              onChange={handleChange}
+              value={currentProductDlc}
+            />
+            <button
+              type="submit"
+              className="dateValidation"
+            >
+              OK
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

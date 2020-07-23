@@ -2,6 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
+
+import { SpeechBubble } from 'react-kawaii'
+
 import './majquantity.scss';
 
 const MajQuantity = ({
@@ -24,29 +28,33 @@ const MajQuantity = ({
 
   return (
     <div className="displayUpdateQuantity_shadow-layer">
-      <div className="displayUpdateQuantity_container">
-        <i
-          className="fas fa-times"
-          onClick={() => {
-            toggleUpdateQuantity(currentProductId);
-          }}
-        />
-        <p>Mettre à jour la quantité</p>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="inputQuantity"
-            type="number"
-            required
-            onChange={handleChange}
-            value={currentProductQuantity}
+      <div className="imgDelete">
+        <SpeechBubble size={320} mood="blissful" color="#83D1FB" />
+        <div className="displayUpdateQuantity_container">
+          <i
+            className="fas fa-times"
+            onClick={() => {
+              toggleUpdateQuantity(currentProductId);
+            }}
           />
-          <button
-            type="submit"
-            className="quantityValidation"
-          >
-            Valider
-          </button>
-        </form>
+          <p>Mettre à jour la quantité</p>
+          <form className="formQuantityModal" onSubmit={handleSubmit}>
+            <input
+              className="inputQuantity"
+              type="number"
+              required
+              onChange={handleChange}
+              value={currentProductQuantity}
+            
+            />
+            <button
+              type="submit"
+              className="quantityValidation"
+            >
+              OK
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@
 
 $white: #FCFCFC;
 $gray: #CBCDD3;
-$dark: $secondColor;
+$dark: black;
 $error: #EF8D9C;
 $orange: #FFC39E;
 $success:$thirdColor;// #b8dd8c;
@@ -65,7 +65,7 @@ $secondary:$fourthColor;// #b4dfc6;
   //font-weight: 100;
   letter-spacing: 3px;
   padding-top: 5px;
-  color: $white;
+  color: $secondColor;
   padding-bottom: 5px;
   text-transform: uppercase;
 }
@@ -83,7 +83,8 @@ $secondary:$fourthColor;// #b4dfc6;
   //position: absolute;
   width: 80vw;
   height: 100%;
-  background: linear-gradient(to bottom right, $success 40%, $secondary 100%);
+  background: lighten($thirdColor, 15%);
+  //background: linear-gradient(to bottom right, $success 40%, $secondary 100%);
   border-radius: 20px;
   border: 5px solid $secondColor;
   box-shadow: 5px 5px 20px rgba($gray, 10%);
@@ -132,7 +133,7 @@ $secondary:$fourthColor;// #b4dfc6;
   height: 22%;
   background: $white;
   border-radius: 50%;
-  border: 1px solid $dark;
+  border: 1px solid black;
   top: 21%;
   left: 37.5%;
   z-index: 2;
@@ -141,12 +142,12 @@ $secondary:$fourthColor;// #b4dfc6;
 
 .eye {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  background: $dark;
+  width: 20px;
+  height: 20px;
+  background: black;
   border-radius: 50%;
-  top: 40%;
-  left: 30%;
+  top: 32%;
+  left: 35%;
   @media only screen and (max-width: 600px){
     width: 10px;
     height: 10px;
@@ -158,7 +159,7 @@ $secondary:$fourthColor;// #b4dfc6;
 }
 
 .right {
-  left: 58%;
+  left: 53%;
   @media only screen and (max-width: 1150px){
     left: 68%;
   }
@@ -168,10 +169,10 @@ $secondary:$fourthColor;// #b4dfc6;
 .mouth {
   position:absolute;
   top: 60%;
-  left: 48%;
-  width: 15px;
-  height: 17px;
-  border-radius: 50%;
+  left: 43%;
+  width: 25px;
+  height: 27px;
+  border-radius: 40%;
   @media only screen and (max-width: 1150px){
     left: 58%;
   }
