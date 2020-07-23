@@ -58,6 +58,8 @@
   height: 40px;
   width: 70%;
   margin-top: 125px;
+  font-size: 20px;
+  text-align: center;
 }
 .dateValidation {
   @include btnDelete(rgb(64, 146, 64));
