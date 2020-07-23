@@ -76,7 +76,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
     case GET_ALL_PRODUCTS: {
       const token = localStorage.getItem('token');
-      axios.get('http://34.192.216.20/api/user/product/all/order-by-date', {
+      axios.get('http://stopgogaspiback.co/api/user/product/all/order-by-date', {
         headers: { Authorization: `Bearer ${token}` },
         // headers: { Authorization: 'Bearer 45ty' },
       })
@@ -112,7 +112,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const date = new Date(dlc);
       const expDate = date.toISOString();
 
-      axios.post('http://34.192.216.20/api/user/product/add/scan', {
+      axios.post('http://stopgogaspiback.co/api/user/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
 
@@ -159,7 +159,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(expiration_date);
       const expDate = dateExp.toISOString();
 
-      axios.post('http://34.192.216.20/api/user/product/add/manual', {
+      axios.post('http://stopgogaspiback.co/api/user/product/add/manual', {
         name,
         elaboration_date: elbDate,
         expiration_date: expDate,
@@ -188,7 +188,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.delete(`http://34.192.216.20/api/product/delete/${currentProductId}`, {
+      axios.delete(`http://stopgogaspiback.co/api/product/delete/${currentProductId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -218,7 +218,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(currentProductDlc);
       const expDate = dateExp.toISOString();
 
-      axios.post(`http://34.192.216.20/api/product/edit/expiration-date/${currentProductId}`, {
+      axios.post(`http://stopgogaspiback.co/api/product/edit/expiration-date/${currentProductId}`, {
         expiration_date: expDate,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -245,7 +245,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.post(`http://34.192.216.20/api/product/edit/quantity/${currentProductId}`, {
+      axios.post(`http://stopgogaspiback.co/api/product/edit/quantity/${currentProductId}`, {
         quantity: parseInt(currentProductQuantity, 10),
       }, {
         headers: { Authorization: `Bearer ${token}` },
