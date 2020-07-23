@@ -120,6 +120,10 @@
           cursor: pointer;
           border: 4px solid $secondColor;
         }
+
+        &.ok {
+          border: 4px solid #000;
+        }
       }
       .alert_24{
         background-color: #f5a31a;
@@ -136,7 +140,11 @@
           border: 4px solid $secondColor;
         }
 
+        &.ok {
+          border: 4px solid #000;
+        }
       }
+
       .alert_48{
         background-color: #79d70f;
         color: $firstColor;
@@ -152,7 +160,9 @@
           border: 4px solid $secondColor;
         }
         
-
+        &.ok {
+          border: 4px solid #000;
+        }
       }
     }
     & .remove_account{
@@ -175,6 +185,23 @@
           border: 4px solid $secondColor;
         }
         
+      }
+    }
+
+    .modalInfo {
+      position: absolute;
+      top: 300px;
+      font-size: 0.6em;
+      text-align: center;
+      background-color: rgb(206, 255, 206);
+      padding: 10px;
+      border: 2px solid rgb(0, 88, 0);
+      border-radius: 5px;
+      display: block;
+      color: rgb(0, 88, 0);
+
+      &.hide {
+        display: none;
       }
     }
   }

@@ -13,6 +13,8 @@ export const ALERT_CHANGE = 'ALERT_CHANGE';
 export const ON_CHANGE_REGISTRATION = 'ON_CHANGE_REGISTRATION';
 export const HANDLE_REGISTRATION = 'HANDLE_REGISTRATION';
 export const AUTOMATIC_CONNECTION = 'AUTOMATIC_CONNECTION';
+export const CHANGE_ALERT_DAY = 'CHANGE_ALERT_DAY';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -81,4 +83,13 @@ export const handleRegistration = () => ({
 
 export const automaticConnection = () => ({
   type: AUTOMATIC_CONNECTION,
+});
+
+export const changeAlertDay = (value) => ({
+  type: CHANGE_ALERT_DAY,
+  value,
+});
+
+export const closeModal = () => ({
+  type: CLOSE_MODAL,
 });

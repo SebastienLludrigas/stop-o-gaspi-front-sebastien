@@ -7,6 +7,8 @@ import {
   HANDLE_REGISTRATION,
   automaticConnection,
   logIn,
+  changeAlertDay,
+  closeModal,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -45,7 +47,11 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           // console.log(response.data);
-          console.log(response);
+          console.log(response.data);
+          store.dispatch(changeAlertDay(response.data.alert_day));
+          setTimeout(() => {
+            store.dispatch(closeModal());
+          }, 2000);
         })
         .catch((error) => {
           console.warn(error);
