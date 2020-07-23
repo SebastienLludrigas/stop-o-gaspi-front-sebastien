@@ -1,7 +1,9 @@
 @import 'src/styles/vars.scss';
 
 .deleteConfirm_shadow-layer {
+
 	background-color: transparentize( lightpink, 0.98);
+
   position: fixed;
   z-index: 100;
   top: 0;

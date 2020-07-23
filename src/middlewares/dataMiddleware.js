@@ -1,10 +1,14 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
-// import staticDatas from 'src/staticDatas';
 
 import { productRecovery } from 'src/actions/datas';
 import { ON_DETECTED } from 'src/actions/scanner';
-import { HANDLE_ADD_PRODUCT, addProductToPantry, CATCH_BAR_CODE, saveUser, logOut } from 'src/actions/user';
+import {
+  HANDLE_ADD_PRODUCT,
+  addProductToPantry,
+  CATCH_BAR_CODE,
+  saveUser, logOut,
+} from 'src/actions/user';
 import {
   HANDMADE_PRODUCT,
   getAllProducts,
@@ -96,7 +100,6 @@ const datasMiddleware = (store) => (next) => (action) => {
     case HANDLE_ADD_PRODUCT: {
       // Récupération des données du state
       const {
-        userProducts,
         currentProduct,
         quantite,
         dlc,
@@ -109,14 +112,6 @@ const datasMiddleware = (store) => (next) => (action) => {
       const date = new Date(dlc);
       const expDate = date.toISOString();
 
-      // Ajout de l'id au nouveau produit. Juste pour les tests car Symfony me renverra
-      // un id différent pour chaque produit une fois que la connexion avec le back
-      // sera opérationnelle.
-      const ids = userProducts.map((product) => product.idi);
-      const nextId = Math.max(...ids) + 1;
-
-      // https://jsonplaceholder.typicode.com/posts
-      // http://54.196.61.131/api/v0/user/1/product/add/scan
       axios.post('http://54.196.61.131/api/user/product/add/scan', {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back

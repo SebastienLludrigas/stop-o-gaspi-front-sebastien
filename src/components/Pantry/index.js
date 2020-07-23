@@ -1,5 +1,5 @@
 // == Import npm
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -15,7 +15,6 @@ const Pantry = ({
   currentProductId,
   currentProductDlc,
   currentProductQuantity,
-  getAllProducts,
   displayDeleteConfirm,
   displayUpdateQuantity,
   displayUpdateDlc,
@@ -71,8 +70,10 @@ Pantry.propTypes = {
   datas: PropTypes.array.isRequired,
   currentProductId: PropTypes.number.isRequired,
   currentProductDlc: PropTypes.string.isRequired,
-  currentProductQuantity: PropTypes.string.isRequired,
-  getAllProducts: PropTypes.func.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   submitNewDlc: PropTypes.func.isRequired,
   submitNewQuantity: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,

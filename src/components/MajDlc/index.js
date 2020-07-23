@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import { SpeechBubble } from 'react-kawaii'
 
 import './majdlc.scss';
+// import { findOldDlc } from '../../utils';
 
 const MajDlc = ({
   toggleUpdateDlc,
@@ -26,8 +27,11 @@ const MajDlc = ({
     submitNewDlc();
   };
 
+  // console.log(findOldDlc(datas, currentProductId));
+
   return (
     <div className="displayUpdateDlc_shadow-layer">
+
       <div className="imgDelete">
         <SpeechBubble size={320} mood="excited" color="#83D1FB"/>
 
@@ -37,6 +41,7 @@ const MajDlc = ({
             onClick={() => {
               toggleUpdateDlc(currentProductId);
             }}
+
           />
           <p>Mettre à jour la date limite de consommation</p>
           <form className="formDlcModal" onSubmit={handleSubmit}>
@@ -46,7 +51,6 @@ const MajDlc = ({
               required
               onChange={handleChange}
               value={currentProductDlc}
-              // defaultValue={}
             />
             <button
               type="submit"

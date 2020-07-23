@@ -1,10 +1,11 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // == Import
 import './dashboard.scss';
 // == Composant
-const Dashboard = () => (
+const Dashboard = ({ alertChange }) => (
   <div className="dashboard_page">
     <div className="dashboard_left">
       <h2>Mettre à jour mes données personnelles :</h2>
@@ -16,15 +17,15 @@ const Dashboard = () => (
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Vérification du Mot de Passe"/>
+        <input type="text" name="" required="" placeholder="Vérification du Mot de Passe" />
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Pseudo"/>
+        <input type="text" name="" required="" placeholder="Pseudo" />
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Prénom"/>
+        <input type="text" name="" required="" placeholder="Prénom" />
       </div>
       <div className="btn_dashboard_validate">valider</div>
     </div>
@@ -32,9 +33,30 @@ const Dashboard = () => (
     <div className="dashboard_right">
       <div className="alert_dashboard">
         <h2>ALERTE :</h2>
-        <div className="alert_J">Jour J</div>
-        <div className="alert_24">24h Avant</div>
-        <div className="alert_48">48h Avant</div>
+        <div
+          className="alert_J"
+          onClick={() => {
+            alertChange(0);
+          }}
+        >
+          Jour J
+        </div>
+        <div
+          className="alert_24"
+          onClick={() => {
+            alertChange(1);
+          }}
+        >
+          24h Avant
+        </div>
+        <div
+          className="alert_48"
+          onClick={() => {
+            alertChange(2);
+          }}
+        >
+          48h Avant
+        </div>
       </div>
       <div className="remove_account">
         <h2>Je veux supprimer mon compte :</h2>
@@ -45,6 +67,10 @@ const Dashboard = () => (
     </div>
   </div>
 );
+
+Dashboard.propTypes = {
+  alertChange: PropTypes.func.isRequired,
+};
 
 // == Export
 export default Dashboard;

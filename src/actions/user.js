@@ -9,6 +9,9 @@ export const SAVE_USER = 'SAVE_USER';
 export const LOG_OUT = 'LOG_OUT';
 export const CHECK_LOGGED = 'CHECK_LOGGED';
 export const CLEAN_UP = 'CLEAN_UP';
+export const ALERT_CHANGE = 'ALERT_CHANGE';
+export const ON_CHANGE_REGISTRATION = 'ON_CHANGE_REGISTRATION';
+export const HANDLE_REGISTRATION = 'HANDLE_REGISTRATION';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -58,4 +61,19 @@ export const checkLogged = () => ({
 
 export const cleanUp = () => ({
   type: CLEAN_UP,
+});
+
+export const alertChange = (value) => ({
+  type: ALERT_CHANGE,
+  value,
+});
+
+export const onChangeRegistration = (newValue, name) => ({
+  type: ON_CHANGE_REGISTRATION,
+  newValue,
+  name,
+});
+
+export const handleRegistration = () => ({
+  type: HANDLE_REGISTRATION,
 });

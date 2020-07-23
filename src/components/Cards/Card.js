@@ -13,7 +13,6 @@ import MajDlc from 'src/components/MajDlc';
 import MajQuantity from 'src/components/MajQuantity';
 import logo from '../../assets/image/logoStopOGaspi.PNG';
 // == Import
-// import emptyVisual from 'src/assets/image/food.png';
 import './cards.scss';
 
 // == Composant
@@ -157,7 +156,10 @@ Card.propTypes = {
   id: PropTypes.number.isRequired,
   currentProductId: PropTypes.number.isRequired,
   currentProductDlc: PropTypes.string.isRequired,
-  currentProductQuantity: PropTypes.string.isRequired,
+  currentProductQuantity: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]).isRequired,
   product_quantity: PropTypes.any,
   nutriscore_grade: PropTypes.string,
   image: PropTypes.string,

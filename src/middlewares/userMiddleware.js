@@ -1,9 +1,10 @@
 import axios from 'axios';
-// import { useHistory } from 'react-router-dom';
 
 import {
   LOG_IN,
   saveUser,
+  ALERT_CHANGE,
+  HANDLE_REGISTRATION,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -11,7 +12,6 @@ const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN: {
       const { username, password } = store.getState().user;
-      // const history = useHistory;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
       axios.post('http://54.196.61.131/api/login_check', {
@@ -22,8 +22,58 @@ const userMiddleware = (store) => (next) => (action) => {
           console.log(response);
           store.dispatch(saveUser());
           localStorage.setItem('token', response.data.token);
-          // history.push('/pantry');
           store.dispatch(getAllProducts());
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case ALERT_CHANGE: {
+      const token = localStorage.getItem('token');
+      const alertLevel = action.value;
+
+      axios.post(`http://54.196.61.131/api/user/edit/alertday/${alertLevel}`, {
+        alertLevel,
+      }, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          // console.log(response.data);
+          console.log(response);
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case HANDLE_REGISTRATION: {
+      const {
+        registrationEmail,
+        registrationName,
+        registrationCity,
+        registrationPassword,
+        registrationVerifPassword,
+        registrationPseudo,
+      } = store.getState().user;
+      // console.log(`l'email est :${username} et le password est : ${password}`);
+
+      axios.post('http://54.196.61.131/api/login/signon', {
+        email: registrationEmail,
+        name: registrationName,
+        City: registrationCity,
+        password: registrationPassword,
+        verifPassword: registrationVerifPassword,
+        pseudo: registrationPseudo,
+      })
+        .then((response) => {
+          console.log(response);
         })
         .catch((error) => {
           console.warn(error);

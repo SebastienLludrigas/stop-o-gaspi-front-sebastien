@@ -1,4 +1,3 @@
-import staticDatas from 'src/staticDatas';
 import {
   UPDATE_USER_FIELD,
   SAVE_USER,
@@ -8,6 +7,7 @@ import {
   HANDLE_ADD_PRODUCT,
   LOG_OUT,
   CLEAN_UP,
+  ON_CHANGE_REGISTRATION,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -28,11 +28,16 @@ const initialState = {
   username: 'sebastienlludrigas@gmail.com',
   // contenu de l'input pour le mot de passe
   password: 'olaola',
-  // informations sur l'utilisateur
-  info: {},
-  // indique si l'utilisateur est loggué
+  // Indique si l'utilisateur est connecté
   isLogged: false,
-  // userProducts: staticDatas,
+  // Données d'inscription d'un utilisateur
+  registrationEmail: '',
+  registrationName: '',
+  registrationCity: '',
+  registrationPassword: '',
+  registrationVerifPassword: '',
+  registrationPseudo: '',
+  // Tous les produits d'un utilisateur
   userProducts: [],
   currentProduct: {},
   productFound: true,
@@ -54,7 +59,7 @@ const initialState = {
   displayUpdateQuantity: false,
   currentProductId: 0,
   currentProductDlc: '',
-  currentProductQuantity: '',
+  currentProductQuantity: 0,
 };
 
 const user = (state = initialState, action = {}) => {
@@ -64,6 +69,13 @@ const user = (state = initialState, action = {}) => {
         ...state,
         [action.name]: action.newValue,
       };
+
+    case ON_CHANGE_REGISTRATION: {
+      return {
+        ...state,
+        [action.name]: action.newValue,
+      };
+    }
 
     case TOGGLE_MENU:
       return {
@@ -78,19 +90,27 @@ const user = (state = initialState, action = {}) => {
         currentProductId: action.id,
       };
 
-    case TOGGLE_UPDATE_QUANTITY:
+    case TOGGLE_UPDATE_QUANTITY: {
+      const quantityFound = state.userProducts.find((data) => data.id === action.id);
       return {
         ...state,
         displayUpdateQuantity: !state.displayUpdateQuantity,
         currentProductId: action.id,
+        currentProductQuantity: quantityFound.quantity,
       };
+    }
 
-    case TOGGLE_UPDATE_DLC:
+    case TOGGLE_UPDATE_DLC: {
+      // On récupère les données du produit sur lequel a cliqué l'utilisateur
+      const dlcFound = state.userProducts.find((data) => data.id === action.id);
       return {
         ...state,
         displayUpdateDlc: !state.displayUpdateDlc,
         currentProductId: action.id,
+        // On affiche en valeur dans l'input la DLC actuelle du produit,
+        currentProductDlc: dlcFound.expiration_date.substring(0, 10),
       };
+    }
 
     case DLC_CHANGE:
       return {
