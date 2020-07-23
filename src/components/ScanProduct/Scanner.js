@@ -20,8 +20,8 @@ class Scanner extends React.Component {
         inputStream: {
           type: 'LiveStream',
           constraints: {
-            width: { min: 800, max: 1280 },
-            height: { min: 600, max: 720 },
+            width: { min: 200, max: 1280 },
+            height: { min: 150, max: 720 },
             aspectRatio: { min: 4 / 3, max: 16 / 9 },
             // width: 800,
             // height: 600,
@@ -101,7 +101,7 @@ class Scanner extends React.Component {
           .forEach((box) => {
             Quagga.ImageDebug.drawPath(box, { x: 0, y: 1 }, drawingCtx, {
               color: 'green',
-              lineWidth: 2,
+              lineWidth: 4,
             });
           });
       }
@@ -135,7 +135,7 @@ class Scanner extends React.Component {
   }
 
   render() {
-    return <div id="interactive" className="viewport" />;
+    return <div id="interactive" className="viewport smallView" />;
   }
 }
 
