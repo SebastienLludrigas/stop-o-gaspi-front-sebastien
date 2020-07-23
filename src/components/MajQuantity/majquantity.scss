@@ -1,7 +1,7 @@
 @import 'src/styles/vars.scss';
 
 .displayUpdateQuantity_shadow-layer {
-	background-color: rgba(128, 128, 128, 0.500);
+	background-color: transparentize(lightpink, 0.99);
   position: fixed;
   z-index: 100;
   top: 0;
