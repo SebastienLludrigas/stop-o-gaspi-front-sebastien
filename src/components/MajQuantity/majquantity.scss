@@ -56,8 +56,10 @@
 }
 .inputQuantity{
   height: 40px;
-  width: 70%;
+  width: 60%;
   margin-top: 145px;
+  font-size: 20px;
+  text-align: center;
 }
 .quantityValidation {
   @include btnDelete(rgb(64, 146, 64));

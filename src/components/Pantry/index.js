@@ -31,18 +31,19 @@ const Pantry = ({
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
+      <h1 className="pantryTitle">MON PANTRY</h1>
       <animated.div
+        className="pantry_move"
         style={pantryText}
         config={{ delay: 100, duration: 2000 }}
       >
-        <h1 className="pantryTitle">MON PANTRY</h1>
-        <h2 className="label_pantry">Ajouter un nouveau produit</h2>
+        <h2 className="label_pantry">Ajouter un nouveau produit :</h2>
         <div className="pantry_buttons">
           <Link to="/product">
-            <div className="btn_manual btn">Je saisie mon produit</div>
+            <div className="btn_manual btn"><span className="infobulle">Je saisie un produit</span></div>
           </Link>
           <Link to="/scan-product">
-            <div className="btn_scan btn">Je scanne mon produit</div>
+            <div className="btn_scan btn"><span className="infobulle">Je saisie avec un code barre</span></div>
           </Link>
         </div>
       </animated.div>
