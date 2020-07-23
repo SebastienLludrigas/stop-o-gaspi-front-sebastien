@@ -14,7 +14,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('http://stopgogaspiback.co/api/login_check', {
+      axios.post('https://stopgogaspiback.co/api/login_check', {
         username,
         password,
       })
@@ -36,7 +36,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`http://stopgogaspiback.co/api/user/edit/alertday/${alertLevel}`, {
+      axios.post(`https://stopgogaspiback.co/api/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -64,7 +64,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('http://stopgogaspiback.co/api/login/signon', {
+      axios.post('https://stopgogaspiback.co/api/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
