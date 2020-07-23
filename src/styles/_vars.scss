@@ -55,21 +55,27 @@ $in-border-radius: 20px;
   border: none;
   color: $colorText;
   background-color: $ColorBackground;
-  border-radius: 10px;
+  border-radius: 50%;
   border:  4px solid $colorText;
-  padding: 3px 15px;
+  padding: 15px;
   margin: 0 auto;
-  height: min-content;
+  height: 150px;
+  width: 150px;
   font-weight: bold;
   box-shadow: $ColorBackground 1px 1px 2px;
   @media all and (max-width: 450px) {
     margin-top: 15px;
 
   }
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 40px;
+    }
+
   &:hover{
     box-shadow: $ColorBackground 1px 1px 20px;
-    transform: scale(1.1);
+  
   }
+
 
 
 }
