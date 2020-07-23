@@ -19,6 +19,7 @@ import {
 // si j'ai besoin de lire des informations dans le state
 const mapStateToProps = (state) => ({
   // nom de la prop à remplir : élément à récupérer dans le state
+  isLogged: state.user.isLogged,
   datas: state.user.userProducts,
   displayDeleteConfirm: state.user.displayDeleteConfirm,
   displayUpdateDlc: state.user.displayUpdateDlc,

@@ -23,6 +23,7 @@ const mapStateToProps = (state) => ({
   productFound: state.user.productFound,
   currentProduct: state.user.currentProduct,
   barCode: state.user.barCode,
+  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps

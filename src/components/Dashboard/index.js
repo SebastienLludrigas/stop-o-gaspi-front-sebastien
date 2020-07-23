@@ -1,11 +1,12 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
 // == Import
 import './dashboard.scss';
 // == Composant
-const Dashboard = ({ alertChange }) => (
+const Dashboard = ({ alertChange, isLogged }) => (
   <div className="dashboard_page">
     <div className="dashboard_left">
       <h2>Mettre à jour mes données personnelles :</h2>
@@ -65,11 +66,13 @@ const Dashboard = ({ alertChange }) => (
         </div>
       </div>
     </div>
+    {!isLogged && <Redirect to="/connexion" />}
   </div>
 );
 
 Dashboard.propTypes = {
   alertChange: PropTypes.func.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

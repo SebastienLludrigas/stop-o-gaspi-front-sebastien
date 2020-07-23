@@ -14,12 +14,10 @@ const MyAccount = ({
   toggleMenu,
   isLogged,
   logOut,
-
 }) => (
   <div
     className="my-account"
     onClick={() => {
-      // console.log(toggle);
       toggleMenu();
     }}
   > {toggle ? <p>Mon compte</p> : <p>Mon compte</p>}
@@ -28,9 +26,7 @@ const MyAccount = ({
     {toggle && (
       <div className="account-menu">
         <ul className="list-menu">
-
-
-          <li><Link to={isLogged ? '/pantry' : '/connexion'} title="mon garde manger">Pantry</Link></li>          
+          <li><Link to={isLogged ? '/pantry' : '/connexion'} title="mon garde manger">Pantry</Link></li>
           <div />
           <li><Link to={isLogged ? '/scan-product' : '/connexion'} title="je scanne un produit">je scanne un produit</Link></li>
           <div />
@@ -41,17 +37,14 @@ const MyAccount = ({
           {!isLogged && <li><Link to="/connexion" title="connexion">Connexion</Link></li>}
 
           {isLogged && (
-
             <li
               title="connexion"
               onClick={logOut}
             >
-
               Déconnexion
-                        </li>
+            </li>
           )}
 
-          
           {!isLogged && <li><Link to="/inscription" title="inscription">Inscription</Link></li>}
         </ul>
       </div>

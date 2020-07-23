@@ -5,6 +5,8 @@ import {
   saveUser,
   ALERT_CHANGE,
   HANDLE_REGISTRATION,
+  automaticConnection,
+  logIn,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -14,7 +16,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('http://54.196.61.131/api/login_check', {
+      axios.post('https://stopgogaspiback.co/api/login_check', {
         username,
         password,
       })
@@ -36,7 +38,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`http://54.196.61.131/api/user/edit/alertday/${alertLevel}`, {
+      axios.post(`https://stopgogaspiback.co/api/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -64,7 +66,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('http://54.196.61.131/api/login/signon', {
+      axios.post('https://stopgogaspiback.co/api/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -74,6 +76,8 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
+          store.dispatch(automaticConnection());
+          store.dispatch(logIn());
         })
         .catch((error) => {
           console.warn(error);

@@ -2,15 +2,14 @@
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import InfosProduct from 'src/components/InfosProduct';
 import Scanner from './Scanner';
 import './scanProduct.scss';
 
 const ScanProduct = ({
-  scanCode,
+  isLogged,
   modal,
-  scanDatas,
   barCode,
   currentProduct,
   onChange,
@@ -37,8 +36,6 @@ const ScanProduct = ({
 
   return (
     <div className="scanPage">
-      {/* {console.log(scanDatas)}
-      {console.log(scanCode)} */}
       <div className="right_scanPage">
         {modal && (
           <div className="modal">
@@ -120,21 +117,21 @@ const ScanProduct = ({
         config={{ delay: 2000, duration: 2000 }}
       >
         <div className="left_scanPage">
-              <div className="scanInput">
-                <h2>je scanne mon code barre :</h2>
-                <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
-              </div>
+          <div className="scanInput">
+            <h2>je scanne mon code barre :</h2>
+            <div onClick={toggleModal} className="btn_scan_direct"><span className="fas fa-barcode" /></div>
+          </div>
 
-              <div className="manualInput">
-                <h2>je saisie mon code barre :</h2>
-                <input onChange={handleChange} type="text" value={barCode} />
-                <div
-                  onClick={catchBarCode}
-                  className="btn_validate_barcode"
-                >
-                  Valider
-                </div>
-              </div>
+          <div className="manualInput">
+            <h2>je saisie mon code barre :</h2>
+            <input onChange={handleChange} type="text" value={barCode} />
+            <div
+              onClick={catchBarCode}
+              className="btn_validate_barcode"
+            >
+              Valider
+            </div>
+          </div>
 
           {(status === 1 && productFound) && (
             <div className="input-dlc ">
@@ -144,7 +141,7 @@ const ScanProduct = ({
 
         </div>
       </animated.div>
-
+      {!isLogged && <Redirect to="/connexion" />}
     </div>
   );
 };
@@ -157,12 +154,11 @@ ScanProduct.propTypes = {
   catchBarCode: PropTypes.func.isRequired,
   handleAddProduct: PropTypes.func.isRequired,
   productFound: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
-  scanCode: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired,
   modal: PropTypes.bool.isRequired,
-  scanDatas: PropTypes.object.isRequired,
   status: PropTypes.number,
   barCode: PropTypes.string.isRequired,
 };

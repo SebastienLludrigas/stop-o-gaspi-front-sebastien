@@ -13,6 +13,7 @@ const mapStateToProps = (state) => ({
   elaboration_date: state.user.elaboration_date,
   expiration_date: state.user.expiration_date,
   quantity: state.user.quantity,
+  isLogged: state.user.isLogged,
 });
 
 // === mapDispatchToProps

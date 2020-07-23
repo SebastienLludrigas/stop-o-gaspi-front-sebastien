@@ -1,7 +1,7 @@
 // == Import npm
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -11,6 +11,7 @@ import './pantry.scss';
 
 // == Composant
 const Pantry = ({
+  isLogged,
   datas,
   currentProductId,
   currentProductDlc,
@@ -62,6 +63,7 @@ const Pantry = ({
         submitNewDlc={submitNewDlc}
         submitNewQuantity={submitNewQuantity}
       />
+      {!isLogged && <Redirect to="/connexion" />}
     </div>
   );
 };
@@ -77,6 +79,7 @@ Pantry.propTypes = {
   submitNewDlc: PropTypes.func.isRequired,
   submitNewQuantity: PropTypes.func.isRequired,
   displayDeleteConfirm: PropTypes.bool.isRequired,
+  isLogged: PropTypes.bool.isRequired,
   displayUpdateQuantity: PropTypes.bool.isRequired,
   displayUpdateDlc: PropTypes.bool.isRequired,
   deleteProduct: PropTypes.func.isRequired,
