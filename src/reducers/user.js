@@ -8,6 +8,9 @@ import {
   LOG_OUT,
   CLEAN_UP,
   ON_CHANGE_REGISTRATION,
+  AUTOMATIC_CONNECTION,
+  CHANGE_ALERT_DAY,
+  CLOSE_MODAL,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -60,10 +63,34 @@ const initialState = {
   currentProductId: 0,
   currentProductDlc: '',
   currentProductQuantity: 0,
+  successfulRegistration: false,
+  alertDayValue: 0,
+  displayTempModal: false,
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CHANGE_ALERT_DAY: {
+      return {
+        ...state,
+        alertDayValue: action.value,
+        displayTempModal: true,
+      };
+    }
+
+    case CLOSE_MODAL:
+      return {
+        ...state,
+        displayTempModal: false,
+      };
+
+    case AUTOMATIC_CONNECTION:
+      return {
+        ...state,
+        username: state.registrationEmail,
+        password: state.registrationPassword,
+      };
+
     case UPDATE_USER_FIELD:
       return {
         ...state,
@@ -151,6 +178,7 @@ const user = (state = initialState, action = {}) => {
         info: action.data,
         // userProducts: action.data.productPerso,
         isLogged: true,
+        successfulRegistration: true,
         // username: '',
         // password: '',
       };
@@ -161,6 +189,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: false,
+        successfulRegistration: false,
       };
     }
 

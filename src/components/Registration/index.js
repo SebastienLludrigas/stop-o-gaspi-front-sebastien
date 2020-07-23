@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -8,6 +8,7 @@ import './registration.scss';
 
 // == Composant
 const Registration = ({
+  successfulRegistration,
   handleRegistration,
   onChangeRegistration,
   email,
@@ -106,6 +107,7 @@ const Registration = ({
           </button>
         </form>
       </div>
+      {successfulRegistration && <Redirect to="/connexion" />}
     </div>
   );
 };
@@ -119,6 +121,7 @@ Registration.propTypes = {
   verifPassword: PropTypes.string.isRequired,
   City: PropTypes.string.isRequired,
   pseudo: PropTypes.string.isRequired,
+  successfulRegistration: PropTypes.bool.isRequired,
 };
 
 // == Export

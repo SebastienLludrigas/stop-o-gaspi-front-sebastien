@@ -2,6 +2,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from 'react-router-dom';
 
 // == Import
 
@@ -9,6 +10,7 @@ import './product.scss';
 
 // == Composant
 const Product = ({
+  isLogged,
   handmadeProduct,
   onChange,
   name,
@@ -79,6 +81,7 @@ const Product = ({
           </button>
         </form>
       </div>
+      {!isLogged && <Redirect to="/connexion" />}
     </div>
   );
 };
@@ -90,6 +93,7 @@ Product.propTypes = {
   elaboration_date: PropTypes.string.isRequired,
   expiration_date: PropTypes.string.isRequired,
   quantity: PropTypes.string.isRequired,
+  isLogged: PropTypes.bool.isRequired,
 };
 
 // == Export

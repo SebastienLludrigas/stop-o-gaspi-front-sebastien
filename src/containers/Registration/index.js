@@ -15,6 +15,7 @@ const mapStateToProps = (state) => ({
   password: state.user.registrationPassword,
   verifPassword: state.user.registrationVerifPassword,
   pseudo: state.user.registrationPseudo,
+  successfulRegistration: state.user.successfulRegistration,
 });
 
 // === mapDispatchToProps
