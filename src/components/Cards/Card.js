@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 
 import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
+import Edit3 from '@bit/feathericons.react-feather.edit-3';
+import RotateCcw from '@bit/feathericons.react-feather.rotate-ccw';
+import Trash2 from '@bit/feathericons.react-feather.trash-2';
 import Delete from 'src/components/Delete';
 import MajDlc from 'src/components/MajDlc';
 import MajQuantity from 'src/components/MajQuantity';
@@ -55,7 +58,9 @@ const Card = ({
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-          <i
+          <RotateCcw size="40" id="rotateCard" />
+          <Trash2
+            size="30"
             className="fas fa-trash-alt"
             onClick={() => {
               toggleDeleteConfirm(id);
@@ -68,11 +73,14 @@ const Card = ({
             className="dlc"
           >
             DLC : <span>{dateConverter(expiration_date)}</span>
-            <i
-              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
+            <Edit3
+              size="20"
+              id="dlcPen"
+              className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fa fa-pencil'}
               onClick={() => {
                 toggleUpdateDlc(id);
               }}
+              aria-hidden="true"
             />
           </p>
           {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
@@ -81,7 +89,9 @@ const Card = ({
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
           <p className="qut">quantité : {quantity}
-            <i
+            <Edit3
+              size="20"
+              id="quantityPen"
               className={colorCode(expiration_date, 'card') === 'card finish' ? '' : 'fas fa-pen-square'}
               onClick={() => {
                 toggleUpdateQuantity(id);
@@ -91,7 +101,7 @@ const Card = ({
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
+          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
           <p className="productTitle">{name}</p>
           {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />}
         </anim.div>

@@ -895,6 +895,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bit/feathericons.react-feather.edit-3@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.edit-3/-/feathericons.react-feather.edit-3-1.1.6.tgz#49b1521638d8deb9a0e9314662a1d8a0e4f8f573"
+  integrity sha1-SbFSFjjY3rmg6TFGYqHYoOT49XM=
+
 "@bit/feathericons.react-feather.mail@^1.1.6":
   version "1.1.6"
   resolved "https://node.bit.dev/feathericons.react-feather.mail/-/feathericons.react-feather.mail-1.1.6.tgz#f6303b5dbd8c7ce668226e425eb1cb11766ce43c"
@@ -904,6 +909,16 @@
   version "1.1.6"
   resolved "https://node.bit.dev/feathericons.react-feather.phone/-/feathericons.react-feather.phone-1.1.6.tgz#1143dc96d6ea5adc6078fe2d17258daa465ef794"
   integrity sha1-EUPcltbqWtxgeP4tFyWNqkZe95Q=
+
+"@bit/feathericons.react-feather.rotate-ccw@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.rotate-ccw/-/feathericons.react-feather.rotate-ccw-1.1.6.tgz#765cfc938254b74ccf5badae5580b79e27013e4c"
+  integrity sha1-dlz8k4JUt0zPW62uVYC3nicBPkw=
+
+"@bit/feathericons.react-feather.trash-2@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.trash-2/-/feathericons.react-feather.trash-2-1.1.6.tgz#1233c8a2d17a3013a0bc3cc25e4385df415ae5e0"
+  integrity sha1-EjPIotF6MBOgvDzCXkOF30Fa5eA=
 
 "@bit/feathericons.react-feather.user@^1.1.6":
   version "1.1.6"

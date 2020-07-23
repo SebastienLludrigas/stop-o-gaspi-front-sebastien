@@ -12,8 +12,8 @@
   background-color: $firstColor;
   border: solid 10px $secondColor;
   border-radius: 15px;
-  width: 250px;
-  height: 300px;
+  width: 320px;
+  height: 360px;
   padding: 1vmin;
   margin: 2vmin;
   display: flex;
@@ -34,27 +34,19 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    font-size: 1.5em;
+    
     color: red;
   } 
 
-  & .fa-pen-square {
-    position: relative;
-    left: 7px;
-    top: 2px;
-    font-size: 1.5em;
-    color: rgb(42, 152, 255);
-  }
-
   & .productTitle{
     text-align: center;
-    font-size: 1.2em;
+    font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 1px $secondColor solid;
-    height: 15%;
-    line-height:1.4em;
+    height: 45px;
+    //line-height:1.4em;
     overflow:hidden;
     // margin-top: 2px;
   }
@@ -65,13 +57,21 @@
   & .dlc{
     order:1;
     @include detail_card();    
-
+    border-bottom: 1px $secondColor solid;
+    width:100%;
     font-weight: bold;
+    font-size: 15px;
+    padding: 5px;
+
   }
   & .qut{
     order:2;
     @include detail_card();    
     font-weight: bold;
+    font-size: 18px;
+    border-bottom: 1px $secondColor solid;
+    width:100%;
+    padding: 5px;
   }
   & .brand{
     order:4;
@@ -90,16 +90,25 @@
 
   & .product-img{
     height: 35%;
-    max-width: 100% ;
+    max-width: 80% ;
     display: block;
     margin: 0 auto;
-    border: 6px solid $firstColor;
+    border: 6px solid pink;//$firstColor;
   }
   & .product-img-logo{
     height: 35%;
+    max-width: 80%;
     display: block;
-    margin: 0 auto;
+    margin: 20px auto 0;
     
+  }
+  & .product-img-back{
+   // height: 45%;
+    width: 70%;
+    max-width: 100% ;
+    display: block;
+    margin: 0 auto ;
+    border: 6px solid $firstColor;
   }
   
 
@@ -129,13 +138,13 @@
   }
 }
 .card.red {
-  border: solid 8px rgb(255, 61, 61);
+  border: solid 15px rgb(255, 61, 61);
   background-color:  rgb(252, 215, 206);
   @include card_effect_peremption();
 
 }
 .card.finish {
-  border: solid 8px $secondColor;
+  border: solid 15px $secondColor;
   background-color:  rgb(211, 208, 208);
   @include card_effect_peremption();
   background-image: url(../../assets/image/finishProduct.png);
@@ -143,24 +152,29 @@
   background-repeat: no-repeat;
   background-position: center;
   & .dlc{color:$secondColor; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
-  & .qut{}
+  & .qut{color:$secondColor; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
   & .brand{display:none;}
   & .createDate{display:none;}
   & .poid{display: none;} 
   & .productTitle{
     align-self: baseline;
     background-color: $firstColor;
-    border:2px solid red;
+    border:3px solid red;
     border-radius: 10px 10px;
     width: 90%;
     margin-left: 5%;
     margin-bottom: 10%;
     //align-self: center;
   }
+  & .product-img{
+      height: 60%;
+    }
+  
+ 
 
 }
 .card.orange {
-  border: solid 8px rgb(247, 176, 45);
+  border: solid 15px rgb(247, 176, 45);
   background-color:  rgb(252, 224, 182);
   @include card_effect_peremption();
 
@@ -168,17 +182,39 @@
 }
 
 .card.green {
-  border: solid 8px rgb(64, 146, 64);
+  border: solid 15px rgb(64, 146, 64);
   background-color:  rgb(206, 255, 206);
   @include card_effect_peremption();
 
 
 
 }
+// ------------- PEN ICON ---------------
+#dlcPen{
+color: black;
+margin-left: 10px;
+&:hover{
+  color: green;
+  text-shadow: 1px 1px 10px black;
+}
+}
+#quantityPen{
+  color:blue;
+  margin-left: 10px;
 
+}
+// -----------ROTATE ICON  ----------
+#rotateCard{
+  color: $secondColor;
+  z-index: 50;
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+// --------- FLIP ------------
 .front, .back{
-  display:none;
- 
+  display:none; 
 }
 
 
