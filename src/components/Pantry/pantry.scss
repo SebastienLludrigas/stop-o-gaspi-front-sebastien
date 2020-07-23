@@ -24,13 +24,13 @@
   font-weight: normal;
   margin-bottom: 3vmin;
   font-family: bubble;
-  margin: auto auto 20px;
+  margin: auto auto 60px;
   background-color: lighten($thirdColor,15%);
   height: 60px;
   border-radius: 20px;
   border:2px solid $secondColor;
   width: 340px;
-  @media screen and (min-width: 800px) {
+  @media screen and (min-width: 1400px) {
     transform: translate(-100px,50px) rotate(-25deg) ; 
     margin: 0;
     width: 650px;
@@ -45,7 +45,9 @@
   font-size: 2em;
   font-weight: 900;
   text-shadow:  10px 10px 25px $firstColor;
-  
+  @media screen and (min-width: 1400px) {
+    }
+
 
 
 }
@@ -64,6 +66,10 @@ margin-bottom: 3vmin;
   background-repeat: no-repeat;
   background-position: left;
   margin-right: 100px;
+  @media screen and (max-width: 600px) {
+    margin: auto;
+    }
+
   .infobulle{display: none;}
   &:hover .infobulle{
     display:block;
@@ -114,7 +120,7 @@ margin-bottom: 3vmin;
     width:320px;
     @media screen and (max-width: 1200px) {
       top: 135px;
-      left: -110px;
+      //left: -110px;
   
     }
   }
