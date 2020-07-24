@@ -905,6 +905,16 @@
   resolved "https://node.bit.dev/feathericons.react-feather.mail/-/feathericons.react-feather.mail-1.1.6.tgz#f6303b5dbd8c7ce668226e425eb1cb11766ce43c"
   integrity sha1-9jA7Xb2MfOZoIm5CXrHLEXZs5Dw=
 
+"@bit/feathericons.react-feather.more-horizontal@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.more-horizontal/-/feathericons.react-feather.more-horizontal-1.1.6.tgz#f99cfeb8d790e1f4cf1d3ba24fb2ae76fc387ad5"
+  integrity sha1-+Zz+uNeQ4fTPHTuiT7Kudvw4etU=
+
+"@bit/feathericons.react-feather.more-vertical@^1.1.6":
+  version "1.1.6"
+  resolved "https://node.bit.dev/feathericons.react-feather.more-vertical/-/feathericons.react-feather.more-vertical-1.1.6.tgz#543b124660cb2a7511bec577641d130179a4566a"
+  integrity sha1-VDsSRmDLKnURvsV3ZB0TAXmkVmo=
+
 "@bit/feathericons.react-feather.phone@^1.1.6":
   version "1.1.6"
   resolved "https://node.bit.dev/feathericons.react-feather.phone/-/feathericons.react-feather.phone-1.1.6.tgz#1143dc96d6ea5adc6078fe2d17258daa465ef794"

@@ -7,6 +7,9 @@ import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
 import Edit3 from '@bit/feathericons.react-feather.edit-3';
 import RotateCcw from '@bit/feathericons.react-feather.rotate-ccw';
+import MoreHorizontal from '@bit/feathericons.react-feather.more-horizontal';
+import MoreVertical from '@bit/feathericons.react-feather.more-vertical';
+
 import Trash2 from '@bit/feathericons.react-feather.trash-2';
 import Delete from 'src/components/Delete';
 import MajDlc from 'src/components/MajDlc';
@@ -57,7 +60,7 @@ const Card = ({
     <>
       <div className="container-date" onClick={() => set((state) => !state)}>
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-          <RotateCcw size="40" id="rotateCard" />
+          <MoreHorizontal size="40" id="rotateCard" color="blue" />
           <Trash2
             size="30"
             className="fas fa-trash-alt"

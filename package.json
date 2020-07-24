@@ -57,6 +57,8 @@
   "dependencies": {
     "@bit/feathericons.react-feather.edit-3": "^1.1.6",
     "@bit/feathericons.react-feather.mail": "1.1.6",
+    "@bit/feathericons.react-feather.more-horizontal": "^1.1.6",
+    "@bit/feathericons.react-feather.more-vertical": "^1.1.6",
     "@bit/feathericons.react-feather.phone": "^1.1.6",
     "@bit/feathericons.react-feather.rotate-ccw": "^1.1.6",
     "@bit/feathericons.react-feather.trash-2": "^1.1.6",
