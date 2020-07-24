@@ -62,9 +62,9 @@ margin-bottom: 3vmin;
   @include btn-style($thirdColor, $secondColor);
   cursor: pointer;
   background-image: url(../../assets/image/pencil.png);
-  background-size: contain;
+  background-size: 100px;
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: center;
   margin-right: 100px;
   @media screen and (max-width: 600px) {
     margin: auto;
