@@ -23,6 +23,9 @@ import {
   TOGGLE_UPDATE_QUANTITY,
   DLC_CHANGE,
   QUANTITY_CHANGE,
+  SHOW_CONFIRM,
+  HIDE_CONFIRM_AND_REDIRECT,
+  CLEAN_UP_REDIRECT,
 } from '../actions/product';
 import { TOGGLE_MENU } from '../actions/myaccount';
 
@@ -66,17 +69,41 @@ const initialState = {
   successfulRegistration: false,
   alertDayValue: 0,
   displayTempModal: false,
+
+  showConfirmAddHandmadeProduct: false,
+  redirectToPantry: false,
+
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
-    case CHANGE_ALERT_DAY: {
+
+    case SHOW_CONFIRM:
+      return {
+        ...state,
+        showConfirmAddHandmadeProduct: true,
+      };
+
+    case HIDE_CONFIRM_AND_REDIRECT:
+      return {
+        ...state,
+        showConfirmAddHandmadeProduct: false,
+        redirectToPantry: true,
+      };
+
+    case CLEAN_UP_REDIRECT:
+      return {
+        ...state,
+        redirectToPantry: false,
+      };
+
+    case CHANGE_ALERT_DAY:
       return {
         ...state,
         alertDayValue: action.value,
         displayTempModal: true,
       };
-    }
+
 
     case CLOSE_MODAL:
       return {

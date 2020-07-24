@@ -43,12 +43,14 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
+
             to="/pantry"
             title="Mon garde manger"
             onClick={() => {
               handleBurger();
             }}
           >Pantry
+
           </NavLink>
         </li>
 

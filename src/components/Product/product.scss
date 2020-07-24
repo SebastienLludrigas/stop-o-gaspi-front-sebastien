@@ -184,5 +184,26 @@
   .productPage{
     //height: 100vh;
   }
+}
 
+.confirmAddProduct {
+  position: fixed;
+  top: 40%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  line-height: 1.3em;
+  text-align: center;
+  background-color: rgb(206, 255, 206);
+  padding: 10px 15px;
+  border: 2px solid rgb(0, 88, 0);
+  border-radius: 5px;
+  display: block;
+  color: rgb(0, 88, 0);
+
+  & .productName {
+    font-size: 2em;
+    line-height: 1.3em;
+  }
 }

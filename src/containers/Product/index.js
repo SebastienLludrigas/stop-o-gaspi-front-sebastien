@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // === on importe le composant de présentation
 import Product from 'src/components/Product';
 
-import { updateProductField, handmadeProduct } from 'src/actions/product';
+import { updateProductField, handmadeProduct, cleanUpRedirect } from 'src/actions/product';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -14,6 +14,8 @@ const mapStateToProps = (state) => ({
   expiration_date: state.user.expiration_date,
   quantity: state.user.quantity,
   isLogged: state.user.isLogged,
+  redirectToPantry: state.user.redirectToPantry,
+  showConfirmAddHandmadeProduct: state.user.showConfirmAddHandmadeProduct,
 });
 
 // === mapDispatchToProps
@@ -26,6 +28,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handmadeProduct: () => {
     dispatch(handmadeProduct());
+  },
+  cleanUpRedirect: () => {
+    dispatch(cleanUpRedirect());
   },
 });
 

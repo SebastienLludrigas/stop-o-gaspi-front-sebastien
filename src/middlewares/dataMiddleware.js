@@ -17,6 +17,8 @@ import {
   DELETE_PRODUCT,
   SUBMIT_NEW_DLC,
   SUBMIT_NEW_QUANTITY,
+  showConfirm,
+  hideConfirmAndRedirect,
 } from 'src/actions/product';
 
 const datasMiddleware = (store) => (next) => (action) => {
@@ -172,6 +174,10 @@ const datasMiddleware = (store) => (next) => (action) => {
           console.log(response);
 
           store.dispatch(getAllProducts(response.data));
+          store.dispatch(showConfirm());
+          setTimeout(() => {
+            store.dispatch(hideConfirmAndRedirect());
+          }, 3000);
         })
         .catch((error) => {
           console.warn(error);

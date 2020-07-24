@@ -1,5 +1,5 @@
 // == Import npm
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -27,7 +27,13 @@ const Pantry = ({
   quantityChange,
   submitNewDlc,
   submitNewQuantity,
+  cleanUpRedirect,
 }) => {
+  useEffect(() => {
+    cleanUpRedirect();
+    console.log('Je clean le redirect !');
+  }, []);
+
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
   return (
     <div className="pantry">
@@ -89,6 +95,7 @@ Pantry.propTypes = {
   toggleDeleteConfirm: PropTypes.func.isRequired,
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
+  cleanUpRedirect: PropTypes.func.isRequired,
 };
 
 // == Export

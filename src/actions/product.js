@@ -12,6 +12,9 @@ export const DLC_CHANGE = 'DLC_CHANGE';
 export const QUANTITY_CHANGE = 'QUANTITY_CHANGE';
 export const SUBMIT_NEW_DLC = 'SUBMIT_NEW_DLC';
 export const SUBMIT_NEW_QUANTITY = 'SUBMIT_NEW_QUANTITY';
+export const SHOW_CONFIRM = 'SHOW_CONFIRM';
+export const HIDE_CONFIRM_AND_REDIRECT = 'HIDE_CONFIRM_AND_REDIRECT';
+export const CLEAN_UP_REDIRECT = 'CLEAN_UP_REDIRECT';
 
 // === action creators
 export const updateProductField = (newValue, name) => ({
@@ -75,4 +78,16 @@ export const submitNewDlc = () => ({
 
 export const submitNewQuantity = () => ({
   type: SUBMIT_NEW_QUANTITY,
+});
+
+export const showConfirm = () => ({
+  type: SHOW_CONFIRM,
+});
+
+export const hideConfirmAndRedirect = () => ({
+  type: HIDE_CONFIRM_AND_REDIRECT,
+});
+
+export const cleanUpRedirect = () => ({
+  type: CLEAN_UP_REDIRECT,
 });
