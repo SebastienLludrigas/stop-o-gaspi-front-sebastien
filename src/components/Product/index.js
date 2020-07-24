@@ -2,7 +2,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 // == Import
 
@@ -27,7 +27,6 @@ const Product = ({
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
   };
-
   return (
     <div className="productPage">
       <div className="login-contain ">
@@ -72,6 +71,7 @@ const Product = ({
             />
             <label>Quantité</label>
           </div>
+ 
           <button type="submit">
             <span />
             <span />
@@ -82,6 +82,7 @@ const Product = ({
         </form>
       </div>
       {!isLogged && <Redirect to="/connexion" />}
+
     </div>
   );
 };
