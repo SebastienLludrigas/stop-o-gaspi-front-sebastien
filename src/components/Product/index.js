@@ -2,7 +2,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 // == Import
 
@@ -36,6 +36,7 @@ const Product = ({
   };
   return (
     <div className="productPage">
+
       {!showConfirmAddHandmadeProduct && (
         <div className="login-contain ">
           <h2>Ajouter un produit dans mon garde manger.</h2>
@@ -99,6 +100,7 @@ const Product = ({
       )}
       {!isLogged && <Redirect to="/connexion" />}
       {redirectToPantry && <Redirect to="/pantry" />}
+
     </div>
   );
 };

@@ -1,32 +1,56 @@
 @import 'src/styles/vars.scss';
-.nav{font-weight: bold;}
+.nav{
+  display: flex;
+  font-weight: bold;
+}
 #row-menu {
-  // display: none;
-}
 
-.row-menu-content  {
-  display: flex;
-  align-items: center;
 }
-
 .row-menu-content {
-  margin-top: -15px;
-  list-style-type: none;
   display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  height: max-content;
 }
 
 #row-menu li {
-    margin-right: 1.2em;
+    margin-right: 0;//1.2em;
     font-size: 1.3em;
-    
+    transform: rotate(0deg);
+      height: max-content;
 }
-
+#row-menu li a{
+  height: 100px;
+  width: 100px;
+  //background-color: greenyellow;
+  padding: 30px;
+}
 #row-menu a:hover {
-    text-shadow: 0.5px 0.5px 0.5px $thirdColor;
-    // color: $thirdColor;
+    
+    color: red;
 
 }
+.ou{text-align: center;}
+.selectedActive{
+  color: red;
+  background-image: url(../../assets/image/sun2.png);
+  background-size: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
 
+
+  
+
+
+}
+/*
+      <ul className="row-social-media">
+          <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
+          <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
+          <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
+          <li><NavLink to="/snapchat" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
+        </ul>
+*/
 .row-social-media {
   margin-top: 12px;
   display: flex;
@@ -87,7 +111,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
   #row-menu {
     display: none;
   }

@@ -20,18 +20,14 @@ const Nav = ({
 
     <nav id="row-menu">
       <ul className="row-menu-content">
-        <li><NavLink to="/" title="Accueil">Accueil</NavLink></li>
-        <li><NavLink to="/about" title="Notre équipe">Notre équipe</NavLink></li>
-      </ul>
-      <ul className="row-social-media">
-        <li><NavLink to="/twitter" title="twitter"><span className="fab fa-twitter" /></NavLink></li>
-        <li><NavLink to="/facebook" title="facebook"><span className="fab fa-facebook" /></NavLink></li>
-        <li><NavLink to="/instagram" title="instagram"><span className="fab fa-instagram" /></NavLink></li>
-        <li><NavLink to="/snapchat" title="snapchat"><span className="fab fa-snapchat" /></NavLink></li>
+        <li><NavLink exact to="/" activeClassName="selectedActive" title="Accueil">Accueil</NavLink></li>
+        {isLogged && (<li><NavLink to="/pantry" activeClassName="selectedActive" title="Mes produits">Mon Pantry</NavLink></li>)}
       </ul>
     </nav>
 
+
     <nav id="column-menu">
+
       <ul className={classNames('column-menu-content', { active: cross })}>
 
         <li className="nav">
@@ -47,12 +43,14 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
-            to="/about"
-            title="Notre vision"
+
+            to="/pantry"
+            title="Mon garde manger"
             onClick={() => {
               handleBurger();
             }}
-          >Notre équipe
+          >Pantry
+
           </NavLink>
         </li>
 
@@ -87,32 +85,6 @@ const Nav = ({
           </li>
         )}
 
-        {!isLogged && (
-          <li className="nav">
-            <Link
-              to="/connexion"
-              title="Connexion"
-              onClick={() => {
-                handleBurger();
-              }}
-            >Connexion
-            </Link>
-          </li>
-        )}
-
-        {!isLogged && (
-          <li className="nav">
-            <Link
-              to="/inscription"
-              title="inscription"
-              onClick={() => {
-                handleBurger();
-              }}
-            >Inscription
-            </Link>
-          </li>
-        )}
-
         <div className="social-media">
           <li><p>Réseaux sociaux</p></li>
           <div className="social-media-container">
@@ -123,8 +95,11 @@ const Nav = ({
           </div>
         </div>
       </ul>
+
     </nav>
+
     <Burger handleBurger={handleBurger} cross={cross} />
+
   </div>
 );
 

@@ -69,12 +69,15 @@ const initialState = {
   successfulRegistration: false,
   alertDayValue: 0,
   displayTempModal: false,
+
   showConfirmAddHandmadeProduct: false,
   redirectToPantry: false,
+
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+
     case SHOW_CONFIRM:
       return {
         ...state,
@@ -100,6 +103,7 @@ const user = (state = initialState, action = {}) => {
         alertDayValue: action.value,
         displayTempModal: true,
       };
+
 
     case CLOSE_MODAL:
       return {
