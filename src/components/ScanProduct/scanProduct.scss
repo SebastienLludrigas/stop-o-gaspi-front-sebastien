@@ -19,7 +19,7 @@
 #interactive.viewport > canvas,
 #interactive.viewport > video {
   width: 90%; // taille video par rapport à #interactive.viewport
-  height: 90%;
+  height: 80%;
   margin: 0 5% 5%;
   border-radius: 10px;
 
@@ -324,7 +324,7 @@ canvas.drawingBuffer {
         border: $secondColor 1px solid;
         cursor: pointer;
         @media screen and (max-width: 600px) {
-          font-size: 23px;
+          font-size: 18px;
           height: 80px;
           width: 80px;
           line-height: 80px;

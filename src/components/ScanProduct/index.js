@@ -126,7 +126,7 @@ const ScanProduct = ({
           </div>
 
           <div className="manualInput">
-            <h2>je saisie mon code barre :</h2>
+            <h2>je saisis mon code barre :</h2>
             <input onChange={handleChange} type="text" value={barCode} />
             <div
               onClick={catchBarCode}
