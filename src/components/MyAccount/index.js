@@ -20,9 +20,10 @@ const MyAccount = ({
     onClick={() => {
       toggleMenu();
     }}
-  > {toggle ? <p>Mon compte</p> : <p>Mon compte</p>}
-
+  >
     <User />
+    {toggle ? <p>Mon compte</p> : <p>Mon compte</p>}
+
     {toggle && (
       <div className="account-menu">
         <ul className="list-menu">

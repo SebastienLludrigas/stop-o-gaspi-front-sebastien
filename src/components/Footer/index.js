@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 // == Import
 import Phone from '@bit/feathericons.react-feather.phone';
@@ -15,17 +15,20 @@ const Footer = () => (
     <div className="aboutUs">
       <h3 className="footerTitle">Stop O'Gaspi :</h3>
       <ul>
-        <Link to="/advice-sheet/about" className="footerHoover">
+        <Link to="/about" className="footerHoover">
           <li>Qui sommes nous ?</li>
         </Link>
         <Link to="/join-us" className="footerHoover">
           <li>Nous rejoindre</li>
         </Link>
+
+
       </ul>
     </div>
 
     <div className="contact">
       <h3 className="footerTitle">Contact :</h3>
+
       <ul className="lienContact">
         <Link to="/advice-sheet/about" className="footerHoover">
           <li> <Phone size="15" /> </li>
