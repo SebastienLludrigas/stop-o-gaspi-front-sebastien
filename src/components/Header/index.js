@@ -22,14 +22,39 @@ const Header = ({
     <Link to="/">
       <LogoGaspi className="logo-gaspi" />
     </Link>
+
     <div className="right-container">
       <Nav />
-      <MyAccount
-        toggleMenu={toggleMenu}
-        toggle={toggle}
-        isLogged={isLogged}
-        logOut={logOut}
-      />
+      {isLogged && (
+        <MyAccount
+          toggleMenu={toggleMenu}
+          toggle={toggle}
+          isLogged={isLogged}
+          logOut={logOut}
+        />
+      )}
+      {!isLogged && (
+        <div>
+
+          <li className="nav">
+            <Link
+              to="/connexion"
+              title="Connexion"
+            >Connexion
+            </Link>
+          </li>
+          <p className="ou"> ou </p>
+
+          <li className="nav">
+            <Link
+              to="/inscription"
+              title="inscription"
+            >Inscription
+            </Link>
+          </li>
+
+        </div>
+      )}
     </div>
     <div className="cloud n1" />
     <div className="cloud n2" />
