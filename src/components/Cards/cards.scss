@@ -47,13 +47,14 @@
     padding-bottom: 10px;
     border-bottom: 1px $secondColor solid;
     height: 45px;
-    //line-height:1.4em;
+    vertical-align: middle;
+    line-height:1.2em;
     overflow:hidden;
     // margin-top: 2px;
   }
   @mixin detail_card(){
     align-self: center;
-    font-size: 1.2em;
+    //font-size: 1.2em;
   }
   & .dlc{
     order:1;
@@ -64,6 +65,15 @@
     font-size: 15px;
     padding: 5px;
 
+  }
+  &.fab{
+    //order:1;
+    @include detail_card();    
+    border-bottom: 1px $secondColor solid;
+    width:100%;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px;
   }
   & .qut{
     order:2;
@@ -94,7 +104,7 @@
     max-width: 80% ;
     display: block;
     margin: 0 auto;
-    border: 6px solid pink;//$firstColor;
+    border: 6px solid $firstColor;
   }
   & .product-img-logo{
     height: 35%;
@@ -148,13 +158,14 @@
   border: solid 15px $secondColor;
   background-color:  rgb(211, 208, 208);
   @include card_effect_peremption();
-  background-image: url(../../assets/image/finishProduct.png);
+  //background-image: url(../../assets/image/finishProduct.png);
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
-  & .dlc{color:$secondColor; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
+  & .dlc{color:red; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
   & .qut{color:$secondColor; font-size:16px; order:10;background-color: transparentize($firstColor, 0.2);}
   & .brand{display:none;}
+  & .fab{display:none;}
   & .createDate{display:none;}
   & .poid{display: none;} 
   & .productTitle{
@@ -164,7 +175,8 @@
     border-radius: 10px 10px;
     width: 90%;
     margin-left: 5%;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
     //align-self: center;
   }
   & .product-img{
@@ -192,7 +204,7 @@
 }
 // ------------- PEN ICON ---------------
 #dlcPen{
-color: black;
+color: blue;
 margin-left: 10px;
 &:hover{
   color: green;
@@ -202,6 +214,10 @@ margin-left: 10px;
 #quantityPen{
   color:blue;
   margin-left: 10px;
+  &:hover{
+    color: green;
+    text-shadow: 1px 1px 10px black;
+  }
 
 }
 // -----------ROTATE ICON  ----------

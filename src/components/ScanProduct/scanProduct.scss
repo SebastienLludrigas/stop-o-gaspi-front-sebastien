@@ -1,45 +1,90 @@
 @import 'src/styles/vars.scss';
 
 #interactive.viewport {
-  position: relative;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  text-align: center;
+  height: 65vh;
+  width: 40vw;
+  background-color: $firstColor;
+  border-radius: 10px;
+  @media screen and (max-width: 980px) {
+    width: 90vw;
+    height: 55vh;
+    margin-top: 17vh;
+    background-color: $secondColor;
+    border:ridge 10px lightblue;
+    margin-left: 0vw;
+    margin-right: 5vw;
+  }
+
 }
 #interactive.viewport > canvas,
 #interactive.viewport > video {
-  max-width: 80vw;
+  width: 90%; // taille video par rapport à #interactive.viewport
+  height: 80%;
+  margin: 0 5% 5%;
+  border-radius: 10px;
+
+  @media screen and (max-width: 980px) {
+    width: 90%; // taille video par rapport à #interactive.viewport
+    height: 90%;
+    margin: 5%;
+  }
+
 }
 canvas.drawing,
 canvas.drawingBuffer {
-  max-width: 100px;
-  max-height: 100px;
+  
+
   
 }
 
 .modal {
   border-radius: 5px;
   background-color: transparent;
-  @media screen and (max-width: 600px) {
-    width: 100vw;
+  .modal-body{
+    width: 320px;
+    height: 320px;
+    //background-color: blueviolet;
+  }
+  @media screen and (max-width: 980px) {
+  position: absolute;
+  top:0px;
+  left: 0px;
+  z-index: 5000;
+
+  @media screen and (max-width: 980px) {
+    display: block;
+    //flex-direction: column;
+    height: max-content;
+
+    width: 90vw;
   }
 
-}
-.modal-content{
-  top:5vmin;
-  background: darken($firstColor, 6%);
-  width: 100%;
-  border-radius: 5px;
 
+    
+}
+}
+
+.modal-content{
+  width: 40vw;
+  border-radius: 5px;
 }
 
 .fa-times {
-  margin-right:40px ;
+  margin-right:10px ;
   float: right;
   color: $secondColor;
   cursor: pointer;
   font-size: 2em;
+  z-index: 1000;
+  padding: 20px;
+  @media screen and (max-width: 980px) {
+    position:absolute;
+    color:$firstColor;
+    top:18vh;
+    right: 0vw;
+    cursor: pointer;
+  }
+
 }
 
 .scan-info {
@@ -78,6 +123,11 @@ canvas.drawingBuffer {
   border-radius: 25px;
   line-height: 1.3em;
   text-align: center;
+  @media screen and (max-width: 980px) {
+    position:absolute;
+    top:20vh;
+    
+  }
 }
 .arrow-down-error {
   width: 0;
@@ -162,8 +212,11 @@ canvas.drawingBuffer {
     height: max-content;
     width: 100vw;
   }
-  @media screen and (max-width: 600px) {
-    flex-direction: column;
+  @media screen and (max-width: 980px) {
+    display: block;
+    //flex-direction: column;
+    height: max-content;
+    overflow: hidden;
     width: 100vw;
   }
   .left_scanPage{
@@ -180,6 +233,8 @@ canvas.drawingBuffer {
     @media screen and (max-width: 980px) {
       width: 90vw;
       margin-left: 0;
+      //border-radius:0px;
+      background-color: #F1F1EF;
     }
     .scanInput{
       margin: 10vmin 5vmin;
@@ -206,7 +261,8 @@ canvas.drawingBuffer {
         margin-left: auto;
         margin-right: auto;
         border: $secondColor 1px solid;
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 980px) {
+        
           font-size: 60px;
           height: 80px;
           width: 80px;
@@ -215,6 +271,8 @@ canvas.drawingBuffer {
           white-space: nowrap;
 
         }
+
+
         &:hover{
           animation: pulse 1.5s infinite ease-in-out;
         }
@@ -266,7 +324,7 @@ canvas.drawingBuffer {
         border: $secondColor 1px solid;
         cursor: pointer;
         @media screen and (max-width: 600px) {
-          font-size: 23px;
+          font-size: 18px;
           height: 80px;
           width: 80px;
           line-height: 80px;
@@ -298,10 +356,15 @@ canvas.drawingBuffer {
   display:flex;
   flex-direction: column;
   @media screen and (max-width: 980px) {
-    width: 100vw;
-    margin-left: 7vmin;
-    margin-right: 0;
-    display: none;
+    @include main_container;
+    position: absolute;
+    top:0px;
+    width: 90vw;
+
+    //z-index: -100;
+    //margin-left: auto;
+    //display: block;
+    //border-radius: 0px;
   }
 
   }

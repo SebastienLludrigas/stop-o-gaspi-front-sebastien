@@ -6,7 +6,12 @@ import { Redirect } from 'react-router-dom';
 // == Import
 import './dashboard.scss';
 // == Composant
-const Dashboard = ({ alertChange, isLogged }) => (
+const Dashboard = ({
+  alertChange,
+  isLogged,
+  alertDayValue,
+  displayTempModal,
+}) => (
   <div className="dashboard_page">
     <div className="dashboard_left">
       <h2>Mettre à jour mes données personnelles :</h2>
@@ -35,7 +40,7 @@ const Dashboard = ({ alertChange, isLogged }) => (
       <div className="alert_dashboard">
         <h2>ALERTE :</h2>
         <div
-          className="alert_J"
+          className={alertDayValue === 0 ? 'alert_J ok' : 'alert_J'}
           onClick={() => {
             alertChange(0);
           }}
@@ -43,7 +48,7 @@ const Dashboard = ({ alertChange, isLogged }) => (
           Jour J
         </div>
         <div
-          className="alert_24"
+          className={alertDayValue === 1 ? 'alert_24 ok' : 'alert_24'}
           onClick={() => {
             alertChange(1);
           }}
@@ -51,13 +56,16 @@ const Dashboard = ({ alertChange, isLogged }) => (
           24h Avant
         </div>
         <div
-          className="alert_48"
+          className={alertDayValue === 2 ? 'alert_48 ok' : 'alert_48'}
           onClick={() => {
             alertChange(2);
           }}
         >
           48h Avant
         </div>
+      </div>
+      <div className={displayTempModal ? 'modalInfo' : 'modalInfo hide'}>
+        Modification enregistré !
       </div>
       <div className="remove_account">
         <h2>Je veux supprimer mon compte :</h2>
@@ -73,6 +81,8 @@ const Dashboard = ({ alertChange, isLogged }) => (
 Dashboard.propTypes = {
   alertChange: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
+  displayTempModal: PropTypes.bool.isRequired,
+  alertDayValue: PropTypes.number.isRequired,
 };
 
 // == Export

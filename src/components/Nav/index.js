@@ -47,12 +47,12 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
-            to="/advice-sheet/about"
+            to="/about"
             title="Notre vision"
             onClick={() => {
               handleBurger();
             }}
-          >Notre vision
+          >Notre équipe
           </NavLink>
         </li>
 

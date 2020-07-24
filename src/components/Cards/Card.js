@@ -82,7 +82,7 @@ const Card = ({
               aria-hidden="true"
             />
           </p>
-          {elaboration_date !== null && <p className="dlc">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
+          {elaboration_date !== null && <p className="fab">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
 
           {brand !== null && <p className="brand">marque : {brand}</p>}
           <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>

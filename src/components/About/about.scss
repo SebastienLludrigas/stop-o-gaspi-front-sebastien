@@ -25,9 +25,9 @@
   "p_greg p_alexis 1fr"
   "a_greg a_alexis 1fr"
   "tous tous tous";
-  place-items: center;
+  //place-items: center;
   }
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 700px) {
     display: grid;
     grid-template-areas:
       "about_title about_title" 
@@ -41,35 +41,58 @@
       ;
     place-items: center;
     row-gap: 2vmin;
+    
   }
+  @media screen and (max-width: 445px) {
+    display: grid;
+    grid-template-areas:
+      "about_title " 
+      "p_laurie"  
+      "a_aurelien"
+      "p_aurelien"
+      "a_laurie"
+      "p_sebastien "
+      "a_sebastien"
+      "p_greg"
+      "a_greg"
+      "p_alexis"
+      "a_alexis "
+      "tous "
+      ;
+    place-items: center;
+    place-content: center;
+    row-gap: 2vmin;
+    & .ul_about>li{font-size: 400px; }
+  }
+
   .about_title{
     grid-area: about_title;
     font-size: 8vmin;
     text-align: center;
-    padding-top: 0px;
-    font-size: 60px;
+    padding: 10px;
+    //font-size: 60px;
     font-weight: normal;
     margin-bottom: 3vmin;
     font-family: bubble;
     margin: auto auto 20px;
     background-color: lighten($thirdColor,15%);
-    height: 70px;
+    height: max-content;
     border-radius: 20px;
     border:2px solid $secondColor;
     width: max-content;
     @media screen and (max-width: 600px) {
-      font-size: 14vmin;
+      font-size: 18px;
      }
   }
   & img{
     border: ridge 10px $fourthColor;
-    width: 200px;
+    width: 100%;//200px;
   }
   .ul_about{
     list-style: none;
     text-align: center;
     border: ridge 10px $fourthColor;
-    width: 200px;
+    width: 100%;//200px;
     background-color: #76ead771;
 
 
