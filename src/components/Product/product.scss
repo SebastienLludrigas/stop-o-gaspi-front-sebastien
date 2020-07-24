@@ -32,8 +32,6 @@
   }
   
 }
-
-
 .login-contain h2 {
   margin: 0 0 30px;
   padding: 0;
@@ -185,22 +183,42 @@
     //height: 100vh;
   }
 }
+.iceCreamRotate{
+  animation: rotation 2s infinite linear;
+}
+
+@keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(360deg);
+		}
+}
 
 .confirmAddProduct {
-  position: fixed;
-  top: 40%;
-  transform: translateY(-50%);
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.2em;
+  
+  font-size: 1.6em;
+  font-weight: bold;
   line-height: 1.3em;
   text-align: center;
   background-color: rgb(206, 255, 206);
   padding: 10px 15px;
-  border: 2px solid rgb(0, 88, 0);
+  border: 10px solid rgb(0, 88, 0);
   border-radius: 5px;
   display: block;
   color: rgb(0, 88, 0);
+  width: 80%;
+  height: 180px;
+  border-radius: 90px;
+  margin-left: 10%;
+
+  @media screen and (min-width: 600px) {
+    width:50% ;
+    margin-left:25% ;
+    }
+  
+  
 
   & .productName {
     font-size: 2em;

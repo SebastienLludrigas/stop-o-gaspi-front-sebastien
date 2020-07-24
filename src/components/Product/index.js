@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect, Link } from 'react-router-dom';
-
+import { IceCream } from 'react-kawaii';
 // == Import
 
 import './product.scss';
@@ -92,11 +92,15 @@ const Product = ({
         </div>
       )}
       {showConfirmAddHandmadeProduct && (
-        <div className="confirmAddProduct">
-          Ajout de votre produit<br />
-          <span className="productName">{name}</span><br />
-          au Pantry réussie !
-        </div>
+        <>
+          <IceCream className="iceCreamRotate" size={320} mood="shocked" color="#e7305b"/>
+          <div className="confirmAddProduct">
+            <p className="confirmProductMessage">
+              Ajout de votre produit<br />
+              <span className="productName">{name}</span><br />
+              au Pantry réussie !</p>
+          </div>
+        </>
       )}
       {!isLogged && <Redirect to="/connexion" />}
       {redirectToPantry && <Redirect to="/pantry" />}
