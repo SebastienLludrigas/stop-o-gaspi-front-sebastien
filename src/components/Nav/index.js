@@ -56,7 +56,7 @@ const Nav = ({
 
         <li className="nav">
           <NavLink
-            to={isLogged ? '/dashboard' : '/connexion'}
+            to={isLogged ? '/settings' : '/connexion'}
             title="DashBoard"
             onClick={() => {
               handleBurger();

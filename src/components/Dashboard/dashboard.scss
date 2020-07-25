@@ -12,6 +12,8 @@
     flex-direction: column;
     text-align: center;
     font-size: 4vmin;
+    align-items: center;
+
   }
   .dashboard_left{
     padding: 5vmin;
@@ -25,7 +27,8 @@
 
     }
     @media screen and (max-width: 770px) {
-      width: 100vw;
+      width: 90vw;
+      border-radius: 25px;
         }
 
     
@@ -89,7 +92,10 @@
 
     @media screen and (max-width: 770px) {
       order:-1;
-      width: 100vw;
+      width: 90vw;
+      border-radius: 25px;
+      margin-bottom: 20px;
+
         }
       
 
