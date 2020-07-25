@@ -43,9 +43,10 @@ const ScanProduct = ({
       <div className="right_scanPage">
         {modal && (
           <div className="modal">
-            <i className="fas fa-times" onClick={toggleModal} />
+            <i className="fas fa-times camCroix" onClick={toggleModal} />
             <div className="modal-body">
               <div className="modal-content">
+                <i className="fas fa-times camCroix" onClick={toggleModal} />
                 <Scanner handleScan={onDetected} />
               </div>
             </div>
@@ -55,7 +56,7 @@ const ScanProduct = ({
         {(status === 1) && (
         <div className="add-product">
           <div className="scanSuccess">
-            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+            <i className="fas fa-times scan-info croixScanSuccesFirst" onClick={toggleScanInfo} />
             <p>Je viens de scanner le produit  <br />
               <mark>{currentProduct.product.product_name_fr}</mark><br />
               de la marque
