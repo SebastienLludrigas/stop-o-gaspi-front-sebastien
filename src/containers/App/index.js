@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import App from 'src/components/App';
 
 import { getAllProducts } from 'src/actions/product';
-import { saveUser } from 'src/actions/user';
+import { fetchUserInfos } from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -20,8 +20,8 @@ const mapDispatchToProps = (dispatch) => ({
   getAllProducts: () => {
     dispatch(getAllProducts());
   },
-  saveUser: () => {
-    dispatch(saveUser());
+  fetchUserInfos: () => {
+    dispatch(fetchUserInfos());
   },
 });
 

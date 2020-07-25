@@ -20,11 +20,12 @@ import './styles.scss';
 
 // import MyAccount from '../MyAccount';
 // == Composant
-const App = ({ getAllProducts }) => {
+const App = ({ getAllProducts, fetchUserInfos }) => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       getAllProducts();
+      fetchUserInfos();
     }
     console.log('Je use l\'effect !');
   }, []);
@@ -50,6 +51,7 @@ const App = ({ getAllProducts }) => {
 
 App.propTypes = {
   getAllProducts: PropTypes.func.isRequired,
+  fetchUserInfos: PropTypes.func.isRequired,
 };
 
 // == Export

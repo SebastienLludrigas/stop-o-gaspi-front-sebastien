@@ -9,6 +9,8 @@ import {
   logIn,
   changeAlertDay,
   closeModal,
+  fetchUserInfos,
+  FETCH_USER_INFOS,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -24,9 +26,27 @@ const userMiddleware = (store) => (next) => (action) => {
       })
         .then((response) => {
           console.log(response);
-          store.dispatch(saveUser());
           localStorage.setItem('token', response.data.token);
           store.dispatch(getAllProducts());
+          store.dispatch(fetchUserInfos());
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case FETCH_USER_INFOS: {
+      const token = localStorage.getItem('token');
+
+      axios.get('https://stopgogaspiback.co/api/user', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          console.log(response.data);
+          store.dispatch(saveUser(response.data));
         })
         .catch((error) => {
           console.warn(error);

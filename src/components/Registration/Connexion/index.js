@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import { useSpring, useChain, animated } from 'react-spring';
 import PropTypes from 'prop-types';
 
 // == Import
@@ -15,17 +14,15 @@ const Connexion = ({
   username,
   password,
   onChange,
-  info,
+  userInfos,
   handleLogin,
-  handleLogout,
   isLogged,
-  loggedMessage,
 }) => {
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
     handleLogin();
   };
-  
+
   const handleChange = (evt) => {
     // console.log(evt.target.name);
     onChange(evt.target.value, evt.target.name);
@@ -52,7 +49,15 @@ const Connexion = ({
                     <div className="mouth happy" />
                   </div>
                   <div className="shadow scale" />
-                  <div className="message"><h1 className="alert">Bonjour !</h1><p className="successHello">C'est une belle journée {info}</p></div>
+                  <div className="message">
+                    <h1 className="alert">
+                      Bonjour<br />
+                      <span className="userPseudo">{userInfos.pseudo} !</span>
+                    </h1>
+                    <p className="successHello">
+                      C'est une belle journée
+                    </p>
+                  </div>
                   <Link to="/pantry">
                     <button
                       type="button"
@@ -121,16 +126,14 @@ const Connexion = ({
 Connexion.propTypes = {
   onChange: PropTypes.func.isRequired,
   handleLogin: PropTypes.func.isRequired,
-  handleLogout: PropTypes.func.isRequired,
   isLogged: PropTypes.bool,
-  loggedMessage: PropTypes.string,
   username: PropTypes.string.isRequired,
   password: PropTypes.string.isRequired,
+  userInfos: PropTypes.object.isRequired,
 };
 
 Connexion.defaultProps = {
   isLogged: false,
-  loggedMessage: 'Connecté',
 };
 // == Export
 export default Connexion;

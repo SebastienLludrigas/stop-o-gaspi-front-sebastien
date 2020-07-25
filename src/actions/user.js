@@ -15,6 +15,7 @@ export const HANDLE_REGISTRATION = 'HANDLE_REGISTRATION';
 export const AUTOMATIC_CONNECTION = 'AUTOMATIC_CONNECTION';
 export const CHANGE_ALERT_DAY = 'CHANGE_ALERT_DAY';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const FETCH_USER_INFOS = 'FETCH_USER_INFOS';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -50,8 +51,9 @@ export const logIn = () => ({
   type: LOG_IN,
 });
 
-export const saveUser = () => ({
+export const saveUser = (userDatas) => ({
   type: SAVE_USER,
+  userDatas,
 });
 
 export const logOut = () => ({
@@ -92,4 +94,8 @@ export const changeAlertDay = (value) => ({
 
 export const closeModal = () => ({
   type: CLOSE_MODAL,
+});
+
+export const fetchUserInfos = () => ({
+  type: FETCH_USER_INFOS,
 });

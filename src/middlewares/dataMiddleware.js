@@ -80,12 +80,10 @@ const datasMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       axios.get('https://stopgogaspiback.co/api/user/product/all/order-by-date', {
         headers: { Authorization: `Bearer ${token}` },
-        // headers: { Authorization: 'Bearer 45ty' },
       })
         .then((response) => {
           console.log(response);
           store.dispatch(fillPantry(response.data));
-          store.dispatch(saveUser());
         })
         .catch((error) => {
           console.warn(error);
