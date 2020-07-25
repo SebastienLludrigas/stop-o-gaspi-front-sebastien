@@ -40,8 +40,10 @@
     font-size: 1.8em;
     height: max-content;
       }  
-  
-  }
+    @media screen and (max-width: 450px) {
+        font-size: 1.5em;
+    }
+}
 .pantry_move{
   margin: -40px auto 20px;
 
@@ -51,7 +53,9 @@
   font-size: 2em;
   font-weight: 900;
   text-shadow:  10px 10px 25px $firstColor;
-  @media screen and (min-width: 1400px) {
+  @media screen and (max-width: 450px) {
+    font-size: 1.2em;
+
     }
 
 
@@ -74,6 +78,9 @@ margin-bottom: 3vmin;
   margin-right: 100px;
   @media screen and (max-width: 600px) {
     margin: auto;
+    }
+    @media screen and (max-width: 450px) {
+    margin-right: 10px;
     }
 
   .infobulle{display: none;}
@@ -133,14 +140,15 @@ margin-bottom: 3vmin;
 }
 @media screen and (max-width: 450px) {
   .pantry_buttons{
-    flex-direction: column;
+    flex-direction: row;
+    //justify-content: space-around;
   }
   .btn{
     //margin-bottom: 4vmax;
-    align-self: center;
+    //align-self: center;
     //margin-left: auto;
-    line-height: 7vmin;
-    font-size: 1.5em;
+    //line-height: 7vmin;
+    //font-size: 1.5em;
 
 
   }
