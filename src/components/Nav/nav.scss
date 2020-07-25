@@ -83,16 +83,22 @@
   overflow-x: hidden;
   transition: width 0.2s ease-in-out;
   color: $secondColor;
-
+  background-image: url(../../assets/image/backgroundMenuSmall.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  
   & .nav {
     font-size: 1.7em;
+    //text-shadow: 1px 10px 10px #585959;
+    color: $secondColor;
     margin: 0.5em;
     cursor: pointer;
+    //transform: rotate(8deg);
   }
 
   & .social-media {
     margin-top: 8em;
-
+    //display: none;
     & li {
       font-size: 1.7em;
       margin: 0.3em;
@@ -102,6 +108,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: purple;
 
     }
   }
