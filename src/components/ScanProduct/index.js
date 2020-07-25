@@ -55,7 +55,7 @@ const ScanProduct = ({
         {(status === 1) && (
         <div className="add-product">
           <div className="scanSuccess">
-            <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
+            <i className="fas fa-times scan-info croixScanSuccesFirst" onClick={toggleScanInfo} />
             <p>Je viens de scanner le produit  <br />
               <mark>{currentProduct.product.product_name_fr}</mark><br />
               de la marque
