@@ -35,6 +35,12 @@
     margin: 0;
     width: 650px;
     }
+    @media screen and (max-width: 600px) {
+    max-width: 70vw;
+    font-size: 1.8em;
+    height: max-content;
+      }  
+  
   }
 .pantry_move{
   margin: -40px auto 20px;
