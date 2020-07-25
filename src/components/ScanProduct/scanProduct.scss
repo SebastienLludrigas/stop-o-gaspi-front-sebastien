@@ -32,7 +32,7 @@
 }
 canvas.drawing,
 canvas.drawingBuffer {
-  
+  display: none;
 
   
 }
@@ -69,14 +69,14 @@ canvas.drawingBuffer {
   border-radius: 5px;
 }
 
-.fa-times {
+.scan-info {
   margin-right:10px ;
   top:0px;
   float: right;
   color: $secondColor;
   cursor: pointer;
   font-size: 2em;
-  z-index: 1000;
+  z-index: 1;
   padding: 20px;
   @media screen and (max-width: 980px) {
     position: absolute;
@@ -85,6 +85,23 @@ canvas.drawingBuffer {
     margin-right: 0;
     font-size: 32px;
     cursor: pointer;
+  }
+
+}
+.camCroix{
+  margin-right:10px ;
+  top:0px;
+  float: right;
+  color: $secondColor;
+  cursor: pointer;
+  font-size: 2em;
+  z-index: 1;
+  padding: 20px;
+  @media screen and (max-width: 980px) {
+    position: absolute;
+    top:17vh;
+    right: 1vmin;
+    color: red;
   }
 
 }
@@ -103,7 +120,7 @@ canvas.drawingBuffer {
     left: 0;
     width: 90vw;
     border: 2px solid $secondColor;
-    padding: 20px;
+    padding: 34px;
   }
 }
 
@@ -220,7 +237,7 @@ canvas.drawingBuffer {
   @media screen and (max-width: 980px) {
     display: block;
     //flex-direction: column;
-    height: max-content;
+    height: 65vh;
     overflow: hidden;
     width: 100vw;
   }

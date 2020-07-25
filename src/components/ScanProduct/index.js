@@ -43,9 +43,10 @@ const ScanProduct = ({
       <div className="right_scanPage">
         {modal && (
           <div className="modal">
-            <i className="fas fa-times" onClick={toggleModal} />
+            <i className="fas fa-times camCroix" onClick={toggleModal} />
             <div className="modal-body">
               <div className="modal-content">
+                <i className="fas fa-times camCroix" onClick={toggleModal} />
                 <Scanner handleScan={onDetected} />
               </div>
             </div>
