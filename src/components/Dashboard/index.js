@@ -11,6 +11,7 @@ const Dashboard = ({
   isLogged,
   alertDayValue,
   displayTempModal,
+  showConfirmDeleteAccount,
 }) => (
   <div className="dashboard_page">
     <div className="dashboard_left">
@@ -69,7 +70,10 @@ const Dashboard = ({
       </div>
       <div className="remove_account">
         <h2>Je veux supprimer mon compte :</h2>
-        <div className="btn_remove_account">
+        <div
+          className="btn_remove_account"
+          onClick={showConfirmDeleteAccount}
+        >
           je veux recommencer à gaspiller
         </div>
       </div>
@@ -80,6 +84,7 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   alertChange: PropTypes.func.isRequired,
+  showConfirmDeleteAccount: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
   displayTempModal: PropTypes.bool.isRequired,
   alertDayValue: PropTypes.number.isRequired,

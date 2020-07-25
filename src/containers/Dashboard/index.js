@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // === on importe le composant de présentation
 import Dashboard from 'src/components/Dashboard';
 
-import { alertChange } from 'src/actions/user';
+import { alertChange, showConfirmDeleteAccount } from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -20,6 +20,9 @@ const mapDispatchToProps = (dispatch) => ({
   // nom de la prop à remplir: fonction qui dispatch l'action
   alertChange: (value) => {
     dispatch(alertChange(value));
+  },
+  showConfirmDeleteAccount: () => {
+    dispatch(showConfirmDeleteAccount());
   },
 });
 

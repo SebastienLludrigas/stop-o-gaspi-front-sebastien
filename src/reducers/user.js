@@ -11,6 +11,7 @@ import {
   AUTOMATIC_CONNECTION,
   CHANGE_ALERT_DAY,
   CLOSE_MODAL,
+  SHOW_CONFIRM_DELETE_ACCOUNT,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -78,10 +79,17 @@ const initialState = {
   showConfirmAddHandmadeProduct: false,
   // Redirection de la page de saisie d'un produit à la main vers le Pantry
   redirectToPantry: false,
+  displayConfirmDeleteAccount: false,
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SHOW_CONFIRM_DELETE_ACCOUNT:
+      return {
+        ...state,
+        displayConfirmDeleteAccount: true,
+      };
+
     case SHOW_CONFIRM:
       return {
         ...state,
@@ -215,7 +223,7 @@ const user = (state = initialState, action = {}) => {
     case LOG_OUT: {
       localStorage.removeItem('token');
 
-      return {
+      return { 
         ...state,
         isLogged: false,
         successfulRegistration: false,
