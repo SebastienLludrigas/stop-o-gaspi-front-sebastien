@@ -8,6 +8,7 @@ import './burger.scss';
 
 // == Composant
 const Burger = ({ handleBurger, cross }) => (
+
   <div
     className={classNames('burger', { active: cross })}
     onClick={() => {

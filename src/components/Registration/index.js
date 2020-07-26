@@ -107,7 +107,7 @@ const Registration = ({
           </button>
         </form>
       </div>
-      {successfulRegistration && <Redirect to="/connexion" />}
+      {successfulRegistration && <Redirect to="/pantry" />}
     </div>
   );
 };

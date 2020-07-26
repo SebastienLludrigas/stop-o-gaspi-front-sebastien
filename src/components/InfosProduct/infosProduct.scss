@@ -1,6 +1,7 @@
 @import 'src/styles/vars.scss';
 .infos-product{
 text-align: center;
+//height: 65vh;
 }
 .img_barcode{
   margin: 0 auto;
@@ -8,6 +9,9 @@ text-align: center;
   background-size: 200px 200px;
   width: 200px;
   height: 200px;
+  @media screen and (max-width: 980px) {
+    display:none;
+  }
 }
 .infos-product-form {
   display: flex;

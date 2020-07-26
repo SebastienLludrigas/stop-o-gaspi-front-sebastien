@@ -1,6 +1,6 @@
 // == Import npm
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -31,10 +31,10 @@ const Connexion = ({
   return (
     <div className="connexionPage">
       <div className="login-form">
-
-        {isLogged && (
-          <div className="login-form-logged">
-            <div className="login-form-message">
+        {isLogged && <Redirect to="/pantry" />}
+       { /*} {isLogged && (
+            <div className="login-form-logged">
+              <div className="login-form-message">
 
               <div id="containerSuccess">
                 <div id="success-box">
@@ -63,20 +63,20 @@ const Connexion = ({
                       type="button"
                       className="button-box"
                     >
-                      <h1
-                        className="greenSuccess"
-                      >
-                        Mon Pantry
-                      </h1>
-                    </button>
-                  </Link>
+                        <h1
+                          className="greenSuccess"
+                        >
+                          Mon Pantry
+                        </h1>
+                      </button>
+                    </Link>
 
+                  </div>
                 </div>
               </div>
-            </div>
 
-          </div>
-        )}
+            </div>
+          )}*/}
 
         {!isLogged && (
           <div className="login-contain ">
@@ -100,7 +100,7 @@ const Connexion = ({
               </div>
               <div className="user-contain">
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   required="password"
                   onChange={handleChange}
