@@ -58,9 +58,9 @@ const Card = ({
 
   return (
     <>
-      <div className="container-date" onClick={() => set((state) => !state)}>
+      <div className="container-date">
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-          <MoreHorizontal size="40" id="rotateCard" color="blue" />
+          <MoreHorizontal size="40" id="rotateCard" color="blue" onClick={() => set((state) => !state)}/>
           <Trash2
             size="30"
             className="fas fa-trash-alt"
@@ -68,11 +68,14 @@ const Card = ({
               toggleDeleteConfirm(id);
             }}
           />
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
-          <p className="productTitle">{name}</p>
+          {image !== null ? <img className="product-img" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
 
           <p
             className="dlc"
+            onClick={() => {
+              toggleUpdateDlc(id);
+              }}
           >
             DLC : <span>{dateConverter(expiration_date)}</span>
             <Edit3
@@ -87,10 +90,10 @@ const Card = ({
           </p>
           {elaboration_date !== null && <p className="fab">Date de fabrication : <span>{dateConverter(elaboration_date)}</span></p>}
 
-          {brand !== null && <p className="brand">marque : {brand}</p>}
-          <p className="createDate">Date d'ajout : {dateConverter(created_at)}</p>
-          {product_quantity !== null && <p className="poid">poids : {product_quantity}</p>}
-          <p className="qut">quantité : {quantity}
+          {brand !== null && <p className="brand" onClick={() => set((state) => !state)}>marque : {brand}</p>}
+          <p className="createDate" onClick={() => set((state) => !state)}>Date d'ajout : {dateConverter(created_at)}</p>
+          {product_quantity !== null && <p className="poid" onClick={() => set((state) => !state)}>poids : {product_quantity}</p>}
+          <p className="qut" onClick={() => {toggleUpdateQuantity(id);}} >quantité : {quantity}
             <Edit3
               size="20"
               id="quantityPen"
@@ -103,9 +106,9 @@ const Card = ({
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" /> : <img className="product-img-logo" src={logo} alt="visuel par default" />}
-          <p className="productTitle">{name}</p>
-          {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" />}
+          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
+          {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" onClick={() => set((state) => !state)}/>}
         </anim.div>
       </div>
       {displayDeleteConfirm && (
