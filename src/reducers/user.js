@@ -43,8 +43,10 @@ const initialState = {
   registrationPassword: '',
   registrationVerifPassword: '',
   registrationPseudo: '',
-  // Tous les produits d'un utilisateur
+  // Tous les produits de l'utilisateur connecté
   userProducts: [],
+  // Infos de l'utilisateur connecté
+  userInfos: {},
   currentProduct: {},
   productFound: true,
   finalProduct: {},
@@ -68,16 +70,18 @@ const initialState = {
   currentProductQuantity: 0,
   successfulRegistration: false,
   alertDayValue: 0,
+  // Affichage temporaire du message de confirmation du changement
+  // du jour d'alerte
   displayTempModal: false,
-
+  // Affichage temporaire du message de confirmation d'ajout d'un produit
+  // à la main
   showConfirmAddHandmadeProduct: false,
+  // Redirection de la page de saisie d'un produit à la main vers le Pantry
   redirectToPantry: false,
-
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
-
     case SHOW_CONFIRM:
       return {
         ...state,
@@ -103,7 +107,6 @@ const user = (state = initialState, action = {}) => {
         alertDayValue: action.value,
         displayTempModal: true,
       };
-
 
     case CLOSE_MODAL:
       return {
@@ -202,8 +205,7 @@ const user = (state = initialState, action = {}) => {
     case SAVE_USER:
       return {
         ...state,
-        info: action.data,
-        // userProducts: action.data.productPerso,
+        userInfos: action.userDatas,
         isLogged: true,
         successfulRegistration: true,
         // username: '',
