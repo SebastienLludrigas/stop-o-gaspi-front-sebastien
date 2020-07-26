@@ -27,10 +27,10 @@ const Pantry = ({
   quantityChange,
   submitNewDlc,
   submitNewQuantity,
-  cleanUpRedirect,
+  cleanUpRedirectToPantry,
 }) => {
   useEffect(() => {
-    cleanUpRedirect();
+    cleanUpRedirectToPantry();
     console.log('Je clean le redirect !');
   }, []);
 
@@ -95,7 +95,7 @@ Pantry.propTypes = {
   toggleDeleteConfirm: PropTypes.func.isRequired,
   toggleUpdateDlc: PropTypes.func.isRequired,
   toggleUpdateQuantity: PropTypes.func.isRequired,
-  cleanUpRedirect: PropTypes.func.isRequired,
+  cleanUpRedirectToPantry: PropTypes.func.isRequired,
 };
 
 // == Export

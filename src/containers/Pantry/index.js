@@ -13,7 +13,7 @@ import {
   quantityChange,
   submitNewDlc,
   submitNewQuantity,
-  cleanUpRedirect,
+  cleanUpRedirectToPantry,
 } from 'src/actions/product';
 
 // === mapStateToProps
@@ -63,8 +63,8 @@ const mapDispatchToProps = (dispatch) => ({
   submitNewQuantity: () => {
     dispatch(submitNewQuantity());
   },
-  cleanUpRedirect: () => {
-    dispatch(cleanUpRedirect());
+  cleanUpRedirectToPantry: () => {
+    dispatch(cleanUpRedirectToPantry());
   },
 });
 

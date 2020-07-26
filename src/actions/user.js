@@ -16,6 +16,10 @@ export const AUTOMATIC_CONNECTION = 'AUTOMATIC_CONNECTION';
 export const CHANGE_ALERT_DAY = 'CHANGE_ALERT_DAY';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const FETCH_USER_INFOS = 'FETCH_USER_INFOS';
+export const TOGGLE_CONFIRM_DELETE_ACCOUNT = 'TOGGLE_CONFIRM_DELETE_ACCOUNT';
+export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
+export const DELETION_REQUEST = 'DELETION_REQUEST';
+export const CLOSE_FINAL_CONFIRMATION = 'CLOSE_FINAL_CONFIRMATION';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -98,4 +102,20 @@ export const closeModal = () => ({
 
 export const fetchUserInfos = () => ({
   type: FETCH_USER_INFOS,
+});
+
+export const toggleConfirmDeleteAccount = () => ({
+  type: TOGGLE_CONFIRM_DELETE_ACCOUNT,
+});
+
+export const deleteAccount = () => ({
+  type: DELETE_ACCOUNT,
+});
+
+export const deletionRequest = () => ({
+  type: DELETION_REQUEST,
+});
+
+export const closeFinalConfirmation = () => ({
+  type: CLOSE_FINAL_CONFIRMATION,
 });

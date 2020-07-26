@@ -11,6 +11,9 @@ import {
   AUTOMATIC_CONNECTION,
   CHANGE_ALERT_DAY,
   CLOSE_MODAL,
+  TOGGLE_CONFIRM_DELETE_ACCOUNT,
+  DELETE_ACCOUNT,
+  CLOSE_FINAL_CONFIRMATION,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -25,7 +28,7 @@ import {
   QUANTITY_CHANGE,
   SHOW_CONFIRM,
   HIDE_CONFIRM_AND_REDIRECT,
-  CLEAN_UP_REDIRECT,
+  CLEAN_UP_REDIRECT_TO_PANTRY,
 } from '../actions/product';
 import { TOGGLE_MENU } from '../actions/myaccount';
 
@@ -78,10 +81,34 @@ const initialState = {
   showConfirmAddHandmadeProduct: false,
   // Redirection de la page de saisie d'un produit à la main vers le Pantry
   redirectToPantry: false,
+  displayConfirmDeleteAccount: false,
+  finalConfirmation: false,
+  redirectToHome: false,
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case TOGGLE_CONFIRM_DELETE_ACCOUNT:
+      return {
+        ...state,
+        displayConfirmDeleteAccount: !state.displayConfirmDeleteAccount,
+      };
+
+    case DELETE_ACCOUNT:
+      return {
+        ...state,
+        finalConfirmation: true,
+      };
+
+    case CLOSE_FINAL_CONFIRMATION:
+      return {
+        ...state,
+        displayConfirmDeleteAccount: false,
+        finalConfirmation: false,
+        redirectToHome: true,
+        isLogged: false,
+      };
+
     case SHOW_CONFIRM:
       return {
         ...state,
@@ -95,7 +122,7 @@ const user = (state = initialState, action = {}) => {
         redirectToPantry: true,
       };
 
-    case CLEAN_UP_REDIRECT:
+    case CLEAN_UP_REDIRECT_TO_PANTRY:
       return {
         ...state,
         redirectToPantry: false,
@@ -208,6 +235,7 @@ const user = (state = initialState, action = {}) => {
         userInfos: action.userDatas,
         isLogged: true,
         successfulRegistration: true,
+        redirectToHome: false,
         // username: '',
         // password: '',
       };
