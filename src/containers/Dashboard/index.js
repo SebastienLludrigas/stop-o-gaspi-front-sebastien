@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // === on importe le composant de présentation
 import Dashboard from 'src/components/Dashboard';
 
-import { alertChange, showConfirmDeleteAccount } from 'src/actions/user';
+import { alertChange, toggleConfirmDeleteAccount, deletionRequest } from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -12,6 +12,9 @@ const mapStateToProps = (state) => ({
   isLogged: state.user.isLogged,
   alertDayValue: state.user.alertDayValue,
   displayTempModal: state.user.displayTempModal,
+  displayConfirmDeleteAccount: state.user.displayConfirmDeleteAccount,
+  finalConfirmation: state.user.finalConfirmation,
+  redirectToHome: state.user.redirectToHome,
 });
 
 // === mapDispatchToProps
@@ -21,8 +24,11 @@ const mapDispatchToProps = (dispatch) => ({
   alertChange: (value) => {
     dispatch(alertChange(value));
   },
-  showConfirmDeleteAccount: () => {
-    dispatch(showConfirmDeleteAccount());
+  toggleConfirmDeleteAccount: () => {
+    dispatch(toggleConfirmDeleteAccount());
+  },
+  deletionRequest: () => {
+    dispatch(deletionRequest());
   },
 });
 

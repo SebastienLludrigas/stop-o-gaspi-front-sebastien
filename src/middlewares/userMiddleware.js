@@ -11,6 +11,10 @@ import {
   closeModal,
   fetchUserInfos,
   FETCH_USER_INFOS,
+  DELETION_REQUEST,
+  deleteAccount,
+  closeFinalConfirmation,
+  logOut,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -104,6 +108,27 @@ const userMiddleware = (store) => (next) => (action) => {
           console.log(response);
           store.dispatch(automaticConnection());
           store.dispatch(logIn());
+        })
+        .catch((error) => {
+          console.warn(error);
+        });
+
+      next(action);
+      break;
+    }
+
+    case DELETION_REQUEST: {
+      const token = localStorage.getItem('token');
+
+      axios.delete('https://stopgogaspiback.co/api/user/delete', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then((response) => {
+          console.log(response);
+          store.dispatch(deleteAccount());
+          setTimeout(() => {
+            store.dispatch(closeFinalConfirmation());
+          }, 2500);
         })
         .catch((error) => {
           console.warn(error);

@@ -14,7 +14,7 @@ export const SUBMIT_NEW_DLC = 'SUBMIT_NEW_DLC';
 export const SUBMIT_NEW_QUANTITY = 'SUBMIT_NEW_QUANTITY';
 export const SHOW_CONFIRM = 'SHOW_CONFIRM';
 export const HIDE_CONFIRM_AND_REDIRECT = 'HIDE_CONFIRM_AND_REDIRECT';
-export const CLEAN_UP_REDIRECT = 'CLEAN_UP_REDIRECT';
+export const CLEAN_UP_REDIRECT_TO_PANTRY = 'CLEAN_UP_REDIRECT_TO_PANTRY';
 
 // === action creators
 export const updateProductField = (newValue, name) => ({
@@ -88,6 +88,6 @@ export const hideConfirmAndRedirect = () => ({
   type: HIDE_CONFIRM_AND_REDIRECT,
 });
 
-export const cleanUpRedirect = () => ({
-  type: CLEAN_UP_REDIRECT,
+export const cleanUpRedirectToPantry = () => ({
+  type: CLEAN_UP_REDIRECT_TO_PANTRY,
 });
