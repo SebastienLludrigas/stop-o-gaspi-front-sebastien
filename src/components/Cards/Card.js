@@ -73,11 +73,9 @@ const Card = ({
 
           <p
             className="dlc"
-            onClick={() => {
-              toggleUpdateDlc(id);
-              }}
+            
           >
-            DLC : <span>{dateConverter(expiration_date)}</span>
+            DLC : <span onClick={() => { toggleUpdateDlc(id); }}>{dateConverter(expiration_date)}</span>
             <Edit3
               size="20"
               id="dlcPen"

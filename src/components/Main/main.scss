@@ -7,11 +7,21 @@
   font-family: "robot";
   src: url("../../assets/fonts/Roboto-Regular.ttf");
  }
+ 
+ @font-face {
+  font-family: "pat";
+  src: url("../../assets/fonts/PatrickHand-Regular.ttf");
+ }
+
+
+
+
 .main{
   @include main_container;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "pat";
   @media screen and (max-width: 600px) {
    }
 }
@@ -118,7 +128,7 @@
 .textMain_A{
   text-align: center;
   height: 100%;
-  font-size: 4vmin;
+  font-size: 5vmin;
   
   line-height: 3vmin;
   color: $secondColor;
