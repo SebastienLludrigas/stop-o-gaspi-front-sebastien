@@ -14,7 +14,6 @@ import {
   DELETION_REQUEST,
   deleteAccount,
   closeFinalConfirmation,
-  logOut,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -31,6 +30,7 @@ const userMiddleware = (store) => (next) => (action) => {
         .then((response) => {
           console.log(response);
           localStorage.setItem('token', response.data.token);
+          store.dispatch(saveUser(response.data));
           store.dispatch(getAllProducts());
           store.dispatch(fetchUserInfos());
         })

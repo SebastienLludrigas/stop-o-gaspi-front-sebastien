@@ -14,6 +14,7 @@ import {
   TOGGLE_CONFIRM_DELETE_ACCOUNT,
   DELETE_ACCOUNT,
   CLOSE_FINAL_CONFIRMATION,
+  FETCH_USER_INFOS,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -104,6 +105,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         displayConfirmDeleteAccount: false,
+        successfulRegistration: false,
         finalConfirmation: false,
         redirectToHome: true,
         isLogged: false,
@@ -146,6 +148,12 @@ const user = (state = initialState, action = {}) => {
         ...state,
         username: state.registrationEmail,
         password: state.registrationPassword,
+        registrationEmail: '',
+        registrationName: '',
+        registrationCity: '',
+        registrationPassword: '',
+        registrationVerifPassword: '',
+        registrationPseudo: '',
       };
 
     case UPDATE_USER_FIELD:
@@ -229,12 +237,18 @@ const user = (state = initialState, action = {}) => {
         barCode: action.newValue,
       };
 
+    case FETCH_USER_INFOS:
+      return {
+        ...state,
+        successfulRegistration: true,
+      };
+
     case SAVE_USER:
       return {
         ...state,
         userInfos: action.userDatas,
         isLogged: true,
-        successfulRegistration: true,
+        successfulRegistration: false,
         redirectToHome: false,
         // username: '',
         // password: '',
