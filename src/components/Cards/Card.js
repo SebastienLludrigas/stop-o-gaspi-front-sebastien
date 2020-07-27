@@ -68,12 +68,12 @@ const Card = ({
               toggleDeleteConfirm(id);
             }}
           />
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          {image !== null ? <img className="product-img" src={image} alt="votre produit" onClick={() => set((state) => !state)} /> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
           <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
 
           <p
             className="dlc"
-            
+
           >
             DLC : <span onClick={() => { toggleUpdateDlc(id); }}>{dateConverter(expiration_date)}</span>
             <Edit3
@@ -104,7 +104,7 @@ const Card = ({
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo-back" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
           <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
           {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" onClick={() => set((state) => !state)}/>}
         </anim.div>

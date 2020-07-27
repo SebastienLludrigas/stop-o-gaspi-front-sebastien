@@ -32,7 +32,7 @@ const Connexion = ({
     <div className="connexionPage">
       <div className="login-form">
         {isLogged && <Redirect to="/pantry" />}
-       { /*} {isLogged && (
+       { /* {isLogged && (
             <div className="login-form-logged">
               <div className="login-form-message">
 
