@@ -42,12 +42,12 @@ const initialState = {
   // Indique si l'utilisateur est connecté
   isLogged: false,
   // Données d'inscription d'un utilisateur
-  registrationEmail: 'sebastienlludrigas@gmail.com',
-  registrationName: 'tony',
-  registrationCity: 'paris',
-  registrationPassword: 'ironmano',
-  registrationVerifPassword: 'ironmano',
-  registrationPseudo: 'Toto',
+  registrationEmail: '',
+  registrationName: '',
+  registrationCity: '',
+  registrationPassword: '',
+  registrationVerifPassword: '',
+  registrationPseudo: '',
   // Tous les produits de l'utilisateur connecté
   userProducts: [],
   // Infos de l'utilisateur connecté
@@ -258,6 +258,7 @@ const user = (state = initialState, action = {}) => {
         isLogged: true,
         successfulRegistration: false,
         redirectToHome: false,
+        errorMessage: '',
         // username: '',
         // password: '',
       };

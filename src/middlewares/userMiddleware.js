@@ -36,7 +36,13 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(fetchUserInfos());
         })
         .catch((error) => {
-          console.warn(error);
+          console.warn(error.response.status);
+          if (error.response.status === 404) {
+            store.dispatch(catchError('La connexion a échoué, veuillez réessayer.'));
+          }
+          else if (error.response.status === 401) {
+            store.dispatch(catchError('Identifiants invalides, veuillez réessayer.'));
+          }
         });
 
       next(action);
