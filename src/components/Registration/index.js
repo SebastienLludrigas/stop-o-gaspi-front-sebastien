@@ -17,21 +17,36 @@ const Registration = ({
   password,
   verifPassword,
   pseudo,
+  errorMessage,
 }) => {
   const [equality, setEquality] = useState(true);
-  const [allowSubmission, setAllowSubmission] = useState(true);
+  const [numberCharacters, setNumberCharacters] = useState(true);
+  const [equalitySubmission, setEqualitySubmission] = useState(true);
+  const [charactersSubmission, setCharactersSubmission] = useState(true);
 
   const errorPasswords = 'Les mots de passe ne sont pas identiques !';
-  const errorSubmit = 'Les mots de passe doivent être identiques pour l\'envoi du formulaire !';
+  const errorNumberCharacters = 'Votre mot de passe doit contenir 8 caractères au minimum !';
+  const errorEqualitySubmit = 'Les mots de passe doivent être identiques pour l\'envoi du formulaire !';
+  const errorNbCharactersSubmit = 'Les mots de passe doivent contenir 8 caractères au minimum pour l\'envoi du formulaire !';
 
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
-    if (equality) {
-      setAllowSubmission(true);
+    if (equality && numberCharacters) {
+      setEqualitySubmission(true);
+      setCharactersSubmission(true);
       handleRegistration();
     }
+    else if (equality && !numberCharacters) {
+      setEqualitySubmission(true);
+      setCharactersSubmission(false);
+    }
+    else if (!equality && numberCharacters) {
+      setEqualitySubmission(false);
+      setCharactersSubmission(true);
+    }
     else {
-      setAllowSubmission(false);
+      setEqualitySubmission(false);
+      setCharactersSubmission(false);
     }
   };
 
@@ -49,8 +64,22 @@ const Registration = ({
     }
   };
 
+  const numberCharactersCheck = () => {
+    if (password.length < 8 || verifPassword.length < 8) {
+      setNumberCharacters(false);
+    }
+    else {
+      setNumberCharacters(true);
+    }
+  };
+
   return (
     <div className="inscriptionPage">
+      {errorMessage.length > 0 && (
+        <div className="errorMessages">
+          {errorMessage}
+        </div>
+      )}
       <div className="contain-inscription login-contain">
         <h2>S'inscrire
           <Link to="/connexion">
@@ -95,9 +124,10 @@ const Registration = ({
               required
               onChange={handleChange}
               onBlur={() => {
-                if (!equality) {
+                if (verifPassword.length > 0) {
                   equalityCheck();
                 }
+                numberCharactersCheck();
               }}
               value={password}
             />
@@ -105,19 +135,23 @@ const Registration = ({
           </div>
           <div className="user-contain">
             <input
-              type="password"
+              type="text"
               name="registrationVerifPassword"
               required
               onChange={handleChange}
-              onBlur={equalityCheck}
+              onBlur={() => {
+                equalityCheck();
+                numberCharactersCheck();
+              }}
               value={verifPassword}
             />
             <label>Verification du mot de passe</label>
             {!equality && <div className="errorPasswords">{errorPasswords}</div>}
+            {!numberCharacters && <div className="errorNumberCharacters">{errorNumberCharacters}</div>}
           </div>
           <div className="user-contain">
             <input
-              type="password"
+              type="pseudo"
               name="registrationPseudo"
               required
               onChange={handleChange}
@@ -133,7 +167,8 @@ const Registration = ({
             Valider
           </button>
         </form>
-        {!allowSubmission && <div className="errorSubmit">{errorSubmit}</div>}
+        {!equalitySubmission && <div className="errorSubmit">{errorEqualitySubmit}</div>}
+        {!charactersSubmission && <div className="errorSubmit">{errorNbCharactersSubmit}</div>}
       </div>
       {successfulRegistration && <Redirect to="/pantry" />}
     </div>
@@ -149,6 +184,7 @@ Registration.propTypes = {
   verifPassword: PropTypes.string.isRequired,
   City: PropTypes.string.isRequired,
   pseudo: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
   successfulRegistration: PropTypes.bool.isRequired,
 };
 

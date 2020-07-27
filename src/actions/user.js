@@ -20,6 +20,7 @@ export const TOGGLE_CONFIRM_DELETE_ACCOUNT = 'TOGGLE_CONFIRM_DELETE_ACCOUNT';
 export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const DELETION_REQUEST = 'DELETION_REQUEST';
 export const CLOSE_FINAL_CONFIRMATION = 'CLOSE_FINAL_CONFIRMATION';
+export const CATCH_ERROR = 'CATCH_ERROR';
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -118,4 +119,9 @@ export const deletionRequest = () => ({
 
 export const closeFinalConfirmation = () => ({
   type: CLOSE_FINAL_CONFIRMATION,
+});
+
+export const catchError = (message) => ({
+  type: CATCH_ERROR,
+  message,
 });
