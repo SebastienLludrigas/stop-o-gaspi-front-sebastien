@@ -79,7 +79,7 @@ const Registration = ({
           </div>
           <div className="user-contain">
             <input
-              type="text"
+              type="password"
               name="registrationVerifPassword"
               required
               onChange={handleChange}
@@ -89,7 +89,7 @@ const Registration = ({
           </div>
           <div className="user-contain">
             <input
-              type="text"
+              type="password"
               name="registrationPseudo"
               required
               onChange={handleChange}
