@@ -67,16 +67,20 @@ const Registration = ({
             />
             <label>Ville</label>
           </div>
+
           <div className="user-contain">
             <input
               type="password"
+              pattern="[a-z][0-9]"
+              minLength="8"
               name="registrationPassword"
               required
               onChange={handleChange}
               value={password}
             />
-            <label>Mot de passe</label>
+            <label>Mot de passe (Minimun 8 caractéres)</label>
           </div>
+
           <div className="user-contain">
             <input
               type="password"
