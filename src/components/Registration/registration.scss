@@ -186,3 +186,21 @@
     width: 100vw;
   }
 }
+
+.errorPasswords {
+  color: red;
+  font-size: 1em;
+  position: relative;
+  bottom: 20px;
+  line-height: 1.2em;
+  font-weight: lighter;
+}
+
+.errorSubmit {
+  color: red;
+  font-size: 1em;
+  position: relative;
+  top: 15px;
+  line-height: 1.2em;
+  font-weight: lighter;
+}
