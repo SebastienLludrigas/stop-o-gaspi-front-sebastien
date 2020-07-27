@@ -16,27 +16,56 @@ const Dashboard = ({
   deletionRequest,
   finalConfirmation,
   redirectToHome,
+  userInfos,
 }) => (
   <div className="dashboard_page">
     <div className="dashboard_left">
       <h2>Mettre à jour mes données personnelles :</h2>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="e-mail" />
+        <input
+          type="text"
+          name=""
+          required
+          placeholder="e-mail"
+          defaultValue={userInfos.email}
+        />
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Mot de Passe" />
+        <input
+          type="text"
+          name=""
+          required
+          placeholder="Mot de Passe"
+        />
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Vérification du Mot de Passe" />
+        <input
+          type="text"
+          name=""
+          required
+          placeholder="Vérification du Mot de Passe"
+        />
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Pseudo" />
+        <input
+          type="text"
+          name=""
+          required
+          placeholder="Pseudo"
+          defaultValue={userInfos.pseudo}
+        />
 
       </div>
       <div className="user-contain">
-        <input type="text" name="" required="" placeholder="Prénom" />
+        <input
+          type="text"
+          name=""
+          required
+          placeholder="Prénom"
+          defaultValue={userInfos.name}
+        />
       </div>
       <div className="btn_dashboard_validate">valider</div>
     </div>
@@ -127,6 +156,7 @@ Dashboard.propTypes = {
   displayConfirmDeleteAccount: PropTypes.bool.isRequired,
   finalConfirmation: PropTypes.bool.isRequired,
   redirectToHome: PropTypes.bool.isRequired,
+  userInfos: PropTypes.object.isRequired,
 };
 
 // == Export

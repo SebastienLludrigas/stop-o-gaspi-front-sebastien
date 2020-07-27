@@ -103,7 +103,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopgogaspiback.co/ap/login/signon', {
+      axios.post('https://stopgogaspiback.co/api/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,

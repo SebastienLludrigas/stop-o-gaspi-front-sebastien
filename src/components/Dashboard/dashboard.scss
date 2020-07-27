@@ -39,15 +39,17 @@
     .user-contain input {
       width: 100%;
       padding: 3px 0;
-      font-size: 16px;
+      font-size: 0.8em;
       color: $secondColor;
       margin-bottom: 30px;
       border: none;
       border-bottom: 1px solid $secondColor;
       outline: none;
       background: transparent;
+
       &::placeholder{
-        color: $secondColor;
+        color: #393e466b;
+        font-size: 0.7em;
       }
     }
 
@@ -56,7 +58,7 @@
       top: -20px;
       left: 0;
       color: $secondColor;
-      font-size: 12px;
+      // font-size: 12px;
     }
     .btn_dashboard_validate{
       background-color: $thirdColor;

@@ -15,6 +15,7 @@ const mapStateToProps = (state) => ({
   displayConfirmDeleteAccount: state.user.displayConfirmDeleteAccount,
   finalConfirmation: state.user.finalConfirmation,
   redirectToHome: state.user.redirectToHome,
+  userInfos: state.user.userInfos,
 });
 
 // === mapDispatchToProps
