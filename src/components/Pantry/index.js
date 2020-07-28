@@ -31,7 +31,6 @@ const Pantry = ({
 }) => {
   useEffect(() => {
     cleanUpRedirectToPantry();
-    console.log('Je clean le redirect !');
   }, []);
 
   const pantryText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });

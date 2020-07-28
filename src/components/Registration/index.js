@@ -121,7 +121,6 @@ const Registration = ({
           <div className="user-contain">
             <input
               type="password"
-              pattern="[a-z][0-9]"
               minLength="8"
               name="registrationPassword"
               required
@@ -139,9 +138,9 @@ const Registration = ({
 
           <div className="user-contain">
             <input
-              type="text"
+              type="password"
               name="registrationVerifPassword"
-              required
+              
               onChange={handleChange}
               onBlur={() => {
                 equalityCheck();
@@ -153,17 +152,18 @@ const Registration = ({
             {!equality && <div className="errorPasswords">{errorPasswords}</div>}
             {!numberCharacters && <div className="errorNumberCharacters">{errorNumberCharacters}</div>}
           </div>
+
           <div className="user-contain">
             <input
               type="text"
- 
               name="registrationPseudo"
-              required
+              
               onChange={handleChange}
               value={pseudo}
             />
             <label>Pseudo</label>
           </div>
+
           <button type="submit">
             <span />
             <span />
