@@ -1,3 +1,5 @@
+import { SHOW_CONFIRM } from "./product";
+
 export const UPDATE_USER_FIELD = 'UPDATE_USER_FIELD';
 export const ON_CHANGE = 'ON_CHANGE';
 export const ON_CHANGE_BAR_CODE = 'ON_CHANGE_BAR_CODE';
@@ -21,6 +23,15 @@ export const DELETE_ACCOUNT = 'DELETE_ACCOUNT';
 export const DELETION_REQUEST = 'DELETION_REQUEST';
 export const CLOSE_FINAL_CONFIRMATION = 'CLOSE_FINAL_CONFIRMATION';
 export const CATCH_ERROR = 'CATCH_ERROR';
+export const TOGGLE_UPDATE_DATA = 'TOGGLE_UPDATE_DATA';
+export const CHANGE_DATA = 'CHANGE_DATA';
+export const UPDATE_DATA = 'UPDATE_DATA';
+export const UPDATE_DATA_WITH_PASSWORD = 'UPDATE_DATA_WITH_PASSWORD';
+export const SHOW_CONFIRM_CHANGE_DATA = 'SHOW_CONFIRM_CHANGE_DATA';
+
+export const showConfirmChangeData = () => ({
+  type: SHOW_CONFIRM_CHANGE_DATA,
+});
 
 export const updateUserField = (newValue, name) => ({
   type: UPDATE_USER_FIELD,
@@ -32,6 +43,22 @@ export const onChange = (newValue, name) => ({
   type: ON_CHANGE,
   newValue,
   name,
+});
+
+export const changeData = (newValue, name) => ({
+  type: ON_CHANGE,
+  newValue,
+  name,
+});
+
+export const updateData = (target) => ({
+  type: UPDATE_DATA,
+  target,
+});
+
+export const updateDataWithPassword = (target) => ({
+  type: UPDATE_DATA_WITH_PASSWORD,
+  target,
 });
 
 export const onChangeBarCode = (newValue) => ({
@@ -124,4 +151,9 @@ export const closeFinalConfirmation = () => ({
 export const catchError = (message) => ({
   type: CATCH_ERROR,
   message,
+});
+
+export const toggleUpdateData = (target) => ({
+  type: TOGGLE_UPDATE_DATA,
+  target,
 });

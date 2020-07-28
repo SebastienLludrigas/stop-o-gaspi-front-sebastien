@@ -16,6 +16,9 @@ import {
   CLOSE_FINAL_CONFIRMATION,
   FETCH_USER_INFOS,
   CATCH_ERROR,
+  TOGGLE_UPDATE_DATA,
+  CHANGE_DATA,
+  SHOW_CONFIRM_CHANGE_DATA,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -48,6 +51,14 @@ const initialState = {
   registrationPassword: '',
   registrationVerifPassword: '',
   registrationPseudo: '',
+  // Données de mise à jour des infos personnelles
+  updateEmail: '',
+  updateName: '',
+  updateCity: '',
+  newPassword: '',
+  newVerifPassword: '',
+  updatePseudo: '',
+  verifPasswordChangeData: '',
   // Tous les produits de l'utilisateur connecté
   userProducts: [],
   // Infos de l'utilisateur connecté
@@ -87,10 +98,36 @@ const initialState = {
   finalConfirmation: false,
   redirectToHome: false,
   errorMessage: '',
+  showUpdateData: false,
+  dataToUpdate: '',
+  confirmChangeData: false,
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SHOW_CONFIRM_CHANGE_DATA:
+      return {
+        ...state,
+        confirmChangeData: true,
+      };
+
+    case CHANGE_DATA:
+      return {
+        ...state,
+        [action.name]: action.newValue,
+      };
+
+    case TOGGLE_UPDATE_DATA:
+      return {
+        ...state,
+        showUpdateData: !state.showUpdateData,
+        dataToUpdate: action.target,
+        errorMessage: '',
+        newPassword: '',
+        newVerifPassword: '',
+        verifPasswordChangeData: '',
+      };
+
     case CATCH_ERROR:
       return {
         ...state,
@@ -149,6 +186,12 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         displayTempModal: false,
+        showUpdateData: false,
+        confirmChangeData: false,
+        errorMessage: '',
+        newPassword: '',
+        newVerifPassword: '',
+        verifPasswordChangeData: '',
       };
 
     case AUTOMATIC_CONNECTION:
@@ -248,6 +291,10 @@ const user = (state = initialState, action = {}) => {
     case FETCH_USER_INFOS:
       return {
         ...state,
+        updateEmail: state.userInfos.email,
+        updateName: state.userInfos.name,
+        updateCity: state.userInfos.city,
+        updatePseudo: state.userInfos.pseudo,
         successfulRegistration: true,
       };
 
@@ -255,6 +302,10 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         userInfos: action.userDatas,
+        updateEmail: action.userDatas.email,
+        updateName: action.userDatas.name,
+        updateCity: action.userDatas.city,
+        updatePseudo: action.userDatas.pseudo,
         isLogged: true,
         successfulRegistration: false,
         redirectToHome: false,

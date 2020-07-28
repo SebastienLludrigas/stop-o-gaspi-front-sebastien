@@ -1,0 +1,95 @@
+@import 'src/styles/vars.scss';
+
+.overlay-updateData {
+  background-color: rgba(128, 128, 128, 0.63);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.contentUpdateDataEmail {
+  background-color: rgb(226, 226, 226);
+  border: 1px solid $secondColor;
+  color: $secondColor;
+  border-radius: 8px;
+  padding: 15px  25px;
+  position: fixed;
+  top: 30%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1em;
+  text-align: center;
+  width: 700px;
+
+  & p {
+    font-size: 0.6em;
+    text-align: left;
+    margin: 50px 0;
+  }
+
+  & .labelEmail {
+    font-size: 0.6em;
+    color: black;
+  }
+
+  & input {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 0.7em;
+    width: 350px;
+    color: $secondColor;
+  }
+
+  & .cancellation {
+    margin-top: 30px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: rgb(255, 214, 214);
+    border: 1px solid red;
+    color: red;
+    font-size: 0.6em;
+  }
+
+  & .submission {
+    margin-top: 30px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: inline-block;
+    background-color: rgb(215, 255, 215);
+    border: 1px solid green;
+    color: green;
+    font-size: 0.6em;
+    margin-right: 50px;
+  }
+}
+
+.confirmChangeData {
+  position: fixed;
+  top: 45%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 20px 25px;
+  border-radius: 5px;
+  color: green;
+  background-color: rgb(215, 255, 215);
+  border: 1px solid green;
+  font-size: 0.8em;
+}
+
+.errorRequest {
+  color: red;
+  background-color: rgb(255, 209, 209);
+  border: 1px solid red;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 0.5em;
+  padding: 15px;
+  margin-bottom: 15px;
+}

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import axios from 'axios';
 
 import {
@@ -15,6 +16,9 @@ import {
   deleteAccount,
   closeFinalConfirmation,
   catchError,
+  UPDATE_DATA,
+  showConfirmChangeData,
+  UPDATE_DATA_WITH_PASSWORD,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -103,7 +107,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopgogaspiback.co/ap/login/signon', {
+      axios.post('https://stopgogaspiback.co/api/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -146,6 +150,130 @@ const userMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.warn(error);
         });
+
+      next(action);
+      break;
+    }
+
+    case UPDATE_DATA: {
+      const token = localStorage.getItem('token');
+      const targetData = action.target;
+      const {
+        updateName,
+        updatePseudo,
+        updateCity,
+      } = store.getState().user;
+
+      if (targetData === 'name') {
+        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+          name: updateName,
+        }, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+            store.dispatch(saveUser(response.data));
+            store.dispatch(showConfirmChangeData());
+            setTimeout(() => {
+              store.dispatch(closeModal());
+            }, 2000);
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+      else if (targetData === 'pseudo') {
+        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+          pseudo: updatePseudo,
+        }, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+            store.dispatch(saveUser(response.data));
+            store.dispatch(showConfirmChangeData());
+            setTimeout(() => {
+              store.dispatch(closeModal());
+            }, 2000);
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+      else if (targetData === 'city') {
+        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+          city: updateCity,
+        }, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+            store.dispatch(saveUser(response.data));
+            store.dispatch(showConfirmChangeData());
+            setTimeout(() => {
+              store.dispatch(closeModal());
+            }, 2000);
+          })
+          .catch((error) => {
+            console.warn(error);
+          });
+      }
+
+      next(action);
+      break;
+    }
+
+    case UPDATE_DATA_WITH_PASSWORD: {
+      const token = localStorage.getItem('token');
+      const targetData = action.target;
+      const {
+        updateEmail,
+        newPassword,
+        newVerifPassword,
+        verifPasswordChangeData,
+      } = store.getState().user;
+
+      if (targetData === 'email') {
+        axios.post(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+          email: updateEmail,
+          password: verifPasswordChangeData,
+        }, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+            store.dispatch(saveUser(response.data));
+            store.dispatch(showConfirmChangeData());
+            setTimeout(() => {
+              store.dispatch(closeModal());
+            }, 2000);
+          })
+          .catch((error) => {
+            console.warn(error);
+            store.dispatch(catchError('La requête a échoué, veuillez réessayer.'));
+          });
+      }
+      else if (targetData === 'password') {
+        axios.post(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+          password: verifPasswordChangeData,
+          newPassword,
+          newPasswordVerif: newVerifPassword,
+        }, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+          .then((response) => {
+            console.log(response.data);
+            store.dispatch(saveUser(response.data));
+            store.dispatch(showConfirmChangeData());
+            setTimeout(() => {
+              store.dispatch(closeModal());
+            }, 2000);
+          })
+          .catch((error) => {
+            console.warn(error);
+            store.dispatch(catchError('La requête a échoué, veuillez réessayer.'));
+          });
+      }
 
       next(action);
       break;

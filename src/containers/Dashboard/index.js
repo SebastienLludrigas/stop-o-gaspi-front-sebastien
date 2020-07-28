@@ -3,7 +3,15 @@ import { connect } from 'react-redux';
 // === on importe le composant de présentation
 import Dashboard from 'src/components/Dashboard';
 
-import { alertChange, toggleConfirmDeleteAccount, deletionRequest } from 'src/actions/user';
+import {
+  alertChange,
+  toggleConfirmDeleteAccount,
+  deletionRequest,
+  toggleUpdateData,
+  changeData,
+  updateData,
+  updateDataWithPassword,
+} from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -15,6 +23,17 @@ const mapStateToProps = (state) => ({
   displayConfirmDeleteAccount: state.user.displayConfirmDeleteAccount,
   finalConfirmation: state.user.finalConfirmation,
   redirectToHome: state.user.redirectToHome,
+  updateEmail: state.user.updateEmail,
+  updateName: state.user.updateName,
+  updateCity: state.user.updateCity,
+  updatePseudo: state.user.updatePseudo,
+  dataToUpdate: state.user.dataToUpdate,
+  showUpdateData: state.user.showUpdateData,
+  verifPasswordChangeData: state.user.verifPasswordChangeData,
+  newPassword: state.user.newPassword,
+  newVerifPassword: state.user.newVerifPassword,
+  confirmChangeData: state.user.confirmChangeData,
+  errorMessage: state.user.errorMessage,
 });
 
 // === mapDispatchToProps
@@ -29,6 +48,19 @@ const mapDispatchToProps = (dispatch) => ({
   },
   deletionRequest: () => {
     dispatch(deletionRequest());
+  },
+  toggleUpdateData: (target) => {
+    dispatch(toggleUpdateData(target));
+  },
+  changeData: (newValue, name) => {
+    console.log(`La valeur du champ ${name} est : ${newValue}`);
+    dispatch(changeData(newValue, name));
+  },
+  updateData: (target) => {
+    dispatch(updateData(target));
+  },
+  updateDataWithPassword: (target) => {
+    dispatch(updateDataWithPassword(target));
   },
 });
 
