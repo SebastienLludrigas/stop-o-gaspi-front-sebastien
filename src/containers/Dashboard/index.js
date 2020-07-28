@@ -8,6 +8,9 @@ import {
   toggleConfirmDeleteAccount,
   deletionRequest,
   toggleUpdateData,
+  changeData,
+  updateData,
+  updateDataWithPassword,
 } from 'src/actions/user';
 
 // === mapStateToProps
@@ -26,6 +29,11 @@ const mapStateToProps = (state) => ({
   updatePseudo: state.user.updatePseudo,
   dataToUpdate: state.user.dataToUpdate,
   showUpdateData: state.user.showUpdateData,
+  verifPasswordChangeData: state.user.verifPasswordChangeData,
+  newPassword: state.user.newPassword,
+  newVerifPassword: state.user.newVerifPassword,
+  confirmChangeData: state.user.confirmChangeData,
+  errorMessage: state.user.errorMessage,
 });
 
 // === mapDispatchToProps
@@ -43,6 +51,16 @@ const mapDispatchToProps = (dispatch) => ({
   },
   toggleUpdateData: (target) => {
     dispatch(toggleUpdateData(target));
+  },
+  changeData: (newValue, name) => {
+    console.log(`La valeur du champ ${name} est : ${newValue}`);
+    dispatch(changeData(newValue, name));
+  },
+  updateData: (target) => {
+    dispatch(updateData(target));
+  },
+  updateDataWithPassword: (target) => {
+    dispatch(updateDataWithPassword(target));
   },
 });
 

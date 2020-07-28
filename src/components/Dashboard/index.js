@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 // == Import
+import MajEmail from 'src/components/MajEmail';
+import MajPassword from 'src/components/MajPassword';
+
 import './dashboard.scss';
+
 // == Composant
 const Dashboard = ({
   alertChange,
@@ -24,6 +28,13 @@ const Dashboard = ({
   showUpdateData,
   dataToUpdate,
   changeData,
+  verifPasswordChangeData,
+  newPassword,
+  newVerifPassword,
+  updateData,
+  confirmChangeData,
+  updateDataWithPassword,
+  errorMessage,
 }) => {
   const handleChange = (evt) => {
     // console.log(evt.target.name);
@@ -173,7 +184,7 @@ const Dashboard = ({
             </div>
           )}
           {finalConfirmation && (
-            <div className="finalConfirm_delete">
+            <div className="confirmChangeData">
               Votre compte a bien été supprimé !
             </div>
           )}
@@ -181,36 +192,152 @@ const Dashboard = ({
       )}
       {(showUpdateData && dataToUpdate === 'name') && (
         <div className="overlay-updateData">
-          <div className="contentUpdateData">
-            <p>Changez votre nom</p>
-            <form
-              // onSubmit={() => {
-              //   updateData('name');
-              // }}
-            >
-              <input
-                type="text"
-                value={updateName}
-                onChange={handleChange}
-              />
-              <button
-                className="submission"
-                type="submit"
-              >
-                Soumettre
-              </button>
-              <button
-                className="cancellation"
-                type="button"
-                onClick={() => {
-                  toggleUpdateData('name');
+          {!confirmChangeData && (
+            <div className="contentUpdateData">
+              <h4>Changez votre nom</h4>
+              <form
+                onSubmit={(evt) => {
+                  evt.preventDefault();
+                  updateData('name');
                 }}
               >
-                Annuler
-              </button>
-            </form>
-          </div>
+                <input
+                  type="text"
+                  value={updateName}
+                  name="updateName"
+                  onChange={handleChange}
+                />
+                <button
+                  className="submission"
+                  type="submit"
+                >
+                  Soumettre
+                </button>
+                <button
+                  className="cancellation"
+                  type="button"
+                  onClick={() => {
+                    toggleUpdateData('name');
+                  }}
+                >
+                  Annuler
+                </button>
+              </form>
+            </div>
+          )}
+          {confirmChangeData && (
+            <div className="confirmChangeData">
+              Modification enregistré !
+            </div>
+          )}
         </div>
+      )}
+      {(showUpdateData && dataToUpdate === 'pseudo') && (
+        <div className="overlay-updateData">
+          {!confirmChangeData && (
+            <div className="contentUpdateData">
+              <h4>Changez votre pseudo</h4>
+              <form
+                onSubmit={(evt) => {
+                  evt.preventDefault();
+                  updateData('pseudo');
+                }}
+              >
+                <input
+                  type="text"
+                  value={updatePseudo}
+                  name="updatePseudo"
+                  onChange={handleChange}
+                />
+                <button
+                  className="submission"
+                  type="submit"
+                >
+                  Soumettre
+                </button>
+                <button
+                  className="cancellation"
+                  type="button"
+                  onClick={() => {
+                    toggleUpdateData('pseudo');
+                  }}
+                >
+                  Annuler
+                </button>
+              </form>
+            </div>
+          )}
+          {confirmChangeData && (
+            <div className="confirmChangeData">
+              Modification enregistré !
+            </div>
+          )}
+        </div>
+      )}
+      {(showUpdateData && dataToUpdate === 'city') && (
+        <div className="overlay-updateData">
+          {!confirmChangeData && (
+            <div className="contentUpdateData">
+              <h4>Changez votre ville</h4>
+              <form
+                onSubmit={(evt) => {
+                  evt.preventDefault();
+                  updateData('city');
+                }}
+              >
+                <input
+                  type="text"
+                  value={updateCity}
+                  name="updateCity"
+                  onChange={handleChange}
+                />
+                <button
+                  className="submission"
+                  type="submit"
+                >
+                  Soumettre
+                </button>
+                <button
+                  className="cancellation"
+                  type="button"
+                  onClick={() => {
+                    toggleUpdateData('pseudo');
+                  }}
+                >
+                  Annuler
+                </button>
+              </form>
+            </div>
+          )}
+          {confirmChangeData && (
+            <div className="confirmChangeData">
+              Modification enregistré !
+            </div>
+          )}
+        </div>
+      )}
+      {(showUpdateData && dataToUpdate === 'email') && (
+        <MajEmail
+          changeData={changeData}
+          toggleUpdateData={toggleUpdateData}
+          updateEmail={updateEmail}
+          verifPasswordChangeData={verifPasswordChangeData}
+          confirmChangeData={confirmChangeData}
+          updateDataWithPassword={updateDataWithPassword}
+          errorMessage={errorMessage}
+        />
+      )}
+      {(showUpdateData && dataToUpdate === 'password') && (
+        <MajPassword
+          changeData={changeData}
+          toggleUpdateData={toggleUpdateData}
+          newPassword={newPassword}
+          newVerifPassword={newVerifPassword}
+          verifPasswordChangeData={verifPasswordChangeData}
+          confirmChangeData={confirmChangeData}
+          updateDataWithPassword={updateDataWithPassword}
+          errorMessage={errorMessage}
+        />
       )}
       {redirectToHome && <Redirect to="/" />}
     </div>
@@ -219,6 +346,8 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   alertChange: PropTypes.func.isRequired,
+  updateDataWithPassword: PropTypes.func.isRequired,
+  updateData: PropTypes.func.isRequired,
   deletionRequest: PropTypes.func.isRequired,
   toggleConfirmDeleteAccount: PropTypes.func.isRequired,
   isLogged: PropTypes.bool.isRequired,
@@ -234,7 +363,12 @@ Dashboard.propTypes = {
   toggleUpdateData: PropTypes.func.isRequired,
   changeData: PropTypes.func.isRequired,
   showUpdateData: PropTypes.bool.isRequired,
+  confirmChangeData: PropTypes.bool.isRequired,
   dataToUpdate: PropTypes.string.isRequired,
+  verifPasswordChangeData: PropTypes.string.isRequired,
+  newPassword: PropTypes.string.isRequired,
+  newVerifPassword: PropTypes.string.isRequired,
+  errorMessage: PropTypes.string.isRequired,
 };
 
 // == Export

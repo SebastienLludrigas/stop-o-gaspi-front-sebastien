@@ -17,6 +17,8 @@ import {
   FETCH_USER_INFOS,
   CATCH_ERROR,
   TOGGLE_UPDATE_DATA,
+  CHANGE_DATA,
+  SHOW_CONFIRM_CHANGE_DATA,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -53,9 +55,10 @@ const initialState = {
   updateEmail: '',
   updateName: '',
   updateCity: '',
-  updatePassword: '',
-  updateVerifPassword: '',
+  newPassword: '',
+  newVerifPassword: '',
   updatePseudo: '',
+  verifPasswordChangeData: '',
   // Tous les produits de l'utilisateur connecté
   userProducts: [],
   // Infos de l'utilisateur connecté
@@ -97,15 +100,32 @@ const initialState = {
   errorMessage: '',
   showUpdateData: false,
   dataToUpdate: '',
+  confirmChangeData: false,
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case SHOW_CONFIRM_CHANGE_DATA:
+      return {
+        ...state,
+        confirmChangeData: true,
+      };
+
+    case CHANGE_DATA:
+      return {
+        ...state,
+        [action.name]: action.newValue,
+      };
+
     case TOGGLE_UPDATE_DATA:
       return {
         ...state,
         showUpdateData: !state.showUpdateData,
         dataToUpdate: action.target,
+        errorMessage: '',
+        newPassword: '',
+        newVerifPassword: '',
+        verifPasswordChangeData: '',
       };
 
     case CATCH_ERROR:
@@ -166,6 +186,12 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         displayTempModal: false,
+        showUpdateData: false,
+        confirmChangeData: false,
+        errorMessage: '',
+        newPassword: '',
+        newVerifPassword: '',
+        verifPasswordChangeData: '',
       };
 
     case AUTOMATIC_CONNECTION:
