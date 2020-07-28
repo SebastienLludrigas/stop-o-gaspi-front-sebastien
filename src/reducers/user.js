@@ -15,6 +15,7 @@ import {
   DELETE_ACCOUNT,
   CLOSE_FINAL_CONFIRMATION,
   FETCH_USER_INFOS,
+  CATCH_ERROR,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
 import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
@@ -41,12 +42,12 @@ const initialState = {
   // Indique si l'utilisateur est connecté
   isLogged: false,
   // Données d'inscription d'un utilisateur
-  registrationEmail: '',
-  registrationName: '',
-  registrationCity: '',
-  registrationPassword: '',
-  registrationVerifPassword: '',
-  registrationPseudo: '',
+  registrationEmail: 'sebastienlludrigas@gmail.com',
+  registrationName: 'tony',
+  registrationCity: 'paris',
+  registrationPassword: 'ironmano',
+  registrationVerifPassword: 'ironmano',
+  registrationPseudo: 'Toto',
   // Tous les produits de l'utilisateur connecté
   userProducts: [],
   // Infos de l'utilisateur connecté
@@ -85,10 +86,17 @@ const initialState = {
   displayConfirmDeleteAccount: false,
   finalConfirmation: false,
   redirectToHome: false,
+  errorMessage: '',
 };
 
 const user = (state = initialState, action = {}) => {
   switch (action.type) {
+    case CATCH_ERROR:
+      return {
+        ...state,
+        errorMessage: action.message,
+      };
+
     case TOGGLE_CONFIRM_DELETE_ACCOUNT:
       return {
         ...state,

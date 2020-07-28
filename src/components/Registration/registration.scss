@@ -7,6 +7,7 @@
 .inscriptionPage {
   @include main_container;
   background-image: repeating-linear-gradient(90deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),repeating-linear-gradient(0deg, rgba(139, 202, 11,0.5) 0px, rgba(139, 202, 11,0.5) 40px,transparent 40px, transparent 80px),linear-gradient(90deg, #ffffff,#ffffff); 
+  text-align: center;
 }
 
 .contain-inscription{
@@ -185,4 +186,35 @@
   .connexionPage{
     width: 100vw;
   }
+}
+
+.errorPasswords, .errorNumberCharacters {
+  color: red;
+  font-size: 1em;
+  position: relative;
+  bottom: 20px;
+  line-height: 1.2em;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.errorSubmit {
+  color: red;
+  font-size: 1em;
+  position: relative;
+  top: 15px;
+  line-height: 1.2em;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.errorMessages {
+  color: red;
+  background-color: rgb(255, 209, 209);
+  border: 1px solid red;
+  display: inline-block;
+  border-radius: 5px;
+  font-size: 1em;
+  padding: 15px;
+  margin-bottom: 15px;
 }

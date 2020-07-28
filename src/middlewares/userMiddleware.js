@@ -14,6 +14,7 @@ import {
   DELETION_REQUEST,
   deleteAccount,
   closeFinalConfirmation,
+  catchError,
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
@@ -96,7 +97,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopgogaspiback.co/api/login/signon', {
+      axios.post('https://stopgogaspiback.co/ap/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -110,7 +111,13 @@ const userMiddleware = (store) => (next) => (action) => {
           store.dispatch(logIn());
         })
         .catch((error) => {
-          console.warn(error);
+          console.warn(error.response.status);
+          if (error.response.status === 404) {
+            store.dispatch(catchError('L\'inscription a échoué, veuillez réessayer.'));
+          }
+          else if (error.response.status === 403) {
+            store.dispatch(catchError('Cette adresse email a déjà un compte, veuillez réessayer ou vous connecter.'));
+          }
         });
 
       next(action);
