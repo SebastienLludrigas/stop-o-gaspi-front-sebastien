@@ -117,9 +117,12 @@ const Registration = ({
             />
             <label>Ville</label>
           </div>
+
           <div className="user-contain">
             <input
-              type="text"
+              type="password"
+              pattern="[a-z][0-9]"
+              minLength="8"
               name="registrationPassword"
               required
               onChange={handleChange}
@@ -131,8 +134,9 @@ const Registration = ({
               }}
               value={password}
             />
-            <label>Mot de passe</label>
+            <label>Mot de passe (Minimun 8 caractéres)</label>
           </div>
+
           <div className="user-contain">
             <input
               type="text"
@@ -151,7 +155,8 @@ const Registration = ({
           </div>
           <div className="user-contain">
             <input
-              type="pseudo"
+              type="text"
+ 
               name="registrationPseudo"
               required
               onChange={handleChange}

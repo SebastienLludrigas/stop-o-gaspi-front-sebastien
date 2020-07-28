@@ -96,7 +96,7 @@ const Connexion = ({
 
               <div className="user-contain">
                 <input
-                  type="text"
+                  type="email"
                   name="username"
                   required="email"
                   onChange={handleChange}

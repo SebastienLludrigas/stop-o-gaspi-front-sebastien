@@ -72,7 +72,7 @@ const Product = ({
             </div>
             <div className="user-contain">
               <input
-                type="text"
+                type="number"
                 name="quantity"
                 required
                 onChange={handleChange}
