@@ -73,18 +73,6 @@ const Dashboard = ({
           >
             Modifier
           </button>
-
-    <div className="dashboard_right">
-      <div className="alert_dashboard">
-        <h2>ALERTE MAIL :</h2>
-        <div
-          className={alertDayValue === 0 ? 'alert_J ok' : 'alert_J'}
-          onClick={() => {
-            alertChange(0);
-          }}
-        >
-          Jour J
-
         </div>
 
         <div className="user-contain">
@@ -132,7 +120,7 @@ const Dashboard = ({
 
       <div className="dashboard_right">
         <div className="alert_dashboard">
-          <h2>ALERTE :</h2>
+          <h2>ALERTE MAIL :</h2>
           <div
             className={alertDayValue === 0 ? 'alert_J ok' : 'alert_J'}
             onClick={() => {
@@ -353,6 +341,7 @@ const Dashboard = ({
       )}
       {redirectToHome && <Redirect to="/" />}
     </div>
+
   );
 };
 
