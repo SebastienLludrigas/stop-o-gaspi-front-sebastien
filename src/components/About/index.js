@@ -61,7 +61,6 @@ const About = () => {
 
       </ul>
 
-      <h2 className="tous">tous issue d'une formation FULLSTACK</h2>
     </div>
   );
 };

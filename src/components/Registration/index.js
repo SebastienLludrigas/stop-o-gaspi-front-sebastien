@@ -155,7 +155,7 @@ const Registration = ({
           </div>
           <div className="user-contain">
             <input
-              type="pseudo
+              type="text"
  
               name="registrationPseudo"
               required
