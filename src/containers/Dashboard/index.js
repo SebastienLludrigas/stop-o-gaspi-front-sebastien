@@ -3,7 +3,12 @@ import { connect } from 'react-redux';
 // === on importe le composant de présentation
 import Dashboard from 'src/components/Dashboard';
 
-import { alertChange, toggleConfirmDeleteAccount, deletionRequest } from 'src/actions/user';
+import {
+  alertChange,
+  toggleConfirmDeleteAccount,
+  deletionRequest,
+  toggleUpdateData,
+} from 'src/actions/user';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -15,7 +20,12 @@ const mapStateToProps = (state) => ({
   displayConfirmDeleteAccount: state.user.displayConfirmDeleteAccount,
   finalConfirmation: state.user.finalConfirmation,
   redirectToHome: state.user.redirectToHome,
-  userInfos: state.user.userInfos,
+  updateEmail: state.user.updateEmail,
+  updateName: state.user.updateName,
+  updateCity: state.user.updateCity,
+  updatePseudo: state.user.updatePseudo,
+  dataToUpdate: state.user.dataToUpdate,
+  showUpdateData: state.user.showUpdateData,
 });
 
 // === mapDispatchToProps
@@ -30,6 +40,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   deletionRequest: () => {
     dispatch(deletionRequest());
+  },
+  toggleUpdateData: (target) => {
+    dispatch(toggleUpdateData(target));
   },
 });
 
