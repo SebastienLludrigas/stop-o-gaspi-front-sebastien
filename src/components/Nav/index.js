@@ -69,7 +69,7 @@ const Nav = ({
           <li
             className="nav"
             onClick={logOut
-            }}
+            }
           >
             Déconnexion
           </li>
