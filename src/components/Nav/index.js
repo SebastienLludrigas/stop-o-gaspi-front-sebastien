@@ -68,7 +68,8 @@ const Nav = ({
         {isLogged && (
           <li
             className="nav"
-            onClick={logOut}
+            onClick={logOut
+            }}
           >
             Déconnexion
           </li>

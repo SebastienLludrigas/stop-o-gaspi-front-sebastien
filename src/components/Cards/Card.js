@@ -91,7 +91,7 @@ const Card = ({
           {brand !== null && <p className="brand" onClick={() => set((state) => !state)}>marque : {brand}</p>}
           <p className="createDate" onClick={() => set((state) => !state)}>Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid" onClick={() => set((state) => !state)}>poids : {product_quantity}</p>}
-          <p className="qut" onClick={() => {toggleUpdateQuantity(id);}} >quantité : {quantity}
+          <p className="qut" onClick={() => {toggleUpdateQuantity(id);}} >Quantité : {quantity}
             <Edit3
               size="20"
               id="quantityPen"

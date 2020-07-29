@@ -96,7 +96,7 @@ const Registration = ({
               onChange={handleChange}
               value={email}
             />
-            <label>e-mail</label>
+            <label>E-mail</label>
           </div>
           <div className="user-contain">
             <input
@@ -134,7 +134,7 @@ const Registration = ({
               }}
               value={password}
             />
-            <label>Mot de passe (Minimun 8 caractéres)</label>
+            <label>Mot de passe (Minimun 8 caractères)</label>
           </div>
 
           <div className="user-contain">
@@ -149,7 +149,7 @@ const Registration = ({
               }}
               value={verifPassword}
             />
-            <label>Verification du mot de passe</label>
+            <label>Vérification du mot de passe</label>
             {!equality && <div className="errorPasswords">{errorPasswords}</div>}
             {!numberCharacters && <div className="errorNumberCharacters">{errorNumberCharacters}</div>}
           </div>

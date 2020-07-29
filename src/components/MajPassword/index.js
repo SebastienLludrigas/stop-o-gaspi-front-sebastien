@@ -79,7 +79,7 @@ const MajPassword = ({
       )}
       {confirmChangeData && (
         <div className="confirmChangeData">
-          Modification enregistré !
+          Modification enregistrée !
         </div>
       )}
     </div>

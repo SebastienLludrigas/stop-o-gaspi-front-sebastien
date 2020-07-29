@@ -102,7 +102,7 @@ const Connexion = ({
                   onChange={handleChange}
                   value={username}
                 />
-                <label>e-mail</label>
+                <label>E-mail</label>
               </div>
               <div className="user-contain">
                 <input

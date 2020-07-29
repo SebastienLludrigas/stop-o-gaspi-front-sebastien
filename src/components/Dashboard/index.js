@@ -147,7 +147,7 @@ const Dashboard = ({
           </div>
         </div>
         <div className={displayTempModal ? 'modalInfo' : 'modalInfo hide'}>
-          Modification enregistré !
+          Modification enregistrée !
         </div>
         <div className="remove_account">
           <h2>Je veux supprimer mon compte :</h2>
@@ -155,7 +155,7 @@ const Dashboard = ({
             className="btn_remove_account"
             onClick={toggleConfirmDeleteAccount}
           >
-            je veux recommencer à gaspiller
+            Je veux recommencer à gaspiller
           </div>
         </div>
       </div>
@@ -164,7 +164,7 @@ const Dashboard = ({
         <div className="deleteAccount_overlay">
           {!finalConfirmation && (
             <div className="deleteAccount_content">
-              <p>Etes-vous sûr de vouloir recommencer<br />
+              <p>Êtes-vous sûr de vouloir recommencer<br />
                 à polluer la planète ?
               </p>
               <button
@@ -227,7 +227,7 @@ const Dashboard = ({
           )}
           {confirmChangeData && (
             <div className="confirmChangeData">
-              Modification enregistré !
+              Modification enregistrée !
             </div>
           )}
         </div>
@@ -269,7 +269,7 @@ const Dashboard = ({
           )}
           {confirmChangeData && (
             <div className="confirmChangeData">
-              Modification enregistré !
+              Modification enregistrée !
             </div>
           )}
         </div>
@@ -311,7 +311,7 @@ const Dashboard = ({
           )}
           {confirmChangeData && (
             <div className="confirmChangeData">
-              Modification enregistré !
+              Modification enregistrée !
             </div>
           )}
         </div>

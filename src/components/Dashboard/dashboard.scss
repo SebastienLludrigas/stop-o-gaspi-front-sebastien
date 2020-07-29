@@ -197,7 +197,7 @@
 
     .modalInfo {
       position: absolute;
-      top: 300px;
+      top: 350px;
       font-size: 0.6em;
       text-align: center;
       background-color: rgb(206, 255, 206);
@@ -206,6 +206,12 @@
       border-radius: 5px;
       display: block;
       color: rgb(0, 88, 0);
+      @media screen and (max-width: 490px) {
+        top: 300px;
+      }
+      @media screen and (max-width: 1150px) {
+        top: 420px;
+      }
 
       &.hide {
         display: none;

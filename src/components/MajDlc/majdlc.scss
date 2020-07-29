@@ -38,7 +38,7 @@
   & .fa-times {
     position: fixed;
     top: 15px;
-    right: -15px;
+    right: 15px;
     z-index: 200;
     font-size: 1.2em;
     color: red;
@@ -51,7 +51,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 .inputDlc{
   height: 40px;

@@ -15,7 +15,7 @@ const A = () => (
           <h3>Vous venez de faire vos courses ?</h3><br />
           <h3>As tu souvent oublié la date de peremption ?</h3><br />
           <h3>tu achètes plein de trucs que tu oublies de manger ? </h3><br />
-          <h3>Te rappelles tu ce que tu as jeté dernierement?</h3>
+          <h3>Te rappelles-tu ce que tu as jeté dernièrement?</h3>
           <br />
         </div><p className="nextMain"> suivant {">>"} </p>
       </div>

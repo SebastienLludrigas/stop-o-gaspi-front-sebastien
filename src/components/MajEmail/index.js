@@ -71,7 +71,7 @@ const MajEmail = ({
       )}
       {confirmChangeData && (
         <div className="confirmChangeData">
-          Modification enregistré !
+          Modification enregistrée !
         </div>
       )}
     </div>

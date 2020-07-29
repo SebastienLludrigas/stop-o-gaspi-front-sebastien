@@ -45,10 +45,10 @@ const Pantry = ({
         <h2 className="label_pantry">Ajouter un nouveau produit :</h2>
         <div className="pantry_buttons">
           <Link to="/product">
-            <div className="btn_manual btn"><span className="infobulle">Je saisie un produit</span></div>
+            <div className="btn_manual btn"><span className="infobulle">Je saisis un produit</span></div>
           </Link>
           <Link to="/scan-product">
-            <div className="btn_scan btn"><span className="infobulle">Je saisie avec un code barre</span></div>
+            <div className="btn_scan btn"><span className="infobulle">Je saisis avec un code barre</span></div>
           </Link>
         </div>
       </animated.div>
