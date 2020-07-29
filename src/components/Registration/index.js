@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // == Import npm
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
@@ -140,7 +141,7 @@ const Registration = ({
             <input
               type="password"
               name="registrationVerifPassword"
-              
+
               onChange={handleChange}
               onBlur={() => {
                 equalityCheck();
@@ -157,7 +158,7 @@ const Registration = ({
             <input
               type="text"
               name="registrationPseudo"
-              
+
               onChange={handleChange}
               value={pseudo}
             />

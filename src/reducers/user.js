@@ -39,9 +39,9 @@ import { TOGGLE_MENU } from '../actions/myaccount';
 
 const initialState = {
   // contenu de l'input pour l'adresse e-mail
-  username: 'sebastienlludrigas@gmail.com',
+  username: '',
   // contenu de l'input pour le mot de passe
-  password: 'olaola',
+  password: '',
   // Indique si l'utilisateur est connecté
   isLogged: false,
   // Données d'inscription d'un utilisateur
