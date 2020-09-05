@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 
 // == Import
-//import logo from 'src/assets/image/logoStopOGaspi.PNG';
+// import logo from 'src/assets/image/logoStopOGaspi.PNG';
 import A from './pagesMain/pageMainA';
 import B from './pagesMain/pageMainB';
 import C from './pagesMain/pageMainC';

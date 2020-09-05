@@ -22,7 +22,6 @@ const Footer = () => (
           <li>Nous rejoindre</li>
         </Link>
 
-
       </ul>
     </div>
 

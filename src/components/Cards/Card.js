@@ -60,7 +60,7 @@ const Card = ({
     <>
       <div className="container-date">
         <anim.div className={flipped ? 'front' : colorCode(expiration_date, 'card')} style={{ opacity: opacity.interpolate((o) => 1 - o), transform }}>
-          <MoreHorizontal size="40" id="rotateCard" color="blue" onClick={() => set((state) => !state)}/>
+          <MoreHorizontal size="40" id="rotateCard" color="blue" onClick={() => set((state) => !state)} />
           <Trash2
             size="30"
             className="fas fa-trash-alt"
@@ -75,7 +75,13 @@ const Card = ({
             className="dlc"
 
           >
-            DLC : <span onClick={() => { toggleUpdateDlc(id); }}>{dateConverter(expiration_date)}</span>
+            DLC :
+            <span
+              onClick={() => {
+                toggleUpdateDlc(id);
+              }}
+            >{dateConverter(expiration_date)}
+            </span>
             <Edit3
               size="20"
               id="dlcPen"
