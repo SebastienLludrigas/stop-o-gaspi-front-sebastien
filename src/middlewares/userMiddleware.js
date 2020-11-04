@@ -28,7 +28,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopgogaspiback.co/api/login_check', {
+      axios.post('https://stopogaspiback.lauriereinette.fr/api/login_check', {
         username,
         password,
       })
@@ -56,7 +56,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_INFOS: {
       const token = localStorage.getItem('token');
 
-      axios.get('https://stopgogaspiback.co/api/user', {
+      axios.get('https://stopogaspiback.lauriereinette.fr/api/user', {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -75,7 +75,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`https://stopgogaspiback.co/api/user/edit/alertday/${alertLevel}`, {
+      axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -107,7 +107,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopgogaspiback.co/api/login/signon', {
+      axios.post('https://stopogaspiback.lauriereinette.fr/api/login/signon', {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -137,7 +137,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case DELETION_REQUEST: {
       const token = localStorage.getItem('token');
 
-      axios.delete('https://stopgogaspiback.co/api/user/delete', {
+      axios.delete('https://stopogaspiback.lauriereinette.fr/api/user/delete', {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -165,7 +165,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'name') {
-        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
           name: updateName,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -183,7 +183,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'pseudo') {
-        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
           pseudo: updatePseudo,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -201,7 +201,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'city') {
-        axios.put(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
           city: updateCity,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -234,7 +234,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'email') {
-        axios.post(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+        axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
           email: updateEmail,
           password: verifPasswordChangeData,
         }, {
@@ -254,7 +254,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'password') {
-        axios.post(`https://stopgogaspiback.co/api/user/edit/${targetData}`, {
+        axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
           password: verifPasswordChangeData,
           newPassword,
           newPasswordVerif: newVerifPassword,

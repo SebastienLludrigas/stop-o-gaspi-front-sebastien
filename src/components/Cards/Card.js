@@ -68,7 +68,7 @@ const Card = ({
               toggleDeleteConfirm(id);
             }}
           />
-          {image !== null ? <img className="product-img" src={image} alt="votre produit" onClick={() => set((state) => !state)} /> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          {image !== null ? <img className="product-img" src={image} alt="votre produit" onClick={() => set((state) => !state)} /> : <img className="product-img-logo" src={logo} alt="visuel par default" onClick={() => set((state) => !state)} />}
           <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
 
           <p

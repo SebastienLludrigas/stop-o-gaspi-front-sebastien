@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 // import findOldDlc from 'src/utils';
-import { SpeechBubble } from 'react-kawaii'
+import { SpeechBubble } from 'react-kawaii';
 
 import './majdlc.scss';
 // import { findOldDlc } from '../../utils';

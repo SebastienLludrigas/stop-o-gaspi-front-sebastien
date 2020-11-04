@@ -1,9 +1,6 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-
-
-
 import { SpeechBubble } from 'react-kawaii'
 
 import './majquantity.scss';
