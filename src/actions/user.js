@@ -1,4 +1,4 @@
-import { SHOW_CONFIRM } from "./product";
+// import { SHOW_CONFIRM } from "./product";
 
 export const UPDATE_USER_FIELD = 'UPDATE_USER_FIELD';
 export const ON_CHANGE = 'ON_CHANGE';
