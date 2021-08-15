@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 import axios from 'axios';
 
@@ -20,6 +21,9 @@ import {
   showConfirm,
   hideConfirmAndRedirect,
 } from 'src/actions/product';
+
+const laurieAPI = 'https://stopogaspiback.lauriereinette.fr/api';
+const localAPI = 'http://localhost:8000/api';
 
 const datasMiddleware = (store) => (next) => (action) => {
   // console.log('on a intercepté une action dans le middleware: ', action);
@@ -78,7 +82,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
     case GET_ALL_PRODUCTS: {
       const token = localStorage.getItem('token');
-      axios.get('https://stopogaspiback.lauriereinette.fr/api/user/product/all/order-by-date', {
+      axios.get(`${laurieAPI}/user/product/all/order-by-date`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -112,7 +116,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const date = new Date(dlc);
       const expDate = date.toISOString();
 
-      axios.post('https://stopogaspiback.lauriereinette.fr/api/user/product/add/scan', {
+      axios.post(`${laurieAPI}/user/product/add/scan`, {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
 
@@ -159,7 +163,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(expiration_date);
       const expDate = dateExp.toISOString();
 
-      axios.post('https://stopogaspiback.lauriereinette.fr/api/user/product/add/manual', {
+      axios.post(`${laurieAPI}/user/product/add/manual`, {
         name,
         elaboration_date: elbDate,
         expiration_date: expDate,
@@ -192,7 +196,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.delete(`https://stopogaspiback.lauriereinette.fr/api/product/delete/${currentProductId}`, {
+      axios.delete(`${laurieAPI}/product/delete/${currentProductId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -222,7 +226,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(currentProductDlc);
       const expDate = dateExp.toISOString();
 
-      axios.post(`https://stopogaspiback.lauriereinette.fr/api/product/edit/expiration-date/${currentProductId}`, {
+      axios.post(`${laurieAPI}/product/edit/expiration-date/${currentProductId}`, {
         expiration_date: expDate,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -249,7 +253,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.post(`https://stopogaspiback.lauriereinette.fr/api/product/edit/quantity/${currentProductId}`, {
+      axios.post(`${laurieAPI}/product/edit/quantity/${currentProductId}`, {
         quantity: parseInt(currentProductQuantity, 10),
       }, {
         headers: { Authorization: `Bearer ${token}` },

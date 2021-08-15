@@ -22,13 +22,16 @@ import {
 } from '../actions/user';
 import { getAllProducts } from '../actions/product';
 
+const laurieAPI = 'https://stopogaspiback.lauriereinette.fr/api';
+const localAPI = 'http://localhost:8000/api';
+
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case LOG_IN: {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopogaspiback.lauriereinette.fr/api/login_check', {
+      axios.post(`${laurieAPI}/login_check`, {
         username,
         password,
       })
@@ -56,7 +59,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_INFOS: {
       const token = localStorage.getItem('token');
 
-      axios.get('https://stopogaspiback.lauriereinette.fr/api/user', {
+      axios.get(`${laurieAPI}/user`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -75,7 +78,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/alertday/${alertLevel}`, {
+      axios.post(`${laurieAPI}/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -107,7 +110,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post('https://stopogaspiback.lauriereinette.fr/api/login/signon', {
+      axios.post(`${laurieAPI}/login/signon`, {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -137,7 +140,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case DELETION_REQUEST: {
       const token = localStorage.getItem('token');
 
-      axios.delete('https://stopogaspiback.lauriereinette.fr/api/user/delete', {
+      axios.delete(`${laurieAPI}/user/delete`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -165,7 +168,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'name') {
-        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           name: updateName,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -183,7 +186,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'pseudo') {
-        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           pseudo: updatePseudo,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -201,7 +204,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'city') {
-        axios.put(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           city: updateCity,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -234,7 +237,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'email') {
-        axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
+        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
           email: updateEmail,
           password: verifPasswordChangeData,
         }, {
@@ -254,7 +257,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'password') {
-        axios.post(`https://stopogaspiback.lauriereinette.fr/api/user/edit/${targetData}`, {
+        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
           password: verifPasswordChangeData,
           newPassword,
           newPasswordVerif: newVerifPassword,
