@@ -3,7 +3,6 @@
 import React, { useState, useCallback } from 'react';
 import Media from 'react-media';
 import { useTransition, animated } from 'react-spring';
-import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 
 // == Import
@@ -23,7 +22,7 @@ const pages = [
 ];
 
 // == Composant
-const Main = ({ handleDatas, sendDatas }) => {
+const Main = () => {
   const [index, set] = useState(0);
   const onClick = useCallback(() => set((state) => (state + 1) % 3), []);
   const transitions = useTransition(index, (p) => p, {
@@ -39,7 +38,6 @@ const Main = ({ handleDatas, sendDatas }) => {
       large: '(min-width: 1315px)',
     }}
     >
-
       {(matches) => (
         <>
           {matches.large && (
@@ -56,25 +54,8 @@ const Main = ({ handleDatas, sendDatas }) => {
         </>
       )}
     </Media>
-
-      {/* <button
-        className="button-tests"
-        type="button"
-        onClick={sendDatas}
-      >Envoyer des données
-      </button>
-      <button
-        className="button-tests"
-        type="button"
-        onClick={handleDatas}
-      >Récupérer des données
-      </button> */}
     </div>
   );
-};
-Main.propTypes = {
-  handleDatas: PropTypes.func.isRequired,
-  sendDatas: PropTypes.func.isRequired,
 };
 
 // == Export

@@ -8,10 +8,7 @@ import Scanner from './Scanner';
 import './scanProduct.scss';
 
 const ScanProduct = ({
-  toggleModal2,
-  scanCode,
   modal,
-  scanDatas,
   barCode,
   currentProduct,
   onChange,
@@ -160,10 +157,8 @@ ScanProduct.propTypes = {
   productFound: PropTypes.bool.isRequired,
   toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
-  scanCode: PropTypes.string.isRequired,
   currentProduct: PropTypes.object.isRequired,
   modal: PropTypes.bool.isRequired,
-  scanDatas: PropTypes.object.isRequired,
   status: PropTypes.number,
   barCode: PropTypes.string.isRequired,
 };

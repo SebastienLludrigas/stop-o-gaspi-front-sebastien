@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable import/no-unresolved */
 // == Import npm
 import React, { useEffect } from 'react';

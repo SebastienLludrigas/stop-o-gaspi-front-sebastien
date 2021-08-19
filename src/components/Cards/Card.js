@@ -6,10 +6,7 @@ import PropTypes from 'prop-types';
 import { useSpring, animated as anim } from 'react-spring';
 import { colorCode, dateConverter } from 'src/utils';
 import Edit3 from '@bit/feathericons.react-feather.edit-3';
-import RotateCcw from '@bit/feathericons.react-feather.rotate-ccw';
 import MoreHorizontal from '@bit/feathericons.react-feather.more-horizontal';
-import MoreVertical from '@bit/feathericons.react-feather.more-vertical';
-
 import Trash2 from '@bit/feathericons.react-feather.trash-2';
 import Delete from 'src/components/Delete';
 import MajDlc from 'src/components/MajDlc';
@@ -97,7 +94,12 @@ const Card = ({
           {brand !== null && <p className="brand" onClick={() => set((state) => !state)}>marque : {brand}</p>}
           <p className="createDate" onClick={() => set((state) => !state)}>Date d'ajout : {dateConverter(created_at)}</p>
           {product_quantity !== null && <p className="poid" onClick={() => set((state) => !state)}>poids : {product_quantity}</p>}
-          <p className="qut" onClick={() => {toggleUpdateQuantity(id);}} >Quantité : {quantity}
+          <p
+            className="qut"
+            onClick={() => {
+              toggleUpdateQuantity(id);
+            }}
+          >Quantité : {quantity}
             <Edit3
               size="20"
               id="quantityPen"
@@ -110,9 +112,9 @@ const Card = ({
         </anim.div>
 
         <anim.div className={flipped ? colorCode(expiration_date, 'card') : 'back'} style={{ opacity, transform: transform.interpolate((t) => `${t} rotateX(180deg)`) }}>
-          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" onClick={() => set((state) => !state)}/> : <img className="product-img-logo-back" src={logo} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          {image !== null ? <img className="product-img-back" src={image} alt="votre produit" onClick={() => set((state) => !state)} /> : <img className="product-img-logo-back" src={logo} alt="visuel par default" onClick={() => set((state) => !state)} />}
           <p className="productTitle" onClick={() => set((state) => !state)}>{name}</p>
-          {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" onClick={() => set((state) => !state)}/>}
+          {nutriscore_grade !== null && <img className="nutri-img" src={nutriscoreUrl} alt="visuel par default" onClick={() => set((state) => !state)} />}
         </anim.div>
       </div>
       {displayDeleteConfirm && (

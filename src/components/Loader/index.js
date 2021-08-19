@@ -1,7 +1,6 @@
 import React from 'react';
 
 // == Import
-import Fridge from 'src/components/Fridge';
 import './loader.scss';
 
 // == Composant
@@ -25,7 +24,6 @@ const Loader = () => (
           <div id="loader-rotate" />
         </div>
       </div>
-      
     </div>
   </div>
 );

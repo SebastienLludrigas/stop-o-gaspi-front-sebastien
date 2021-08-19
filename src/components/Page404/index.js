@@ -10,11 +10,6 @@ import chouFleur from 'src/assets/image/chouFleur.png';
 import oeuf from 'src/assets/image/oeuf.png';
 import milk from 'src/assets/image/milk.png';
 import frigo from 'src/assets/image/frigo.png';
-import KawaiiAnimation from '../../utils/kawaiiAnimation';
-
-
-
-
 import './page404.scss';
 
 // == Composant
@@ -41,13 +36,10 @@ const Page404 = () => (
       <img alt="" className="chouFleur" src={chouFleur} width="180px" />
       <img alt="" className="milk" src={milk} width="180px" />
       <img alt="" className="oeuf" src={oeuf} width="80px" />
-      
 
       <div className="box_fridge">
-        
         <img alt="" className="object_fridge" src={frigo} width="300px" />
       </div>
-      
     </div>
   </div>
 );

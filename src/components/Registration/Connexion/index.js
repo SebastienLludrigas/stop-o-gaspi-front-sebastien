@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 // == Import npm
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';

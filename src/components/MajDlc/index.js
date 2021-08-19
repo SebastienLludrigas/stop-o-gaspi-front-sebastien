@@ -14,7 +14,6 @@ const MajDlc = ({
   currentProductDlc,
   dlcChange,
   submitNewDlc,
-  datas,
 }) => {
   const handleChange = (evt) => {
     console.log(evt.target.value);
@@ -33,7 +32,7 @@ const MajDlc = ({
     <div className="displayUpdateDlc_shadow-layer">
 
       <div className="imgDelete">
-        <SpeechBubble size={320} mood="excited" color="#83D1FB"/>
+        <SpeechBubble size={320} mood="excited" color="#83D1FB" />
 
         <div className="displayUpdateDlc_container">
           <i
@@ -66,7 +65,6 @@ const MajDlc = ({
 };
 
 MajDlc.propTypes = {
-  datas: PropTypes.array.isRequired,
   toggleUpdateDlc: PropTypes.func.isRequired,
   submitNewDlc: PropTypes.func.isRequired,
   dlcChange: PropTypes.func.isRequired,

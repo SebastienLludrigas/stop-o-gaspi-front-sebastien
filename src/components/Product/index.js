@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable camelcase */
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Redirect, Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { IceCream } from 'react-kawaii';
 // == Import
 
@@ -20,11 +21,6 @@ const Product = ({
   redirectToPantry,
   showConfirmAddHandmadeProduct,
 }) => {
-  // useEffect(() => {
-  //   cleanUpRedirect();
-  //   console.log('Je clean le redirect !');
-  // }, []);
-
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
     handmadeProduct();
@@ -43,6 +39,7 @@ const Product = ({
           <form onSubmit={handleSubmitLoggin}>
             <div className="user-contain">
               <input
+                id="name"
                 type="text"
                 name="name"
                 required
@@ -93,12 +90,13 @@ const Product = ({
       )}
       {showConfirmAddHandmadeProduct && (
         <>
-          <IceCream className="iceCreamRotate" size={320} mood="shocked" color="#e7305b"/>
+          <IceCream className="iceCreamRotate" size={320} mood="shocked" color="#e7305b" />
           <div className="confirmAddProduct">
             <p className="confirmProductMessage">
               Ajout de votre produit<br />
               <span className="productName">{name}</span><br />
-              au Pantry réussie !</p>
+              au Pantry réussie !
+            </p>
           </div>
         </>
       )}
