@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable camelcase */
 import React, { useEffect } from 'react';
 import { useSpring, animated } from 'react-spring';
@@ -31,6 +32,10 @@ const ScanProduct = ({
   useEffect(() => {
     cleanUp();
     console.log('Je cleane le up!');
+
+    return () => {
+      cleanUp();
+    };
   }, []);
 
   return (

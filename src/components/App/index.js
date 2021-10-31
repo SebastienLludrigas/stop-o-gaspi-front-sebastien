@@ -23,12 +23,17 @@ import './styles.scss';
 // == Composant
 const App = ({ getAllProducts, fetchUserInfos }) => {
   useEffect(() => {
+    let isMounted = true;
     const token = localStorage.getItem('token');
-    if (token) {
+    if (isMounted && token) {
       getAllProducts();
       fetchUserInfos();
     }
     console.log('Je use l\'effect !');
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

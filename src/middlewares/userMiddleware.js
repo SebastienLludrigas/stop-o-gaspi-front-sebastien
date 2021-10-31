@@ -24,7 +24,7 @@ import {
 import { getAllProducts } from '../actions/product';
 
 const laurieAPI = 'https://stopogaspiback.lauriereinette.fr/api';
-const localAPI = 'http://localhost:8000/api';
+const localAPI = 'https://localhost:8000/api';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -32,7 +32,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post(`${laurieAPI}/login_check`, {
+      axios.post(`${localAPI}/login_check`, {
         username,
         password,
       })
@@ -60,7 +60,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_INFOS: {
       const token = localStorage.getItem('token');
 
-      axios.get(`${laurieAPI}/user`, {
+      axios.get(`${localAPI}/user`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -79,7 +79,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`${laurieAPI}/user/edit/alertday/${alertLevel}`, {
+      axios.post(`${localAPI}/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -111,7 +111,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post(`${laurieAPI}/login/signon`, {
+      axios.post(`${localAPI}/login/signon`, {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -141,7 +141,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case DELETION_REQUEST: {
       const token = localStorage.getItem('token');
 
-      axios.delete(`${laurieAPI}/user/delete`, {
+      axios.delete(`${localAPI}/user/delete`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -169,7 +169,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'name') {
-        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
+        axios.put(`${localAPI}/user/edit/${targetData}`, {
           name: updateName,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -187,7 +187,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'pseudo') {
-        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
+        axios.put(`${localAPI}/user/edit/${targetData}`, {
           pseudo: updatePseudo,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -205,7 +205,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'city') {
-        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
+        axios.put(`${localAPI}/user/edit/${targetData}`, {
           city: updateCity,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -238,7 +238,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'email') {
-        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
+        axios.post(`${localAPI}/user/edit/${targetData}`, {
           email: updateEmail,
           password: verifPasswordChangeData,
         }, {
@@ -258,7 +258,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'password') {
-        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
+        axios.post(`${localAPI}/user/edit/${targetData}`, {
           password: verifPasswordChangeData,
           newPassword,
           newPasswordVerif: newVerifPassword,
