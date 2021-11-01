@@ -42,9 +42,9 @@ const datasMiddleware = (store) => (next) => (action) => {
       console.log(action.result.codeResult.code);
 
       // J'exécute la requête seulement si le code-barres qui vient
-      // d'être scanné contient 13 chiffres et si il est différent
+      // d'être scanné contient 13 ou 8 chiffres et si il est différent
       // du code-barres qui est actuellement enregistré dans le state
-      if (barCode.length === 13 && barCode !== scanCode) {
+      if ((barCode.length === 13 || barCode.length === 8) && barCode !== scanCode) {
         // faire une requête vers l'API
         axios.get(`https://world.openfoodfacts.org/api/v0/product/${barCode}.json`)
           .then((response) => {

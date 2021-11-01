@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { connect } from 'react-redux';
 
 import { toggleModal, onDetected, toggleScanInfo } from 'src/actions/scanner';
