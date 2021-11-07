@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { connect } from 'react-redux';
 
 // === on importe le composant de présentation
@@ -27,6 +28,10 @@ const mapStateToProps = (state) => ({
   updateName: state.user.updateName,
   updateCity: state.user.updateCity,
   updatePseudo: state.user.updatePseudo,
+  userEmail: state.user.userEmail,
+  userName: state.user.userName,
+  userCity: state.user.userCity,
+  userPseudo: state.user.userPseudo,
   dataToUpdate: state.user.dataToUpdate,
   showUpdateData: state.user.showUpdateData,
   verifPasswordChangeData: state.user.verifPasswordChangeData,

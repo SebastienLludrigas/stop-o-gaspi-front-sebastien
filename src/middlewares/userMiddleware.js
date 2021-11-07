@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import {
   LOG_IN,
+  changePassword,
   saveUser,
   ALERT_CHANGE,
   HANDLE_REGISTRATION,
@@ -32,15 +33,17 @@ const userMiddleware = (store) => (next) => (action) => {
       const { username, password } = store.getState().user;
       console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post(`${localAPI}/login_check`, {
+      axios.post(`${laurieAPI}/login_check`, {
         username,
         password,
       })
         .then((response) => {
-          console.log(response);
+          // console.log(response);
           localStorage.setItem('token', response.data.token);
-          store.dispatch(saveUser(response.data));
+          console.log(response.data, 'line 42');
           store.dispatch(getAllProducts());
+        })
+        .then(() => {
           store.dispatch(fetchUserInfos());
         })
         .catch((error) => {
@@ -60,11 +63,11 @@ const userMiddleware = (store) => (next) => (action) => {
     case FETCH_USER_INFOS: {
       const token = localStorage.getItem('token');
 
-      axios.get(`${localAPI}/user`, {
+      axios.get(`${laurieAPI}/user`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
-          console.log(response.data);
+          console.log(response.data, 'line 72');
           store.dispatch(saveUser(response.data));
         })
         .catch((error) => {
@@ -79,7 +82,7 @@ const userMiddleware = (store) => (next) => (action) => {
       const token = localStorage.getItem('token');
       const alertLevel = action.value;
 
-      axios.post(`${localAPI}/user/edit/alertday/${alertLevel}`, {
+      axios.post(`${laurieAPI}/user/edit/alertday/${alertLevel}`, {
         alertLevel,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -111,7 +114,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
       // console.log(`l'email est :${username} et le password est : ${password}`);
 
-      axios.post(`${localAPI}/login/signon`, {
+      axios.post(`${laurieAPI}/login/signon`, {
         email: registrationEmail,
         name: registrationName,
         City: registrationCity,
@@ -141,7 +144,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case DELETION_REQUEST: {
       const token = localStorage.getItem('token');
 
-      axios.delete(`${localAPI}/user/delete`, {
+      axios.delete(`${laurieAPI}/user/delete`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -169,7 +172,7 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'name') {
-        axios.put(`${localAPI}/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           name: updateName,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -187,7 +190,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'pseudo') {
-        axios.put(`${localAPI}/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           pseudo: updatePseudo,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -205,7 +208,7 @@ const userMiddleware = (store) => (next) => (action) => {
           });
       }
       else if (targetData === 'city') {
-        axios.put(`${localAPI}/user/edit/${targetData}`, {
+        axios.put(`${laurieAPI}/user/edit/${targetData}`, {
           city: updateCity,
         }, {
           headers: { Authorization: `Bearer ${token}` },
@@ -238,13 +241,14 @@ const userMiddleware = (store) => (next) => (action) => {
       } = store.getState().user;
 
       if (targetData === 'email') {
-        axios.post(`${localAPI}/user/edit/${targetData}`, {
+        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
           email: updateEmail,
           password: verifPasswordChangeData,
         }, {
           headers: { Authorization: `Bearer ${token}` },
         })
           .then((response) => {
+            console.log(response.data.token);
             console.log(response.data);
             store.dispatch(saveUser(response.data));
             store.dispatch(showConfirmChangeData());
@@ -252,13 +256,16 @@ const userMiddleware = (store) => (next) => (action) => {
               store.dispatch(closeModal());
             }, 2000);
           })
+          .then(() => {
+            store.dispatch(logIn());
+          })
           .catch((error) => {
             console.warn(error);
             store.dispatch(catchError('La requête a échoué, veuillez réessayer.'));
           });
       }
       else if (targetData === 'password') {
-        axios.post(`${localAPI}/user/edit/${targetData}`, {
+        axios.post(`${laurieAPI}/user/edit/${targetData}`, {
           password: verifPasswordChangeData,
           newPassword,
           newPasswordVerif: newVerifPassword,
@@ -266,7 +273,9 @@ const userMiddleware = (store) => (next) => (action) => {
           headers: { Authorization: `Bearer ${token}` },
         })
           .then((response) => {
+            console.log(response.data.token);
             console.log(response.data);
+            store.dispatch(changePassword(newPassword));
             store.dispatch(saveUser(response.data));
             store.dispatch(showConfirmChangeData());
             setTimeout(() => {

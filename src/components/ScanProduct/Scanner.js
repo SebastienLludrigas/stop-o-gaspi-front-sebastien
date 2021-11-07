@@ -14,7 +14,7 @@ const Scanner = ({ handleScan }) => {
             width: { min: 200, max: 1280 },
             height: { min: 150, max: 720 },
             aspectRatio: { min: 4 / 3, max: 16 / 9 },
-            facingMode: 'user', // ou environment => essayer l'un ou l'autre pour voir celui qui marche le
+            facingMode: 'environment', // ou environment => essayer l'un ou l'autre pour voir celui qui marche le
             // mieux
           },
 
@@ -41,7 +41,7 @@ const Scanner = ({ handleScan }) => {
           // Type de code-barre à rechercher
           readers: [
             'ean_reader',
-            'ean_8_reader',
+            // 'ean_8_reader',
           ],
         },
 
@@ -105,11 +105,15 @@ const Scanner = ({ handleScan }) => {
   };
 
   useEffect(() => {
-    init();
-    Quagga.onDetected(onDetected);
-    Quagga.onProcessed(onProcessed);
+    let isMounted = true;
+    if (isMounted) {
+      init();
+      Quagga.onDetected(onDetected);
+      Quagga.onProcessed(onProcessed);
+    }
 
     return () => {
+      isMounted = false;
       Quagga.stop();
     };
   }, []);

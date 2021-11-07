@@ -46,7 +46,7 @@ const MajEmail = ({
             />
             <label className="labelEmail">Mot de passe actuel :</label>
             <input
-              type="text"
+              type="password"
               value={verifPasswordChangeData}
               name="verifPasswordChangeData"
               onChange={handleChange}

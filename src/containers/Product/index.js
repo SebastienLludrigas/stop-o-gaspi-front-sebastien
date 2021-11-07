@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 import { connect } from 'react-redux';
 
 // === on importe le composant de présentation
 import Product from 'src/components/Product';
 
-import { updateProductField, handmadeProduct, cleanUpRedirectToPantry } from 'src/actions/product';
+import { updateProductField, handmadeProduct } from 'src/actions/product';
 
 // === mapStateToProps
 // si j'ai besoin de lire des informations dans le state
@@ -28,9 +29,6 @@ const mapDispatchToProps = (dispatch) => ({
   },
   handmadeProduct: () => {
     dispatch(handmadeProduct());
-  },
-  cleanUpRedirectToPantry: () => {
-    dispatch(cleanUpRedirectToPantry());
   },
 });
 

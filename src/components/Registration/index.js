@@ -20,8 +20,13 @@ const Registration = ({
   pseudo,
   errorMessage,
 }) => {
+  // Variables d'état permettant la vérification lors de l'évènement blur, donc au cours
+  // du remplissage du formulaire
   const [equality, setEquality] = useState(true);
   const [numberCharacters, setNumberCharacters] = useState(true);
+
+  // Variables d'état permettant la vérification lors de l'évènement submit, donc au moment
+  // de la validation du formulaire
   const [equalitySubmission, setEqualitySubmission] = useState(true);
   const [charactersSubmission, setCharactersSubmission] = useState(true);
 
@@ -32,7 +37,15 @@ const Registration = ({
 
   const handleSubmitLoggin = (evt) => {
     evt.preventDefault();
-    if (equality && numberCharacters) {
+    if (
+      (equality && numberCharacters)
+        && email.length !== 0
+        && name.length !== 0
+        && City.length !== 0
+        && password.length !== 0
+        && verifPassword.length !== 0
+        && pseudo.length !== 0
+    ) {
       setEqualitySubmission(true);
       setCharactersSubmission(true);
       handleRegistration();
@@ -129,8 +142,8 @@ const Registration = ({
               onBlur={() => {
                 if (verifPassword.length > 0) {
                   equalityCheck();
+                  numberCharactersCheck();
                 }
-                numberCharactersCheck();
               }}
               value={password}
             />
@@ -144,8 +157,10 @@ const Registration = ({
 
               onChange={handleChange}
               onBlur={() => {
-                equalityCheck();
-                numberCharactersCheck();
+                if (password.length > 0) {
+                  equalityCheck();
+                  numberCharactersCheck();
+                }
               }}
               value={verifPassword}
             />

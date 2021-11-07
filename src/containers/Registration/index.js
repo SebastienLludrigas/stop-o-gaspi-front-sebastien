@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { connect } from 'react-redux';
 
 // === on importe le composant de présentation

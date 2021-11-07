@@ -11,14 +11,11 @@ const enhancers = composeWithDevTools(
   applyMiddleware(
     dataMiddleware,
     userMiddleware,
-    // ... d'autres middlewares
   ),
 );
 
 const store = createStore(
-  // reducer
   reducer,
-  // enhancer
   enhancers,
 );
 

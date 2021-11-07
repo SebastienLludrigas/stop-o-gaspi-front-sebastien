@@ -40,21 +40,21 @@ const MajPassword = ({
           >
             <label className="labelPassword">Mot de passe actuel :</label>
             <input
-              type="text"
+              type="password"
               value={verifPasswordChangeData}
               name="verifPasswordChangeData"
               onChange={handleChange}
             />
             <label className="labelPassword">Nouveau mot de passe :</label>
             <input
-              type="text"
+              type="password"
               value={newPassword}
               name="newPassword"
               onChange={handleChange}
             />
             <label className="labelPassword">Saisissez une seconde fois le nouveau mot de passe :</label>
             <input
-              type="text"
+              type="password"
               value={newVerifPassword}
               name="newVerifPassword"
               onChange={handleChange}

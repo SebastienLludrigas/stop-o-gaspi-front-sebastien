@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 import {
   UPDATE_USER_FIELD,
   SAVE_USER,
@@ -14,14 +15,20 @@ import {
   TOGGLE_CONFIRM_DELETE_ACCOUNT,
   DELETE_ACCOUNT,
   CLOSE_FINAL_CONFIRMATION,
-  FETCH_USER_INFOS,
+  // FETCH_USER_INFOS,
   CATCH_ERROR,
   TOGGLE_UPDATE_DATA,
   CHANGE_DATA,
   SHOW_CONFIRM_CHANGE_DATA,
+  CHANGE_PASSWORD,
 } from '../actions/user';
 import { PRODUCT_RECOVERY } from '../actions/datas';
-import { TOGGLE_MODAL, TOGGLE_SCAN_INFO, ON_DETECTED } from '../actions/scanner';
+
+import {
+  TOGGLE_MODAL,
+  TOGGLE_SCAN_INFO,
+  ON_DETECTED,
+} from '../actions/scanner';
 import {
   UPDATE_PRODUCT_FIELD,
   ADD_HANDMADE_PRODUCT,
@@ -51,6 +58,12 @@ const initialState = {
   registrationPassword: '',
   registrationVerifPassword: '',
   registrationPseudo: '',
+  // Données courante d'un utilisateur
+  userEmail: '',
+  userName: '',
+  userCity: '',
+  userPassword: '',
+  userPseudo: '',
   // Données de mise à jour des infos personnelles
   updateEmail: '',
   updateName: '',
@@ -64,9 +77,8 @@ const initialState = {
   // Infos de l'utilisateur connecté
   userInfos: {},
   currentProduct: {},
-  productFound: true,
   finalProduct: {},
-  status: 2,
+  status: '',
   modal: false,
   scanCode: '',
   barCode: '',
@@ -199,12 +211,6 @@ const user = (state = initialState, action = {}) => {
         ...state,
         username: state.registrationEmail,
         password: state.registrationPassword,
-        registrationEmail: '',
-        registrationName: '',
-        registrationCity: '',
-        registrationPassword: '',
-        registrationVerifPassword: '',
-        registrationPseudo: '',
       };
 
     case UPDATE_USER_FIELD:
@@ -271,9 +277,7 @@ const user = (state = initialState, action = {}) => {
       return {
         ...state,
         toggle: false,
-        status: 2,
-        productFound: true,
-        // modal: false,
+        status: '',
       };
 
     case ON_CHANGE:
@@ -288,30 +292,23 @@ const user = (state = initialState, action = {}) => {
         barCode: action.newValue,
       };
 
-    case FETCH_USER_INFOS:
-      return {
-        ...state,
-        updateEmail: state.userInfos.email,
-        updateName: state.userInfos.name,
-        updateCity: state.userInfos.city,
-        updatePseudo: state.userInfos.pseudo,
-        successfulRegistration: true,
-      };
-
     case SAVE_USER:
       return {
         ...state,
         userInfos: action.userDatas,
+        username: action.userDatas.email,
+        userEmail: action.userDatas.email,
+        userName: action.userDatas.name,
+        userCity: action.userDatas.city,
+        userPseudo: action.userDatas.pseudo,
         updateEmail: action.userDatas.email,
         updateName: action.userDatas.name,
         updateCity: action.userDatas.city,
         updatePseudo: action.userDatas.pseudo,
         isLogged: true,
-        successfulRegistration: false,
+        successfulRegistration: true,
         redirectToHome: false,
         errorMessage: '',
-        // username: '',
-        // password: '',
       };
 
     case LOG_OUT: {
@@ -334,63 +331,53 @@ const user = (state = initialState, action = {}) => {
       };
 
     case ON_DETECTED: {
-      if (action.result.codeResult.code === 13) {
-        return {
-          ...state,
-          modal: false,
-          scanCode: action.result ? action.result.codeResult.code : '',
-          scanDatas: action.result,
-          status: 1,
-        };
-      }
       return {
         ...state,
-        modal: false,
         scanCode: action.result ? action.result.codeResult.code : '',
         scanDatas: action.result,
-        status: 0,
       };
     }
 
     case PRODUCT_RECOVERY: {
-      if (action.datas.status_verbose === 'product not found') {
+      if (action.datas.status_verbose === 'product found') {
         return {
           ...state,
-          productFound: false,
-          status: 2,
+          currentProduct: action.datas,
+          status: 'product found',
           barCode: '',
+          scanCode: '',
+          modal: false,
         };
       }
-      // eslint-disable-next-line no-else-return
-      else if (action.datas.status_verbose === 'no code or invalid code') {
+      else if (action.datas.status_verbose === 'product not found') {
         return {
           ...state,
-          productFound: false,
-          // status: 0,
+          status: 'product not found',
           barCode: '',
+          scanCode: '',
+          modal: false,
         };
       }
       return {
         ...state,
-        currentProduct: action.datas,
-        productFound: true,
-        status: 1,
+        status: 'invalid code',
         barCode: '',
+        scanCode: '',
+        modal: false,
       };
     }
 
     case HANDLE_ADD_PRODUCT:
       return {
         ...state,
-        status: 2,
+        status: '',
       };
 
     case ADD_PRODUCT_TO_PANTRY:
       return {
         ...state,
-        // userProducts: [action.datas, ...state.userProducts],
         userProducts: action.datas,
-        status: 3,
+        status: 'product added',
       };
 
     case UPDATE_PRODUCT_FIELD:
@@ -410,16 +397,21 @@ const user = (state = initialState, action = {}) => {
         ...state,
         modal: !state.modal,
         productFound: true,
-        status: 2,
+        status: '',
       };
     }
 
     case TOGGLE_SCAN_INFO:
       return {
         ...state,
-        status: 2,
-        productFound: true,
+        modal: false,
+        status: '',
+      };
 
+    case CHANGE_PASSWORD:
+      return {
+        ...state,
+        password: action.value,
       };
 
     default: return state;

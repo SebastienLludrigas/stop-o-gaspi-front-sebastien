@@ -55,7 +55,7 @@ const Product = ({
                 onChange={handleChange}
                 value={elaboration_date}
               />
-              <label>Date de fabriction (si vous avez cuisiné vous même)</label>
+              <label>Date de fabrication (si vous avez cuisiné vous même)</label>
             </div>
             <div className="user-contain">
               <input

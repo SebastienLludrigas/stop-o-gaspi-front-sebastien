@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 import './infosProduct.scss';
 
-// == Composant
 const infosProduct = ({ handleAddProduct, onChange }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();

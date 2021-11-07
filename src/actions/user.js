@@ -28,6 +28,7 @@ export const CHANGE_DATA = 'CHANGE_DATA';
 export const UPDATE_DATA = 'UPDATE_DATA';
 export const UPDATE_DATA_WITH_PASSWORD = 'UPDATE_DATA_WITH_PASSWORD';
 export const SHOW_CONFIRM_CHANGE_DATA = 'SHOW_CONFIRM_CHANGE_DATA';
+export const CHANGE_PASSWORD = 'CHANGE_PASSWORD';
 
 export const showConfirmChangeData = () => ({
   type: SHOW_CONFIRM_CHANGE_DATA,
@@ -156,4 +157,9 @@ export const catchError = (message) => ({
 export const toggleUpdateData = (target) => ({
   type: TOGGLE_UPDATE_DATA,
   target,
+});
+
+export const changePassword = (value) => ({
+  type: CHANGE_PASSWORD,
+  value,
 });

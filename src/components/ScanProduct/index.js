@@ -20,7 +20,7 @@ const ScanProduct = ({
   onDetected,
   status,
   toggleScanInfo,
-  productFound,
+  // productFound,
   cleanUp,
 }) => {
   const scanText = useSpring({ marginLeft: 0, from: { marginLeft: 500 } });
@@ -30,18 +30,18 @@ const ScanProduct = ({
   };
 
   useEffect(() => {
-    cleanUp();
-    console.log('Je cleane le up!');
+    let isMounted = true;
+    if (isMounted) {
+      cleanUp();
+    }
 
     return () => {
-      cleanUp();
+      isMounted = false;
     };
   }, []);
 
   return (
     <div className="scanPage">
-      {/* {console.log(scanDatas)}
-      {console.log(scanCode)} */}
       <div className="right_scanPage">
         {modal && (
           <div className="modal">
@@ -55,7 +55,7 @@ const ScanProduct = ({
           </div>
         )}
 
-        {(status === 1) && (
+        {(status === 'product found') && (
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info croixScanSuccesFirst" onClick={toggleScanInfo} />
@@ -70,7 +70,7 @@ const ScanProduct = ({
         </div>
         )}
 
-        {(status === 3) && (
+        {(status === 'product added') && (
         <div className="add-product">
           <div className="scanSuccess">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
@@ -88,21 +88,19 @@ const ScanProduct = ({
         </div>
         )}
 
-        {!productFound && (
+        {(status === 'product not found') && (
         <>
           <div className="productNotFound">
             <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
             <p>Votre produit n'a pas été trouvé<br />
-              dans notre base de données..<br />
-              Il est possible que ce produit ne soit pas<br />
-              un produit alimentaire, ou que le code-barres soit erroné.<br />
+              dans notre base de données...<br />
               Veuillez réessayer.
             </p>
           </div>
           <div className="arrow-down-notFound" />
         </>
         )}
-        {(status === 0) && (
+        {(status === 'code invalid') && (
           <>
             <div className="scanError">
               <i className="fas fa-times scan-info" onClick={toggleScanInfo} />
@@ -139,7 +137,7 @@ const ScanProduct = ({
             </div>
           </div>
 
-          {(status === 1 && productFound) && (
+          {(status === 'product found') && (
             <div className="input-dlc ">
               <InfosProduct onChange={onChange} handleAddProduct={handleAddProduct} />
             </div>
@@ -159,17 +157,12 @@ ScanProduct.propTypes = {
   onChangeBarCode: PropTypes.func.isRequired,
   catchBarCode: PropTypes.func.isRequired,
   handleAddProduct: PropTypes.func.isRequired,
-  productFound: PropTypes.bool.isRequired,
   toggleScanInfo: PropTypes.func.isRequired,
   onDetected: PropTypes.func.isRequired,
   currentProduct: PropTypes.object.isRequired,
   modal: PropTypes.bool.isRequired,
-  status: PropTypes.number,
+  status: PropTypes.string.isRequired,
   barCode: PropTypes.string.isRequired,
-};
-
-ScanProduct.defaultProps = {
-  status: 2,
 };
 
 export default ScanProduct;

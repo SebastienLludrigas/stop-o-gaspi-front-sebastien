@@ -24,6 +24,10 @@ const Dashboard = ({
   updateName,
   updateCity,
   updatePseudo,
+  userEmail,
+  userName,
+  userCity,
+  userPseudo,
   toggleUpdateData,
   showUpdateData,
   dataToUpdate,
@@ -49,7 +53,7 @@ const Dashboard = ({
 
         <div className="user-contain">
           <h3 className="data-name">Nom :</h3>
-          <p>{updateName}</p>
+          <p>{userName}</p>
           <button
             className="updateButton"
             type="button"
@@ -63,7 +67,7 @@ const Dashboard = ({
 
         <div className="user-contain">
           <h3 className="data-name">E-mail :</h3>
-          <p>{updateEmail}</p>
+          <p>{userEmail}</p>
           <button
             className="updateButton"
             type="button"
@@ -91,7 +95,7 @@ const Dashboard = ({
 
         <div className="user-contain">
           <h3 className="data-name">Pseudo :</h3>
-          <p>{updatePseudo}</p>
+          <p>{userPseudo}</p>
           <button
             className="updateButton"
             type="button"
@@ -105,7 +109,7 @@ const Dashboard = ({
 
         <div className="user-contain">
           <h3 className="data-name">City :</h3>
-          <p>{updateCity}</p>
+          <p>{userCity}</p>
           <button
             className="updateButton"
             type="button"
@@ -361,6 +365,10 @@ Dashboard.propTypes = {
   updateName: PropTypes.string.isRequired,
   updateCity: PropTypes.string.isRequired,
   updatePseudo: PropTypes.string.isRequired,
+  userEmail: PropTypes.string.isRequired,
+  userName: PropTypes.string.isRequired,
+  userCity: PropTypes.string.isRequired,
+  userPseudo: PropTypes.string.isRequired,
   toggleUpdateData: PropTypes.func.isRequired,
   changeData: PropTypes.func.isRequired,
   showUpdateData: PropTypes.bool.isRequired,

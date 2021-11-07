@@ -27,7 +27,6 @@ const laurieAPI = 'https://stopogaspiback.lauriereinette.fr/api';
 const localAPI = 'https://localhost:8000/api';
 
 const datasMiddleware = (store) => (next) => (action) => {
-  // console.log('on a intercepté une action dans le middleware: ', action);
   switch (action.type) {
     case ON_DETECTED: {
       // Je récupère le code-barres qui est enregistré dans le state actuel
@@ -39,13 +38,14 @@ const datasMiddleware = (store) => (next) => (action) => {
       // de l'action ON_DETECTED
       const barCode = action.result.codeResult.code;
 
-      console.log(action.result.codeResult.code);
+      // console.log(`Code-barres du state : ${scanCode}`);
+      // console.log(`Code-barres scanné : ${barCode}`);
 
       // J'exécute la requête seulement si le code-barres qui vient
-      // d'être scanné contient 13 ou 8 chiffres et si il est différent
+      // d'être scanné contient 13 chiffres et si il est différent
       // du code-barres qui est actuellement enregistré dans le state
-      if ((barCode.length === 13 || barCode.length === 8) && barCode !== scanCode) {
-        // faire une requête vers l'API
+      if ((scanCode !== barCode) && (barCode.length === 13)) {
+        // requête vers l'API d'Open Food facts
         axios.get(`https://world.openfoodfacts.org/api/v0/product/${barCode}.json`)
           .then((response) => {
             console.log(response.data);
@@ -83,11 +83,11 @@ const datasMiddleware = (store) => (next) => (action) => {
 
     case GET_ALL_PRODUCTS: {
       const token = localStorage.getItem('token');
-      axios.get(`${localAPI}/user/product/all/order-by-date`, {
+      axios.get(`${laurieAPI}/user/product/all/order-by-date`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
-          console.log(response);
+          console.log(response, 'line 90');
           store.dispatch(fillPantry(response.data));
         })
         .catch((error) => {
@@ -117,11 +117,10 @@ const datasMiddleware = (store) => (next) => (action) => {
       const date = new Date(dlc);
       const expDate = date.toISOString();
 
-      axios.post(`${localAPI}/user/product/add/scan`, {
+      axios.post(`${laurieAPI}/user/product/add/scan`, {
         // Création et envoi du nouvel objet JSON avec les données d'open food + les données
         // rentrées par le user au format JSON determiné par le back
 
-        // idi: nextId,
         name: currentProduct.product.product_name_fr,
         brand: currentProduct.product.brands,
         image: currentProduct.product.image_front_thumb_url,
@@ -164,7 +163,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(expiration_date);
       const expDate = dateExp.toISOString();
 
-      axios.post(`${localAPI}/user/product/add/manual`, {
+      axios.post(`${laurieAPI}/user/product/add/manual`, {
         name,
         elaboration_date: elbDate,
         expiration_date: expDate,
@@ -197,7 +196,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.delete(`${localAPI}/product/delete/${currentProductId}`, {
+      axios.delete(`${laurieAPI}/product/delete/${currentProductId}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((response) => {
@@ -227,7 +226,7 @@ const datasMiddleware = (store) => (next) => (action) => {
       const dateExp = new Date(currentProductDlc);
       const expDate = dateExp.toISOString();
 
-      axios.post(`${localAPI}/product/edit/expiration-date/${currentProductId}`, {
+      axios.post(`${laurieAPI}/product/edit/expiration-date/${currentProductId}`, {
         expiration_date: expDate,
       }, {
         headers: { Authorization: `Bearer ${token}` },
@@ -254,7 +253,7 @@ const datasMiddleware = (store) => (next) => (action) => {
 
       const token = localStorage.getItem('token');
 
-      axios.post(`${localAPI}/product/edit/quantity/${currentProductId}`, {
+      axios.post(`${laurieAPI}/product/edit/quantity/${currentProductId}`, {
         quantity: parseInt(currentProductQuantity, 10),
       }, {
         headers: { Authorization: `Bearer ${token}` },
